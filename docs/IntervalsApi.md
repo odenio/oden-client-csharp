@@ -223,7 +223,7 @@ catch (ApiException e)
 
 <a id="v2intervalsetpost"></a>
 # **V2IntervalSetPost**
-> Interval V2IntervalSetPost (Interval interval)
+> List&lt;Interval&gt; V2IntervalSetPost (Interval interval)
 
 
 
@@ -259,7 +259,7 @@ namespace Example
 
             try
             {
-                Interval result = apiInstance.V2IntervalSetPost(interval);
+                List<Interval> result = apiInstance.V2IntervalSetPost(interval);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -279,7 +279,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Interval> response = apiInstance.V2IntervalSetPostWithHttpInfo(interval);
+    ApiResponse<List<Interval>> response = apiInstance.V2IntervalSetPostWithHttpInfo(interval);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -300,7 +300,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**Interval**](Interval.md)
+[**List&lt;Interval&gt;**](Interval.md)
 
 ### Authorization
 
