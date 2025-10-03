@@ -38,7 +38,6 @@ docs/Target.md
 docs/TargetsApi.md
 docs/Unit.md
 docs/V2IntervalsDeletePost200Response.md
-docs/V2IntervalsSetPost200Response.md
 docs/V2LineSearchPost400Response.md
 docs/V2LineSearchPost409Response.md
 docs/V2LineSearchPost500Response.md
@@ -100,7 +99,6 @@ src/Oden/Model/StateReason.cs
 src/Oden/Model/Target.cs
 src/Oden/Model/Unit.cs
 src/Oden/Model/V2IntervalsDeletePost200Response.cs
-src/Oden/Model/V2IntervalsSetPost200Response.cs
 src/Oden/Model/V2LineSearchPost400Response.cs
 src/Oden/Model/V2LineSearchPost409Response.cs
 src/Oden/Model/V2LineSearchPost500Response.cs

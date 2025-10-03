@@ -141,8 +141,8 @@ namespace Oden.Api
         /// </remarks>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="intervalBulkCreate"></param>
-        /// <returns>V2IntervalsSetPost200Response</returns>
-        V2IntervalsSetPost200Response V2IntervalsSetPost(IntervalBulkCreate intervalBulkCreate);
+        /// <returns>List&lt;string&gt;</returns>
+        List<string> V2IntervalsSetPost(IntervalBulkCreate intervalBulkCreate);
 
         /// <summary>
         /// 
@@ -152,8 +152,8 @@ namespace Oden.Api
         /// </remarks>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="intervalBulkCreate"></param>
-        /// <returns>ApiResponse of V2IntervalsSetPost200Response</returns>
-        ApiResponse<V2IntervalsSetPost200Response> V2IntervalsSetPostWithHttpInfo(IntervalBulkCreate intervalBulkCreate);
+        /// <returns>ApiResponse of List&lt;string&gt;</returns>
+        ApiResponse<List<string>> V2IntervalsSetPostWithHttpInfo(IntervalBulkCreate intervalBulkCreate);
         #endregion Synchronous Operations
     }
 
@@ -287,8 +287,8 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="intervalBulkCreate"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of V2IntervalsSetPost200Response</returns>
-        System.Threading.Tasks.Task<V2IntervalsSetPost200Response> V2IntervalsSetPostAsync(IntervalBulkCreate intervalBulkCreate, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of List&lt;string&gt;</returns>
+        System.Threading.Tasks.Task<List<string>> V2IntervalsSetPostAsync(IntervalBulkCreate intervalBulkCreate, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -299,8 +299,8 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="intervalBulkCreate"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (V2IntervalsSetPost200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V2IntervalsSetPost200Response>> V2IntervalsSetPostWithHttpInfoAsync(IntervalBulkCreate intervalBulkCreate, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<string>>> V2IntervalsSetPostWithHttpInfoAsync(IntervalBulkCreate intervalBulkCreate, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -1154,10 +1154,10 @@ namespace Oden.Api
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="intervalBulkCreate"></param>
-        /// <returns>V2IntervalsSetPost200Response</returns>
-        public V2IntervalsSetPost200Response V2IntervalsSetPost(IntervalBulkCreate intervalBulkCreate)
+        /// <returns>List&lt;string&gt;</returns>
+        public List<string> V2IntervalsSetPost(IntervalBulkCreate intervalBulkCreate)
         {
-            Oden.Client.ApiResponse<V2IntervalsSetPost200Response> localVarResponse = V2IntervalsSetPostWithHttpInfo(intervalBulkCreate);
+            Oden.Client.ApiResponse<List<string>> localVarResponse = V2IntervalsSetPostWithHttpInfo(intervalBulkCreate);
             return localVarResponse.Data;
         }
 
@@ -1166,8 +1166,8 @@ namespace Oden.Api
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="intervalBulkCreate"></param>
-        /// <returns>ApiResponse of V2IntervalsSetPost200Response</returns>
-        public Oden.Client.ApiResponse<V2IntervalsSetPost200Response> V2IntervalsSetPostWithHttpInfo(IntervalBulkCreate intervalBulkCreate)
+        /// <returns>ApiResponse of List&lt;string&gt;</returns>
+        public Oden.Client.ApiResponse<List<string>> V2IntervalsSetPostWithHttpInfo(IntervalBulkCreate intervalBulkCreate)
         {
             // verify the required parameter 'intervalBulkCreate' is set
             if (intervalBulkCreate == null)
@@ -1199,7 +1199,7 @@ namespace Oden.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<V2IntervalsSetPost200Response>("/v2/intervals/set", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<List<string>>("/v2/intervals/set", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1216,10 +1216,10 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="intervalBulkCreate"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of V2IntervalsSetPost200Response</returns>
-        public async System.Threading.Tasks.Task<V2IntervalsSetPost200Response> V2IntervalsSetPostAsync(IntervalBulkCreate intervalBulkCreate, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of List&lt;string&gt;</returns>
+        public async System.Threading.Tasks.Task<List<string>> V2IntervalsSetPostAsync(IntervalBulkCreate intervalBulkCreate, System.Threading.CancellationToken cancellationToken = default)
         {
-            Oden.Client.ApiResponse<V2IntervalsSetPost200Response> localVarResponse = await V2IntervalsSetPostWithHttpInfoAsync(intervalBulkCreate, cancellationToken).ConfigureAwait(false);
+            Oden.Client.ApiResponse<List<string>> localVarResponse = await V2IntervalsSetPostWithHttpInfoAsync(intervalBulkCreate, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1229,8 +1229,8 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="intervalBulkCreate"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (V2IntervalsSetPost200Response)</returns>
-        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<V2IntervalsSetPost200Response>> V2IntervalsSetPostWithHttpInfoAsync(IntervalBulkCreate intervalBulkCreate, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<List<string>>> V2IntervalsSetPostWithHttpInfoAsync(IntervalBulkCreate intervalBulkCreate, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'intervalBulkCreate' is set
             if (intervalBulkCreate == null)
@@ -1265,7 +1265,7 @@ namespace Oden.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<V2IntervalsSetPost200Response>("/v2/intervals/set", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<string>>("/v2/intervals/set", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

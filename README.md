@@ -283,7 +283,6 @@ Class | Method | HTTP request | Description
  - [Model.Target](docs/Target.md)
  - [Model.Unit](docs/Unit.md)
  - [Model.V2IntervalsDeletePost200Response](docs/V2IntervalsDeletePost200Response.md)
- - [Model.V2IntervalsSetPost200Response](docs/V2IntervalsSetPost200Response.md)
  - [Model.V2LineSearchPost400Response](docs/V2LineSearchPost400Response.md)
  - [Model.V2LineSearchPost409Response](docs/V2LineSearchPost409Response.md)
  - [Model.V2LineSearchPost500Response](docs/V2LineSearchPost500Response.md)

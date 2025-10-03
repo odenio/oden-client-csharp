@@ -535,7 +535,7 @@ catch (ApiException e)
 
 <a id="v2intervalssetpost"></a>
 # **V2IntervalsSetPost**
-> V2IntervalsSetPost200Response V2IntervalsSetPost (IntervalBulkCreate intervalBulkCreate)
+> List&lt;string&gt; V2IntervalsSetPost (IntervalBulkCreate intervalBulkCreate)
 
 
 
@@ -571,7 +571,7 @@ namespace Example
 
             try
             {
-                V2IntervalsSetPost200Response result = apiInstance.V2IntervalsSetPost(intervalBulkCreate);
+                List<string> result = apiInstance.V2IntervalsSetPost(intervalBulkCreate);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -591,7 +591,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<V2IntervalsSetPost200Response> response = apiInstance.V2IntervalsSetPostWithHttpInfo(intervalBulkCreate);
+    ApiResponse<List<string>> response = apiInstance.V2IntervalsSetPostWithHttpInfo(intervalBulkCreate);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -612,7 +612,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**V2IntervalsSetPost200Response**](V2IntervalsSetPost200Response.md)
+**List<string>**
 
 ### Authorization
 
@@ -627,7 +627,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | A list containing any intervals found but not created. |  -  |
+| **200** | A list of created interval IDs. |  -  |
 | **400** | An error occurred regarding one of the input parameters |  -  |
 | **401** | User has provided either no credentials or invalid credentials |  -  |
 | **403** | User has provided valid credentials but is not authorized to access the entity  |  -  |
