@@ -50,24 +50,23 @@ namespace Oden.Model
         /// <summary>
         /// Gets or Sets MetadataType
         /// </summary>
-        [DataMember(Name = "metadata_type", IsRequired = true, EmitDefaultValue = true)]
-        public MetadataTypeEnum MetadataType { get; set; }
+        [DataMember(Name = "metadata_type", EmitDefaultValue = false)]
+        public MetadataTypeEnum? MetadataType { get; set; }
+
         /// <summary>
-        /// Initializes a new instance of the <see cref="BatchMetadata" /> class.
+        /// Returns false as MetadataType should not be serialized given that it's read-only.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected BatchMetadata()
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeMetadataType()
         {
-            this.AdditionalProperties = new Dictionary<string, object>();
+            return false;
         }
         /// <summary>
         /// Initializes a new instance of the <see cref="BatchMetadata" /> class.
         /// </summary>
-        /// <param name="metadataType">metadataType (required).</param>
         /// <param name="run">run.</param>
-        public BatchMetadata(MetadataTypeEnum metadataType = default, Interval run = default)
+        public BatchMetadata(Interval run = default)
         {
-            this.MetadataType = metadataType;
             this.Run = run;
             this.AdditionalProperties = new Dictionary<string, object>();
         }

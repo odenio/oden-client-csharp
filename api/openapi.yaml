@@ -2962,11 +2962,11 @@ components:
         metadata_type:
           enum:
           - batch
+          readOnly: true
           type: string
+          x-go-type-skip-optional-pointer: true
         run:
           $ref: "#/components/schemas/Interval"
-      required:
-      - metadata_type
       type: object
     RunMetadata:
       additionalProperties: true
@@ -2975,13 +2975,13 @@ components:
         metadata_type:
           enum:
           - run
+          readOnly: true
           type: string
+          x-go-type-skip-optional-pointer: true
         product:
           $ref: "#/components/schemas/Product"
         target:
           $ref: "#/components/schemas/Target"
-      required:
-      - metadata_type
       type: object
     StateMetadata:
       additionalProperties: true
@@ -2990,15 +2990,15 @@ components:
         metadata_type:
           enum:
           - state
+          readOnly: true
           type: string
+          x-go-type-skip-optional-pointer: true
         reason:
           $ref: "#/components/schemas/StateReason"
         comment:
           type: string
         category:
           $ref: "#/components/schemas/StateCategory"
-      required:
-      - metadata_type
       type: object
     CustomMetadata:
       additionalProperties: true
@@ -3007,9 +3007,9 @@ components:
         metadata_type:
           enum:
           - custom
+          readOnly: true
           type: string
-      required:
-      - metadata_type
+          x-go-type-skip-optional-pointer: true
       type: object
     Unit:
       description: |

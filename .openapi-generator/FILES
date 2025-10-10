@@ -45,7 +45,6 @@ docs/V2LineSearchPost500Response.md
 docs/V2QualityTestsDeletePostRequest.md
 docs/V2ScrapYieldSearchPostRequest.md
 docs/V2ScrapYieldSetPostRequest.md
-src/Oden.Test/Model/CustomMetadataTests.cs
 src/Oden.Test/Oden.Test.csproj
 src/Oden/Api/IntervalsApi.cs
 src/Oden/Api/MachineGroupsApi.cs
