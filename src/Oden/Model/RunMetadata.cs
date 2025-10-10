@@ -34,12 +34,41 @@ namespace Oden.Model
     public partial class RunMetadata : IValidatableObject
     {
         /// <summary>
+        /// Defines MetadataType
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum MetadataTypeEnum
+        {
+            /// <summary>
+            /// Enum Run for value: run
+            /// </summary>
+            [EnumMember(Value = "run")]
+            Run = 1
+        }
+
+
+        /// <summary>
+        /// Gets or Sets MetadataType
+        /// </summary>
+        [DataMember(Name = "metadata_type", IsRequired = true, EmitDefaultValue = true)]
+        public MetadataTypeEnum MetadataType { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="RunMetadata" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected RunMetadata()
+        {
+            this.AdditionalProperties = new Dictionary<string, object>();
+        }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunMetadata" /> class.
+        /// </summary>
+        /// <param name="metadataType">metadataType (required).</param>
         /// <param name="product">product.</param>
         /// <param name="target">target.</param>
-        public RunMetadata(Product product = default, Target target = default)
+        public RunMetadata(MetadataTypeEnum metadataType = default, Product product = default, Target target = default)
         {
+            this.MetadataType = metadataType;
             this.Product = product;
             this.Target = target;
             this.AdditionalProperties = new Dictionary<string, object>();
@@ -71,6 +100,7 @@ namespace Oden.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class RunMetadata {\n");
+            sb.Append("  MetadataType: ").Append(MetadataType).Append("\n");
             sb.Append("  Product: ").Append(Product).Append("\n");
             sb.Append("  Target: ").Append(Target).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");

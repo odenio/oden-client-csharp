@@ -3,6 +3,7 @@ Oden.sln
 README.md
 api/openapi.yaml
 docs/BatchMetadata.md
+docs/CustomMetadata.md
 docs/Factory.md
 docs/GenericError.md
 docs/Interval.md
@@ -44,6 +45,7 @@ docs/V2LineSearchPost500Response.md
 docs/V2QualityTestsDeletePostRequest.md
 docs/V2ScrapYieldSearchPostRequest.md
 docs/V2ScrapYieldSetPostRequest.md
+src/Oden.Test/Model/CustomMetadataTests.cs
 src/Oden.Test/Oden.Test.csproj
 src/Oden/Api/IntervalsApi.cs
 src/Oden/Api/MachineGroupsApi.cs
@@ -74,6 +76,7 @@ src/Oden/Client/RetryConfiguration.cs
 src/Oden/Client/WebRequestPathBuilder.cs
 src/Oden/Model/AbstractOpenAPISchema.cs
 src/Oden/Model/BatchMetadata.cs
+src/Oden/Model/CustomMetadata.cs
 src/Oden/Model/Factory.cs
 src/Oden/Model/GenericError.cs
 src/Oden/Model/Interval.cs

@@ -28,10 +28,10 @@ using OpenAPIDateConverter = Oden.Client.OpenAPIDateConverter;
 namespace Oden.Model
 {
     /// <summary>
-    /// Metadata associated with a batch interval
+    /// Metadata associated with a custom interval type
     /// </summary>
-    [DataContract(Name = "BatchMetadata")]
-    public partial class BatchMetadata : IValidatableObject
+    [DataContract(Name = "CustomMetadata")]
+    public partial class CustomMetadata : IValidatableObject
     {
         /// <summary>
         /// Defines MetadataType
@@ -40,10 +40,10 @@ namespace Oden.Model
         public enum MetadataTypeEnum
         {
             /// <summary>
-            /// Enum Batch for value: batch
+            /// Enum Custom for value: custom
             /// </summary>
-            [EnumMember(Value = "batch")]
-            Batch = 1
+            [EnumMember(Value = "custom")]
+            Custom = 1
         }
 
 
@@ -53,30 +53,22 @@ namespace Oden.Model
         [DataMember(Name = "metadata_type", IsRequired = true, EmitDefaultValue = true)]
         public MetadataTypeEnum MetadataType { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="BatchMetadata" /> class.
+        /// Initializes a new instance of the <see cref="CustomMetadata" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected BatchMetadata()
+        protected CustomMetadata()
         {
             this.AdditionalProperties = new Dictionary<string, object>();
         }
         /// <summary>
-        /// Initializes a new instance of the <see cref="BatchMetadata" /> class.
+        /// Initializes a new instance of the <see cref="CustomMetadata" /> class.
         /// </summary>
         /// <param name="metadataType">metadataType (required).</param>
-        /// <param name="run">run.</param>
-        public BatchMetadata(MetadataTypeEnum metadataType = default, Interval run = default)
+        public CustomMetadata(MetadataTypeEnum metadataType = default)
         {
             this.MetadataType = metadataType;
-            this.Run = run;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
-
-        /// <summary>
-        /// Gets or Sets Run
-        /// </summary>
-        [DataMember(Name = "run", EmitDefaultValue = false)]
-        public Interval Run { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties
@@ -91,9 +83,8 @@ namespace Oden.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class BatchMetadata {\n");
+            sb.Append("class CustomMetadata {\n");
             sb.Append("  MetadataType: ").Append(MetadataType).Append("\n");
-            sb.Append("  Run: ").Append(Run).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

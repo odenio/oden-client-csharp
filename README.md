@@ -258,6 +258,7 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [Model.BatchMetadata](docs/BatchMetadata.md)
+ - [Model.CustomMetadata](docs/CustomMetadata.md)
  - [Model.Factory](docs/Factory.md)
  - [Model.GenericError](docs/GenericError.md)
  - [Model.Interval](docs/Interval.md)

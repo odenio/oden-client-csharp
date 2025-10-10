@@ -21,6 +21,7 @@ using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
+using JsonSubTypes;
 using System.ComponentModel.DataAnnotations;
 using FileParameter = Oden.Client.FileParameter;
 using OpenAPIDateConverter = Oden.Client.OpenAPIDateConverter;
@@ -73,10 +74,10 @@ namespace Oden.Model
 
         /// <summary>
         /// Initializes a new instance of the <see cref="IntervalMetadata" /> class
-        /// with the <see cref="Object" /> class
+        /// with the <see cref="CustomMetadata" /> class
         /// </summary>
-        /// <param name="actualInstance">An instance of Object.</param>
-        public IntervalMetadata(Object actualInstance)
+        /// <param name="actualInstance">An instance of CustomMetadata.</param>
+        public IntervalMetadata(CustomMetadata actualInstance)
         {
             this.IsNullable = false;
             this.SchemaType= "oneOf";
@@ -101,7 +102,7 @@ namespace Oden.Model
                 {
                     this._actualInstance = value;
                 }
-                else if (value.GetType() == typeof(Object) || value is Object)
+                else if (value.GetType() == typeof(CustomMetadata) || value is CustomMetadata)
                 {
                     this._actualInstance = value;
                 }
@@ -115,7 +116,7 @@ namespace Oden.Model
                 }
                 else
                 {
-                    throw new ArgumentException("Invalid instance found. Must be the following types: BatchMetadata, Object, RunMetadata, StateMetadata");
+                    throw new ArgumentException("Invalid instance found. Must be the following types: BatchMetadata, CustomMetadata, RunMetadata, StateMetadata");
                 }
             }
         }
@@ -151,13 +152,13 @@ namespace Oden.Model
         }
 
         /// <summary>
-        /// Get the actual instance of `Object`. If the actual instance is not `Object`,
+        /// Get the actual instance of `CustomMetadata`. If the actual instance is not `CustomMetadata`,
         /// the InvalidClassException will be thrown
         /// </summary>
-        /// <returns>An instance of Object</returns>
-        public Object GetObject()
+        /// <returns>An instance of CustomMetadata</returns>
+        public CustomMetadata GetCustomMetadata()
         {
-            return (Object)this.ActualInstance;
+            return (CustomMetadata)this.ActualInstance;
         }
 
         /// <summary>
@@ -221,21 +222,21 @@ namespace Oden.Model
             try
             {
                 // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
-                if (typeof(Object).GetProperty("AdditionalProperties") == null)
+                if (typeof(CustomMetadata).GetProperty("AdditionalProperties") == null)
                 {
-                    newIntervalMetadata = new IntervalMetadata(JsonConvert.DeserializeObject<Object>(jsonString, IntervalMetadata.SerializerSettings));
+                    newIntervalMetadata = new IntervalMetadata(JsonConvert.DeserializeObject<CustomMetadata>(jsonString, IntervalMetadata.SerializerSettings));
                 }
                 else
                 {
-                    newIntervalMetadata = new IntervalMetadata(JsonConvert.DeserializeObject<Object>(jsonString, IntervalMetadata.AdditionalPropertiesSerializerSettings));
+                    newIntervalMetadata = new IntervalMetadata(JsonConvert.DeserializeObject<CustomMetadata>(jsonString, IntervalMetadata.AdditionalPropertiesSerializerSettings));
                 }
-                matchedTypes.Add("Object");
+                matchedTypes.Add("CustomMetadata");
                 match++;
             }
             catch (Exception exception)
             {
                 // deserialization failed, try the next one
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into Object: {1}", jsonString, exception.ToString()));
+                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into CustomMetadata: {1}", jsonString, exception.ToString()));
             }
 
             try

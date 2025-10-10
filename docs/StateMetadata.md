@@ -5,6 +5,7 @@ Metadata associated with a state interval
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**MetadataType** | **string** |  | 
 **Reason** | [**StateReason**](StateReason.md) |  | [optional] 
 **Comment** | **string** |  | [optional] 
 **Category** | [**StateCategory**](StateCategory.md) |  | [optional] 

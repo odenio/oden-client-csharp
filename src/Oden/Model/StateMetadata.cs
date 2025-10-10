@@ -34,13 +34,42 @@ namespace Oden.Model
     public partial class StateMetadata : IValidatableObject
     {
         /// <summary>
+        /// Defines MetadataType
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum MetadataTypeEnum
+        {
+            /// <summary>
+            /// Enum State for value: state
+            /// </summary>
+            [EnumMember(Value = "state")]
+            State = 1
+        }
+
+
+        /// <summary>
+        /// Gets or Sets MetadataType
+        /// </summary>
+        [DataMember(Name = "metadata_type", IsRequired = true, EmitDefaultValue = true)]
+        public MetadataTypeEnum MetadataType { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="StateMetadata" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected StateMetadata()
+        {
+            this.AdditionalProperties = new Dictionary<string, object>();
+        }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StateMetadata" /> class.
+        /// </summary>
+        /// <param name="metadataType">metadataType (required).</param>
         /// <param name="reason">reason.</param>
         /// <param name="comment">comment.</param>
         /// <param name="category">category.</param>
-        public StateMetadata(StateReason reason = default, string comment = default, StateCategory category = default)
+        public StateMetadata(MetadataTypeEnum metadataType = default, StateReason reason = default, string comment = default, StateCategory category = default)
         {
+            this.MetadataType = metadataType;
             this.Reason = reason;
             this.Comment = comment;
             this.Category = category;
@@ -79,6 +108,7 @@ namespace Oden.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class StateMetadata {\n");
+            sb.Append("  MetadataType: ").Append(MetadataType).Append("\n");
             sb.Append("  Reason: ").Append(Reason).Append("\n");
             sb.Append("  Comment: ").Append(Comment).Append("\n");
             sb.Append("  Category: ").Append(Category).Append("\n");

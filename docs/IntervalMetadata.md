@@ -5,6 +5,7 @@ Metadata about this interval, such as the associated run or the state category. 
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**MetadataType** | **string** |  | 
 **Run** | [**Interval**](Interval.md) |  | [optional] 
 **Product** | [**Product**](Product.md) |  | [optional] 
 **Target** | [**Target**](Target.md) |  | [optional] 
