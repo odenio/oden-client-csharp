@@ -9,6 +9,7 @@ docs/GenericError.md
 docs/Interval.md
 docs/IntervalBulkCreate.md
 docs/IntervalBulkDelete.md
+docs/IntervalBulkUpdate.md
 docs/IntervalMetadata.md
 docs/IntervalType.md
 docs/IntervalsApi.md
@@ -39,12 +40,17 @@ docs/Target.md
 docs/TargetsApi.md
 docs/Unit.md
 docs/V2IntervalsDeletePost200Response.md
+docs/V2IntervalsUpdatePost200Response.md
+docs/V2IntervalsUpdatePost200ResponseFailedIntervalsInner.md
 docs/V2LineSearchPost400Response.md
 docs/V2LineSearchPost409Response.md
 docs/V2LineSearchPost500Response.md
 docs/V2QualityTestsDeletePostRequest.md
 docs/V2ScrapYieldSearchPostRequest.md
 docs/V2ScrapYieldSetPostRequest.md
+src/Oden.Test/Model/IntervalBulkUpdateTests.cs
+src/Oden.Test/Model/V2IntervalsUpdatePost200ResponseFailedIntervalsInnerTests.cs
+src/Oden.Test/Model/V2IntervalsUpdatePost200ResponseTests.cs
 src/Oden.Test/Oden.Test.csproj
 src/Oden/Api/IntervalsApi.cs
 src/Oden/Api/MachineGroupsApi.cs
@@ -81,6 +87,7 @@ src/Oden/Model/GenericError.cs
 src/Oden/Model/Interval.cs
 src/Oden/Model/IntervalBulkCreate.cs
 src/Oden/Model/IntervalBulkDelete.cs
+src/Oden/Model/IntervalBulkUpdate.cs
 src/Oden/Model/IntervalMetadata.cs
 src/Oden/Model/IntervalType.cs
 src/Oden/Model/Line.cs
@@ -101,6 +108,8 @@ src/Oden/Model/StateReason.cs
 src/Oden/Model/Target.cs
 src/Oden/Model/Unit.cs
 src/Oden/Model/V2IntervalsDeletePost200Response.cs
+src/Oden/Model/V2IntervalsUpdatePost200Response.cs
+src/Oden/Model/V2IntervalsUpdatePost200ResponseFailedIntervalsInner.cs
 src/Oden/Model/V2LineSearchPost400Response.cs
 src/Oden/Model/V2LineSearchPost409Response.cs
 src/Oden/Model/V2LineSearchPost500Response.cs

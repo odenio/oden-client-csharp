@@ -8,8 +8,10 @@ All URIs are relative to *https://api.oden.app*
 | [**V2IntervalSearchPost**](IntervalsApi.md#v2intervalsearchpost) | **POST** /v2/interval/search |  |
 | [**V2IntervalSetPost**](IntervalsApi.md#v2intervalsetpost) | **POST** /v2/interval/set |  |
 | [**V2IntervalTypeSearchPost**](IntervalsApi.md#v2intervaltypesearchpost) | **POST** /v2/interval_type/search |  |
+| [**V2IntervalUpdatePost**](IntervalsApi.md#v2intervalupdatepost) | **POST** /v2/interval/update |  |
 | [**V2IntervalsDeletePost**](IntervalsApi.md#v2intervalsdeletepost) | **POST** /v2/intervals/delete |  |
 | [**V2IntervalsSetPost**](IntervalsApi.md#v2intervalssetpost) | **POST** /v2/intervals/set |  |
+| [**V2IntervalsUpdatePost**](IntervalsApi.md#v2intervalsupdatepost) | **POST** /v2/intervals/update |  |
 
 <a id="v2intervaldeletepost"></a>
 # **V2IntervalDeletePost**
@@ -428,6 +430,111 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="v2intervalupdatepost"></a>
+# **V2IntervalUpdatePost**
+> List&lt;Interval&gt; V2IntervalUpdatePost (Interval interval)
+
+
+
+Update an existing Interval. This endpoint only updates intervals and will not create new ones.  Must include `line`, `type`, and `id`. The `id` must reference an existing interval.  This interval's properties can be modified using the following fields: - `name`: Update the interval name - `start_time`: Modify the start time - `end_time`: Modify the end time - `metadata`: Update metadata (product, target, category, reason, etc.)  If the interval does not exist, a 404 error will be returned.  **Note:** The `id` must be obtained from either: - The response when creating an interval via `/v2/interval/set` - Searching for intervals via `/v2/interval/search` 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using Oden.Api;
+using Oden.Client;
+using Oden.Model;
+
+namespace Example
+{
+    public class V2IntervalUpdatePostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.oden.app";
+            // Configure API key authorization: APIKeyAuth
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new IntervalsApi(httpClient, config, httpClientHandler);
+            var interval = new Interval(); // Interval | 
+
+            try
+            {
+                List<Interval> result = apiInstance.V2IntervalUpdatePost(interval);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling IntervalsApi.V2IntervalUpdatePost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the V2IntervalUpdatePostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<List<Interval>> response = apiInstance.V2IntervalUpdatePostWithHttpInfo(interval);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling IntervalsApi.V2IntervalUpdatePostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **interval** | [**Interval**](Interval.md) |  |  |
+
+### Return type
+
+[**List&lt;Interval&gt;**](Interval.md)
+
+### Authorization
+
+[APIKeyAuth](../README.md#APIKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Updated interval. |  -  |
+| **400** | An error occurred regarding one of the input parameters |  -  |
+| **401** | User has provided either no credentials or invalid credentials |  -  |
+| **403** | User has provided valid credentials but is not authorized to access the entity  |  -  |
+| **404** | Entity not found |  -  |
+| **409** | A {match: \&quot;unique\&quot;} was requested, but multiple entities matched the search parameters.  |  -  |
+| **500** | An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.  |  -  |
+| **501** | Endpoint is not yet implemented |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="v2intervalsdeletepost"></a>
 # **V2IntervalsDeletePost**
 > V2IntervalsDeletePost200Response V2IntervalsDeletePost (IntervalBulkDelete intervalBulkDelete)
@@ -632,6 +739,110 @@ catch (ApiException e)
 | **401** | User has provided either no credentials or invalid credentials |  -  |
 | **403** | User has provided valid credentials but is not authorized to access the entity  |  -  |
 | **404** | Entity not found |  -  |
+| **409** | A {match: \&quot;unique\&quot;} was requested, but multiple entities matched the search parameters.  |  -  |
+| **500** | An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.  |  -  |
+| **501** | Endpoint is not yet implemented |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="v2intervalsupdatepost"></a>
+# **V2IntervalsUpdatePost**
+> V2IntervalsUpdatePost200Response V2IntervalsUpdatePost (IntervalBulkUpdate intervalBulkUpdate)
+
+
+
+Update multiple existing intervals. This endpoint only updates intervals and will not create new ones.  Each interval in the `intervals` array must include an `id` that references an existing interval.  Updatable fields for each interval: - `name`: Update the interval name - `start_time`: Modify the start time - `end_time`: Modify the end time - `metadata`: Update metadata (product, target, category, reason, etc.)  The endpoint will attempt to update all intervals and return information about successes and failures: - Successfully updated intervals are returned in the response - Failed intervals are listed with their IDs and error reasons  Limitations: - Cannot exceed 2500 intervals per request - All intervals must be of the same `type` and on the same `line`  **Note:** Interval IDs must be obtained from either: - The response when creating intervals via `/v2/interval/set` or `/v2/intervals/set` - Searching for intervals via `/v2/interval/search` 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using Oden.Api;
+using Oden.Client;
+using Oden.Model;
+
+namespace Example
+{
+    public class V2IntervalsUpdatePostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.oden.app";
+            // Configure API key authorization: APIKeyAuth
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new IntervalsApi(httpClient, config, httpClientHandler);
+            var intervalBulkUpdate = new IntervalBulkUpdate(); // IntervalBulkUpdate | 
+
+            try
+            {
+                V2IntervalsUpdatePost200Response result = apiInstance.V2IntervalsUpdatePost(intervalBulkUpdate);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling IntervalsApi.V2IntervalsUpdatePost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the V2IntervalsUpdatePostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<V2IntervalsUpdatePost200Response> response = apiInstance.V2IntervalsUpdatePostWithHttpInfo(intervalBulkUpdate);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling IntervalsApi.V2IntervalsUpdatePostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **intervalBulkUpdate** | [**IntervalBulkUpdate**](IntervalBulkUpdate.md) |  |  |
+
+### Return type
+
+[**V2IntervalsUpdatePost200Response**](V2IntervalsUpdatePost200Response.md)
+
+### Authorization
+
+[APIKeyAuth](../README.md#APIKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Response containing successfully updated intervals and any failures that occurred. |  -  |
+| **400** | An error occurred regarding one of the input parameters |  -  |
+| **401** | User has provided either no credentials or invalid credentials |  -  |
+| **403** | User has provided valid credentials but is not authorized to access the entity  |  -  |
 | **409** | A {match: \&quot;unique\&quot;} was requested, but multiple entities matched the search parameters.  |  -  |
 | **500** | An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.  |  -  |
 | **501** | Endpoint is not yet implemented |  -  |
