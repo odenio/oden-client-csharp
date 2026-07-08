@@ -29,7 +29,7 @@ namespace Oden.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Search metric targets
         /// </summary>
         /// <remarks>
         /// Search for a Target by &#x60;line&#x60;, &#x60;metric_group&#x60;, and &#x60;product&#x60;. For each of these inputs, any of their unique indentifiers (as described in their &#x60;search&#x60; endpoint) may be used. See examples. 
@@ -37,10 +37,10 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="target"></param>
         /// <returns>List&lt;Target&gt;</returns>
-        List<Target> V2TargetSearchPost(Target target);
+        List<Target> SearchTargets(Target target);
 
         /// <summary>
-        /// 
+        /// Search metric targets
         /// </summary>
         /// <remarks>
         /// Search for a Target by &#x60;line&#x60;, &#x60;metric_group&#x60;, and &#x60;product&#x60;. For each of these inputs, any of their unique indentifiers (as described in their &#x60;search&#x60; endpoint) may be used. See examples. 
@@ -48,9 +48,9 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="target"></param>
         /// <returns>ApiResponse of List&lt;Target&gt;</returns>
-        ApiResponse<List<Target>> V2TargetSearchPostWithHttpInfo(Target target);
+        ApiResponse<List<Target>> SearchTargetsWithHttpInfo(Target target);
         /// <summary>
-        /// 
+        /// Create or update a metric target
         /// </summary>
         /// <remarks>
         /// Create or update a Target.  First the endpoint will search for a Target by &#x60;metric_group&#x60;, &#x60;product&#x60;, and &#x60;line&#x60;: - If the target does not exist a new target is created. - If the product or its mapping to the given line does not exist, they will be created. - If a target exists but with different parameters, it will be updated. - If the target exists with all the same parameters nothing is done. 
@@ -58,10 +58,10 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="target"></param>
         /// <returns>Target</returns>
-        Target V2TargetSetPost(Target target);
+        Target SetTarget(Target target);
 
         /// <summary>
-        /// 
+        /// Create or update a metric target
         /// </summary>
         /// <remarks>
         /// Create or update a Target.  First the endpoint will search for a Target by &#x60;metric_group&#x60;, &#x60;product&#x60;, and &#x60;line&#x60;: - If the target does not exist a new target is created. - If the product or its mapping to the given line does not exist, they will be created. - If a target exists but with different parameters, it will be updated. - If the target exists with all the same parameters nothing is done. 
@@ -69,7 +69,7 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="target"></param>
         /// <returns>ApiResponse of Target</returns>
-        ApiResponse<Target> V2TargetSetPostWithHttpInfo(Target target);
+        ApiResponse<Target> SetTargetWithHttpInfo(Target target);
         #endregion Synchronous Operations
     }
 
@@ -80,7 +80,7 @@ namespace Oden.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Search metric targets
         /// </summary>
         /// <remarks>
         /// Search for a Target by &#x60;line&#x60;, &#x60;metric_group&#x60;, and &#x60;product&#x60;. For each of these inputs, any of their unique indentifiers (as described in their &#x60;search&#x60; endpoint) may be used. See examples. 
@@ -89,10 +89,10 @@ namespace Oden.Api
         /// <param name="target"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Target&gt;</returns>
-        System.Threading.Tasks.Task<List<Target>> V2TargetSearchPostAsync(Target target, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<List<Target>> SearchTargetsAsync(Target target, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// 
+        /// Search metric targets
         /// </summary>
         /// <remarks>
         /// Search for a Target by &#x60;line&#x60;, &#x60;metric_group&#x60;, and &#x60;product&#x60;. For each of these inputs, any of their unique indentifiers (as described in their &#x60;search&#x60; endpoint) may be used. See examples. 
@@ -101,9 +101,9 @@ namespace Oden.Api
         /// <param name="target"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Target&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Target>>> V2TargetSearchPostWithHttpInfoAsync(Target target, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<List<Target>>> SearchTargetsWithHttpInfoAsync(Target target, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// 
+        /// Create or update a metric target
         /// </summary>
         /// <remarks>
         /// Create or update a Target.  First the endpoint will search for a Target by &#x60;metric_group&#x60;, &#x60;product&#x60;, and &#x60;line&#x60;: - If the target does not exist a new target is created. - If the product or its mapping to the given line does not exist, they will be created. - If a target exists but with different parameters, it will be updated. - If the target exists with all the same parameters nothing is done. 
@@ -112,10 +112,10 @@ namespace Oden.Api
         /// <param name="target"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Target</returns>
-        System.Threading.Tasks.Task<Target> V2TargetSetPostAsync(Target target, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<Target> SetTargetAsync(Target target, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// 
+        /// Create or update a metric target
         /// </summary>
         /// <remarks>
         /// Create or update a Target.  First the endpoint will search for a Target by &#x60;metric_group&#x60;, &#x60;product&#x60;, and &#x60;line&#x60;: - If the target does not exist a new target is created. - If the product or its mapping to the given line does not exist, they will be created. - If a target exists but with different parameters, it will be updated. - If the target exists with all the same parameters nothing is done. 
@@ -124,7 +124,7 @@ namespace Oden.Api
         /// <param name="target"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Target)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Target>> V2TargetSetPostWithHttpInfoAsync(Target target, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<Target>> SetTargetWithHttpInfoAsync(Target target, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -339,28 +339,28 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Search for a Target by &#x60;line&#x60;, &#x60;metric_group&#x60;, and &#x60;product&#x60;. For each of these inputs, any of their unique indentifiers (as described in their &#x60;search&#x60; endpoint) may be used. See examples. 
+        /// Search metric targets Search for a Target by &#x60;line&#x60;, &#x60;metric_group&#x60;, and &#x60;product&#x60;. For each of these inputs, any of their unique indentifiers (as described in their &#x60;search&#x60; endpoint) may be used. See examples. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="target"></param>
         /// <returns>List&lt;Target&gt;</returns>
-        public List<Target> V2TargetSearchPost(Target target)
+        public List<Target> SearchTargets(Target target)
         {
-            Oden.Client.ApiResponse<List<Target>> localVarResponse = V2TargetSearchPostWithHttpInfo(target);
+            Oden.Client.ApiResponse<List<Target>> localVarResponse = SearchTargetsWithHttpInfo(target);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  Search for a Target by &#x60;line&#x60;, &#x60;metric_group&#x60;, and &#x60;product&#x60;. For each of these inputs, any of their unique indentifiers (as described in their &#x60;search&#x60; endpoint) may be used. See examples. 
+        /// Search metric targets Search for a Target by &#x60;line&#x60;, &#x60;metric_group&#x60;, and &#x60;product&#x60;. For each of these inputs, any of their unique indentifiers (as described in their &#x60;search&#x60; endpoint) may be used. See examples. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="target"></param>
         /// <returns>ApiResponse of List&lt;Target&gt;</returns>
-        public Oden.Client.ApiResponse<List<Target>> V2TargetSearchPostWithHttpInfo(Target target)
+        public Oden.Client.ApiResponse<List<Target>> SearchTargetsWithHttpInfo(Target target)
         {
             // verify the required parameter 'target' is set
             if (target == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'target' when calling TargetsApi->V2TargetSearchPost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'target' when calling TargetsApi->SearchTargets");
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
 
@@ -392,7 +392,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2TargetSearchPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SearchTargets", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -400,30 +400,30 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Search for a Target by &#x60;line&#x60;, &#x60;metric_group&#x60;, and &#x60;product&#x60;. For each of these inputs, any of their unique indentifiers (as described in their &#x60;search&#x60; endpoint) may be used. See examples. 
+        /// Search metric targets Search for a Target by &#x60;line&#x60;, &#x60;metric_group&#x60;, and &#x60;product&#x60;. For each of these inputs, any of their unique indentifiers (as described in their &#x60;search&#x60; endpoint) may be used. See examples. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="target"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Target&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Target>> V2TargetSearchPostAsync(Target target, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<List<Target>> SearchTargetsAsync(Target target, System.Threading.CancellationToken cancellationToken = default)
         {
-            Oden.Client.ApiResponse<List<Target>> localVarResponse = await V2TargetSearchPostWithHttpInfoAsync(target, cancellationToken).ConfigureAwait(false);
+            Oden.Client.ApiResponse<List<Target>> localVarResponse = await SearchTargetsWithHttpInfoAsync(target, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  Search for a Target by &#x60;line&#x60;, &#x60;metric_group&#x60;, and &#x60;product&#x60;. For each of these inputs, any of their unique indentifiers (as described in their &#x60;search&#x60; endpoint) may be used. See examples. 
+        /// Search metric targets Search for a Target by &#x60;line&#x60;, &#x60;metric_group&#x60;, and &#x60;product&#x60;. For each of these inputs, any of their unique indentifiers (as described in their &#x60;search&#x60; endpoint) may be used. See examples. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="target"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Target&gt;)</returns>
-        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<List<Target>>> V2TargetSearchPostWithHttpInfoAsync(Target target, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<List<Target>>> SearchTargetsWithHttpInfoAsync(Target target, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'target' is set
             if (target == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'target' when calling TargetsApi->V2TargetSearchPost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'target' when calling TargetsApi->SearchTargets");
 
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
@@ -458,7 +458,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2TargetSearchPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SearchTargets", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -466,28 +466,28 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Create or update a Target.  First the endpoint will search for a Target by &#x60;metric_group&#x60;, &#x60;product&#x60;, and &#x60;line&#x60;: - If the target does not exist a new target is created. - If the product or its mapping to the given line does not exist, they will be created. - If a target exists but with different parameters, it will be updated. - If the target exists with all the same parameters nothing is done. 
+        /// Create or update a metric target Create or update a Target.  First the endpoint will search for a Target by &#x60;metric_group&#x60;, &#x60;product&#x60;, and &#x60;line&#x60;: - If the target does not exist a new target is created. - If the product or its mapping to the given line does not exist, they will be created. - If a target exists but with different parameters, it will be updated. - If the target exists with all the same parameters nothing is done. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="target"></param>
         /// <returns>Target</returns>
-        public Target V2TargetSetPost(Target target)
+        public Target SetTarget(Target target)
         {
-            Oden.Client.ApiResponse<Target> localVarResponse = V2TargetSetPostWithHttpInfo(target);
+            Oden.Client.ApiResponse<Target> localVarResponse = SetTargetWithHttpInfo(target);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  Create or update a Target.  First the endpoint will search for a Target by &#x60;metric_group&#x60;, &#x60;product&#x60;, and &#x60;line&#x60;: - If the target does not exist a new target is created. - If the product or its mapping to the given line does not exist, they will be created. - If a target exists but with different parameters, it will be updated. - If the target exists with all the same parameters nothing is done. 
+        /// Create or update a metric target Create or update a Target.  First the endpoint will search for a Target by &#x60;metric_group&#x60;, &#x60;product&#x60;, and &#x60;line&#x60;: - If the target does not exist a new target is created. - If the product or its mapping to the given line does not exist, they will be created. - If a target exists but with different parameters, it will be updated. - If the target exists with all the same parameters nothing is done. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="target"></param>
         /// <returns>ApiResponse of Target</returns>
-        public Oden.Client.ApiResponse<Target> V2TargetSetPostWithHttpInfo(Target target)
+        public Oden.Client.ApiResponse<Target> SetTargetWithHttpInfo(Target target)
         {
             // verify the required parameter 'target' is set
             if (target == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'target' when calling TargetsApi->V2TargetSetPost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'target' when calling TargetsApi->SetTarget");
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
 
@@ -519,7 +519,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2TargetSetPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SetTarget", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -527,30 +527,30 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Create or update a Target.  First the endpoint will search for a Target by &#x60;metric_group&#x60;, &#x60;product&#x60;, and &#x60;line&#x60;: - If the target does not exist a new target is created. - If the product or its mapping to the given line does not exist, they will be created. - If a target exists but with different parameters, it will be updated. - If the target exists with all the same parameters nothing is done. 
+        /// Create or update a metric target Create or update a Target.  First the endpoint will search for a Target by &#x60;metric_group&#x60;, &#x60;product&#x60;, and &#x60;line&#x60;: - If the target does not exist a new target is created. - If the product or its mapping to the given line does not exist, they will be created. - If a target exists but with different parameters, it will be updated. - If the target exists with all the same parameters nothing is done. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="target"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Target</returns>
-        public async System.Threading.Tasks.Task<Target> V2TargetSetPostAsync(Target target, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Target> SetTargetAsync(Target target, System.Threading.CancellationToken cancellationToken = default)
         {
-            Oden.Client.ApiResponse<Target> localVarResponse = await V2TargetSetPostWithHttpInfoAsync(target, cancellationToken).ConfigureAwait(false);
+            Oden.Client.ApiResponse<Target> localVarResponse = await SetTargetWithHttpInfoAsync(target, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  Create or update a Target.  First the endpoint will search for a Target by &#x60;metric_group&#x60;, &#x60;product&#x60;, and &#x60;line&#x60;: - If the target does not exist a new target is created. - If the product or its mapping to the given line does not exist, they will be created. - If a target exists but with different parameters, it will be updated. - If the target exists with all the same parameters nothing is done. 
+        /// Create or update a metric target Create or update a Target.  First the endpoint will search for a Target by &#x60;metric_group&#x60;, &#x60;product&#x60;, and &#x60;line&#x60;: - If the target does not exist a new target is created. - If the product or its mapping to the given line does not exist, they will be created. - If a target exists but with different parameters, it will be updated. - If the target exists with all the same parameters nothing is done. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="target"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Target)</returns>
-        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<Target>> V2TargetSetPostWithHttpInfoAsync(Target target, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<Target>> SetTargetWithHttpInfoAsync(Target target, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'target' is set
             if (target == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'target' when calling TargetsApi->V2TargetSetPost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'target' when calling TargetsApi->SetTarget");
 
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
@@ -585,7 +585,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2TargetSetPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SetTarget", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

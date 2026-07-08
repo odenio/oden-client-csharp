@@ -4,14 +4,14 @@ All URIs are relative to *https://api.oden.app*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**V2FactorySearchPost**](MachineGroupsApi.md#v2factorysearchpost) | **POST** /v2/factory/search |  |
-| [**V2LineSearchPost**](MachineGroupsApi.md#v2linesearchpost) | **POST** /v2/line/search |  |
+| [**SearchFactories**](MachineGroupsApi.md#searchfactories) | **POST** /v2/factory/search | Search factories |
+| [**SearchLines**](MachineGroupsApi.md#searchlines) | **POST** /v2/line/search | Search production lines |
 
-<a id="v2factorysearchpost"></a>
-# **V2FactorySearchPost**
-> List&lt;Factory&gt; V2FactorySearchPost (Factory factory)
+<a id="searchfactories"></a>
+# **SearchFactories**
+> List&lt;Factory&gt; SearchFactories (Factory factory)
 
-
+Search factories
 
 Search for a specific Factory by a unique indentifier: - `name` - `match: unique` or omit  OR  - `id` - `match: unique` or omit  Search for all factories: - `match: all` 
 
@@ -26,7 +26,7 @@ using Oden.Model;
 
 namespace Example
 {
-    public class V2FactorySearchPostExample
+    public class SearchFactoriesExample
     {
         public static void Main()
         {
@@ -45,12 +45,13 @@ namespace Example
 
             try
             {
-                List<Factory> result = apiInstance.V2FactorySearchPost(factory);
+                // Search factories
+                List<Factory> result = apiInstance.SearchFactories(factory);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling MachineGroupsApi.V2FactorySearchPost: " + e.Message);
+                Debug.Print("Exception when calling MachineGroupsApi.SearchFactories: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -59,20 +60,21 @@ namespace Example
 }
 ```
 
-#### Using the V2FactorySearchPostWithHttpInfo variant
+#### Using the SearchFactoriesWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<Factory>> response = apiInstance.V2FactorySearchPostWithHttpInfo(factory);
+    // Search factories
+    ApiResponse<List<Factory>> response = apiInstance.SearchFactoriesWithHttpInfo(factory);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling MachineGroupsApi.V2FactorySearchPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling MachineGroupsApi.SearchFactoriesWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -112,11 +114,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="v2linesearchpost"></a>
-# **V2LineSearchPost**
-> List&lt;Line&gt; V2LineSearchPost (Line line)
+<a id="searchlines"></a>
+# **SearchLines**
+> List&lt;Line&gt; SearchLines (Line line)
 
-
+Search production lines
 
 Search for specific Line by any Line identifier. Either: - `id` - `match: unique` or omit  OR - `factory`   - `name` or `id` - line `name` - `match: unique` or omit  Search for all Lines for a given Factory: - `factory`   - `name` or `id` - `match: all` 
 
@@ -131,7 +133,7 @@ using Oden.Model;
 
 namespace Example
 {
-    public class V2LineSearchPostExample
+    public class SearchLinesExample
     {
         public static void Main()
         {
@@ -150,12 +152,13 @@ namespace Example
 
             try
             {
-                List<Line> result = apiInstance.V2LineSearchPost(line);
+                // Search production lines
+                List<Line> result = apiInstance.SearchLines(line);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling MachineGroupsApi.V2LineSearchPost: " + e.Message);
+                Debug.Print("Exception when calling MachineGroupsApi.SearchLines: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -164,20 +167,21 @@ namespace Example
 }
 ```
 
-#### Using the V2LineSearchPostWithHttpInfo variant
+#### Using the SearchLinesWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<Line>> response = apiInstance.V2LineSearchPostWithHttpInfo(line);
+    // Search production lines
+    ApiResponse<List<Line>> response = apiInstance.SearchLinesWithHttpInfo(line);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling MachineGroupsApi.V2LineSearchPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling MachineGroupsApi.SearchLinesWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

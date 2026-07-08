@@ -29,7 +29,7 @@ namespace Oden.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Search factories
         /// </summary>
         /// <remarks>
         /// Search for a specific Factory by a unique indentifier: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  Search for all factories: - &#x60;match: all&#x60; 
@@ -37,10 +37,10 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="factory"></param>
         /// <returns>List&lt;Factory&gt;</returns>
-        List<Factory> V2FactorySearchPost(Factory factory);
+        List<Factory> SearchFactories(Factory factory);
 
         /// <summary>
-        /// 
+        /// Search factories
         /// </summary>
         /// <remarks>
         /// Search for a specific Factory by a unique indentifier: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  Search for all factories: - &#x60;match: all&#x60; 
@@ -48,9 +48,9 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="factory"></param>
         /// <returns>ApiResponse of List&lt;Factory&gt;</returns>
-        ApiResponse<List<Factory>> V2FactorySearchPostWithHttpInfo(Factory factory);
+        ApiResponse<List<Factory>> SearchFactoriesWithHttpInfo(Factory factory);
         /// <summary>
-        /// 
+        /// Search production lines
         /// </summary>
         /// <remarks>
         /// Search for specific Line by any Line identifier. Either: - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  OR - &#x60;factory&#x60;   - &#x60;name&#x60; or &#x60;id&#x60; - line &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  Search for all Lines for a given Factory: - &#x60;factory&#x60;   - &#x60;name&#x60; or &#x60;id&#x60; - &#x60;match: all&#x60; 
@@ -58,10 +58,10 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="line"></param>
         /// <returns>List&lt;Line&gt;</returns>
-        List<Line> V2LineSearchPost(Line line);
+        List<Line> SearchLines(Line line);
 
         /// <summary>
-        /// 
+        /// Search production lines
         /// </summary>
         /// <remarks>
         /// Search for specific Line by any Line identifier. Either: - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  OR - &#x60;factory&#x60;   - &#x60;name&#x60; or &#x60;id&#x60; - line &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  Search for all Lines for a given Factory: - &#x60;factory&#x60;   - &#x60;name&#x60; or &#x60;id&#x60; - &#x60;match: all&#x60; 
@@ -69,7 +69,7 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="line"></param>
         /// <returns>ApiResponse of List&lt;Line&gt;</returns>
-        ApiResponse<List<Line>> V2LineSearchPostWithHttpInfo(Line line);
+        ApiResponse<List<Line>> SearchLinesWithHttpInfo(Line line);
         #endregion Synchronous Operations
     }
 
@@ -80,7 +80,7 @@ namespace Oden.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Search factories
         /// </summary>
         /// <remarks>
         /// Search for a specific Factory by a unique indentifier: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  Search for all factories: - &#x60;match: all&#x60; 
@@ -89,10 +89,10 @@ namespace Oden.Api
         /// <param name="factory"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Factory&gt;</returns>
-        System.Threading.Tasks.Task<List<Factory>> V2FactorySearchPostAsync(Factory factory, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<List<Factory>> SearchFactoriesAsync(Factory factory, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// 
+        /// Search factories
         /// </summary>
         /// <remarks>
         /// Search for a specific Factory by a unique indentifier: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  Search for all factories: - &#x60;match: all&#x60; 
@@ -101,9 +101,9 @@ namespace Oden.Api
         /// <param name="factory"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Factory&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Factory>>> V2FactorySearchPostWithHttpInfoAsync(Factory factory, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<List<Factory>>> SearchFactoriesWithHttpInfoAsync(Factory factory, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// 
+        /// Search production lines
         /// </summary>
         /// <remarks>
         /// Search for specific Line by any Line identifier. Either: - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  OR - &#x60;factory&#x60;   - &#x60;name&#x60; or &#x60;id&#x60; - line &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  Search for all Lines for a given Factory: - &#x60;factory&#x60;   - &#x60;name&#x60; or &#x60;id&#x60; - &#x60;match: all&#x60; 
@@ -112,10 +112,10 @@ namespace Oden.Api
         /// <param name="line"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Line&gt;</returns>
-        System.Threading.Tasks.Task<List<Line>> V2LineSearchPostAsync(Line line, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<List<Line>> SearchLinesAsync(Line line, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// 
+        /// Search production lines
         /// </summary>
         /// <remarks>
         /// Search for specific Line by any Line identifier. Either: - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  OR - &#x60;factory&#x60;   - &#x60;name&#x60; or &#x60;id&#x60; - line &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  Search for all Lines for a given Factory: - &#x60;factory&#x60;   - &#x60;name&#x60; or &#x60;id&#x60; - &#x60;match: all&#x60; 
@@ -124,7 +124,7 @@ namespace Oden.Api
         /// <param name="line"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Line&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Line>>> V2LineSearchPostWithHttpInfoAsync(Line line, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<List<Line>>> SearchLinesWithHttpInfoAsync(Line line, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -339,28 +339,28 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Search for a specific Factory by a unique indentifier: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  Search for all factories: - &#x60;match: all&#x60; 
+        /// Search factories Search for a specific Factory by a unique indentifier: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  Search for all factories: - &#x60;match: all&#x60; 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="factory"></param>
         /// <returns>List&lt;Factory&gt;</returns>
-        public List<Factory> V2FactorySearchPost(Factory factory)
+        public List<Factory> SearchFactories(Factory factory)
         {
-            Oden.Client.ApiResponse<List<Factory>> localVarResponse = V2FactorySearchPostWithHttpInfo(factory);
+            Oden.Client.ApiResponse<List<Factory>> localVarResponse = SearchFactoriesWithHttpInfo(factory);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  Search for a specific Factory by a unique indentifier: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  Search for all factories: - &#x60;match: all&#x60; 
+        /// Search factories Search for a specific Factory by a unique indentifier: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  Search for all factories: - &#x60;match: all&#x60; 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="factory"></param>
         /// <returns>ApiResponse of List&lt;Factory&gt;</returns>
-        public Oden.Client.ApiResponse<List<Factory>> V2FactorySearchPostWithHttpInfo(Factory factory)
+        public Oden.Client.ApiResponse<List<Factory>> SearchFactoriesWithHttpInfo(Factory factory)
         {
             // verify the required parameter 'factory' is set
             if (factory == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'factory' when calling MachineGroupsApi->V2FactorySearchPost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'factory' when calling MachineGroupsApi->SearchFactories");
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
 
@@ -392,7 +392,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2FactorySearchPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SearchFactories", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -400,30 +400,30 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Search for a specific Factory by a unique indentifier: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  Search for all factories: - &#x60;match: all&#x60; 
+        /// Search factories Search for a specific Factory by a unique indentifier: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  Search for all factories: - &#x60;match: all&#x60; 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="factory"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Factory&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Factory>> V2FactorySearchPostAsync(Factory factory, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<List<Factory>> SearchFactoriesAsync(Factory factory, System.Threading.CancellationToken cancellationToken = default)
         {
-            Oden.Client.ApiResponse<List<Factory>> localVarResponse = await V2FactorySearchPostWithHttpInfoAsync(factory, cancellationToken).ConfigureAwait(false);
+            Oden.Client.ApiResponse<List<Factory>> localVarResponse = await SearchFactoriesWithHttpInfoAsync(factory, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  Search for a specific Factory by a unique indentifier: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  Search for all factories: - &#x60;match: all&#x60; 
+        /// Search factories Search for a specific Factory by a unique indentifier: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  Search for all factories: - &#x60;match: all&#x60; 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="factory"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Factory&gt;)</returns>
-        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<List<Factory>>> V2FactorySearchPostWithHttpInfoAsync(Factory factory, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<List<Factory>>> SearchFactoriesWithHttpInfoAsync(Factory factory, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'factory' is set
             if (factory == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'factory' when calling MachineGroupsApi->V2FactorySearchPost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'factory' when calling MachineGroupsApi->SearchFactories");
 
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
@@ -458,7 +458,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2FactorySearchPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SearchFactories", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -466,28 +466,28 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Search for specific Line by any Line identifier. Either: - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  OR - &#x60;factory&#x60;   - &#x60;name&#x60; or &#x60;id&#x60; - line &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  Search for all Lines for a given Factory: - &#x60;factory&#x60;   - &#x60;name&#x60; or &#x60;id&#x60; - &#x60;match: all&#x60; 
+        /// Search production lines Search for specific Line by any Line identifier. Either: - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  OR - &#x60;factory&#x60;   - &#x60;name&#x60; or &#x60;id&#x60; - line &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  Search for all Lines for a given Factory: - &#x60;factory&#x60;   - &#x60;name&#x60; or &#x60;id&#x60; - &#x60;match: all&#x60; 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="line"></param>
         /// <returns>List&lt;Line&gt;</returns>
-        public List<Line> V2LineSearchPost(Line line)
+        public List<Line> SearchLines(Line line)
         {
-            Oden.Client.ApiResponse<List<Line>> localVarResponse = V2LineSearchPostWithHttpInfo(line);
+            Oden.Client.ApiResponse<List<Line>> localVarResponse = SearchLinesWithHttpInfo(line);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  Search for specific Line by any Line identifier. Either: - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  OR - &#x60;factory&#x60;   - &#x60;name&#x60; or &#x60;id&#x60; - line &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  Search for all Lines for a given Factory: - &#x60;factory&#x60;   - &#x60;name&#x60; or &#x60;id&#x60; - &#x60;match: all&#x60; 
+        /// Search production lines Search for specific Line by any Line identifier. Either: - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  OR - &#x60;factory&#x60;   - &#x60;name&#x60; or &#x60;id&#x60; - line &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  Search for all Lines for a given Factory: - &#x60;factory&#x60;   - &#x60;name&#x60; or &#x60;id&#x60; - &#x60;match: all&#x60; 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="line"></param>
         /// <returns>ApiResponse of List&lt;Line&gt;</returns>
-        public Oden.Client.ApiResponse<List<Line>> V2LineSearchPostWithHttpInfo(Line line)
+        public Oden.Client.ApiResponse<List<Line>> SearchLinesWithHttpInfo(Line line)
         {
             // verify the required parameter 'line' is set
             if (line == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'line' when calling MachineGroupsApi->V2LineSearchPost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'line' when calling MachineGroupsApi->SearchLines");
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
 
@@ -519,7 +519,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2LineSearchPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SearchLines", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -527,30 +527,30 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Search for specific Line by any Line identifier. Either: - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  OR - &#x60;factory&#x60;   - &#x60;name&#x60; or &#x60;id&#x60; - line &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  Search for all Lines for a given Factory: - &#x60;factory&#x60;   - &#x60;name&#x60; or &#x60;id&#x60; - &#x60;match: all&#x60; 
+        /// Search production lines Search for specific Line by any Line identifier. Either: - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  OR - &#x60;factory&#x60;   - &#x60;name&#x60; or &#x60;id&#x60; - line &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  Search for all Lines for a given Factory: - &#x60;factory&#x60;   - &#x60;name&#x60; or &#x60;id&#x60; - &#x60;match: all&#x60; 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="line"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Line&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Line>> V2LineSearchPostAsync(Line line, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<List<Line>> SearchLinesAsync(Line line, System.Threading.CancellationToken cancellationToken = default)
         {
-            Oden.Client.ApiResponse<List<Line>> localVarResponse = await V2LineSearchPostWithHttpInfoAsync(line, cancellationToken).ConfigureAwait(false);
+            Oden.Client.ApiResponse<List<Line>> localVarResponse = await SearchLinesWithHttpInfoAsync(line, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  Search for specific Line by any Line identifier. Either: - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  OR - &#x60;factory&#x60;   - &#x60;name&#x60; or &#x60;id&#x60; - line &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  Search for all Lines for a given Factory: - &#x60;factory&#x60;   - &#x60;name&#x60; or &#x60;id&#x60; - &#x60;match: all&#x60; 
+        /// Search production lines Search for specific Line by any Line identifier. Either: - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  OR - &#x60;factory&#x60;   - &#x60;name&#x60; or &#x60;id&#x60; - line &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  Search for all Lines for a given Factory: - &#x60;factory&#x60;   - &#x60;name&#x60; or &#x60;id&#x60; - &#x60;match: all&#x60; 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="line"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Line&gt;)</returns>
-        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<List<Line>>> V2LineSearchPostWithHttpInfoAsync(Line line, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<List<Line>>> SearchLinesWithHttpInfoAsync(Line line, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'line' is set
             if (line == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'line' when calling MachineGroupsApi->V2LineSearchPost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'line' when calling MachineGroupsApi->SearchLines");
 
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
@@ -585,7 +585,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2LineSearchPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SearchLines", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

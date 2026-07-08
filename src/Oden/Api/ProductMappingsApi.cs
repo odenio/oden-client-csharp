@@ -29,7 +29,7 @@ namespace Oden.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Search product-to-line mappings
         /// </summary>
         /// <remarks>
         /// Searches for Product Mappings.  May be used to confirm a Product Mapping exists.  Much like &#x60;product/search&#x60;, may be used to get &#x60;name&#x60;s of line or product from &#x60;id&#x60;s, or &#x60;id&#x60;s from &#x60;name&#x60;s. 
@@ -37,10 +37,10 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="productMapping"></param>
         /// <returns>List&lt;ProductMapping&gt;</returns>
-        List<ProductMapping> V2ProductMappingSearchPost(ProductMapping productMapping);
+        List<ProductMapping> SearchProductMappings(ProductMapping productMapping);
 
         /// <summary>
-        /// 
+        /// Search product-to-line mappings
         /// </summary>
         /// <remarks>
         /// Searches for Product Mappings.  May be used to confirm a Product Mapping exists.  Much like &#x60;product/search&#x60;, may be used to get &#x60;name&#x60;s of line or product from &#x60;id&#x60;s, or &#x60;id&#x60;s from &#x60;name&#x60;s. 
@@ -48,9 +48,9 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="productMapping"></param>
         /// <returns>ApiResponse of List&lt;ProductMapping&gt;</returns>
-        ApiResponse<List<ProductMapping>> V2ProductMappingSearchPostWithHttpInfo(ProductMapping productMapping);
+        ApiResponse<List<ProductMapping>> SearchProductMappingsWithHttpInfo(ProductMapping productMapping);
         /// <summary>
-        /// 
+        /// Map a product to a line
         /// </summary>
         /// <remarks>
         /// Map a Product to a Line - implying this Line can produce, or is producing this Product.  If the supplied Product doesn&#39;t exist, it will be created. 
@@ -58,10 +58,10 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="productMapping"></param>
         /// <returns></returns>
-        void V2ProductMappingSetPost(ProductMapping productMapping);
+        void SetProductMapping(ProductMapping productMapping);
 
         /// <summary>
-        /// 
+        /// Map a product to a line
         /// </summary>
         /// <remarks>
         /// Map a Product to a Line - implying this Line can produce, or is producing this Product.  If the supplied Product doesn&#39;t exist, it will be created. 
@@ -69,7 +69,7 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="productMapping"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> V2ProductMappingSetPostWithHttpInfo(ProductMapping productMapping);
+        ApiResponse<Object> SetProductMappingWithHttpInfo(ProductMapping productMapping);
         #endregion Synchronous Operations
     }
 
@@ -80,7 +80,7 @@ namespace Oden.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Search product-to-line mappings
         /// </summary>
         /// <remarks>
         /// Searches for Product Mappings.  May be used to confirm a Product Mapping exists.  Much like &#x60;product/search&#x60;, may be used to get &#x60;name&#x60;s of line or product from &#x60;id&#x60;s, or &#x60;id&#x60;s from &#x60;name&#x60;s. 
@@ -89,10 +89,10 @@ namespace Oden.Api
         /// <param name="productMapping"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ProductMapping&gt;</returns>
-        System.Threading.Tasks.Task<List<ProductMapping>> V2ProductMappingSearchPostAsync(ProductMapping productMapping, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<List<ProductMapping>> SearchProductMappingsAsync(ProductMapping productMapping, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// 
+        /// Search product-to-line mappings
         /// </summary>
         /// <remarks>
         /// Searches for Product Mappings.  May be used to confirm a Product Mapping exists.  Much like &#x60;product/search&#x60;, may be used to get &#x60;name&#x60;s of line or product from &#x60;id&#x60;s, or &#x60;id&#x60;s from &#x60;name&#x60;s. 
@@ -101,9 +101,9 @@ namespace Oden.Api
         /// <param name="productMapping"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ProductMapping&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ProductMapping>>> V2ProductMappingSearchPostWithHttpInfoAsync(ProductMapping productMapping, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<List<ProductMapping>>> SearchProductMappingsWithHttpInfoAsync(ProductMapping productMapping, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// 
+        /// Map a product to a line
         /// </summary>
         /// <remarks>
         /// Map a Product to a Line - implying this Line can produce, or is producing this Product.  If the supplied Product doesn&#39;t exist, it will be created. 
@@ -112,10 +112,10 @@ namespace Oden.Api
         /// <param name="productMapping"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task V2ProductMappingSetPostAsync(ProductMapping productMapping, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task SetProductMappingAsync(ProductMapping productMapping, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// 
+        /// Map a product to a line
         /// </summary>
         /// <remarks>
         /// Map a Product to a Line - implying this Line can produce, or is producing this Product.  If the supplied Product doesn&#39;t exist, it will be created. 
@@ -124,7 +124,7 @@ namespace Oden.Api
         /// <param name="productMapping"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> V2ProductMappingSetPostWithHttpInfoAsync(ProductMapping productMapping, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<Object>> SetProductMappingWithHttpInfoAsync(ProductMapping productMapping, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -339,28 +339,28 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Searches for Product Mappings.  May be used to confirm a Product Mapping exists.  Much like &#x60;product/search&#x60;, may be used to get &#x60;name&#x60;s of line or product from &#x60;id&#x60;s, or &#x60;id&#x60;s from &#x60;name&#x60;s. 
+        /// Search product-to-line mappings Searches for Product Mappings.  May be used to confirm a Product Mapping exists.  Much like &#x60;product/search&#x60;, may be used to get &#x60;name&#x60;s of line or product from &#x60;id&#x60;s, or &#x60;id&#x60;s from &#x60;name&#x60;s. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="productMapping"></param>
         /// <returns>List&lt;ProductMapping&gt;</returns>
-        public List<ProductMapping> V2ProductMappingSearchPost(ProductMapping productMapping)
+        public List<ProductMapping> SearchProductMappings(ProductMapping productMapping)
         {
-            Oden.Client.ApiResponse<List<ProductMapping>> localVarResponse = V2ProductMappingSearchPostWithHttpInfo(productMapping);
+            Oden.Client.ApiResponse<List<ProductMapping>> localVarResponse = SearchProductMappingsWithHttpInfo(productMapping);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  Searches for Product Mappings.  May be used to confirm a Product Mapping exists.  Much like &#x60;product/search&#x60;, may be used to get &#x60;name&#x60;s of line or product from &#x60;id&#x60;s, or &#x60;id&#x60;s from &#x60;name&#x60;s. 
+        /// Search product-to-line mappings Searches for Product Mappings.  May be used to confirm a Product Mapping exists.  Much like &#x60;product/search&#x60;, may be used to get &#x60;name&#x60;s of line or product from &#x60;id&#x60;s, or &#x60;id&#x60;s from &#x60;name&#x60;s. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="productMapping"></param>
         /// <returns>ApiResponse of List&lt;ProductMapping&gt;</returns>
-        public Oden.Client.ApiResponse<List<ProductMapping>> V2ProductMappingSearchPostWithHttpInfo(ProductMapping productMapping)
+        public Oden.Client.ApiResponse<List<ProductMapping>> SearchProductMappingsWithHttpInfo(ProductMapping productMapping)
         {
             // verify the required parameter 'productMapping' is set
             if (productMapping == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'productMapping' when calling ProductMappingsApi->V2ProductMappingSearchPost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'productMapping' when calling ProductMappingsApi->SearchProductMappings");
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
 
@@ -392,7 +392,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2ProductMappingSearchPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SearchProductMappings", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -400,30 +400,30 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Searches for Product Mappings.  May be used to confirm a Product Mapping exists.  Much like &#x60;product/search&#x60;, may be used to get &#x60;name&#x60;s of line or product from &#x60;id&#x60;s, or &#x60;id&#x60;s from &#x60;name&#x60;s. 
+        /// Search product-to-line mappings Searches for Product Mappings.  May be used to confirm a Product Mapping exists.  Much like &#x60;product/search&#x60;, may be used to get &#x60;name&#x60;s of line or product from &#x60;id&#x60;s, or &#x60;id&#x60;s from &#x60;name&#x60;s. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="productMapping"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ProductMapping&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ProductMapping>> V2ProductMappingSearchPostAsync(ProductMapping productMapping, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<List<ProductMapping>> SearchProductMappingsAsync(ProductMapping productMapping, System.Threading.CancellationToken cancellationToken = default)
         {
-            Oden.Client.ApiResponse<List<ProductMapping>> localVarResponse = await V2ProductMappingSearchPostWithHttpInfoAsync(productMapping, cancellationToken).ConfigureAwait(false);
+            Oden.Client.ApiResponse<List<ProductMapping>> localVarResponse = await SearchProductMappingsWithHttpInfoAsync(productMapping, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  Searches for Product Mappings.  May be used to confirm a Product Mapping exists.  Much like &#x60;product/search&#x60;, may be used to get &#x60;name&#x60;s of line or product from &#x60;id&#x60;s, or &#x60;id&#x60;s from &#x60;name&#x60;s. 
+        /// Search product-to-line mappings Searches for Product Mappings.  May be used to confirm a Product Mapping exists.  Much like &#x60;product/search&#x60;, may be used to get &#x60;name&#x60;s of line or product from &#x60;id&#x60;s, or &#x60;id&#x60;s from &#x60;name&#x60;s. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="productMapping"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ProductMapping&gt;)</returns>
-        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<List<ProductMapping>>> V2ProductMappingSearchPostWithHttpInfoAsync(ProductMapping productMapping, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<List<ProductMapping>>> SearchProductMappingsWithHttpInfoAsync(ProductMapping productMapping, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'productMapping' is set
             if (productMapping == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'productMapping' when calling ProductMappingsApi->V2ProductMappingSearchPost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'productMapping' when calling ProductMappingsApi->SearchProductMappings");
 
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
@@ -458,7 +458,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2ProductMappingSearchPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SearchProductMappings", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -466,27 +466,27 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Map a Product to a Line - implying this Line can produce, or is producing this Product.  If the supplied Product doesn&#39;t exist, it will be created. 
+        /// Map a product to a line Map a Product to a Line - implying this Line can produce, or is producing this Product.  If the supplied Product doesn&#39;t exist, it will be created. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="productMapping"></param>
         /// <returns></returns>
-        public void V2ProductMappingSetPost(ProductMapping productMapping)
+        public void SetProductMapping(ProductMapping productMapping)
         {
-            V2ProductMappingSetPostWithHttpInfo(productMapping);
+            SetProductMappingWithHttpInfo(productMapping);
         }
 
         /// <summary>
-        ///  Map a Product to a Line - implying this Line can produce, or is producing this Product.  If the supplied Product doesn&#39;t exist, it will be created. 
+        /// Map a product to a line Map a Product to a Line - implying this Line can produce, or is producing this Product.  If the supplied Product doesn&#39;t exist, it will be created. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="productMapping"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Oden.Client.ApiResponse<Object> V2ProductMappingSetPostWithHttpInfo(ProductMapping productMapping)
+        public Oden.Client.ApiResponse<Object> SetProductMappingWithHttpInfo(ProductMapping productMapping)
         {
             // verify the required parameter 'productMapping' is set
             if (productMapping == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'productMapping' when calling ProductMappingsApi->V2ProductMappingSetPost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'productMapping' when calling ProductMappingsApi->SetProductMapping");
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
 
@@ -518,7 +518,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2ProductMappingSetPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SetProductMapping", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -526,29 +526,29 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Map a Product to a Line - implying this Line can produce, or is producing this Product.  If the supplied Product doesn&#39;t exist, it will be created. 
+        /// Map a product to a line Map a Product to a Line - implying this Line can produce, or is producing this Product.  If the supplied Product doesn&#39;t exist, it will be created. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="productMapping"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task V2ProductMappingSetPostAsync(ProductMapping productMapping, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task SetProductMappingAsync(ProductMapping productMapping, System.Threading.CancellationToken cancellationToken = default)
         {
-            await V2ProductMappingSetPostWithHttpInfoAsync(productMapping, cancellationToken).ConfigureAwait(false);
+            await SetProductMappingWithHttpInfoAsync(productMapping, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        ///  Map a Product to a Line - implying this Line can produce, or is producing this Product.  If the supplied Product doesn&#39;t exist, it will be created. 
+        /// Map a product to a line Map a Product to a Line - implying this Line can produce, or is producing this Product.  If the supplied Product doesn&#39;t exist, it will be created. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="productMapping"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<Object>> V2ProductMappingSetPostWithHttpInfoAsync(ProductMapping productMapping, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<Object>> SetProductMappingWithHttpInfoAsync(ProductMapping productMapping, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'productMapping' is set
             if (productMapping == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'productMapping' when calling ProductMappingsApi->V2ProductMappingSetPost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'productMapping' when calling ProductMappingsApi->SetProductMapping");
 
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
@@ -583,7 +583,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2ProductMappingSetPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SetProductMapping", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

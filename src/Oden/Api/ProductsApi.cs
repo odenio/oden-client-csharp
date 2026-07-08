@@ -29,7 +29,7 @@ namespace Oden.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Delete a product
         /// </summary>
         /// <remarks>
         /// Delete a Product by unique identifier: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  A deleted Product will not show up in Product searches or dropdowns, but associated Intervals will still exist. 
@@ -37,10 +37,10 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="product"></param>
         /// <returns></returns>
-        void V2ProductDeletePost(Product product);
+        void DeleteProduct(Product product);
 
         /// <summary>
-        /// 
+        /// Delete a product
         /// </summary>
         /// <remarks>
         /// Delete a Product by unique identifier: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  A deleted Product will not show up in Product searches or dropdowns, but associated Intervals will still exist. 
@@ -48,9 +48,9 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="product"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> V2ProductDeletePostWithHttpInfo(Product product);
+        ApiResponse<Object> DeleteProductWithHttpInfo(Product product);
         /// <summary>
-        /// 
+        /// Search products
         /// </summary>
         /// <remarks>
         /// Search for specific Product: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  May be used to confirm a Product exists or to get a Product &#x60;id&#x60; if &#x60;name&#x60; is known, or &#x60;name&#x60; if &#x60;id&#x60; is known. 
@@ -58,10 +58,10 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="product"></param>
         /// <returns>List&lt;Product&gt;</returns>
-        List<Product> V2ProductSearchPost(Product product);
+        List<Product> SearchProducts(Product product);
 
         /// <summary>
-        /// 
+        /// Search products
         /// </summary>
         /// <remarks>
         /// Search for specific Product: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  May be used to confirm a Product exists or to get a Product &#x60;id&#x60; if &#x60;name&#x60; is known, or &#x60;name&#x60; if &#x60;id&#x60; is known. 
@@ -69,9 +69,9 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="product"></param>
         /// <returns>ApiResponse of List&lt;Product&gt;</returns>
-        ApiResponse<List<Product>> V2ProductSearchPostWithHttpInfo(Product product);
+        ApiResponse<List<Product>> SearchProductsWithHttpInfo(Product product);
         /// <summary>
-        /// 
+        /// Create or update a product
         /// </summary>
         /// <remarks>
         /// To **create** a new Product, include &#x60;name&#x60;, and omit &#x60;id&#x60; field.  To **update** an existing Product, include the &#x60;id&#x60; of the existing product the updated &#x60;name&#x60;. 
@@ -79,10 +79,10 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="product"></param>
         /// <returns></returns>
-        void V2ProductSetPost(Product product);
+        void SetProduct(Product product);
 
         /// <summary>
-        /// 
+        /// Create or update a product
         /// </summary>
         /// <remarks>
         /// To **create** a new Product, include &#x60;name&#x60;, and omit &#x60;id&#x60; field.  To **update** an existing Product, include the &#x60;id&#x60; of the existing product the updated &#x60;name&#x60;. 
@@ -90,7 +90,7 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="product"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> V2ProductSetPostWithHttpInfo(Product product);
+        ApiResponse<Object> SetProductWithHttpInfo(Product product);
         #endregion Synchronous Operations
     }
 
@@ -101,7 +101,7 @@ namespace Oden.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Delete a product
         /// </summary>
         /// <remarks>
         /// Delete a Product by unique identifier: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  A deleted Product will not show up in Product searches or dropdowns, but associated Intervals will still exist. 
@@ -110,10 +110,10 @@ namespace Oden.Api
         /// <param name="product"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task V2ProductDeletePostAsync(Product product, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task DeleteProductAsync(Product product, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// 
+        /// Delete a product
         /// </summary>
         /// <remarks>
         /// Delete a Product by unique identifier: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  A deleted Product will not show up in Product searches or dropdowns, but associated Intervals will still exist. 
@@ -122,9 +122,9 @@ namespace Oden.Api
         /// <param name="product"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> V2ProductDeletePostWithHttpInfoAsync(Product product, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteProductWithHttpInfoAsync(Product product, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// 
+        /// Search products
         /// </summary>
         /// <remarks>
         /// Search for specific Product: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  May be used to confirm a Product exists or to get a Product &#x60;id&#x60; if &#x60;name&#x60; is known, or &#x60;name&#x60; if &#x60;id&#x60; is known. 
@@ -133,10 +133,10 @@ namespace Oden.Api
         /// <param name="product"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Product&gt;</returns>
-        System.Threading.Tasks.Task<List<Product>> V2ProductSearchPostAsync(Product product, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<List<Product>> SearchProductsAsync(Product product, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// 
+        /// Search products
         /// </summary>
         /// <remarks>
         /// Search for specific Product: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  May be used to confirm a Product exists or to get a Product &#x60;id&#x60; if &#x60;name&#x60; is known, or &#x60;name&#x60; if &#x60;id&#x60; is known. 
@@ -145,9 +145,9 @@ namespace Oden.Api
         /// <param name="product"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Product&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Product>>> V2ProductSearchPostWithHttpInfoAsync(Product product, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<List<Product>>> SearchProductsWithHttpInfoAsync(Product product, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// 
+        /// Create or update a product
         /// </summary>
         /// <remarks>
         /// To **create** a new Product, include &#x60;name&#x60;, and omit &#x60;id&#x60; field.  To **update** an existing Product, include the &#x60;id&#x60; of the existing product the updated &#x60;name&#x60;. 
@@ -156,10 +156,10 @@ namespace Oden.Api
         /// <param name="product"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task V2ProductSetPostAsync(Product product, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task SetProductAsync(Product product, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// 
+        /// Create or update a product
         /// </summary>
         /// <remarks>
         /// To **create** a new Product, include &#x60;name&#x60;, and omit &#x60;id&#x60; field.  To **update** an existing Product, include the &#x60;id&#x60; of the existing product the updated &#x60;name&#x60;. 
@@ -168,7 +168,7 @@ namespace Oden.Api
         /// <param name="product"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> V2ProductSetPostWithHttpInfoAsync(Product product, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<Object>> SetProductWithHttpInfoAsync(Product product, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -383,27 +383,27 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Delete a Product by unique identifier: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  A deleted Product will not show up in Product searches or dropdowns, but associated Intervals will still exist. 
+        /// Delete a product Delete a Product by unique identifier: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  A deleted Product will not show up in Product searches or dropdowns, but associated Intervals will still exist. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="product"></param>
         /// <returns></returns>
-        public void V2ProductDeletePost(Product product)
+        public void DeleteProduct(Product product)
         {
-            V2ProductDeletePostWithHttpInfo(product);
+            DeleteProductWithHttpInfo(product);
         }
 
         /// <summary>
-        ///  Delete a Product by unique identifier: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  A deleted Product will not show up in Product searches or dropdowns, but associated Intervals will still exist. 
+        /// Delete a product Delete a Product by unique identifier: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  A deleted Product will not show up in Product searches or dropdowns, but associated Intervals will still exist. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="product"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Oden.Client.ApiResponse<Object> V2ProductDeletePostWithHttpInfo(Product product)
+        public Oden.Client.ApiResponse<Object> DeleteProductWithHttpInfo(Product product)
         {
             // verify the required parameter 'product' is set
             if (product == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'product' when calling ProductsApi->V2ProductDeletePost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'product' when calling ProductsApi->DeleteProduct");
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
 
@@ -435,7 +435,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2ProductDeletePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeleteProduct", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -443,29 +443,29 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Delete a Product by unique identifier: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  A deleted Product will not show up in Product searches or dropdowns, but associated Intervals will still exist. 
+        /// Delete a product Delete a Product by unique identifier: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  A deleted Product will not show up in Product searches or dropdowns, but associated Intervals will still exist. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="product"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task V2ProductDeletePostAsync(Product product, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task DeleteProductAsync(Product product, System.Threading.CancellationToken cancellationToken = default)
         {
-            await V2ProductDeletePostWithHttpInfoAsync(product, cancellationToken).ConfigureAwait(false);
+            await DeleteProductWithHttpInfoAsync(product, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        ///  Delete a Product by unique identifier: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  A deleted Product will not show up in Product searches or dropdowns, but associated Intervals will still exist. 
+        /// Delete a product Delete a Product by unique identifier: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  A deleted Product will not show up in Product searches or dropdowns, but associated Intervals will still exist. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="product"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<Object>> V2ProductDeletePostWithHttpInfoAsync(Product product, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<Object>> DeleteProductWithHttpInfoAsync(Product product, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'product' is set
             if (product == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'product' when calling ProductsApi->V2ProductDeletePost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'product' when calling ProductsApi->DeleteProduct");
 
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
@@ -500,7 +500,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2ProductDeletePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeleteProduct", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -508,28 +508,28 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Search for specific Product: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  May be used to confirm a Product exists or to get a Product &#x60;id&#x60; if &#x60;name&#x60; is known, or &#x60;name&#x60; if &#x60;id&#x60; is known. 
+        /// Search products Search for specific Product: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  May be used to confirm a Product exists or to get a Product &#x60;id&#x60; if &#x60;name&#x60; is known, or &#x60;name&#x60; if &#x60;id&#x60; is known. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="product"></param>
         /// <returns>List&lt;Product&gt;</returns>
-        public List<Product> V2ProductSearchPost(Product product)
+        public List<Product> SearchProducts(Product product)
         {
-            Oden.Client.ApiResponse<List<Product>> localVarResponse = V2ProductSearchPostWithHttpInfo(product);
+            Oden.Client.ApiResponse<List<Product>> localVarResponse = SearchProductsWithHttpInfo(product);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  Search for specific Product: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  May be used to confirm a Product exists or to get a Product &#x60;id&#x60; if &#x60;name&#x60; is known, or &#x60;name&#x60; if &#x60;id&#x60; is known. 
+        /// Search products Search for specific Product: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  May be used to confirm a Product exists or to get a Product &#x60;id&#x60; if &#x60;name&#x60; is known, or &#x60;name&#x60; if &#x60;id&#x60; is known. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="product"></param>
         /// <returns>ApiResponse of List&lt;Product&gt;</returns>
-        public Oden.Client.ApiResponse<List<Product>> V2ProductSearchPostWithHttpInfo(Product product)
+        public Oden.Client.ApiResponse<List<Product>> SearchProductsWithHttpInfo(Product product)
         {
             // verify the required parameter 'product' is set
             if (product == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'product' when calling ProductsApi->V2ProductSearchPost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'product' when calling ProductsApi->SearchProducts");
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
 
@@ -561,7 +561,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2ProductSearchPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SearchProducts", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -569,30 +569,30 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Search for specific Product: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  May be used to confirm a Product exists or to get a Product &#x60;id&#x60; if &#x60;name&#x60; is known, or &#x60;name&#x60; if &#x60;id&#x60; is known. 
+        /// Search products Search for specific Product: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  May be used to confirm a Product exists or to get a Product &#x60;id&#x60; if &#x60;name&#x60; is known, or &#x60;name&#x60; if &#x60;id&#x60; is known. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="product"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Product&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Product>> V2ProductSearchPostAsync(Product product, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<List<Product>> SearchProductsAsync(Product product, System.Threading.CancellationToken cancellationToken = default)
         {
-            Oden.Client.ApiResponse<List<Product>> localVarResponse = await V2ProductSearchPostWithHttpInfoAsync(product, cancellationToken).ConfigureAwait(false);
+            Oden.Client.ApiResponse<List<Product>> localVarResponse = await SearchProductsWithHttpInfoAsync(product, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  Search for specific Product: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  May be used to confirm a Product exists or to get a Product &#x60;id&#x60; if &#x60;name&#x60; is known, or &#x60;name&#x60; if &#x60;id&#x60; is known. 
+        /// Search products Search for specific Product: - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  May be used to confirm a Product exists or to get a Product &#x60;id&#x60; if &#x60;name&#x60; is known, or &#x60;name&#x60; if &#x60;id&#x60; is known. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="product"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Product&gt;)</returns>
-        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<List<Product>>> V2ProductSearchPostWithHttpInfoAsync(Product product, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<List<Product>>> SearchProductsWithHttpInfoAsync(Product product, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'product' is set
             if (product == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'product' when calling ProductsApi->V2ProductSearchPost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'product' when calling ProductsApi->SearchProducts");
 
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
@@ -627,7 +627,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2ProductSearchPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SearchProducts", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -635,27 +635,27 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  To **create** a new Product, include &#x60;name&#x60;, and omit &#x60;id&#x60; field.  To **update** an existing Product, include the &#x60;id&#x60; of the existing product the updated &#x60;name&#x60;. 
+        /// Create or update a product To **create** a new Product, include &#x60;name&#x60;, and omit &#x60;id&#x60; field.  To **update** an existing Product, include the &#x60;id&#x60; of the existing product the updated &#x60;name&#x60;. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="product"></param>
         /// <returns></returns>
-        public void V2ProductSetPost(Product product)
+        public void SetProduct(Product product)
         {
-            V2ProductSetPostWithHttpInfo(product);
+            SetProductWithHttpInfo(product);
         }
 
         /// <summary>
-        ///  To **create** a new Product, include &#x60;name&#x60;, and omit &#x60;id&#x60; field.  To **update** an existing Product, include the &#x60;id&#x60; of the existing product the updated &#x60;name&#x60;. 
+        /// Create or update a product To **create** a new Product, include &#x60;name&#x60;, and omit &#x60;id&#x60; field.  To **update** an existing Product, include the &#x60;id&#x60; of the existing product the updated &#x60;name&#x60;. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="product"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Oden.Client.ApiResponse<Object> V2ProductSetPostWithHttpInfo(Product product)
+        public Oden.Client.ApiResponse<Object> SetProductWithHttpInfo(Product product)
         {
             // verify the required parameter 'product' is set
             if (product == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'product' when calling ProductsApi->V2ProductSetPost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'product' when calling ProductsApi->SetProduct");
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
 
@@ -687,7 +687,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2ProductSetPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SetProduct", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -695,29 +695,29 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  To **create** a new Product, include &#x60;name&#x60;, and omit &#x60;id&#x60; field.  To **update** an existing Product, include the &#x60;id&#x60; of the existing product the updated &#x60;name&#x60;. 
+        /// Create or update a product To **create** a new Product, include &#x60;name&#x60;, and omit &#x60;id&#x60; field.  To **update** an existing Product, include the &#x60;id&#x60; of the existing product the updated &#x60;name&#x60;. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="product"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task V2ProductSetPostAsync(Product product, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task SetProductAsync(Product product, System.Threading.CancellationToken cancellationToken = default)
         {
-            await V2ProductSetPostWithHttpInfoAsync(product, cancellationToken).ConfigureAwait(false);
+            await SetProductWithHttpInfoAsync(product, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        ///  To **create** a new Product, include &#x60;name&#x60;, and omit &#x60;id&#x60; field.  To **update** an existing Product, include the &#x60;id&#x60; of the existing product the updated &#x60;name&#x60;. 
+        /// Create or update a product To **create** a new Product, include &#x60;name&#x60;, and omit &#x60;id&#x60; field.  To **update** an existing Product, include the &#x60;id&#x60; of the existing product the updated &#x60;name&#x60;. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="product"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<Object>> V2ProductSetPostWithHttpInfoAsync(Product product, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<Object>> SetProductWithHttpInfoAsync(Product product, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'product' is set
             if (product == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'product' when calling ProductsApi->V2ProductSetPost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'product' when calling ProductsApi->SetProduct");
 
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
@@ -752,7 +752,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2ProductSetPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SetProduct", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

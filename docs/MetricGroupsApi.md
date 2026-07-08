@@ -4,13 +4,13 @@ All URIs are relative to *https://api.oden.app*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**V2MetricGroupSearchPost**](MetricGroupsApi.md#v2metricgroupsearchpost) | **POST** /v2/metric_group/search |  |
+| [**SearchMetricGroups**](MetricGroupsApi.md#searchmetricgroups) | **POST** /v2/metric_group/search | Search metric groups |
 
-<a id="v2metricgroupsearchpost"></a>
-# **V2MetricGroupSearchPost**
-> List&lt;MetricGroup&gt; V2MetricGroupSearchPost (MetricGroup metricGroup)
+<a id="searchmetricgroups"></a>
+# **SearchMetricGroups**
+> List&lt;MetricGroup&gt; SearchMetricGroups (MetricGroup metricGroup)
 
-
+Search metric groups
 
 Search for a specific Metric Group:  - `name` - `match: unique` or omit  OR  - `id` - `match: unique` or omit  Search for all Metric Groups: - `match: all` 
 
@@ -25,7 +25,7 @@ using Oden.Model;
 
 namespace Example
 {
-    public class V2MetricGroupSearchPostExample
+    public class SearchMetricGroupsExample
     {
         public static void Main()
         {
@@ -44,12 +44,13 @@ namespace Example
 
             try
             {
-                List<MetricGroup> result = apiInstance.V2MetricGroupSearchPost(metricGroup);
+                // Search metric groups
+                List<MetricGroup> result = apiInstance.SearchMetricGroups(metricGroup);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling MetricGroupsApi.V2MetricGroupSearchPost: " + e.Message);
+                Debug.Print("Exception when calling MetricGroupsApi.SearchMetricGroups: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -58,20 +59,21 @@ namespace Example
 }
 ```
 
-#### Using the V2MetricGroupSearchPostWithHttpInfo variant
+#### Using the SearchMetricGroupsWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<MetricGroup>> response = apiInstance.V2MetricGroupSearchPostWithHttpInfo(metricGroup);
+    // Search metric groups
+    ApiResponse<List<MetricGroup>> response = apiInstance.SearchMetricGroupsWithHttpInfo(metricGroup);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling MetricGroupsApi.V2MetricGroupSearchPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling MetricGroupsApi.SearchMetricGroupsWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

@@ -29,7 +29,7 @@ namespace Oden.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Search product attributes
         /// </summary>
         /// <remarks>
         /// Searches for Product Attributes  Product attributes may be searched by ID, product, or, display_name - in that order.  If an ID is supplied, it will be used to search for a Product Attribute, and display_name, product will be ignored.  If a product is supplied (and no ID), it will be used to search for a Product Attribute, and display_name will be ignored. 
@@ -37,10 +37,10 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="productAttribute"></param>
         /// <returns>List&lt;ProductAttribute&gt;</returns>
-        List<ProductAttribute> V2ProductAttributeSearchPost(ProductAttribute productAttribute);
+        List<ProductAttribute> SearchProductAttributes(ProductAttribute productAttribute);
 
         /// <summary>
-        /// 
+        /// Search product attributes
         /// </summary>
         /// <remarks>
         /// Searches for Product Attributes  Product attributes may be searched by ID, product, or, display_name - in that order.  If an ID is supplied, it will be used to search for a Product Attribute, and display_name, product will be ignored.  If a product is supplied (and no ID), it will be used to search for a Product Attribute, and display_name will be ignored. 
@@ -48,9 +48,9 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="productAttribute"></param>
         /// <returns>ApiResponse of List&lt;ProductAttribute&gt;</returns>
-        ApiResponse<List<ProductAttribute>> V2ProductAttributeSearchPostWithHttpInfo(ProductAttribute productAttribute);
+        ApiResponse<List<ProductAttribute>> SearchProductAttributesWithHttpInfo(ProductAttribute productAttribute);
         /// <summary>
-        /// 
+        /// Create or update a product attribute
         /// </summary>
         /// <remarks>
         /// Set a Product Attribute for a Product.  If the supplied Product Attribute doesn&#39;t exist, it will be created.  If the supplied Product Attribute Value doesn&#39;t exist, it will be created.  If the supplied Product Attribute Value is already set for the Product, it will be updated.  If the supplied Product Attribute Value is not set for the Product, it will be added.  Supplied Product must exist already. 
@@ -58,10 +58,10 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="productAttribute"></param>
         /// <returns>List&lt;ProductAttribute&gt;</returns>
-        List<ProductAttribute> V2ProductAttributeSetPost(ProductAttribute productAttribute);
+        List<ProductAttribute> SetProductAttribute(ProductAttribute productAttribute);
 
         /// <summary>
-        /// 
+        /// Create or update a product attribute
         /// </summary>
         /// <remarks>
         /// Set a Product Attribute for a Product.  If the supplied Product Attribute doesn&#39;t exist, it will be created.  If the supplied Product Attribute Value doesn&#39;t exist, it will be created.  If the supplied Product Attribute Value is already set for the Product, it will be updated.  If the supplied Product Attribute Value is not set for the Product, it will be added.  Supplied Product must exist already. 
@@ -69,7 +69,7 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="productAttribute"></param>
         /// <returns>ApiResponse of List&lt;ProductAttribute&gt;</returns>
-        ApiResponse<List<ProductAttribute>> V2ProductAttributeSetPostWithHttpInfo(ProductAttribute productAttribute);
+        ApiResponse<List<ProductAttribute>> SetProductAttributeWithHttpInfo(ProductAttribute productAttribute);
         #endregion Synchronous Operations
     }
 
@@ -80,7 +80,7 @@ namespace Oden.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Search product attributes
         /// </summary>
         /// <remarks>
         /// Searches for Product Attributes  Product attributes may be searched by ID, product, or, display_name - in that order.  If an ID is supplied, it will be used to search for a Product Attribute, and display_name, product will be ignored.  If a product is supplied (and no ID), it will be used to search for a Product Attribute, and display_name will be ignored. 
@@ -89,10 +89,10 @@ namespace Oden.Api
         /// <param name="productAttribute"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ProductAttribute&gt;</returns>
-        System.Threading.Tasks.Task<List<ProductAttribute>> V2ProductAttributeSearchPostAsync(ProductAttribute productAttribute, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<List<ProductAttribute>> SearchProductAttributesAsync(ProductAttribute productAttribute, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// 
+        /// Search product attributes
         /// </summary>
         /// <remarks>
         /// Searches for Product Attributes  Product attributes may be searched by ID, product, or, display_name - in that order.  If an ID is supplied, it will be used to search for a Product Attribute, and display_name, product will be ignored.  If a product is supplied (and no ID), it will be used to search for a Product Attribute, and display_name will be ignored. 
@@ -101,9 +101,9 @@ namespace Oden.Api
         /// <param name="productAttribute"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ProductAttribute&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ProductAttribute>>> V2ProductAttributeSearchPostWithHttpInfoAsync(ProductAttribute productAttribute, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<List<ProductAttribute>>> SearchProductAttributesWithHttpInfoAsync(ProductAttribute productAttribute, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// 
+        /// Create or update a product attribute
         /// </summary>
         /// <remarks>
         /// Set a Product Attribute for a Product.  If the supplied Product Attribute doesn&#39;t exist, it will be created.  If the supplied Product Attribute Value doesn&#39;t exist, it will be created.  If the supplied Product Attribute Value is already set for the Product, it will be updated.  If the supplied Product Attribute Value is not set for the Product, it will be added.  Supplied Product must exist already. 
@@ -112,10 +112,10 @@ namespace Oden.Api
         /// <param name="productAttribute"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ProductAttribute&gt;</returns>
-        System.Threading.Tasks.Task<List<ProductAttribute>> V2ProductAttributeSetPostAsync(ProductAttribute productAttribute, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<List<ProductAttribute>> SetProductAttributeAsync(ProductAttribute productAttribute, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// 
+        /// Create or update a product attribute
         /// </summary>
         /// <remarks>
         /// Set a Product Attribute for a Product.  If the supplied Product Attribute doesn&#39;t exist, it will be created.  If the supplied Product Attribute Value doesn&#39;t exist, it will be created.  If the supplied Product Attribute Value is already set for the Product, it will be updated.  If the supplied Product Attribute Value is not set for the Product, it will be added.  Supplied Product must exist already. 
@@ -124,7 +124,7 @@ namespace Oden.Api
         /// <param name="productAttribute"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ProductAttribute&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ProductAttribute>>> V2ProductAttributeSetPostWithHttpInfoAsync(ProductAttribute productAttribute, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<List<ProductAttribute>>> SetProductAttributeWithHttpInfoAsync(ProductAttribute productAttribute, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -339,28 +339,28 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Searches for Product Attributes  Product attributes may be searched by ID, product, or, display_name - in that order.  If an ID is supplied, it will be used to search for a Product Attribute, and display_name, product will be ignored.  If a product is supplied (and no ID), it will be used to search for a Product Attribute, and display_name will be ignored. 
+        /// Search product attributes Searches for Product Attributes  Product attributes may be searched by ID, product, or, display_name - in that order.  If an ID is supplied, it will be used to search for a Product Attribute, and display_name, product will be ignored.  If a product is supplied (and no ID), it will be used to search for a Product Attribute, and display_name will be ignored. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="productAttribute"></param>
         /// <returns>List&lt;ProductAttribute&gt;</returns>
-        public List<ProductAttribute> V2ProductAttributeSearchPost(ProductAttribute productAttribute)
+        public List<ProductAttribute> SearchProductAttributes(ProductAttribute productAttribute)
         {
-            Oden.Client.ApiResponse<List<ProductAttribute>> localVarResponse = V2ProductAttributeSearchPostWithHttpInfo(productAttribute);
+            Oden.Client.ApiResponse<List<ProductAttribute>> localVarResponse = SearchProductAttributesWithHttpInfo(productAttribute);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  Searches for Product Attributes  Product attributes may be searched by ID, product, or, display_name - in that order.  If an ID is supplied, it will be used to search for a Product Attribute, and display_name, product will be ignored.  If a product is supplied (and no ID), it will be used to search for a Product Attribute, and display_name will be ignored. 
+        /// Search product attributes Searches for Product Attributes  Product attributes may be searched by ID, product, or, display_name - in that order.  If an ID is supplied, it will be used to search for a Product Attribute, and display_name, product will be ignored.  If a product is supplied (and no ID), it will be used to search for a Product Attribute, and display_name will be ignored. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="productAttribute"></param>
         /// <returns>ApiResponse of List&lt;ProductAttribute&gt;</returns>
-        public Oden.Client.ApiResponse<List<ProductAttribute>> V2ProductAttributeSearchPostWithHttpInfo(ProductAttribute productAttribute)
+        public Oden.Client.ApiResponse<List<ProductAttribute>> SearchProductAttributesWithHttpInfo(ProductAttribute productAttribute)
         {
             // verify the required parameter 'productAttribute' is set
             if (productAttribute == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'productAttribute' when calling ProductAttributesApi->V2ProductAttributeSearchPost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'productAttribute' when calling ProductAttributesApi->SearchProductAttributes");
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
 
@@ -392,7 +392,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2ProductAttributeSearchPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SearchProductAttributes", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -400,30 +400,30 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Searches for Product Attributes  Product attributes may be searched by ID, product, or, display_name - in that order.  If an ID is supplied, it will be used to search for a Product Attribute, and display_name, product will be ignored.  If a product is supplied (and no ID), it will be used to search for a Product Attribute, and display_name will be ignored. 
+        /// Search product attributes Searches for Product Attributes  Product attributes may be searched by ID, product, or, display_name - in that order.  If an ID is supplied, it will be used to search for a Product Attribute, and display_name, product will be ignored.  If a product is supplied (and no ID), it will be used to search for a Product Attribute, and display_name will be ignored. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="productAttribute"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ProductAttribute&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ProductAttribute>> V2ProductAttributeSearchPostAsync(ProductAttribute productAttribute, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<List<ProductAttribute>> SearchProductAttributesAsync(ProductAttribute productAttribute, System.Threading.CancellationToken cancellationToken = default)
         {
-            Oden.Client.ApiResponse<List<ProductAttribute>> localVarResponse = await V2ProductAttributeSearchPostWithHttpInfoAsync(productAttribute, cancellationToken).ConfigureAwait(false);
+            Oden.Client.ApiResponse<List<ProductAttribute>> localVarResponse = await SearchProductAttributesWithHttpInfoAsync(productAttribute, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  Searches for Product Attributes  Product attributes may be searched by ID, product, or, display_name - in that order.  If an ID is supplied, it will be used to search for a Product Attribute, and display_name, product will be ignored.  If a product is supplied (and no ID), it will be used to search for a Product Attribute, and display_name will be ignored. 
+        /// Search product attributes Searches for Product Attributes  Product attributes may be searched by ID, product, or, display_name - in that order.  If an ID is supplied, it will be used to search for a Product Attribute, and display_name, product will be ignored.  If a product is supplied (and no ID), it will be used to search for a Product Attribute, and display_name will be ignored. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="productAttribute"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ProductAttribute&gt;)</returns>
-        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<List<ProductAttribute>>> V2ProductAttributeSearchPostWithHttpInfoAsync(ProductAttribute productAttribute, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<List<ProductAttribute>>> SearchProductAttributesWithHttpInfoAsync(ProductAttribute productAttribute, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'productAttribute' is set
             if (productAttribute == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'productAttribute' when calling ProductAttributesApi->V2ProductAttributeSearchPost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'productAttribute' when calling ProductAttributesApi->SearchProductAttributes");
 
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
@@ -458,7 +458,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2ProductAttributeSearchPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SearchProductAttributes", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -466,28 +466,28 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Set a Product Attribute for a Product.  If the supplied Product Attribute doesn&#39;t exist, it will be created.  If the supplied Product Attribute Value doesn&#39;t exist, it will be created.  If the supplied Product Attribute Value is already set for the Product, it will be updated.  If the supplied Product Attribute Value is not set for the Product, it will be added.  Supplied Product must exist already. 
+        /// Create or update a product attribute Set a Product Attribute for a Product.  If the supplied Product Attribute doesn&#39;t exist, it will be created.  If the supplied Product Attribute Value doesn&#39;t exist, it will be created.  If the supplied Product Attribute Value is already set for the Product, it will be updated.  If the supplied Product Attribute Value is not set for the Product, it will be added.  Supplied Product must exist already. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="productAttribute"></param>
         /// <returns>List&lt;ProductAttribute&gt;</returns>
-        public List<ProductAttribute> V2ProductAttributeSetPost(ProductAttribute productAttribute)
+        public List<ProductAttribute> SetProductAttribute(ProductAttribute productAttribute)
         {
-            Oden.Client.ApiResponse<List<ProductAttribute>> localVarResponse = V2ProductAttributeSetPostWithHttpInfo(productAttribute);
+            Oden.Client.ApiResponse<List<ProductAttribute>> localVarResponse = SetProductAttributeWithHttpInfo(productAttribute);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  Set a Product Attribute for a Product.  If the supplied Product Attribute doesn&#39;t exist, it will be created.  If the supplied Product Attribute Value doesn&#39;t exist, it will be created.  If the supplied Product Attribute Value is already set for the Product, it will be updated.  If the supplied Product Attribute Value is not set for the Product, it will be added.  Supplied Product must exist already. 
+        /// Create or update a product attribute Set a Product Attribute for a Product.  If the supplied Product Attribute doesn&#39;t exist, it will be created.  If the supplied Product Attribute Value doesn&#39;t exist, it will be created.  If the supplied Product Attribute Value is already set for the Product, it will be updated.  If the supplied Product Attribute Value is not set for the Product, it will be added.  Supplied Product must exist already. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="productAttribute"></param>
         /// <returns>ApiResponse of List&lt;ProductAttribute&gt;</returns>
-        public Oden.Client.ApiResponse<List<ProductAttribute>> V2ProductAttributeSetPostWithHttpInfo(ProductAttribute productAttribute)
+        public Oden.Client.ApiResponse<List<ProductAttribute>> SetProductAttributeWithHttpInfo(ProductAttribute productAttribute)
         {
             // verify the required parameter 'productAttribute' is set
             if (productAttribute == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'productAttribute' when calling ProductAttributesApi->V2ProductAttributeSetPost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'productAttribute' when calling ProductAttributesApi->SetProductAttribute");
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
 
@@ -519,7 +519,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2ProductAttributeSetPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SetProductAttribute", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -527,30 +527,30 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Set a Product Attribute for a Product.  If the supplied Product Attribute doesn&#39;t exist, it will be created.  If the supplied Product Attribute Value doesn&#39;t exist, it will be created.  If the supplied Product Attribute Value is already set for the Product, it will be updated.  If the supplied Product Attribute Value is not set for the Product, it will be added.  Supplied Product must exist already. 
+        /// Create or update a product attribute Set a Product Attribute for a Product.  If the supplied Product Attribute doesn&#39;t exist, it will be created.  If the supplied Product Attribute Value doesn&#39;t exist, it will be created.  If the supplied Product Attribute Value is already set for the Product, it will be updated.  If the supplied Product Attribute Value is not set for the Product, it will be added.  Supplied Product must exist already. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="productAttribute"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ProductAttribute&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ProductAttribute>> V2ProductAttributeSetPostAsync(ProductAttribute productAttribute, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<List<ProductAttribute>> SetProductAttributeAsync(ProductAttribute productAttribute, System.Threading.CancellationToken cancellationToken = default)
         {
-            Oden.Client.ApiResponse<List<ProductAttribute>> localVarResponse = await V2ProductAttributeSetPostWithHttpInfoAsync(productAttribute, cancellationToken).ConfigureAwait(false);
+            Oden.Client.ApiResponse<List<ProductAttribute>> localVarResponse = await SetProductAttributeWithHttpInfoAsync(productAttribute, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  Set a Product Attribute for a Product.  If the supplied Product Attribute doesn&#39;t exist, it will be created.  If the supplied Product Attribute Value doesn&#39;t exist, it will be created.  If the supplied Product Attribute Value is already set for the Product, it will be updated.  If the supplied Product Attribute Value is not set for the Product, it will be added.  Supplied Product must exist already. 
+        /// Create or update a product attribute Set a Product Attribute for a Product.  If the supplied Product Attribute doesn&#39;t exist, it will be created.  If the supplied Product Attribute Value doesn&#39;t exist, it will be created.  If the supplied Product Attribute Value is already set for the Product, it will be updated.  If the supplied Product Attribute Value is not set for the Product, it will be added.  Supplied Product must exist already. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="productAttribute"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ProductAttribute&gt;)</returns>
-        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<List<ProductAttribute>>> V2ProductAttributeSetPostWithHttpInfoAsync(ProductAttribute productAttribute, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<List<ProductAttribute>>> SetProductAttributeWithHttpInfoAsync(ProductAttribute productAttribute, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'productAttribute' is set
             if (productAttribute == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'productAttribute' when calling ProductAttributesApi->V2ProductAttributeSetPost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'productAttribute' when calling ProductAttributesApi->SetProductAttribute");
 
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
@@ -585,7 +585,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2ProductAttributeSetPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SetProductAttribute", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

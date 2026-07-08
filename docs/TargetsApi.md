@@ -4,14 +4,14 @@ All URIs are relative to *https://api.oden.app*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**V2TargetSearchPost**](TargetsApi.md#v2targetsearchpost) | **POST** /v2/target/search |  |
-| [**V2TargetSetPost**](TargetsApi.md#v2targetsetpost) | **POST** /v2/target/set |  |
+| [**SearchTargets**](TargetsApi.md#searchtargets) | **POST** /v2/target/search | Search metric targets |
+| [**SetTarget**](TargetsApi.md#settarget) | **POST** /v2/target/set | Create or update a metric target |
 
-<a id="v2targetsearchpost"></a>
-# **V2TargetSearchPost**
-> List&lt;Target&gt; V2TargetSearchPost (Target target)
+<a id="searchtargets"></a>
+# **SearchTargets**
+> List&lt;Target&gt; SearchTargets (Target target)
 
-
+Search metric targets
 
 Search for a Target by `line`, `metric_group`, and `product`. For each of these inputs, any of their unique indentifiers (as described in their `search` endpoint) may be used. See examples. 
 
@@ -26,7 +26,7 @@ using Oden.Model;
 
 namespace Example
 {
-    public class V2TargetSearchPostExample
+    public class SearchTargetsExample
     {
         public static void Main()
         {
@@ -45,12 +45,13 @@ namespace Example
 
             try
             {
-                List<Target> result = apiInstance.V2TargetSearchPost(target);
+                // Search metric targets
+                List<Target> result = apiInstance.SearchTargets(target);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TargetsApi.V2TargetSearchPost: " + e.Message);
+                Debug.Print("Exception when calling TargetsApi.SearchTargets: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -59,20 +60,21 @@ namespace Example
 }
 ```
 
-#### Using the V2TargetSearchPostWithHttpInfo variant
+#### Using the SearchTargetsWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<Target>> response = apiInstance.V2TargetSearchPostWithHttpInfo(target);
+    // Search metric targets
+    ApiResponse<List<Target>> response = apiInstance.SearchTargetsWithHttpInfo(target);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TargetsApi.V2TargetSearchPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TargetsApi.SearchTargetsWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -112,11 +114,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="v2targetsetpost"></a>
-# **V2TargetSetPost**
-> Target V2TargetSetPost (Target target)
+<a id="settarget"></a>
+# **SetTarget**
+> Target SetTarget (Target target)
 
-
+Create or update a metric target
 
 Create or update a Target.  First the endpoint will search for a Target by `metric_group`, `product`, and `line`: - If the target does not exist a new target is created. - If the product or its mapping to the given line does not exist, they will be created. - If a target exists but with different parameters, it will be updated. - If the target exists with all the same parameters nothing is done. 
 
@@ -131,7 +133,7 @@ using Oden.Model;
 
 namespace Example
 {
-    public class V2TargetSetPostExample
+    public class SetTargetExample
     {
         public static void Main()
         {
@@ -150,12 +152,13 @@ namespace Example
 
             try
             {
-                Target result = apiInstance.V2TargetSetPost(target);
+                // Create or update a metric target
+                Target result = apiInstance.SetTarget(target);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TargetsApi.V2TargetSetPost: " + e.Message);
+                Debug.Print("Exception when calling TargetsApi.SetTarget: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -164,20 +167,21 @@ namespace Example
 }
 ```
 
-#### Using the V2TargetSetPostWithHttpInfo variant
+#### Using the SetTargetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<Target> response = apiInstance.V2TargetSetPostWithHttpInfo(target);
+    // Create or update a metric target
+    ApiResponse<Target> response = apiInstance.SetTargetWithHttpInfo(target);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling TargetsApi.V2TargetSetPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling TargetsApi.SetTargetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

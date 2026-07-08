@@ -29,7 +29,7 @@ namespace Oden.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Run an OQL query
         /// </summary>
         /// <remarks>
         /// Run an OQL (Oden Query Language) query.  For reference on writing OQL queries, see:  [https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql](https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql) 
@@ -38,10 +38,10 @@ namespace Oden.Api
         /// <param name="oQLQuery"></param>
         /// <param name="format">Format of the response. Can be &#x60;json&#x60;, &#x60;jsonextended&#x60; or &#x60;csv&#x60;. If unspecified, defaults to &#x60;jsonextended&#x60;.  (optional, default to json)</param>
         /// <returns></returns>
-        void V2OqlQueryPost(OQLQuery oQLQuery, string format = default);
+        void RunOqlQuery(OQLQuery oQLQuery, string format = default);
 
         /// <summary>
-        /// 
+        /// Run an OQL query
         /// </summary>
         /// <remarks>
         /// Run an OQL (Oden Query Language) query.  For reference on writing OQL queries, see:  [https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql](https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql) 
@@ -50,7 +50,7 @@ namespace Oden.Api
         /// <param name="oQLQuery"></param>
         /// <param name="format">Format of the response. Can be &#x60;json&#x60;, &#x60;jsonextended&#x60; or &#x60;csv&#x60;. If unspecified, defaults to &#x60;jsonextended&#x60;.  (optional, default to json)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> V2OqlQueryPostWithHttpInfo(OQLQuery oQLQuery, string format = default);
+        ApiResponse<Object> RunOqlQueryWithHttpInfo(OQLQuery oQLQuery, string format = default);
         #endregion Synchronous Operations
     }
 
@@ -61,7 +61,7 @@ namespace Oden.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Run an OQL query
         /// </summary>
         /// <remarks>
         /// Run an OQL (Oden Query Language) query.  For reference on writing OQL queries, see:  [https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql](https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql) 
@@ -71,10 +71,10 @@ namespace Oden.Api
         /// <param name="format">Format of the response. Can be &#x60;json&#x60;, &#x60;jsonextended&#x60; or &#x60;csv&#x60;. If unspecified, defaults to &#x60;jsonextended&#x60;.  (optional, default to json)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task V2OqlQueryPostAsync(OQLQuery oQLQuery, string format = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task RunOqlQueryAsync(OQLQuery oQLQuery, string format = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// 
+        /// Run an OQL query
         /// </summary>
         /// <remarks>
         /// Run an OQL (Oden Query Language) query.  For reference on writing OQL queries, see:  [https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql](https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql) 
@@ -84,7 +84,7 @@ namespace Oden.Api
         /// <param name="format">Format of the response. Can be &#x60;json&#x60;, &#x60;jsonextended&#x60; or &#x60;csv&#x60;. If unspecified, defaults to &#x60;jsonextended&#x60;.  (optional, default to json)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> V2OqlQueryPostWithHttpInfoAsync(OQLQuery oQLQuery, string format = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<Object>> RunOqlQueryWithHttpInfoAsync(OQLQuery oQLQuery, string format = default, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -299,29 +299,29 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Run an OQL (Oden Query Language) query.  For reference on writing OQL queries, see:  [https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql](https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql) 
+        /// Run an OQL query Run an OQL (Oden Query Language) query.  For reference on writing OQL queries, see:  [https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql](https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql) 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="oQLQuery"></param>
         /// <param name="format">Format of the response. Can be &#x60;json&#x60;, &#x60;jsonextended&#x60; or &#x60;csv&#x60;. If unspecified, defaults to &#x60;jsonextended&#x60;.  (optional, default to json)</param>
         /// <returns></returns>
-        public void V2OqlQueryPost(OQLQuery oQLQuery, string format = default)
+        public void RunOqlQuery(OQLQuery oQLQuery, string format = default)
         {
-            V2OqlQueryPostWithHttpInfo(oQLQuery, format);
+            RunOqlQueryWithHttpInfo(oQLQuery, format);
         }
 
         /// <summary>
-        ///  Run an OQL (Oden Query Language) query.  For reference on writing OQL queries, see:  [https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql](https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql) 
+        /// Run an OQL query Run an OQL (Oden Query Language) query.  For reference on writing OQL queries, see:  [https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql](https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql) 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="oQLQuery"></param>
         /// <param name="format">Format of the response. Can be &#x60;json&#x60;, &#x60;jsonextended&#x60; or &#x60;csv&#x60;. If unspecified, defaults to &#x60;jsonextended&#x60;.  (optional, default to json)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Oden.Client.ApiResponse<Object> V2OqlQueryPostWithHttpInfo(OQLQuery oQLQuery, string format = default)
+        public Oden.Client.ApiResponse<Object> RunOqlQueryWithHttpInfo(OQLQuery oQLQuery, string format = default)
         {
             // verify the required parameter 'oQLQuery' is set
             if (oQLQuery == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'oQLQuery' when calling OQLApi->V2OqlQueryPost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'oQLQuery' when calling OQLApi->RunOqlQuery");
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
 
@@ -357,7 +357,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2OqlQueryPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("RunOqlQuery", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -365,31 +365,31 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Run an OQL (Oden Query Language) query.  For reference on writing OQL queries, see:  [https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql](https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql) 
+        /// Run an OQL query Run an OQL (Oden Query Language) query.  For reference on writing OQL queries, see:  [https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql](https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql) 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="oQLQuery"></param>
         /// <param name="format">Format of the response. Can be &#x60;json&#x60;, &#x60;jsonextended&#x60; or &#x60;csv&#x60;. If unspecified, defaults to &#x60;jsonextended&#x60;.  (optional, default to json)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task V2OqlQueryPostAsync(OQLQuery oQLQuery, string format = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task RunOqlQueryAsync(OQLQuery oQLQuery, string format = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            await V2OqlQueryPostWithHttpInfoAsync(oQLQuery, format, cancellationToken).ConfigureAwait(false);
+            await RunOqlQueryWithHttpInfoAsync(oQLQuery, format, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        ///  Run an OQL (Oden Query Language) query.  For reference on writing OQL queries, see:  [https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql](https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql) 
+        /// Run an OQL query Run an OQL (Oden Query Language) query.  For reference on writing OQL queries, see:  [https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql](https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql) 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="oQLQuery"></param>
         /// <param name="format">Format of the response. Can be &#x60;json&#x60;, &#x60;jsonextended&#x60; or &#x60;csv&#x60;. If unspecified, defaults to &#x60;jsonextended&#x60;.  (optional, default to json)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<Object>> V2OqlQueryPostWithHttpInfoAsync(OQLQuery oQLQuery, string format = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<Object>> RunOqlQueryWithHttpInfoAsync(OQLQuery oQLQuery, string format = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'oQLQuery' is set
             if (oQLQuery == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'oQLQuery' when calling OQLApi->V2OqlQueryPost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'oQLQuery' when calling OQLApi->RunOqlQuery");
 
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
@@ -428,7 +428,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2OqlQueryPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("RunOqlQuery", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

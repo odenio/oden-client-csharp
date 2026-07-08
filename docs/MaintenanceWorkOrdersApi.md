@@ -4,15 +4,15 @@ All URIs are relative to *https://api.oden.app*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**V2MaintenanceWorkOrderDeletePost**](MaintenanceWorkOrdersApi.md#v2maintenanceworkorderdeletepost) | **POST** /v2/maintenance_work_order/delete |  |
-| [**V2MaintenanceWorkOrderSearchPost**](MaintenanceWorkOrdersApi.md#v2maintenanceworkordersearchpost) | **POST** /v2/maintenance_work_order/search |  |
-| [**V2MaintenanceWorkOrderSetPost**](MaintenanceWorkOrdersApi.md#v2maintenanceworkordersetpost) | **POST** /v2/maintenance_work_order/set |  |
+| [**DeleteMaintenanceWorkOrder**](MaintenanceWorkOrdersApi.md#deletemaintenanceworkorder) | **POST** /v2/maintenance_work_order/delete | Delete a maintenance work order |
+| [**SearchMaintenanceWorkOrders**](MaintenanceWorkOrdersApi.md#searchmaintenanceworkorders) | **POST** /v2/maintenance_work_order/search | Search maintenance work orders |
+| [**SetMaintenanceWorkOrder**](MaintenanceWorkOrdersApi.md#setmaintenanceworkorder) | **POST** /v2/maintenance_work_order/set | Create or update a maintenance work order |
 
-<a id="v2maintenanceworkorderdeletepost"></a>
-# **V2MaintenanceWorkOrderDeletePost**
-> List&lt;MaintenanceWorkOrder&gt; V2MaintenanceWorkOrderDeletePost (MaintenanceWorkOrder maintenanceWorkOrder)
+<a id="deletemaintenanceworkorder"></a>
+# **DeleteMaintenanceWorkOrder**
+> List&lt;MaintenanceWorkOrder&gt; DeleteMaintenanceWorkOrder (MaintenanceWorkOrder maintenanceWorkOrder)
 
-
+Delete a maintenance work order
 
 Delete a Maintenance Work Order by unique identifier: - `id` OR `external_id` - `match: unique` or omit (only unique is supported) 
 
@@ -27,7 +27,7 @@ using Oden.Model;
 
 namespace Example
 {
-    public class V2MaintenanceWorkOrderDeletePostExample
+    public class DeleteMaintenanceWorkOrderExample
     {
         public static void Main()
         {
@@ -46,12 +46,13 @@ namespace Example
 
             try
             {
-                List<MaintenanceWorkOrder> result = apiInstance.V2MaintenanceWorkOrderDeletePost(maintenanceWorkOrder);
+                // Delete a maintenance work order
+                List<MaintenanceWorkOrder> result = apiInstance.DeleteMaintenanceWorkOrder(maintenanceWorkOrder);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling MaintenanceWorkOrdersApi.V2MaintenanceWorkOrderDeletePost: " + e.Message);
+                Debug.Print("Exception when calling MaintenanceWorkOrdersApi.DeleteMaintenanceWorkOrder: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -60,20 +61,21 @@ namespace Example
 }
 ```
 
-#### Using the V2MaintenanceWorkOrderDeletePostWithHttpInfo variant
+#### Using the DeleteMaintenanceWorkOrderWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<MaintenanceWorkOrder>> response = apiInstance.V2MaintenanceWorkOrderDeletePostWithHttpInfo(maintenanceWorkOrder);
+    // Delete a maintenance work order
+    ApiResponse<List<MaintenanceWorkOrder>> response = apiInstance.DeleteMaintenanceWorkOrderWithHttpInfo(maintenanceWorkOrder);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling MaintenanceWorkOrdersApi.V2MaintenanceWorkOrderDeletePostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling MaintenanceWorkOrdersApi.DeleteMaintenanceWorkOrderWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -113,11 +115,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="v2maintenanceworkordersearchpost"></a>
-# **V2MaintenanceWorkOrderSearchPost**
-> List&lt;MaintenanceWorkOrder&gt; V2MaintenanceWorkOrderSearchPost (V2MaintenanceWorkOrderSearchPostRequest v2MaintenanceWorkOrderSearchPostRequest)
+<a id="searchmaintenanceworkorders"></a>
+# **SearchMaintenanceWorkOrders**
+> List&lt;MaintenanceWorkOrder&gt; SearchMaintenanceWorkOrders (SearchMaintenanceWorkOrdersRequest searchMaintenanceWorkOrdersRequest)
 
-
+Search maintenance work orders
 
 Search for Maintenance Work Orders by: - `id` - `external_id` - `line_id` with required `start_time` and `end_time` filters 
 
@@ -132,7 +134,7 @@ using Oden.Model;
 
 namespace Example
 {
-    public class V2MaintenanceWorkOrderSearchPostExample
+    public class SearchMaintenanceWorkOrdersExample
     {
         public static void Main()
         {
@@ -147,16 +149,17 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new MaintenanceWorkOrdersApi(httpClient, config, httpClientHandler);
-            var v2MaintenanceWorkOrderSearchPostRequest = new V2MaintenanceWorkOrderSearchPostRequest(); // V2MaintenanceWorkOrderSearchPostRequest | 
+            var searchMaintenanceWorkOrdersRequest = new SearchMaintenanceWorkOrdersRequest(); // SearchMaintenanceWorkOrdersRequest | 
 
             try
             {
-                List<MaintenanceWorkOrder> result = apiInstance.V2MaintenanceWorkOrderSearchPost(v2MaintenanceWorkOrderSearchPostRequest);
+                // Search maintenance work orders
+                List<MaintenanceWorkOrder> result = apiInstance.SearchMaintenanceWorkOrders(searchMaintenanceWorkOrdersRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling MaintenanceWorkOrdersApi.V2MaintenanceWorkOrderSearchPost: " + e.Message);
+                Debug.Print("Exception when calling MaintenanceWorkOrdersApi.SearchMaintenanceWorkOrders: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -165,20 +168,21 @@ namespace Example
 }
 ```
 
-#### Using the V2MaintenanceWorkOrderSearchPostWithHttpInfo variant
+#### Using the SearchMaintenanceWorkOrdersWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<MaintenanceWorkOrder>> response = apiInstance.V2MaintenanceWorkOrderSearchPostWithHttpInfo(v2MaintenanceWorkOrderSearchPostRequest);
+    // Search maintenance work orders
+    ApiResponse<List<MaintenanceWorkOrder>> response = apiInstance.SearchMaintenanceWorkOrdersWithHttpInfo(searchMaintenanceWorkOrdersRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling MaintenanceWorkOrdersApi.V2MaintenanceWorkOrderSearchPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling MaintenanceWorkOrdersApi.SearchMaintenanceWorkOrdersWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -188,7 +192,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **v2MaintenanceWorkOrderSearchPostRequest** | [**V2MaintenanceWorkOrderSearchPostRequest**](V2MaintenanceWorkOrderSearchPostRequest.md) |  |  |
+| **searchMaintenanceWorkOrdersRequest** | [**SearchMaintenanceWorkOrdersRequest**](SearchMaintenanceWorkOrdersRequest.md) |  |  |
 
 ### Return type
 
@@ -218,11 +222,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="v2maintenanceworkordersetpost"></a>
-# **V2MaintenanceWorkOrderSetPost**
-> MaintenanceWorkOrder V2MaintenanceWorkOrderSetPost (MaintenanceWorkOrder maintenanceWorkOrder)
+<a id="setmaintenanceworkorder"></a>
+# **SetMaintenanceWorkOrder**
+> MaintenanceWorkOrder SetMaintenanceWorkOrder (MaintenanceWorkOrder maintenanceWorkOrder)
 
-
+Create or update a maintenance work order
 
 Create or update a Maintenance Work Order.  To **create** a new Maintenance Work Order: - Include `name` and `line`, `external_id`, `started_at` (required) - Omit `id` field - include `completed_at`, `description`, `metadata`  To **update** an existing Maintenance Work Order: - Include the `id` of the existing work order - Include any fields to update  NOTE: Any fields not included in an update request will be left unchanged. 
 
@@ -237,7 +241,7 @@ using Oden.Model;
 
 namespace Example
 {
-    public class V2MaintenanceWorkOrderSetPostExample
+    public class SetMaintenanceWorkOrderExample
     {
         public static void Main()
         {
@@ -256,12 +260,13 @@ namespace Example
 
             try
             {
-                MaintenanceWorkOrder result = apiInstance.V2MaintenanceWorkOrderSetPost(maintenanceWorkOrder);
+                // Create or update a maintenance work order
+                MaintenanceWorkOrder result = apiInstance.SetMaintenanceWorkOrder(maintenanceWorkOrder);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling MaintenanceWorkOrdersApi.V2MaintenanceWorkOrderSetPost: " + e.Message);
+                Debug.Print("Exception when calling MaintenanceWorkOrdersApi.SetMaintenanceWorkOrder: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -270,20 +275,21 @@ namespace Example
 }
 ```
 
-#### Using the V2MaintenanceWorkOrderSetPostWithHttpInfo variant
+#### Using the SetMaintenanceWorkOrderWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<MaintenanceWorkOrder> response = apiInstance.V2MaintenanceWorkOrderSetPostWithHttpInfo(maintenanceWorkOrder);
+    // Create or update a maintenance work order
+    ApiResponse<MaintenanceWorkOrder> response = apiInstance.SetMaintenanceWorkOrderWithHttpInfo(maintenanceWorkOrder);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling MaintenanceWorkOrdersApi.V2MaintenanceWorkOrderSetPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling MaintenanceWorkOrdersApi.SetMaintenanceWorkOrderWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

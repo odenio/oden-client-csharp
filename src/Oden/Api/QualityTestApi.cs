@@ -29,28 +29,28 @@ namespace Oden.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Delete multiple quality tests
         /// </summary>
         /// <remarks>
-        /// Searches for Quality Schema[s] by:  - &#x60;factory&#x60; 
+        /// Bulk deletes quality tests, either: - All quality tests on a given &#x60;line&#x60; whose &#x60;timsetamp&#x60; is between &#x60;start_time&#x60; and &#x60;end_time&#x60; OR - All quality tests whose &#x60;id&#x60; is supplied  It will do one or the other, with a bias for &#x60;id&#x60;&#39;s if both are supplied. 
         /// </remarks>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="qualitySchema"></param>
+        /// <param name="bulkDeleteQualityTestsRequest"></param>
         /// <returns></returns>
-        void V2QualitySchemaSearchPost(QualitySchema qualitySchema);
+        void BulkDeleteQualityTests(BulkDeleteQualityTestsRequest bulkDeleteQualityTestsRequest);
 
         /// <summary>
-        /// 
+        /// Delete multiple quality tests
         /// </summary>
         /// <remarks>
-        /// Searches for Quality Schema[s] by:  - &#x60;factory&#x60; 
+        /// Bulk deletes quality tests, either: - All quality tests on a given &#x60;line&#x60; whose &#x60;timsetamp&#x60; is between &#x60;start_time&#x60; and &#x60;end_time&#x60; OR - All quality tests whose &#x60;id&#x60; is supplied  It will do one or the other, with a bias for &#x60;id&#x60;&#39;s if both are supplied. 
         /// </remarks>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="qualitySchema"></param>
+        /// <param name="bulkDeleteQualityTestsRequest"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> V2QualitySchemaSearchPostWithHttpInfo(QualitySchema qualitySchema);
+        ApiResponse<Object> BulkDeleteQualityTestsWithHttpInfo(BulkDeleteQualityTestsRequest bulkDeleteQualityTestsRequest);
         /// <summary>
-        /// 
+        /// Delete a quality test
         /// </summary>
         /// <remarks>
         /// Searches for uniqueQuality Test by:  - &#x60;id&#x60;  OR  - &#x60;interval&#x60; (of type &#x60;RUN&#x60; or &#x60;BATCH&#x60;)*  *This only work if there is a single quality test record for the interval. 
@@ -58,10 +58,10 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="qualityTest"></param>
         /// <returns></returns>
-        void V2QualityTestDeletePost(QualityTest qualityTest);
+        void DeleteQualityTest(QualityTest qualityTest);
 
         /// <summary>
-        /// 
+        /// Delete a quality test
         /// </summary>
         /// <remarks>
         /// Searches for uniqueQuality Test by:  - &#x60;id&#x60;  OR  - &#x60;interval&#x60; (of type &#x60;RUN&#x60; or &#x60;BATCH&#x60;)*  *This only work if there is a single quality test record for the interval. 
@@ -69,9 +69,30 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="qualityTest"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> V2QualityTestDeletePostWithHttpInfo(QualityTest qualityTest);
+        ApiResponse<Object> DeleteQualityTestWithHttpInfo(QualityTest qualityTest);
         /// <summary>
-        /// 
+        /// Search quality schemas for a factory
+        /// </summary>
+        /// <remarks>
+        /// Searches for Quality Schema[s] by:  - &#x60;factory&#x60; 
+        /// </remarks>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="qualitySchema"></param>
+        /// <returns></returns>
+        void SearchQualitySchemas(QualitySchema qualitySchema);
+
+        /// <summary>
+        /// Search quality schemas for a factory
+        /// </summary>
+        /// <remarks>
+        /// Searches for Quality Schema[s] by:  - &#x60;factory&#x60; 
+        /// </remarks>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="qualitySchema"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> SearchQualitySchemasWithHttpInfo(QualitySchema qualitySchema);
+        /// <summary>
+        /// Search quality tests
         /// </summary>
         /// <remarks>
         /// Searches for Quality Test[s] by:  - &#x60;id&#x60;  OR  - &#x60;interval&#x60; (of type &#x60;RUN&#x60; or &#x60;BATCH&#x60;) 
@@ -79,10 +100,10 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="qualityTest"></param>
         /// <returns></returns>
-        void V2QualityTestSearchPost(QualityTest qualityTest);
+        void SearchQualityTests(QualityTest qualityTest);
 
         /// <summary>
-        /// 
+        /// Search quality tests
         /// </summary>
         /// <remarks>
         /// Searches for Quality Test[s] by:  - &#x60;id&#x60;  OR  - &#x60;interval&#x60; (of type &#x60;RUN&#x60; or &#x60;BATCH&#x60;) 
@@ -90,9 +111,9 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="qualityTest"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> V2QualityTestSearchPostWithHttpInfo(QualityTest qualityTest);
+        ApiResponse<Object> SearchQualityTestsWithHttpInfo(QualityTest qualityTest);
         /// <summary>
-        /// 
+        /// Create or update a quality test result
         /// </summary>
         /// <remarks>
         /// Create or update a Quality Test record: - To update &#x60;id&#x60; must be supplied. Only the supplied fields will be updated, the rest will remain unchanged. - If &#x60;id&#x60; is not supplied, a new &#x60;quality_test_record&#x60; will be created. 
@@ -100,10 +121,10 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="qualityTest"></param>
         /// <returns></returns>
-        void V2QualityTestSetPost(QualityTest qualityTest);
+        void SetQualityTest(QualityTest qualityTest);
 
         /// <summary>
-        /// 
+        /// Create or update a quality test result
         /// </summary>
         /// <remarks>
         /// Create or update a Quality Test record: - To update &#x60;id&#x60; must be supplied. Only the supplied fields will be updated, the rest will remain unchanged. - If &#x60;id&#x60; is not supplied, a new &#x60;quality_test_record&#x60; will be created. 
@@ -111,28 +132,7 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="qualityTest"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> V2QualityTestSetPostWithHttpInfo(QualityTest qualityTest);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// Bulk deletes quality tests, either: - All quality tests on a given &#x60;line&#x60; whose &#x60;timsetamp&#x60; is between &#x60;start_time&#x60; and &#x60;end_time&#x60; OR - All quality tests whose &#x60;id&#x60; is supplied  It will do one or the other, with a bias for &#x60;id&#x60;&#39;s if both are supplied. 
-        /// </remarks>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2QualityTestsDeletePostRequest"></param>
-        /// <returns></returns>
-        void V2QualityTestsDeletePost(V2QualityTestsDeletePostRequest v2QualityTestsDeletePostRequest);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// Bulk deletes quality tests, either: - All quality tests on a given &#x60;line&#x60; whose &#x60;timsetamp&#x60; is between &#x60;start_time&#x60; and &#x60;end_time&#x60; OR - All quality tests whose &#x60;id&#x60; is supplied  It will do one or the other, with a bias for &#x60;id&#x60;&#39;s if both are supplied. 
-        /// </remarks>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2QualityTestsDeletePostRequest"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> V2QualityTestsDeletePostWithHttpInfo(V2QualityTestsDeletePostRequest v2QualityTestsDeletePostRequest);
+        ApiResponse<Object> SetQualityTestWithHttpInfo(QualityTest qualityTest);
         #endregion Synchronous Operations
     }
 
@@ -143,30 +143,30 @@ namespace Oden.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Delete multiple quality tests
         /// </summary>
         /// <remarks>
-        /// Searches for Quality Schema[s] by:  - &#x60;factory&#x60; 
+        /// Bulk deletes quality tests, either: - All quality tests on a given &#x60;line&#x60; whose &#x60;timsetamp&#x60; is between &#x60;start_time&#x60; and &#x60;end_time&#x60; OR - All quality tests whose &#x60;id&#x60; is supplied  It will do one or the other, with a bias for &#x60;id&#x60;&#39;s if both are supplied. 
         /// </remarks>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="qualitySchema"></param>
+        /// <param name="bulkDeleteQualityTestsRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task V2QualitySchemaSearchPostAsync(QualitySchema qualitySchema, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task BulkDeleteQualityTestsAsync(BulkDeleteQualityTestsRequest bulkDeleteQualityTestsRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// 
+        /// Delete multiple quality tests
         /// </summary>
         /// <remarks>
-        /// Searches for Quality Schema[s] by:  - &#x60;factory&#x60; 
+        /// Bulk deletes quality tests, either: - All quality tests on a given &#x60;line&#x60; whose &#x60;timsetamp&#x60; is between &#x60;start_time&#x60; and &#x60;end_time&#x60; OR - All quality tests whose &#x60;id&#x60; is supplied  It will do one or the other, with a bias for &#x60;id&#x60;&#39;s if both are supplied. 
         /// </remarks>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="qualitySchema"></param>
+        /// <param name="bulkDeleteQualityTestsRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> V2QualitySchemaSearchPostWithHttpInfoAsync(QualitySchema qualitySchema, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<Object>> BulkDeleteQualityTestsWithHttpInfoAsync(BulkDeleteQualityTestsRequest bulkDeleteQualityTestsRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// 
+        /// Delete a quality test
         /// </summary>
         /// <remarks>
         /// Searches for uniqueQuality Test by:  - &#x60;id&#x60;  OR  - &#x60;interval&#x60; (of type &#x60;RUN&#x60; or &#x60;BATCH&#x60;)*  *This only work if there is a single quality test record for the interval. 
@@ -175,10 +175,10 @@ namespace Oden.Api
         /// <param name="qualityTest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task V2QualityTestDeletePostAsync(QualityTest qualityTest, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task DeleteQualityTestAsync(QualityTest qualityTest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// 
+        /// Delete a quality test
         /// </summary>
         /// <remarks>
         /// Searches for uniqueQuality Test by:  - &#x60;id&#x60;  OR  - &#x60;interval&#x60; (of type &#x60;RUN&#x60; or &#x60;BATCH&#x60;)*  *This only work if there is a single quality test record for the interval. 
@@ -187,9 +187,32 @@ namespace Oden.Api
         /// <param name="qualityTest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> V2QualityTestDeletePostWithHttpInfoAsync(QualityTest qualityTest, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteQualityTestWithHttpInfoAsync(QualityTest qualityTest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// 
+        /// Search quality schemas for a factory
+        /// </summary>
+        /// <remarks>
+        /// Searches for Quality Schema[s] by:  - &#x60;factory&#x60; 
+        /// </remarks>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="qualitySchema"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task SearchQualitySchemasAsync(QualitySchema qualitySchema, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Search quality schemas for a factory
+        /// </summary>
+        /// <remarks>
+        /// Searches for Quality Schema[s] by:  - &#x60;factory&#x60; 
+        /// </remarks>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="qualitySchema"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> SearchQualitySchemasWithHttpInfoAsync(QualitySchema qualitySchema, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Search quality tests
         /// </summary>
         /// <remarks>
         /// Searches for Quality Test[s] by:  - &#x60;id&#x60;  OR  - &#x60;interval&#x60; (of type &#x60;RUN&#x60; or &#x60;BATCH&#x60;) 
@@ -198,10 +221,10 @@ namespace Oden.Api
         /// <param name="qualityTest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task V2QualityTestSearchPostAsync(QualityTest qualityTest, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task SearchQualityTestsAsync(QualityTest qualityTest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// 
+        /// Search quality tests
         /// </summary>
         /// <remarks>
         /// Searches for Quality Test[s] by:  - &#x60;id&#x60;  OR  - &#x60;interval&#x60; (of type &#x60;RUN&#x60; or &#x60;BATCH&#x60;) 
@@ -210,9 +233,9 @@ namespace Oden.Api
         /// <param name="qualityTest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> V2QualityTestSearchPostWithHttpInfoAsync(QualityTest qualityTest, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<Object>> SearchQualityTestsWithHttpInfoAsync(QualityTest qualityTest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// 
+        /// Create or update a quality test result
         /// </summary>
         /// <remarks>
         /// Create or update a Quality Test record: - To update &#x60;id&#x60; must be supplied. Only the supplied fields will be updated, the rest will remain unchanged. - If &#x60;id&#x60; is not supplied, a new &#x60;quality_test_record&#x60; will be created. 
@@ -221,10 +244,10 @@ namespace Oden.Api
         /// <param name="qualityTest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task V2QualityTestSetPostAsync(QualityTest qualityTest, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task SetQualityTestAsync(QualityTest qualityTest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// 
+        /// Create or update a quality test result
         /// </summary>
         /// <remarks>
         /// Create or update a Quality Test record: - To update &#x60;id&#x60; must be supplied. Only the supplied fields will be updated, the rest will remain unchanged. - If &#x60;id&#x60; is not supplied, a new &#x60;quality_test_record&#x60; will be created. 
@@ -233,30 +256,7 @@ namespace Oden.Api
         /// <param name="qualityTest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> V2QualityTestSetPostWithHttpInfoAsync(QualityTest qualityTest, System.Threading.CancellationToken cancellationToken = default);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// Bulk deletes quality tests, either: - All quality tests on a given &#x60;line&#x60; whose &#x60;timsetamp&#x60; is between &#x60;start_time&#x60; and &#x60;end_time&#x60; OR - All quality tests whose &#x60;id&#x60; is supplied  It will do one or the other, with a bias for &#x60;id&#x60;&#39;s if both are supplied. 
-        /// </remarks>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2QualityTestsDeletePostRequest"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task V2QualityTestsDeletePostAsync(V2QualityTestsDeletePostRequest v2QualityTestsDeletePostRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// Bulk deletes quality tests, either: - All quality tests on a given &#x60;line&#x60; whose &#x60;timsetamp&#x60; is between &#x60;start_time&#x60; and &#x60;end_time&#x60; OR - All quality tests whose &#x60;id&#x60; is supplied  It will do one or the other, with a bias for &#x60;id&#x60;&#39;s if both are supplied. 
-        /// </remarks>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2QualityTestsDeletePostRequest"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> V2QualityTestsDeletePostWithHttpInfoAsync(V2QualityTestsDeletePostRequest v2QualityTestsDeletePostRequest, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<Object>> SetQualityTestWithHttpInfoAsync(QualityTest qualityTest, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -471,27 +471,27 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Searches for Quality Schema[s] by:  - &#x60;factory&#x60; 
+        /// Delete multiple quality tests Bulk deletes quality tests, either: - All quality tests on a given &#x60;line&#x60; whose &#x60;timsetamp&#x60; is between &#x60;start_time&#x60; and &#x60;end_time&#x60; OR - All quality tests whose &#x60;id&#x60; is supplied  It will do one or the other, with a bias for &#x60;id&#x60;&#39;s if both are supplied. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="qualitySchema"></param>
+        /// <param name="bulkDeleteQualityTestsRequest"></param>
         /// <returns></returns>
-        public void V2QualitySchemaSearchPost(QualitySchema qualitySchema)
+        public void BulkDeleteQualityTests(BulkDeleteQualityTestsRequest bulkDeleteQualityTestsRequest)
         {
-            V2QualitySchemaSearchPostWithHttpInfo(qualitySchema);
+            BulkDeleteQualityTestsWithHttpInfo(bulkDeleteQualityTestsRequest);
         }
 
         /// <summary>
-        ///  Searches for Quality Schema[s] by:  - &#x60;factory&#x60; 
+        /// Delete multiple quality tests Bulk deletes quality tests, either: - All quality tests on a given &#x60;line&#x60; whose &#x60;timsetamp&#x60; is between &#x60;start_time&#x60; and &#x60;end_time&#x60; OR - All quality tests whose &#x60;id&#x60; is supplied  It will do one or the other, with a bias for &#x60;id&#x60;&#39;s if both are supplied. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="qualitySchema"></param>
+        /// <param name="bulkDeleteQualityTestsRequest"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Oden.Client.ApiResponse<Object> V2QualitySchemaSearchPostWithHttpInfo(QualitySchema qualitySchema)
+        public Oden.Client.ApiResponse<Object> BulkDeleteQualityTestsWithHttpInfo(BulkDeleteQualityTestsRequest bulkDeleteQualityTestsRequest)
         {
-            // verify the required parameter 'qualitySchema' is set
-            if (qualitySchema == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'qualitySchema' when calling QualityTestApi->V2QualitySchemaSearchPost");
+            // verify the required parameter 'bulkDeleteQualityTestsRequest' is set
+            if (bulkDeleteQualityTestsRequest == null)
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'bulkDeleteQualityTestsRequest' when calling QualityTestApi->BulkDeleteQualityTests");
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
 
@@ -510,7 +510,7 @@ namespace Oden.Api
             var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = qualitySchema;
+            localVarRequestOptions.Data = bulkDeleteQualityTestsRequest;
 
             // authentication (APIKeyAuth) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -519,11 +519,11 @@ namespace Oden.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/v2/quality_schema/search", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<Object>("/v2/quality_tests/delete", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2QualitySchemaSearchPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("BulkDeleteQualityTests", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -531,29 +531,29 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Searches for Quality Schema[s] by:  - &#x60;factory&#x60; 
+        /// Delete multiple quality tests Bulk deletes quality tests, either: - All quality tests on a given &#x60;line&#x60; whose &#x60;timsetamp&#x60; is between &#x60;start_time&#x60; and &#x60;end_time&#x60; OR - All quality tests whose &#x60;id&#x60; is supplied  It will do one or the other, with a bias for &#x60;id&#x60;&#39;s if both are supplied. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="qualitySchema"></param>
+        /// <param name="bulkDeleteQualityTestsRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task V2QualitySchemaSearchPostAsync(QualitySchema qualitySchema, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task BulkDeleteQualityTestsAsync(BulkDeleteQualityTestsRequest bulkDeleteQualityTestsRequest, System.Threading.CancellationToken cancellationToken = default)
         {
-            await V2QualitySchemaSearchPostWithHttpInfoAsync(qualitySchema, cancellationToken).ConfigureAwait(false);
+            await BulkDeleteQualityTestsWithHttpInfoAsync(bulkDeleteQualityTestsRequest, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        ///  Searches for Quality Schema[s] by:  - &#x60;factory&#x60; 
+        /// Delete multiple quality tests Bulk deletes quality tests, either: - All quality tests on a given &#x60;line&#x60; whose &#x60;timsetamp&#x60; is between &#x60;start_time&#x60; and &#x60;end_time&#x60; OR - All quality tests whose &#x60;id&#x60; is supplied  It will do one or the other, with a bias for &#x60;id&#x60;&#39;s if both are supplied. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="qualitySchema"></param>
+        /// <param name="bulkDeleteQualityTestsRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<Object>> V2QualitySchemaSearchPostWithHttpInfoAsync(QualitySchema qualitySchema, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<Object>> BulkDeleteQualityTestsWithHttpInfoAsync(BulkDeleteQualityTestsRequest bulkDeleteQualityTestsRequest, System.Threading.CancellationToken cancellationToken = default)
         {
-            // verify the required parameter 'qualitySchema' is set
-            if (qualitySchema == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'qualitySchema' when calling QualityTestApi->V2QualitySchemaSearchPost");
+            // verify the required parameter 'bulkDeleteQualityTestsRequest' is set
+            if (bulkDeleteQualityTestsRequest == null)
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'bulkDeleteQualityTestsRequest' when calling QualityTestApi->BulkDeleteQualityTests");
 
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
@@ -574,7 +574,7 @@ namespace Oden.Api
             var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = qualitySchema;
+            localVarRequestOptions.Data = bulkDeleteQualityTestsRequest;
 
             // authentication (APIKeyAuth) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -584,11 +584,11 @@ namespace Oden.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/v2/quality_schema/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/v2/quality_tests/delete", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2QualitySchemaSearchPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("BulkDeleteQualityTests", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -596,27 +596,27 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Searches for uniqueQuality Test by:  - &#x60;id&#x60;  OR  - &#x60;interval&#x60; (of type &#x60;RUN&#x60; or &#x60;BATCH&#x60;)*  *This only work if there is a single quality test record for the interval. 
+        /// Delete a quality test Searches for uniqueQuality Test by:  - &#x60;id&#x60;  OR  - &#x60;interval&#x60; (of type &#x60;RUN&#x60; or &#x60;BATCH&#x60;)*  *This only work if there is a single quality test record for the interval. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="qualityTest"></param>
         /// <returns></returns>
-        public void V2QualityTestDeletePost(QualityTest qualityTest)
+        public void DeleteQualityTest(QualityTest qualityTest)
         {
-            V2QualityTestDeletePostWithHttpInfo(qualityTest);
+            DeleteQualityTestWithHttpInfo(qualityTest);
         }
 
         /// <summary>
-        ///  Searches for uniqueQuality Test by:  - &#x60;id&#x60;  OR  - &#x60;interval&#x60; (of type &#x60;RUN&#x60; or &#x60;BATCH&#x60;)*  *This only work if there is a single quality test record for the interval. 
+        /// Delete a quality test Searches for uniqueQuality Test by:  - &#x60;id&#x60;  OR  - &#x60;interval&#x60; (of type &#x60;RUN&#x60; or &#x60;BATCH&#x60;)*  *This only work if there is a single quality test record for the interval. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="qualityTest"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Oden.Client.ApiResponse<Object> V2QualityTestDeletePostWithHttpInfo(QualityTest qualityTest)
+        public Oden.Client.ApiResponse<Object> DeleteQualityTestWithHttpInfo(QualityTest qualityTest)
         {
             // verify the required parameter 'qualityTest' is set
             if (qualityTest == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'qualityTest' when calling QualityTestApi->V2QualityTestDeletePost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'qualityTest' when calling QualityTestApi->DeleteQualityTest");
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
 
@@ -648,7 +648,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2QualityTestDeletePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeleteQualityTest", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -656,29 +656,29 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Searches for uniqueQuality Test by:  - &#x60;id&#x60;  OR  - &#x60;interval&#x60; (of type &#x60;RUN&#x60; or &#x60;BATCH&#x60;)*  *This only work if there is a single quality test record for the interval. 
+        /// Delete a quality test Searches for uniqueQuality Test by:  - &#x60;id&#x60;  OR  - &#x60;interval&#x60; (of type &#x60;RUN&#x60; or &#x60;BATCH&#x60;)*  *This only work if there is a single quality test record for the interval. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="qualityTest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task V2QualityTestDeletePostAsync(QualityTest qualityTest, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task DeleteQualityTestAsync(QualityTest qualityTest, System.Threading.CancellationToken cancellationToken = default)
         {
-            await V2QualityTestDeletePostWithHttpInfoAsync(qualityTest, cancellationToken).ConfigureAwait(false);
+            await DeleteQualityTestWithHttpInfoAsync(qualityTest, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        ///  Searches for uniqueQuality Test by:  - &#x60;id&#x60;  OR  - &#x60;interval&#x60; (of type &#x60;RUN&#x60; or &#x60;BATCH&#x60;)*  *This only work if there is a single quality test record for the interval. 
+        /// Delete a quality test Searches for uniqueQuality Test by:  - &#x60;id&#x60;  OR  - &#x60;interval&#x60; (of type &#x60;RUN&#x60; or &#x60;BATCH&#x60;)*  *This only work if there is a single quality test record for the interval. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="qualityTest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<Object>> V2QualityTestDeletePostWithHttpInfoAsync(QualityTest qualityTest, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<Object>> DeleteQualityTestWithHttpInfoAsync(QualityTest qualityTest, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'qualityTest' is set
             if (qualityTest == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'qualityTest' when calling QualityTestApi->V2QualityTestDeletePost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'qualityTest' when calling QualityTestApi->DeleteQualityTest");
 
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
@@ -713,7 +713,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2QualityTestDeletePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeleteQualityTest", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -721,27 +721,152 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Searches for Quality Test[s] by:  - &#x60;id&#x60;  OR  - &#x60;interval&#x60; (of type &#x60;RUN&#x60; or &#x60;BATCH&#x60;) 
+        /// Search quality schemas for a factory Searches for Quality Schema[s] by:  - &#x60;factory&#x60; 
+        /// </summary>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="qualitySchema"></param>
+        /// <returns></returns>
+        public void SearchQualitySchemas(QualitySchema qualitySchema)
+        {
+            SearchQualitySchemasWithHttpInfo(qualitySchema);
+        }
+
+        /// <summary>
+        /// Search quality schemas for a factory Searches for Quality Schema[s] by:  - &#x60;factory&#x60; 
+        /// </summary>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="qualitySchema"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Oden.Client.ApiResponse<Object> SearchQualitySchemasWithHttpInfo(QualitySchema qualitySchema)
+        {
+            // verify the required parameter 'qualitySchema' is set
+            if (qualitySchema == null)
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'qualitySchema' when calling QualityTestApi->SearchQualitySchemas");
+
+            Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Oden.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = qualitySchema;
+
+            // authentication (APIKeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/v2/quality_schema/search", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SearchQualitySchemas", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Search quality schemas for a factory Searches for Quality Schema[s] by:  - &#x60;factory&#x60; 
+        /// </summary>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="qualitySchema"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task SearchQualitySchemasAsync(QualitySchema qualitySchema, System.Threading.CancellationToken cancellationToken = default)
+        {
+            await SearchQualitySchemasWithHttpInfoAsync(qualitySchema, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Search quality schemas for a factory Searches for Quality Schema[s] by:  - &#x60;factory&#x60; 
+        /// </summary>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="qualitySchema"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<Object>> SearchQualitySchemasWithHttpInfoAsync(QualitySchema qualitySchema, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'qualitySchema' is set
+            if (qualitySchema == null)
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'qualitySchema' when calling QualityTestApi->SearchQualitySchemas");
+
+
+            Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Oden.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = qualitySchema;
+
+            // authentication (APIKeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/v2/quality_schema/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SearchQualitySchemas", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Search quality tests Searches for Quality Test[s] by:  - &#x60;id&#x60;  OR  - &#x60;interval&#x60; (of type &#x60;RUN&#x60; or &#x60;BATCH&#x60;) 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="qualityTest"></param>
         /// <returns></returns>
-        public void V2QualityTestSearchPost(QualityTest qualityTest)
+        public void SearchQualityTests(QualityTest qualityTest)
         {
-            V2QualityTestSearchPostWithHttpInfo(qualityTest);
+            SearchQualityTestsWithHttpInfo(qualityTest);
         }
 
         /// <summary>
-        ///  Searches for Quality Test[s] by:  - &#x60;id&#x60;  OR  - &#x60;interval&#x60; (of type &#x60;RUN&#x60; or &#x60;BATCH&#x60;) 
+        /// Search quality tests Searches for Quality Test[s] by:  - &#x60;id&#x60;  OR  - &#x60;interval&#x60; (of type &#x60;RUN&#x60; or &#x60;BATCH&#x60;) 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="qualityTest"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Oden.Client.ApiResponse<Object> V2QualityTestSearchPostWithHttpInfo(QualityTest qualityTest)
+        public Oden.Client.ApiResponse<Object> SearchQualityTestsWithHttpInfo(QualityTest qualityTest)
         {
             // verify the required parameter 'qualityTest' is set
             if (qualityTest == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'qualityTest' when calling QualityTestApi->V2QualityTestSearchPost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'qualityTest' when calling QualityTestApi->SearchQualityTests");
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
 
@@ -773,7 +898,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2QualityTestSearchPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SearchQualityTests", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -781,29 +906,29 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Searches for Quality Test[s] by:  - &#x60;id&#x60;  OR  - &#x60;interval&#x60; (of type &#x60;RUN&#x60; or &#x60;BATCH&#x60;) 
+        /// Search quality tests Searches for Quality Test[s] by:  - &#x60;id&#x60;  OR  - &#x60;interval&#x60; (of type &#x60;RUN&#x60; or &#x60;BATCH&#x60;) 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="qualityTest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task V2QualityTestSearchPostAsync(QualityTest qualityTest, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task SearchQualityTestsAsync(QualityTest qualityTest, System.Threading.CancellationToken cancellationToken = default)
         {
-            await V2QualityTestSearchPostWithHttpInfoAsync(qualityTest, cancellationToken).ConfigureAwait(false);
+            await SearchQualityTestsWithHttpInfoAsync(qualityTest, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        ///  Searches for Quality Test[s] by:  - &#x60;id&#x60;  OR  - &#x60;interval&#x60; (of type &#x60;RUN&#x60; or &#x60;BATCH&#x60;) 
+        /// Search quality tests Searches for Quality Test[s] by:  - &#x60;id&#x60;  OR  - &#x60;interval&#x60; (of type &#x60;RUN&#x60; or &#x60;BATCH&#x60;) 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="qualityTest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<Object>> V2QualityTestSearchPostWithHttpInfoAsync(QualityTest qualityTest, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<Object>> SearchQualityTestsWithHttpInfoAsync(QualityTest qualityTest, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'qualityTest' is set
             if (qualityTest == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'qualityTest' when calling QualityTestApi->V2QualityTestSearchPost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'qualityTest' when calling QualityTestApi->SearchQualityTests");
 
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
@@ -838,7 +963,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2QualityTestSearchPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SearchQualityTests", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -846,27 +971,27 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Create or update a Quality Test record: - To update &#x60;id&#x60; must be supplied. Only the supplied fields will be updated, the rest will remain unchanged. - If &#x60;id&#x60; is not supplied, a new &#x60;quality_test_record&#x60; will be created. 
+        /// Create or update a quality test result Create or update a Quality Test record: - To update &#x60;id&#x60; must be supplied. Only the supplied fields will be updated, the rest will remain unchanged. - If &#x60;id&#x60; is not supplied, a new &#x60;quality_test_record&#x60; will be created. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="qualityTest"></param>
         /// <returns></returns>
-        public void V2QualityTestSetPost(QualityTest qualityTest)
+        public void SetQualityTest(QualityTest qualityTest)
         {
-            V2QualityTestSetPostWithHttpInfo(qualityTest);
+            SetQualityTestWithHttpInfo(qualityTest);
         }
 
         /// <summary>
-        ///  Create or update a Quality Test record: - To update &#x60;id&#x60; must be supplied. Only the supplied fields will be updated, the rest will remain unchanged. - If &#x60;id&#x60; is not supplied, a new &#x60;quality_test_record&#x60; will be created. 
+        /// Create or update a quality test result Create or update a Quality Test record: - To update &#x60;id&#x60; must be supplied. Only the supplied fields will be updated, the rest will remain unchanged. - If &#x60;id&#x60; is not supplied, a new &#x60;quality_test_record&#x60; will be created. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="qualityTest"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Oden.Client.ApiResponse<Object> V2QualityTestSetPostWithHttpInfo(QualityTest qualityTest)
+        public Oden.Client.ApiResponse<Object> SetQualityTestWithHttpInfo(QualityTest qualityTest)
         {
             // verify the required parameter 'qualityTest' is set
             if (qualityTest == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'qualityTest' when calling QualityTestApi->V2QualityTestSetPost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'qualityTest' when calling QualityTestApi->SetQualityTest");
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
 
@@ -898,7 +1023,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2QualityTestSetPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SetQualityTest", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -906,29 +1031,29 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Create or update a Quality Test record: - To update &#x60;id&#x60; must be supplied. Only the supplied fields will be updated, the rest will remain unchanged. - If &#x60;id&#x60; is not supplied, a new &#x60;quality_test_record&#x60; will be created. 
+        /// Create or update a quality test result Create or update a Quality Test record: - To update &#x60;id&#x60; must be supplied. Only the supplied fields will be updated, the rest will remain unchanged. - If &#x60;id&#x60; is not supplied, a new &#x60;quality_test_record&#x60; will be created. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="qualityTest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task V2QualityTestSetPostAsync(QualityTest qualityTest, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task SetQualityTestAsync(QualityTest qualityTest, System.Threading.CancellationToken cancellationToken = default)
         {
-            await V2QualityTestSetPostWithHttpInfoAsync(qualityTest, cancellationToken).ConfigureAwait(false);
+            await SetQualityTestWithHttpInfoAsync(qualityTest, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        ///  Create or update a Quality Test record: - To update &#x60;id&#x60; must be supplied. Only the supplied fields will be updated, the rest will remain unchanged. - If &#x60;id&#x60; is not supplied, a new &#x60;quality_test_record&#x60; will be created. 
+        /// Create or update a quality test result Create or update a Quality Test record: - To update &#x60;id&#x60; must be supplied. Only the supplied fields will be updated, the rest will remain unchanged. - If &#x60;id&#x60; is not supplied, a new &#x60;quality_test_record&#x60; will be created. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="qualityTest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<Object>> V2QualityTestSetPostWithHttpInfoAsync(QualityTest qualityTest, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<Object>> SetQualityTestWithHttpInfoAsync(QualityTest qualityTest, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'qualityTest' is set
             if (qualityTest == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'qualityTest' when calling QualityTestApi->V2QualityTestSetPost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'qualityTest' when calling QualityTestApi->SetQualityTest");
 
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
@@ -963,132 +1088,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2QualityTestSetPost", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  Bulk deletes quality tests, either: - All quality tests on a given &#x60;line&#x60; whose &#x60;timsetamp&#x60; is between &#x60;start_time&#x60; and &#x60;end_time&#x60; OR - All quality tests whose &#x60;id&#x60; is supplied  It will do one or the other, with a bias for &#x60;id&#x60;&#39;s if both are supplied. 
-        /// </summary>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2QualityTestsDeletePostRequest"></param>
-        /// <returns></returns>
-        public void V2QualityTestsDeletePost(V2QualityTestsDeletePostRequest v2QualityTestsDeletePostRequest)
-        {
-            V2QualityTestsDeletePostWithHttpInfo(v2QualityTestsDeletePostRequest);
-        }
-
-        /// <summary>
-        ///  Bulk deletes quality tests, either: - All quality tests on a given &#x60;line&#x60; whose &#x60;timsetamp&#x60; is between &#x60;start_time&#x60; and &#x60;end_time&#x60; OR - All quality tests whose &#x60;id&#x60; is supplied  It will do one or the other, with a bias for &#x60;id&#x60;&#39;s if both are supplied. 
-        /// </summary>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2QualityTestsDeletePostRequest"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Oden.Client.ApiResponse<Object> V2QualityTestsDeletePostWithHttpInfo(V2QualityTestsDeletePostRequest v2QualityTestsDeletePostRequest)
-        {
-            // verify the required parameter 'v2QualityTestsDeletePostRequest' is set
-            if (v2QualityTestsDeletePostRequest == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'v2QualityTestsDeletePostRequest' when calling QualityTestApi->V2QualityTestsDeletePost");
-
-            Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Oden.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.Data = v2QualityTestsDeletePostRequest;
-
-            // authentication (APIKeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/v2/quality_tests/delete", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("V2QualityTestsDeletePost", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  Bulk deletes quality tests, either: - All quality tests on a given &#x60;line&#x60; whose &#x60;timsetamp&#x60; is between &#x60;start_time&#x60; and &#x60;end_time&#x60; OR - All quality tests whose &#x60;id&#x60; is supplied  It will do one or the other, with a bias for &#x60;id&#x60;&#39;s if both are supplied. 
-        /// </summary>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2QualityTestsDeletePostRequest"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task V2QualityTestsDeletePostAsync(V2QualityTestsDeletePostRequest v2QualityTestsDeletePostRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            await V2QualityTestsDeletePostWithHttpInfoAsync(v2QualityTestsDeletePostRequest, cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        ///  Bulk deletes quality tests, either: - All quality tests on a given &#x60;line&#x60; whose &#x60;timsetamp&#x60; is between &#x60;start_time&#x60; and &#x60;end_time&#x60; OR - All quality tests whose &#x60;id&#x60; is supplied  It will do one or the other, with a bias for &#x60;id&#x60;&#39;s if both are supplied. 
-        /// </summary>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2QualityTestsDeletePostRequest"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<Object>> V2QualityTestsDeletePostWithHttpInfoAsync(V2QualityTestsDeletePostRequest v2QualityTestsDeletePostRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            // verify the required parameter 'v2QualityTestsDeletePostRequest' is set
-            if (v2QualityTestsDeletePostRequest == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'v2QualityTestsDeletePostRequest' when calling QualityTestApi->V2QualityTestsDeletePost");
-
-
-            Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-
-            var localVarContentType = Oden.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.Data = v2QualityTestsDeletePostRequest;
-
-            // authentication (APIKeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/v2/quality_tests/delete", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("V2QualityTestsDeletePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SetQualityTest", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

@@ -4,13 +4,13 @@ All URIs are relative to *https://api.oden.app*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**V2OqlQueryPost**](OQLApi.md#v2oqlquerypost) | **POST** /v2/oql/query |  |
+| [**RunOqlQuery**](OQLApi.md#runoqlquery) | **POST** /v2/oql/query | Run an OQL query |
 
-<a id="v2oqlquerypost"></a>
-# **V2OqlQueryPost**
-> void V2OqlQueryPost (OQLQuery oQLQuery, string format = null)
+<a id="runoqlquery"></a>
+# **RunOqlQuery**
+> void RunOqlQuery (OQLQuery oQLQuery, string format = null)
 
-
+Run an OQL query
 
 Run an OQL (Oden Query Language) query.  For reference on writing OQL queries, see:  [https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql](https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql) 
 
@@ -25,7 +25,7 @@ using Oden.Model;
 
 namespace Example
 {
-    public class V2OqlQueryPostExample
+    public class RunOqlQueryExample
     {
         public static void Main()
         {
@@ -45,11 +45,12 @@ namespace Example
 
             try
             {
-                apiInstance.V2OqlQueryPost(oQLQuery, format);
+                // Run an OQL query
+                apiInstance.RunOqlQuery(oQLQuery, format);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OQLApi.V2OqlQueryPost: " + e.Message);
+                Debug.Print("Exception when calling OQLApi.RunOqlQuery: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -58,17 +59,18 @@ namespace Example
 }
 ```
 
-#### Using the V2OqlQueryPostWithHttpInfo variant
+#### Using the RunOqlQueryWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.V2OqlQueryPostWithHttpInfo(oQLQuery, format);
+    // Run an OQL query
+    apiInstance.RunOqlQueryWithHttpInfo(oQLQuery, format);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling OQLApi.V2OqlQueryPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling OQLApi.RunOqlQueryWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -104,7 +106,7 @@ void (empty response body)
 | **403** | User has provided valid credentials but is not authorized to access the entity  |  -  |
 | **404** | Entity not found |  -  |
 | **409** | A {match: \&quot;unique\&quot;} was requested, but multiple entities matched the search parameters.  |  -  |
-| **413** | Too many requests |  -  |
+| **429** | Too many requests |  -  |
 | **500** | An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.  |  -  |
 | **501** | Endpoint is not yet implemented |  -  |
 

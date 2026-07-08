@@ -29,7 +29,7 @@ namespace Oden.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Search metric groups
         /// </summary>
         /// <remarks>
         /// Search for a specific Metric Group:  - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  Search for all Metric Groups: - &#x60;match: all&#x60; 
@@ -37,10 +37,10 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="metricGroup"></param>
         /// <returns>List&lt;MetricGroup&gt;</returns>
-        List<MetricGroup> V2MetricGroupSearchPost(MetricGroup metricGroup);
+        List<MetricGroup> SearchMetricGroups(MetricGroup metricGroup);
 
         /// <summary>
-        /// 
+        /// Search metric groups
         /// </summary>
         /// <remarks>
         /// Search for a specific Metric Group:  - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  Search for all Metric Groups: - &#x60;match: all&#x60; 
@@ -48,7 +48,7 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="metricGroup"></param>
         /// <returns>ApiResponse of List&lt;MetricGroup&gt;</returns>
-        ApiResponse<List<MetricGroup>> V2MetricGroupSearchPostWithHttpInfo(MetricGroup metricGroup);
+        ApiResponse<List<MetricGroup>> SearchMetricGroupsWithHttpInfo(MetricGroup metricGroup);
         #endregion Synchronous Operations
     }
 
@@ -59,7 +59,7 @@ namespace Oden.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Search metric groups
         /// </summary>
         /// <remarks>
         /// Search for a specific Metric Group:  - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  Search for all Metric Groups: - &#x60;match: all&#x60; 
@@ -68,10 +68,10 @@ namespace Oden.Api
         /// <param name="metricGroup"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;MetricGroup&gt;</returns>
-        System.Threading.Tasks.Task<List<MetricGroup>> V2MetricGroupSearchPostAsync(MetricGroup metricGroup, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<List<MetricGroup>> SearchMetricGroupsAsync(MetricGroup metricGroup, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// 
+        /// Search metric groups
         /// </summary>
         /// <remarks>
         /// Search for a specific Metric Group:  - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  Search for all Metric Groups: - &#x60;match: all&#x60; 
@@ -80,7 +80,7 @@ namespace Oden.Api
         /// <param name="metricGroup"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;MetricGroup&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<MetricGroup>>> V2MetricGroupSearchPostWithHttpInfoAsync(MetricGroup metricGroup, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<List<MetricGroup>>> SearchMetricGroupsWithHttpInfoAsync(MetricGroup metricGroup, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -295,28 +295,28 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Search for a specific Metric Group:  - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  Search for all Metric Groups: - &#x60;match: all&#x60; 
+        /// Search metric groups Search for a specific Metric Group:  - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  Search for all Metric Groups: - &#x60;match: all&#x60; 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="metricGroup"></param>
         /// <returns>List&lt;MetricGroup&gt;</returns>
-        public List<MetricGroup> V2MetricGroupSearchPost(MetricGroup metricGroup)
+        public List<MetricGroup> SearchMetricGroups(MetricGroup metricGroup)
         {
-            Oden.Client.ApiResponse<List<MetricGroup>> localVarResponse = V2MetricGroupSearchPostWithHttpInfo(metricGroup);
+            Oden.Client.ApiResponse<List<MetricGroup>> localVarResponse = SearchMetricGroupsWithHttpInfo(metricGroup);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  Search for a specific Metric Group:  - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  Search for all Metric Groups: - &#x60;match: all&#x60; 
+        /// Search metric groups Search for a specific Metric Group:  - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  Search for all Metric Groups: - &#x60;match: all&#x60; 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="metricGroup"></param>
         /// <returns>ApiResponse of List&lt;MetricGroup&gt;</returns>
-        public Oden.Client.ApiResponse<List<MetricGroup>> V2MetricGroupSearchPostWithHttpInfo(MetricGroup metricGroup)
+        public Oden.Client.ApiResponse<List<MetricGroup>> SearchMetricGroupsWithHttpInfo(MetricGroup metricGroup)
         {
             // verify the required parameter 'metricGroup' is set
             if (metricGroup == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'metricGroup' when calling MetricGroupsApi->V2MetricGroupSearchPost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'metricGroup' when calling MetricGroupsApi->SearchMetricGroups");
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
 
@@ -348,7 +348,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2MetricGroupSearchPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SearchMetricGroups", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -356,30 +356,30 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Search for a specific Metric Group:  - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  Search for all Metric Groups: - &#x60;match: all&#x60; 
+        /// Search metric groups Search for a specific Metric Group:  - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  Search for all Metric Groups: - &#x60;match: all&#x60; 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="metricGroup"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;MetricGroup&gt;</returns>
-        public async System.Threading.Tasks.Task<List<MetricGroup>> V2MetricGroupSearchPostAsync(MetricGroup metricGroup, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<List<MetricGroup>> SearchMetricGroupsAsync(MetricGroup metricGroup, System.Threading.CancellationToken cancellationToken = default)
         {
-            Oden.Client.ApiResponse<List<MetricGroup>> localVarResponse = await V2MetricGroupSearchPostWithHttpInfoAsync(metricGroup, cancellationToken).ConfigureAwait(false);
+            Oden.Client.ApiResponse<List<MetricGroup>> localVarResponse = await SearchMetricGroupsWithHttpInfoAsync(metricGroup, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  Search for a specific Metric Group:  - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  Search for all Metric Groups: - &#x60;match: all&#x60; 
+        /// Search metric groups Search for a specific Metric Group:  - &#x60;name&#x60; - &#x60;match: unique&#x60; or omit  OR  - &#x60;id&#x60; - &#x60;match: unique&#x60; or omit  Search for all Metric Groups: - &#x60;match: all&#x60; 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="metricGroup"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;MetricGroup&gt;)</returns>
-        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<List<MetricGroup>>> V2MetricGroupSearchPostWithHttpInfoAsync(MetricGroup metricGroup, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<List<MetricGroup>>> SearchMetricGroupsWithHttpInfoAsync(MetricGroup metricGroup, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'metricGroup' is set
             if (metricGroup == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'metricGroup' when calling MetricGroupsApi->V2MetricGroupSearchPost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'metricGroup' when calling MetricGroupsApi->SearchMetricGroups");
 
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
@@ -414,7 +414,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2MetricGroupSearchPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SearchMetricGroups", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

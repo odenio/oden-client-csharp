@@ -29,7 +29,7 @@ namespace Oden.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Delete a maintenance work order
         /// </summary>
         /// <remarks>
         /// Delete a Maintenance Work Order by unique identifier: - &#x60;id&#x60; OR &#x60;external_id&#x60; - &#x60;match: unique&#x60; or omit (only unique is supported) 
@@ -37,10 +37,10 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="maintenanceWorkOrder"></param>
         /// <returns>List&lt;MaintenanceWorkOrder&gt;</returns>
-        List<MaintenanceWorkOrder> V2MaintenanceWorkOrderDeletePost(MaintenanceWorkOrder maintenanceWorkOrder);
+        List<MaintenanceWorkOrder> DeleteMaintenanceWorkOrder(MaintenanceWorkOrder maintenanceWorkOrder);
 
         /// <summary>
-        /// 
+        /// Delete a maintenance work order
         /// </summary>
         /// <remarks>
         /// Delete a Maintenance Work Order by unique identifier: - &#x60;id&#x60; OR &#x60;external_id&#x60; - &#x60;match: unique&#x60; or omit (only unique is supported) 
@@ -48,30 +48,30 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="maintenanceWorkOrder"></param>
         /// <returns>ApiResponse of List&lt;MaintenanceWorkOrder&gt;</returns>
-        ApiResponse<List<MaintenanceWorkOrder>> V2MaintenanceWorkOrderDeletePostWithHttpInfo(MaintenanceWorkOrder maintenanceWorkOrder);
+        ApiResponse<List<MaintenanceWorkOrder>> DeleteMaintenanceWorkOrderWithHttpInfo(MaintenanceWorkOrder maintenanceWorkOrder);
         /// <summary>
-        /// 
+        /// Search maintenance work orders
         /// </summary>
         /// <remarks>
         /// Search for Maintenance Work Orders by: - &#x60;id&#x60; - &#x60;external_id&#x60; - &#x60;line_id&#x60; with required &#x60;start_time&#x60; and &#x60;end_time&#x60; filters 
         /// </remarks>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2MaintenanceWorkOrderSearchPostRequest"></param>
+        /// <param name="searchMaintenanceWorkOrdersRequest"></param>
         /// <returns>List&lt;MaintenanceWorkOrder&gt;</returns>
-        List<MaintenanceWorkOrder> V2MaintenanceWorkOrderSearchPost(V2MaintenanceWorkOrderSearchPostRequest v2MaintenanceWorkOrderSearchPostRequest);
+        List<MaintenanceWorkOrder> SearchMaintenanceWorkOrders(SearchMaintenanceWorkOrdersRequest searchMaintenanceWorkOrdersRequest);
 
         /// <summary>
-        /// 
+        /// Search maintenance work orders
         /// </summary>
         /// <remarks>
         /// Search for Maintenance Work Orders by: - &#x60;id&#x60; - &#x60;external_id&#x60; - &#x60;line_id&#x60; with required &#x60;start_time&#x60; and &#x60;end_time&#x60; filters 
         /// </remarks>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2MaintenanceWorkOrderSearchPostRequest"></param>
+        /// <param name="searchMaintenanceWorkOrdersRequest"></param>
         /// <returns>ApiResponse of List&lt;MaintenanceWorkOrder&gt;</returns>
-        ApiResponse<List<MaintenanceWorkOrder>> V2MaintenanceWorkOrderSearchPostWithHttpInfo(V2MaintenanceWorkOrderSearchPostRequest v2MaintenanceWorkOrderSearchPostRequest);
+        ApiResponse<List<MaintenanceWorkOrder>> SearchMaintenanceWorkOrdersWithHttpInfo(SearchMaintenanceWorkOrdersRequest searchMaintenanceWorkOrdersRequest);
         /// <summary>
-        /// 
+        /// Create or update a maintenance work order
         /// </summary>
         /// <remarks>
         /// Create or update a Maintenance Work Order.  To **create** a new Maintenance Work Order: - Include &#x60;name&#x60; and &#x60;line&#x60;, &#x60;external_id&#x60;, &#x60;started_at&#x60; (required) - Omit &#x60;id&#x60; field - include &#x60;completed_at&#x60;, &#x60;description&#x60;, &#x60;metadata&#x60;  To **update** an existing Maintenance Work Order: - Include the &#x60;id&#x60; of the existing work order - Include any fields to update  NOTE: Any fields not included in an update request will be left unchanged. 
@@ -79,10 +79,10 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="maintenanceWorkOrder"></param>
         /// <returns>MaintenanceWorkOrder</returns>
-        MaintenanceWorkOrder V2MaintenanceWorkOrderSetPost(MaintenanceWorkOrder maintenanceWorkOrder);
+        MaintenanceWorkOrder SetMaintenanceWorkOrder(MaintenanceWorkOrder maintenanceWorkOrder);
 
         /// <summary>
-        /// 
+        /// Create or update a maintenance work order
         /// </summary>
         /// <remarks>
         /// Create or update a Maintenance Work Order.  To **create** a new Maintenance Work Order: - Include &#x60;name&#x60; and &#x60;line&#x60;, &#x60;external_id&#x60;, &#x60;started_at&#x60; (required) - Omit &#x60;id&#x60; field - include &#x60;completed_at&#x60;, &#x60;description&#x60;, &#x60;metadata&#x60;  To **update** an existing Maintenance Work Order: - Include the &#x60;id&#x60; of the existing work order - Include any fields to update  NOTE: Any fields not included in an update request will be left unchanged. 
@@ -90,7 +90,7 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="maintenanceWorkOrder"></param>
         /// <returns>ApiResponse of MaintenanceWorkOrder</returns>
-        ApiResponse<MaintenanceWorkOrder> V2MaintenanceWorkOrderSetPostWithHttpInfo(MaintenanceWorkOrder maintenanceWorkOrder);
+        ApiResponse<MaintenanceWorkOrder> SetMaintenanceWorkOrderWithHttpInfo(MaintenanceWorkOrder maintenanceWorkOrder);
         #endregion Synchronous Operations
     }
 
@@ -101,7 +101,7 @@ namespace Oden.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Delete a maintenance work order
         /// </summary>
         /// <remarks>
         /// Delete a Maintenance Work Order by unique identifier: - &#x60;id&#x60; OR &#x60;external_id&#x60; - &#x60;match: unique&#x60; or omit (only unique is supported) 
@@ -110,10 +110,10 @@ namespace Oden.Api
         /// <param name="maintenanceWorkOrder"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;MaintenanceWorkOrder&gt;</returns>
-        System.Threading.Tasks.Task<List<MaintenanceWorkOrder>> V2MaintenanceWorkOrderDeletePostAsync(MaintenanceWorkOrder maintenanceWorkOrder, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<List<MaintenanceWorkOrder>> DeleteMaintenanceWorkOrderAsync(MaintenanceWorkOrder maintenanceWorkOrder, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// 
+        /// Delete a maintenance work order
         /// </summary>
         /// <remarks>
         /// Delete a Maintenance Work Order by unique identifier: - &#x60;id&#x60; OR &#x60;external_id&#x60; - &#x60;match: unique&#x60; or omit (only unique is supported) 
@@ -122,32 +122,32 @@ namespace Oden.Api
         /// <param name="maintenanceWorkOrder"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;MaintenanceWorkOrder&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<MaintenanceWorkOrder>>> V2MaintenanceWorkOrderDeletePostWithHttpInfoAsync(MaintenanceWorkOrder maintenanceWorkOrder, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<List<MaintenanceWorkOrder>>> DeleteMaintenanceWorkOrderWithHttpInfoAsync(MaintenanceWorkOrder maintenanceWorkOrder, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// 
+        /// Search maintenance work orders
         /// </summary>
         /// <remarks>
         /// Search for Maintenance Work Orders by: - &#x60;id&#x60; - &#x60;external_id&#x60; - &#x60;line_id&#x60; with required &#x60;start_time&#x60; and &#x60;end_time&#x60; filters 
         /// </remarks>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2MaintenanceWorkOrderSearchPostRequest"></param>
+        /// <param name="searchMaintenanceWorkOrdersRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;MaintenanceWorkOrder&gt;</returns>
-        System.Threading.Tasks.Task<List<MaintenanceWorkOrder>> V2MaintenanceWorkOrderSearchPostAsync(V2MaintenanceWorkOrderSearchPostRequest v2MaintenanceWorkOrderSearchPostRequest, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<List<MaintenanceWorkOrder>> SearchMaintenanceWorkOrdersAsync(SearchMaintenanceWorkOrdersRequest searchMaintenanceWorkOrdersRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// 
+        /// Search maintenance work orders
         /// </summary>
         /// <remarks>
         /// Search for Maintenance Work Orders by: - &#x60;id&#x60; - &#x60;external_id&#x60; - &#x60;line_id&#x60; with required &#x60;start_time&#x60; and &#x60;end_time&#x60; filters 
         /// </remarks>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2MaintenanceWorkOrderSearchPostRequest"></param>
+        /// <param name="searchMaintenanceWorkOrdersRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;MaintenanceWorkOrder&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<MaintenanceWorkOrder>>> V2MaintenanceWorkOrderSearchPostWithHttpInfoAsync(V2MaintenanceWorkOrderSearchPostRequest v2MaintenanceWorkOrderSearchPostRequest, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<List<MaintenanceWorkOrder>>> SearchMaintenanceWorkOrdersWithHttpInfoAsync(SearchMaintenanceWorkOrdersRequest searchMaintenanceWorkOrdersRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// 
+        /// Create or update a maintenance work order
         /// </summary>
         /// <remarks>
         /// Create or update a Maintenance Work Order.  To **create** a new Maintenance Work Order: - Include &#x60;name&#x60; and &#x60;line&#x60;, &#x60;external_id&#x60;, &#x60;started_at&#x60; (required) - Omit &#x60;id&#x60; field - include &#x60;completed_at&#x60;, &#x60;description&#x60;, &#x60;metadata&#x60;  To **update** an existing Maintenance Work Order: - Include the &#x60;id&#x60; of the existing work order - Include any fields to update  NOTE: Any fields not included in an update request will be left unchanged. 
@@ -156,10 +156,10 @@ namespace Oden.Api
         /// <param name="maintenanceWorkOrder"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of MaintenanceWorkOrder</returns>
-        System.Threading.Tasks.Task<MaintenanceWorkOrder> V2MaintenanceWorkOrderSetPostAsync(MaintenanceWorkOrder maintenanceWorkOrder, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<MaintenanceWorkOrder> SetMaintenanceWorkOrderAsync(MaintenanceWorkOrder maintenanceWorkOrder, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// 
+        /// Create or update a maintenance work order
         /// </summary>
         /// <remarks>
         /// Create or update a Maintenance Work Order.  To **create** a new Maintenance Work Order: - Include &#x60;name&#x60; and &#x60;line&#x60;, &#x60;external_id&#x60;, &#x60;started_at&#x60; (required) - Omit &#x60;id&#x60; field - include &#x60;completed_at&#x60;, &#x60;description&#x60;, &#x60;metadata&#x60;  To **update** an existing Maintenance Work Order: - Include the &#x60;id&#x60; of the existing work order - Include any fields to update  NOTE: Any fields not included in an update request will be left unchanged. 
@@ -168,7 +168,7 @@ namespace Oden.Api
         /// <param name="maintenanceWorkOrder"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MaintenanceWorkOrder)</returns>
-        System.Threading.Tasks.Task<ApiResponse<MaintenanceWorkOrder>> V2MaintenanceWorkOrderSetPostWithHttpInfoAsync(MaintenanceWorkOrder maintenanceWorkOrder, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<MaintenanceWorkOrder>> SetMaintenanceWorkOrderWithHttpInfoAsync(MaintenanceWorkOrder maintenanceWorkOrder, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -383,28 +383,28 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Delete a Maintenance Work Order by unique identifier: - &#x60;id&#x60; OR &#x60;external_id&#x60; - &#x60;match: unique&#x60; or omit (only unique is supported) 
+        /// Delete a maintenance work order Delete a Maintenance Work Order by unique identifier: - &#x60;id&#x60; OR &#x60;external_id&#x60; - &#x60;match: unique&#x60; or omit (only unique is supported) 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="maintenanceWorkOrder"></param>
         /// <returns>List&lt;MaintenanceWorkOrder&gt;</returns>
-        public List<MaintenanceWorkOrder> V2MaintenanceWorkOrderDeletePost(MaintenanceWorkOrder maintenanceWorkOrder)
+        public List<MaintenanceWorkOrder> DeleteMaintenanceWorkOrder(MaintenanceWorkOrder maintenanceWorkOrder)
         {
-            Oden.Client.ApiResponse<List<MaintenanceWorkOrder>> localVarResponse = V2MaintenanceWorkOrderDeletePostWithHttpInfo(maintenanceWorkOrder);
+            Oden.Client.ApiResponse<List<MaintenanceWorkOrder>> localVarResponse = DeleteMaintenanceWorkOrderWithHttpInfo(maintenanceWorkOrder);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  Delete a Maintenance Work Order by unique identifier: - &#x60;id&#x60; OR &#x60;external_id&#x60; - &#x60;match: unique&#x60; or omit (only unique is supported) 
+        /// Delete a maintenance work order Delete a Maintenance Work Order by unique identifier: - &#x60;id&#x60; OR &#x60;external_id&#x60; - &#x60;match: unique&#x60; or omit (only unique is supported) 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="maintenanceWorkOrder"></param>
         /// <returns>ApiResponse of List&lt;MaintenanceWorkOrder&gt;</returns>
-        public Oden.Client.ApiResponse<List<MaintenanceWorkOrder>> V2MaintenanceWorkOrderDeletePostWithHttpInfo(MaintenanceWorkOrder maintenanceWorkOrder)
+        public Oden.Client.ApiResponse<List<MaintenanceWorkOrder>> DeleteMaintenanceWorkOrderWithHttpInfo(MaintenanceWorkOrder maintenanceWorkOrder)
         {
             // verify the required parameter 'maintenanceWorkOrder' is set
             if (maintenanceWorkOrder == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'maintenanceWorkOrder' when calling MaintenanceWorkOrdersApi->V2MaintenanceWorkOrderDeletePost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'maintenanceWorkOrder' when calling MaintenanceWorkOrdersApi->DeleteMaintenanceWorkOrder");
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
 
@@ -436,7 +436,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2MaintenanceWorkOrderDeletePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeleteMaintenanceWorkOrder", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -444,30 +444,30 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Delete a Maintenance Work Order by unique identifier: - &#x60;id&#x60; OR &#x60;external_id&#x60; - &#x60;match: unique&#x60; or omit (only unique is supported) 
+        /// Delete a maintenance work order Delete a Maintenance Work Order by unique identifier: - &#x60;id&#x60; OR &#x60;external_id&#x60; - &#x60;match: unique&#x60; or omit (only unique is supported) 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="maintenanceWorkOrder"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;MaintenanceWorkOrder&gt;</returns>
-        public async System.Threading.Tasks.Task<List<MaintenanceWorkOrder>> V2MaintenanceWorkOrderDeletePostAsync(MaintenanceWorkOrder maintenanceWorkOrder, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<List<MaintenanceWorkOrder>> DeleteMaintenanceWorkOrderAsync(MaintenanceWorkOrder maintenanceWorkOrder, System.Threading.CancellationToken cancellationToken = default)
         {
-            Oden.Client.ApiResponse<List<MaintenanceWorkOrder>> localVarResponse = await V2MaintenanceWorkOrderDeletePostWithHttpInfoAsync(maintenanceWorkOrder, cancellationToken).ConfigureAwait(false);
+            Oden.Client.ApiResponse<List<MaintenanceWorkOrder>> localVarResponse = await DeleteMaintenanceWorkOrderWithHttpInfoAsync(maintenanceWorkOrder, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  Delete a Maintenance Work Order by unique identifier: - &#x60;id&#x60; OR &#x60;external_id&#x60; - &#x60;match: unique&#x60; or omit (only unique is supported) 
+        /// Delete a maintenance work order Delete a Maintenance Work Order by unique identifier: - &#x60;id&#x60; OR &#x60;external_id&#x60; - &#x60;match: unique&#x60; or omit (only unique is supported) 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="maintenanceWorkOrder"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;MaintenanceWorkOrder&gt;)</returns>
-        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<List<MaintenanceWorkOrder>>> V2MaintenanceWorkOrderDeletePostWithHttpInfoAsync(MaintenanceWorkOrder maintenanceWorkOrder, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<List<MaintenanceWorkOrder>>> DeleteMaintenanceWorkOrderWithHttpInfoAsync(MaintenanceWorkOrder maintenanceWorkOrder, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'maintenanceWorkOrder' is set
             if (maintenanceWorkOrder == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'maintenanceWorkOrder' when calling MaintenanceWorkOrdersApi->V2MaintenanceWorkOrderDeletePost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'maintenanceWorkOrder' when calling MaintenanceWorkOrdersApi->DeleteMaintenanceWorkOrder");
 
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
@@ -502,7 +502,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2MaintenanceWorkOrderDeletePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeleteMaintenanceWorkOrder", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -510,28 +510,28 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Search for Maintenance Work Orders by: - &#x60;id&#x60; - &#x60;external_id&#x60; - &#x60;line_id&#x60; with required &#x60;start_time&#x60; and &#x60;end_time&#x60; filters 
+        /// Search maintenance work orders Search for Maintenance Work Orders by: - &#x60;id&#x60; - &#x60;external_id&#x60; - &#x60;line_id&#x60; with required &#x60;start_time&#x60; and &#x60;end_time&#x60; filters 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2MaintenanceWorkOrderSearchPostRequest"></param>
+        /// <param name="searchMaintenanceWorkOrdersRequest"></param>
         /// <returns>List&lt;MaintenanceWorkOrder&gt;</returns>
-        public List<MaintenanceWorkOrder> V2MaintenanceWorkOrderSearchPost(V2MaintenanceWorkOrderSearchPostRequest v2MaintenanceWorkOrderSearchPostRequest)
+        public List<MaintenanceWorkOrder> SearchMaintenanceWorkOrders(SearchMaintenanceWorkOrdersRequest searchMaintenanceWorkOrdersRequest)
         {
-            Oden.Client.ApiResponse<List<MaintenanceWorkOrder>> localVarResponse = V2MaintenanceWorkOrderSearchPostWithHttpInfo(v2MaintenanceWorkOrderSearchPostRequest);
+            Oden.Client.ApiResponse<List<MaintenanceWorkOrder>> localVarResponse = SearchMaintenanceWorkOrdersWithHttpInfo(searchMaintenanceWorkOrdersRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  Search for Maintenance Work Orders by: - &#x60;id&#x60; - &#x60;external_id&#x60; - &#x60;line_id&#x60; with required &#x60;start_time&#x60; and &#x60;end_time&#x60; filters 
+        /// Search maintenance work orders Search for Maintenance Work Orders by: - &#x60;id&#x60; - &#x60;external_id&#x60; - &#x60;line_id&#x60; with required &#x60;start_time&#x60; and &#x60;end_time&#x60; filters 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2MaintenanceWorkOrderSearchPostRequest"></param>
+        /// <param name="searchMaintenanceWorkOrdersRequest"></param>
         /// <returns>ApiResponse of List&lt;MaintenanceWorkOrder&gt;</returns>
-        public Oden.Client.ApiResponse<List<MaintenanceWorkOrder>> V2MaintenanceWorkOrderSearchPostWithHttpInfo(V2MaintenanceWorkOrderSearchPostRequest v2MaintenanceWorkOrderSearchPostRequest)
+        public Oden.Client.ApiResponse<List<MaintenanceWorkOrder>> SearchMaintenanceWorkOrdersWithHttpInfo(SearchMaintenanceWorkOrdersRequest searchMaintenanceWorkOrdersRequest)
         {
-            // verify the required parameter 'v2MaintenanceWorkOrderSearchPostRequest' is set
-            if (v2MaintenanceWorkOrderSearchPostRequest == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'v2MaintenanceWorkOrderSearchPostRequest' when calling MaintenanceWorkOrdersApi->V2MaintenanceWorkOrderSearchPost");
+            // verify the required parameter 'searchMaintenanceWorkOrdersRequest' is set
+            if (searchMaintenanceWorkOrdersRequest == null)
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'searchMaintenanceWorkOrdersRequest' when calling MaintenanceWorkOrdersApi->SearchMaintenanceWorkOrders");
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
 
@@ -550,7 +550,7 @@ namespace Oden.Api
             var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = v2MaintenanceWorkOrderSearchPostRequest;
+            localVarRequestOptions.Data = searchMaintenanceWorkOrdersRequest;
 
             // authentication (APIKeyAuth) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -563,7 +563,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2MaintenanceWorkOrderSearchPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SearchMaintenanceWorkOrders", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -571,30 +571,30 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Search for Maintenance Work Orders by: - &#x60;id&#x60; - &#x60;external_id&#x60; - &#x60;line_id&#x60; with required &#x60;start_time&#x60; and &#x60;end_time&#x60; filters 
+        /// Search maintenance work orders Search for Maintenance Work Orders by: - &#x60;id&#x60; - &#x60;external_id&#x60; - &#x60;line_id&#x60; with required &#x60;start_time&#x60; and &#x60;end_time&#x60; filters 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2MaintenanceWorkOrderSearchPostRequest"></param>
+        /// <param name="searchMaintenanceWorkOrdersRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;MaintenanceWorkOrder&gt;</returns>
-        public async System.Threading.Tasks.Task<List<MaintenanceWorkOrder>> V2MaintenanceWorkOrderSearchPostAsync(V2MaintenanceWorkOrderSearchPostRequest v2MaintenanceWorkOrderSearchPostRequest, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<List<MaintenanceWorkOrder>> SearchMaintenanceWorkOrdersAsync(SearchMaintenanceWorkOrdersRequest searchMaintenanceWorkOrdersRequest, System.Threading.CancellationToken cancellationToken = default)
         {
-            Oden.Client.ApiResponse<List<MaintenanceWorkOrder>> localVarResponse = await V2MaintenanceWorkOrderSearchPostWithHttpInfoAsync(v2MaintenanceWorkOrderSearchPostRequest, cancellationToken).ConfigureAwait(false);
+            Oden.Client.ApiResponse<List<MaintenanceWorkOrder>> localVarResponse = await SearchMaintenanceWorkOrdersWithHttpInfoAsync(searchMaintenanceWorkOrdersRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  Search for Maintenance Work Orders by: - &#x60;id&#x60; - &#x60;external_id&#x60; - &#x60;line_id&#x60; with required &#x60;start_time&#x60; and &#x60;end_time&#x60; filters 
+        /// Search maintenance work orders Search for Maintenance Work Orders by: - &#x60;id&#x60; - &#x60;external_id&#x60; - &#x60;line_id&#x60; with required &#x60;start_time&#x60; and &#x60;end_time&#x60; filters 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2MaintenanceWorkOrderSearchPostRequest"></param>
+        /// <param name="searchMaintenanceWorkOrdersRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;MaintenanceWorkOrder&gt;)</returns>
-        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<List<MaintenanceWorkOrder>>> V2MaintenanceWorkOrderSearchPostWithHttpInfoAsync(V2MaintenanceWorkOrderSearchPostRequest v2MaintenanceWorkOrderSearchPostRequest, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<List<MaintenanceWorkOrder>>> SearchMaintenanceWorkOrdersWithHttpInfoAsync(SearchMaintenanceWorkOrdersRequest searchMaintenanceWorkOrdersRequest, System.Threading.CancellationToken cancellationToken = default)
         {
-            // verify the required parameter 'v2MaintenanceWorkOrderSearchPostRequest' is set
-            if (v2MaintenanceWorkOrderSearchPostRequest == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'v2MaintenanceWorkOrderSearchPostRequest' when calling MaintenanceWorkOrdersApi->V2MaintenanceWorkOrderSearchPost");
+            // verify the required parameter 'searchMaintenanceWorkOrdersRequest' is set
+            if (searchMaintenanceWorkOrdersRequest == null)
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'searchMaintenanceWorkOrdersRequest' when calling MaintenanceWorkOrdersApi->SearchMaintenanceWorkOrders");
 
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
@@ -615,7 +615,7 @@ namespace Oden.Api
             var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = v2MaintenanceWorkOrderSearchPostRequest;
+            localVarRequestOptions.Data = searchMaintenanceWorkOrdersRequest;
 
             // authentication (APIKeyAuth) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -629,7 +629,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2MaintenanceWorkOrderSearchPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SearchMaintenanceWorkOrders", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -637,28 +637,28 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Create or update a Maintenance Work Order.  To **create** a new Maintenance Work Order: - Include &#x60;name&#x60; and &#x60;line&#x60;, &#x60;external_id&#x60;, &#x60;started_at&#x60; (required) - Omit &#x60;id&#x60; field - include &#x60;completed_at&#x60;, &#x60;description&#x60;, &#x60;metadata&#x60;  To **update** an existing Maintenance Work Order: - Include the &#x60;id&#x60; of the existing work order - Include any fields to update  NOTE: Any fields not included in an update request will be left unchanged. 
+        /// Create or update a maintenance work order Create or update a Maintenance Work Order.  To **create** a new Maintenance Work Order: - Include &#x60;name&#x60; and &#x60;line&#x60;, &#x60;external_id&#x60;, &#x60;started_at&#x60; (required) - Omit &#x60;id&#x60; field - include &#x60;completed_at&#x60;, &#x60;description&#x60;, &#x60;metadata&#x60;  To **update** an existing Maintenance Work Order: - Include the &#x60;id&#x60; of the existing work order - Include any fields to update  NOTE: Any fields not included in an update request will be left unchanged. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="maintenanceWorkOrder"></param>
         /// <returns>MaintenanceWorkOrder</returns>
-        public MaintenanceWorkOrder V2MaintenanceWorkOrderSetPost(MaintenanceWorkOrder maintenanceWorkOrder)
+        public MaintenanceWorkOrder SetMaintenanceWorkOrder(MaintenanceWorkOrder maintenanceWorkOrder)
         {
-            Oden.Client.ApiResponse<MaintenanceWorkOrder> localVarResponse = V2MaintenanceWorkOrderSetPostWithHttpInfo(maintenanceWorkOrder);
+            Oden.Client.ApiResponse<MaintenanceWorkOrder> localVarResponse = SetMaintenanceWorkOrderWithHttpInfo(maintenanceWorkOrder);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  Create or update a Maintenance Work Order.  To **create** a new Maintenance Work Order: - Include &#x60;name&#x60; and &#x60;line&#x60;, &#x60;external_id&#x60;, &#x60;started_at&#x60; (required) - Omit &#x60;id&#x60; field - include &#x60;completed_at&#x60;, &#x60;description&#x60;, &#x60;metadata&#x60;  To **update** an existing Maintenance Work Order: - Include the &#x60;id&#x60; of the existing work order - Include any fields to update  NOTE: Any fields not included in an update request will be left unchanged. 
+        /// Create or update a maintenance work order Create or update a Maintenance Work Order.  To **create** a new Maintenance Work Order: - Include &#x60;name&#x60; and &#x60;line&#x60;, &#x60;external_id&#x60;, &#x60;started_at&#x60; (required) - Omit &#x60;id&#x60; field - include &#x60;completed_at&#x60;, &#x60;description&#x60;, &#x60;metadata&#x60;  To **update** an existing Maintenance Work Order: - Include the &#x60;id&#x60; of the existing work order - Include any fields to update  NOTE: Any fields not included in an update request will be left unchanged. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="maintenanceWorkOrder"></param>
         /// <returns>ApiResponse of MaintenanceWorkOrder</returns>
-        public Oden.Client.ApiResponse<MaintenanceWorkOrder> V2MaintenanceWorkOrderSetPostWithHttpInfo(MaintenanceWorkOrder maintenanceWorkOrder)
+        public Oden.Client.ApiResponse<MaintenanceWorkOrder> SetMaintenanceWorkOrderWithHttpInfo(MaintenanceWorkOrder maintenanceWorkOrder)
         {
             // verify the required parameter 'maintenanceWorkOrder' is set
             if (maintenanceWorkOrder == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'maintenanceWorkOrder' when calling MaintenanceWorkOrdersApi->V2MaintenanceWorkOrderSetPost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'maintenanceWorkOrder' when calling MaintenanceWorkOrdersApi->SetMaintenanceWorkOrder");
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
 
@@ -690,7 +690,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2MaintenanceWorkOrderSetPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SetMaintenanceWorkOrder", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -698,30 +698,30 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Create or update a Maintenance Work Order.  To **create** a new Maintenance Work Order: - Include &#x60;name&#x60; and &#x60;line&#x60;, &#x60;external_id&#x60;, &#x60;started_at&#x60; (required) - Omit &#x60;id&#x60; field - include &#x60;completed_at&#x60;, &#x60;description&#x60;, &#x60;metadata&#x60;  To **update** an existing Maintenance Work Order: - Include the &#x60;id&#x60; of the existing work order - Include any fields to update  NOTE: Any fields not included in an update request will be left unchanged. 
+        /// Create or update a maintenance work order Create or update a Maintenance Work Order.  To **create** a new Maintenance Work Order: - Include &#x60;name&#x60; and &#x60;line&#x60;, &#x60;external_id&#x60;, &#x60;started_at&#x60; (required) - Omit &#x60;id&#x60; field - include &#x60;completed_at&#x60;, &#x60;description&#x60;, &#x60;metadata&#x60;  To **update** an existing Maintenance Work Order: - Include the &#x60;id&#x60; of the existing work order - Include any fields to update  NOTE: Any fields not included in an update request will be left unchanged. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="maintenanceWorkOrder"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of MaintenanceWorkOrder</returns>
-        public async System.Threading.Tasks.Task<MaintenanceWorkOrder> V2MaintenanceWorkOrderSetPostAsync(MaintenanceWorkOrder maintenanceWorkOrder, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<MaintenanceWorkOrder> SetMaintenanceWorkOrderAsync(MaintenanceWorkOrder maintenanceWorkOrder, System.Threading.CancellationToken cancellationToken = default)
         {
-            Oden.Client.ApiResponse<MaintenanceWorkOrder> localVarResponse = await V2MaintenanceWorkOrderSetPostWithHttpInfoAsync(maintenanceWorkOrder, cancellationToken).ConfigureAwait(false);
+            Oden.Client.ApiResponse<MaintenanceWorkOrder> localVarResponse = await SetMaintenanceWorkOrderWithHttpInfoAsync(maintenanceWorkOrder, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  Create or update a Maintenance Work Order.  To **create** a new Maintenance Work Order: - Include &#x60;name&#x60; and &#x60;line&#x60;, &#x60;external_id&#x60;, &#x60;started_at&#x60; (required) - Omit &#x60;id&#x60; field - include &#x60;completed_at&#x60;, &#x60;description&#x60;, &#x60;metadata&#x60;  To **update** an existing Maintenance Work Order: - Include the &#x60;id&#x60; of the existing work order - Include any fields to update  NOTE: Any fields not included in an update request will be left unchanged. 
+        /// Create or update a maintenance work order Create or update a Maintenance Work Order.  To **create** a new Maintenance Work Order: - Include &#x60;name&#x60; and &#x60;line&#x60;, &#x60;external_id&#x60;, &#x60;started_at&#x60; (required) - Omit &#x60;id&#x60; field - include &#x60;completed_at&#x60;, &#x60;description&#x60;, &#x60;metadata&#x60;  To **update** an existing Maintenance Work Order: - Include the &#x60;id&#x60; of the existing work order - Include any fields to update  NOTE: Any fields not included in an update request will be left unchanged. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="maintenanceWorkOrder"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MaintenanceWorkOrder)</returns>
-        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<MaintenanceWorkOrder>> V2MaintenanceWorkOrderSetPostWithHttpInfoAsync(MaintenanceWorkOrder maintenanceWorkOrder, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<MaintenanceWorkOrder>> SetMaintenanceWorkOrderWithHttpInfoAsync(MaintenanceWorkOrder maintenanceWorkOrder, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'maintenanceWorkOrder' is set
             if (maintenanceWorkOrder == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'maintenanceWorkOrder' when calling MaintenanceWorkOrdersApi->V2MaintenanceWorkOrderSetPost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'maintenanceWorkOrder' when calling MaintenanceWorkOrdersApi->SetMaintenanceWorkOrder");
 
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
@@ -756,7 +756,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2MaintenanceWorkOrderSetPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SetMaintenanceWorkOrder", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

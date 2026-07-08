@@ -29,133 +29,28 @@ namespace Oden.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// Delete an interval by &#x60;type&#x60;, &#x60;line&#x60;, and &#x60;id&#x60;  **Note:** The &#x60;id&#x60; must be obtained from either: - The response when creating an interval via &#x60;/v2/interval/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60;  The examples below use placeholder IDs - replace with actual IDs from your system. 
-        /// </remarks>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="interval"></param>
-        /// <returns>List&lt;Interval&gt;</returns>
-        List<Interval> V2IntervalDeletePost(Interval interval);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// Delete an interval by &#x60;type&#x60;, &#x60;line&#x60;, and &#x60;id&#x60;  **Note:** The &#x60;id&#x60; must be obtained from either: - The response when creating an interval via &#x60;/v2/interval/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60;  The examples below use placeholder IDs - replace with actual IDs from your system. 
-        /// </remarks>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="interval"></param>
-        /// <returns>ApiResponse of List&lt;Interval&gt;</returns>
-        ApiResponse<List<Interval>> V2IntervalDeletePostWithHttpInfo(Interval interval);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// Searches for intervals by &#x60;type&#x60;, &#x60;line&#x60; and other optional parameters:  - &#x60;id&#x60; (for a specific Interval) - &#x60;match: unique&#x60; or omit  OR  - &#x60;match : last&#x60; for the most recent Interval of the given type on the given line  OR  - &#x60;start_time&#x60; and &#x60;end_time&#x60; (for a range of Intervals over a period of time) - &#x60;match: all&#x60; for more than one result  OR  - match all intervals for all lines in a given factory  AND/OR  - &#x60;name&#x60; (only for Intervals with a matching name) 
-        /// </remarks>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="interval"></param>
-        /// <returns>List&lt;Interval&gt;</returns>
-        List<Interval> V2IntervalSearchPost(Interval interval);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// Searches for intervals by &#x60;type&#x60;, &#x60;line&#x60; and other optional parameters:  - &#x60;id&#x60; (for a specific Interval) - &#x60;match: unique&#x60; or omit  OR  - &#x60;match : last&#x60; for the most recent Interval of the given type on the given line  OR  - &#x60;start_time&#x60; and &#x60;end_time&#x60; (for a range of Intervals over a period of time) - &#x60;match: all&#x60; for more than one result  OR  - match all intervals for all lines in a given factory  AND/OR  - &#x60;name&#x60; (only for Intervals with a matching name) 
-        /// </remarks>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="interval"></param>
-        /// <returns>ApiResponse of List&lt;Interval&gt;</returns>
-        ApiResponse<List<Interval>> V2IntervalSearchPostWithHttpInfo(Interval interval);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// Create or update an Interval.  Must include &#x60;line&#x60; and &#x60;type&#x60;. &#x60;match&#x60; must be omitted, &#x60;unique&#x60; or &#x60;last&#x60;   - If &#x60;id&#x60; is not supplied, a new Interval will be created.   - If &#x60;id&#x60; is supplied, existing Interval will be updated. This interval&#39;s start time can be modified using &#x60;start_time&#x60; field.  To update a specific interval supply the &#x60;id&#x60; of that interval.  If the interval exists with all the same parameters nothing is done.  To update the most recent Interval of a given &#x60;type&#x60; on a &#x60;line&#x60; one may use &#x60;match: last&#x60; and omit &#x60;id&#x60;  For &#x60;RUN&#x60; type: if &#x60;product&#x60; and/or &#x60;product_mapping&#x60; does not exist a new one will be created. Further a &#x60;target&#x60; may be set by adding a &#x60;target&#x60; to the metadata field. The &#x60;line&#x60; and &#x60;product&#x60; for this target will be the same as the interval.  Please see examples for more specific information. 
-        /// </remarks>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="interval"></param>
-        /// <returns>List&lt;Interval&gt;</returns>
-        List<Interval> V2IntervalSetPost(Interval interval);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// Create or update an Interval.  Must include &#x60;line&#x60; and &#x60;type&#x60;. &#x60;match&#x60; must be omitted, &#x60;unique&#x60; or &#x60;last&#x60;   - If &#x60;id&#x60; is not supplied, a new Interval will be created.   - If &#x60;id&#x60; is supplied, existing Interval will be updated. This interval&#39;s start time can be modified using &#x60;start_time&#x60; field.  To update a specific interval supply the &#x60;id&#x60; of that interval.  If the interval exists with all the same parameters nothing is done.  To update the most recent Interval of a given &#x60;type&#x60; on a &#x60;line&#x60; one may use &#x60;match: last&#x60; and omit &#x60;id&#x60;  For &#x60;RUN&#x60; type: if &#x60;product&#x60; and/or &#x60;product_mapping&#x60; does not exist a new one will be created. Further a &#x60;target&#x60; may be set by adding a &#x60;target&#x60; to the metadata field. The &#x60;line&#x60; and &#x60;product&#x60; for this target will be the same as the interval.  Please see examples for more specific information. 
-        /// </remarks>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="interval"></param>
-        /// <returns>ApiResponse of List&lt;Interval&gt;</returns>
-        ApiResponse<List<Interval>> V2IntervalSetPostWithHttpInfo(Interval interval);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// Search for Interval Types by &#x60;name&#x60;, &#x60;id&#x60;, or just &#x60;match: all&#x60; to return all Interval Types associated with the your organization. Basic Interval Types - - &#x60;RUN&#x60;, &#x60;BATCH&#x60;, and &#x60;STATE&#x60; - - are dedicated interval types that come out-of-the-box with Oden. Custom Interval Types may be created by users. 
-        /// </remarks>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="intervalType"></param>
-        /// <returns>List&lt;IntervalType&gt;</returns>
-        List<IntervalType> V2IntervalTypeSearchPost(IntervalType intervalType);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// Search for Interval Types by &#x60;name&#x60;, &#x60;id&#x60;, or just &#x60;match: all&#x60; to return all Interval Types associated with the your organization. Basic Interval Types - - &#x60;RUN&#x60;, &#x60;BATCH&#x60;, and &#x60;STATE&#x60; - - are dedicated interval types that come out-of-the-box with Oden. Custom Interval Types may be created by users. 
-        /// </remarks>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="intervalType"></param>
-        /// <returns>ApiResponse of List&lt;IntervalType&gt;</returns>
-        ApiResponse<List<IntervalType>> V2IntervalTypeSearchPostWithHttpInfo(IntervalType intervalType);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// Update an existing Interval. This endpoint only updates intervals and will not create new ones.  Must include &#x60;line&#x60;, &#x60;type&#x60;, and &#x60;id&#x60;. The &#x60;id&#x60; must reference an existing interval.  This interval&#39;s properties can be modified using the following fields: - &#x60;name&#x60;: Update the interval name - &#x60;start_time&#x60;: Modify the start time - &#x60;end_time&#x60;: Modify the end time - &#x60;metadata&#x60;: Update metadata (product, target, category, reason, etc.)  If the interval does not exist, a 404 error will be returned.  **Note:** The &#x60;id&#x60; must be obtained from either: - The response when creating an interval via &#x60;/v2/interval/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60; 
-        /// </remarks>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="interval"></param>
-        /// <returns>List&lt;Interval&gt;</returns>
-        List<Interval> V2IntervalUpdatePost(Interval interval);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// Update an existing Interval. This endpoint only updates intervals and will not create new ones.  Must include &#x60;line&#x60;, &#x60;type&#x60;, and &#x60;id&#x60;. The &#x60;id&#x60; must reference an existing interval.  This interval&#39;s properties can be modified using the following fields: - &#x60;name&#x60;: Update the interval name - &#x60;start_time&#x60;: Modify the start time - &#x60;end_time&#x60;: Modify the end time - &#x60;metadata&#x60;: Update metadata (product, target, category, reason, etc.)  If the interval does not exist, a 404 error will be returned.  **Note:** The &#x60;id&#x60; must be obtained from either: - The response when creating an interval via &#x60;/v2/interval/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60; 
-        /// </remarks>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="interval"></param>
-        /// <returns>ApiResponse of List&lt;Interval&gt;</returns>
-        ApiResponse<List<Interval>> V2IntervalUpdatePostWithHttpInfo(Interval interval);
-        /// <summary>
-        /// 
+        /// Delete intervals in a time range
         /// </summary>
         /// <remarks>
         /// Delete a group of intervals by a single &#x60;type&#x60; and a single &#x60;line&#x60;, between &#x60;start_time&#x60; and &#x60;end_time&#x60;. Returns a list of intervals that were not deleted, and the number of intervals deleted.  Limitations: - Cannot exceed 15,000 intervals per request, or 30 days worth of data. - Currently does not support \&quot;batch\&quot; or \&quot;run\&quot; interval types. 
         /// </remarks>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="intervalBulkDelete"></param>
-        /// <returns>V2IntervalsDeletePost200Response</returns>
-        V2IntervalsDeletePost200Response V2IntervalsDeletePost(IntervalBulkDelete intervalBulkDelete);
+        /// <returns>BulkDeleteIntervals200Response</returns>
+        BulkDeleteIntervals200Response BulkDeleteIntervals(IntervalBulkDelete intervalBulkDelete);
 
         /// <summary>
-        /// 
+        /// Delete intervals in a time range
         /// </summary>
         /// <remarks>
         /// Delete a group of intervals by a single &#x60;type&#x60; and a single &#x60;line&#x60;, between &#x60;start_time&#x60; and &#x60;end_time&#x60;. Returns a list of intervals that were not deleted, and the number of intervals deleted.  Limitations: - Cannot exceed 15,000 intervals per request, or 30 days worth of data. - Currently does not support \&quot;batch\&quot; or \&quot;run\&quot; interval types. 
         /// </remarks>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="intervalBulkDelete"></param>
-        /// <returns>ApiResponse of V2IntervalsDeletePost200Response</returns>
-        ApiResponse<V2IntervalsDeletePost200Response> V2IntervalsDeletePostWithHttpInfo(IntervalBulkDelete intervalBulkDelete);
+        /// <returns>ApiResponse of BulkDeleteIntervals200Response</returns>
+        ApiResponse<BulkDeleteIntervals200Response> BulkDeleteIntervalsWithHttpInfo(IntervalBulkDelete intervalBulkDelete);
         /// <summary>
-        /// 
+        /// Create a set of intervals
         /// </summary>
         /// <remarks>
         /// Create (Does not update) a group of custom intervals, for the same &#x60;type&#x60; and &#x60;line&#x60;. Line and type do not need to be included in each individual interval, just once at the top level.  Limitations: - Cannot excees 2500 intervals per request. - Will not write over other intervals - Does not support \&quot;batch\&quot;, \&quot;run\&quot;, or \&quot;state\&quot; interval types. 
@@ -163,10 +58,10 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="intervalBulkCreate"></param>
         /// <returns>List&lt;string&gt;</returns>
-        List<string> V2IntervalsSetPost(IntervalBulkCreate intervalBulkCreate);
+        List<string> BulkSetIntervals(IntervalBulkCreate intervalBulkCreate);
 
         /// <summary>
-        /// 
+        /// Create a set of intervals
         /// </summary>
         /// <remarks>
         /// Create (Does not update) a group of custom intervals, for the same &#x60;type&#x60; and &#x60;line&#x60;. Line and type do not need to be included in each individual interval, just once at the top level.  Limitations: - Cannot excees 2500 intervals per request. - Will not write over other intervals - Does not support \&quot;batch\&quot;, \&quot;run\&quot;, or \&quot;state\&quot; interval types. 
@@ -174,28 +69,175 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="intervalBulkCreate"></param>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
-        ApiResponse<List<string>> V2IntervalsSetPostWithHttpInfo(IntervalBulkCreate intervalBulkCreate);
+        ApiResponse<List<string>> BulkSetIntervalsWithHttpInfo(IntervalBulkCreate intervalBulkCreate);
         /// <summary>
-        /// 
+        /// Update a set of intervals
         /// </summary>
         /// <remarks>
         /// Update multiple existing intervals. This endpoint only updates intervals and will not create new ones.  Each interval in the &#x60;intervals&#x60; array must include an &#x60;id&#x60; that references an existing interval.  Updatable fields for each interval: - &#x60;name&#x60;: Update the interval name - &#x60;start_time&#x60;: Modify the start time - &#x60;end_time&#x60;: Modify the end time - &#x60;metadata&#x60;: Update metadata (product, target, category, reason, etc.)  The endpoint will attempt to update all intervals and return information about successes and failures: - Successfully updated intervals are returned in the response - Failed intervals are listed with their IDs and error reasons  Limitations: - Cannot exceed 2500 intervals per request - All intervals must be of the same &#x60;type&#x60; and on the same &#x60;line&#x60;  **Note:** Interval IDs must be obtained from either: - The response when creating intervals via &#x60;/v2/interval/set&#x60; or &#x60;/v2/intervals/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60; 
         /// </remarks>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="intervalBulkUpdate"></param>
-        /// <returns>V2IntervalsUpdatePost200Response</returns>
-        V2IntervalsUpdatePost200Response V2IntervalsUpdatePost(IntervalBulkUpdate intervalBulkUpdate);
+        /// <returns>BulkUpdateIntervals200Response</returns>
+        BulkUpdateIntervals200Response BulkUpdateIntervals(IntervalBulkUpdate intervalBulkUpdate);
 
         /// <summary>
-        /// 
+        /// Update a set of intervals
         /// </summary>
         /// <remarks>
         /// Update multiple existing intervals. This endpoint only updates intervals and will not create new ones.  Each interval in the &#x60;intervals&#x60; array must include an &#x60;id&#x60; that references an existing interval.  Updatable fields for each interval: - &#x60;name&#x60;: Update the interval name - &#x60;start_time&#x60;: Modify the start time - &#x60;end_time&#x60;: Modify the end time - &#x60;metadata&#x60;: Update metadata (product, target, category, reason, etc.)  The endpoint will attempt to update all intervals and return information about successes and failures: - Successfully updated intervals are returned in the response - Failed intervals are listed with their IDs and error reasons  Limitations: - Cannot exceed 2500 intervals per request - All intervals must be of the same &#x60;type&#x60; and on the same &#x60;line&#x60;  **Note:** Interval IDs must be obtained from either: - The response when creating intervals via &#x60;/v2/interval/set&#x60; or &#x60;/v2/intervals/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60; 
         /// </remarks>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="intervalBulkUpdate"></param>
-        /// <returns>ApiResponse of V2IntervalsUpdatePost200Response</returns>
-        ApiResponse<V2IntervalsUpdatePost200Response> V2IntervalsUpdatePostWithHttpInfo(IntervalBulkUpdate intervalBulkUpdate);
+        /// <returns>ApiResponse of BulkUpdateIntervals200Response</returns>
+        ApiResponse<BulkUpdateIntervals200Response> BulkUpdateIntervalsWithHttpInfo(IntervalBulkUpdate intervalBulkUpdate);
+        /// <summary>
+        /// Delete an interval
+        /// </summary>
+        /// <remarks>
+        /// Delete an interval by &#x60;type&#x60;, &#x60;line&#x60;, and &#x60;id&#x60;  **Note:** The &#x60;id&#x60; must be obtained from either: - The response when creating an interval via &#x60;/v2/interval/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60;  The examples below use placeholder IDs - replace with actual IDs from your system. 
+        /// </remarks>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="interval"></param>
+        /// <returns>List&lt;Interval&gt;</returns>
+        List<Interval> DeleteInterval(Interval interval);
+
+        /// <summary>
+        /// Delete an interval
+        /// </summary>
+        /// <remarks>
+        /// Delete an interval by &#x60;type&#x60;, &#x60;line&#x60;, and &#x60;id&#x60;  **Note:** The &#x60;id&#x60; must be obtained from either: - The response when creating an interval via &#x60;/v2/interval/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60;  The examples below use placeholder IDs - replace with actual IDs from your system. 
+        /// </remarks>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="interval"></param>
+        /// <returns>ApiResponse of List&lt;Interval&gt;</returns>
+        ApiResponse<List<Interval>> DeleteIntervalWithHttpInfo(Interval interval);
+        /// <summary>
+        /// Delete a custom interval type
+        /// </summary>
+        /// <remarks>
+        /// Delete an existing custom Interval Type. &#x60;id&#x60; is required. Built-in types (RUN, BATCH, STATE) cannot be deleted. 
+        /// </remarks>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="intervalType"></param>
+        /// <returns>IntervalType</returns>
+        IntervalType DeleteIntervalType(IntervalType intervalType);
+
+        /// <summary>
+        /// Delete a custom interval type
+        /// </summary>
+        /// <remarks>
+        /// Delete an existing custom Interval Type. &#x60;id&#x60; is required. Built-in types (RUN, BATCH, STATE) cannot be deleted. 
+        /// </remarks>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="intervalType"></param>
+        /// <returns>ApiResponse of IntervalType</returns>
+        ApiResponse<IntervalType> DeleteIntervalTypeWithHttpInfo(IntervalType intervalType);
+        /// <summary>
+        /// Search interval types
+        /// </summary>
+        /// <remarks>
+        /// Search for Interval Types by &#x60;name&#x60;, &#x60;id&#x60;, or just &#x60;match: all&#x60; to return all Interval Types associated with the your organization. Basic Interval Types - - &#x60;RUN&#x60;, &#x60;BATCH&#x60;, and &#x60;STATE&#x60; - - are dedicated interval types that come out-of-the-box with Oden. Custom Interval Types may be created by users. 
+        /// </remarks>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="intervalType"></param>
+        /// <returns>List&lt;IntervalType&gt;</returns>
+        List<IntervalType> SearchIntervalTypes(IntervalType intervalType);
+
+        /// <summary>
+        /// Search interval types
+        /// </summary>
+        /// <remarks>
+        /// Search for Interval Types by &#x60;name&#x60;, &#x60;id&#x60;, or just &#x60;match: all&#x60; to return all Interval Types associated with the your organization. Basic Interval Types - - &#x60;RUN&#x60;, &#x60;BATCH&#x60;, and &#x60;STATE&#x60; - - are dedicated interval types that come out-of-the-box with Oden. Custom Interval Types may be created by users. 
+        /// </remarks>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="intervalType"></param>
+        /// <returns>ApiResponse of List&lt;IntervalType&gt;</returns>
+        ApiResponse<List<IntervalType>> SearchIntervalTypesWithHttpInfo(IntervalType intervalType);
+        /// <summary>
+        /// Search intervals on a line
+        /// </summary>
+        /// <remarks>
+        /// Searches for intervals by &#x60;type&#x60;, &#x60;line&#x60; and other optional parameters:  - &#x60;id&#x60; (for a specific Interval) - &#x60;match: unique&#x60; or omit  OR  - &#x60;match : last&#x60; for the most recent Interval of the given type on the given line  OR  - &#x60;start_time&#x60; and &#x60;end_time&#x60; (for a range of Intervals over a period of time) - &#x60;match: all&#x60; for more than one result  OR  - match all intervals for all lines in a given factory  AND/OR  - &#x60;name&#x60; (only for Intervals with a matching name) 
+        /// </remarks>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="interval"></param>
+        /// <returns>List&lt;Interval&gt;</returns>
+        List<Interval> SearchIntervals(Interval interval);
+
+        /// <summary>
+        /// Search intervals on a line
+        /// </summary>
+        /// <remarks>
+        /// Searches for intervals by &#x60;type&#x60;, &#x60;line&#x60; and other optional parameters:  - &#x60;id&#x60; (for a specific Interval) - &#x60;match: unique&#x60; or omit  OR  - &#x60;match : last&#x60; for the most recent Interval of the given type on the given line  OR  - &#x60;start_time&#x60; and &#x60;end_time&#x60; (for a range of Intervals over a period of time) - &#x60;match: all&#x60; for more than one result  OR  - match all intervals for all lines in a given factory  AND/OR  - &#x60;name&#x60; (only for Intervals with a matching name) 
+        /// </remarks>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="interval"></param>
+        /// <returns>ApiResponse of List&lt;Interval&gt;</returns>
+        ApiResponse<List<Interval>> SearchIntervalsWithHttpInfo(Interval interval);
+        /// <summary>
+        /// Create or update an interval
+        /// </summary>
+        /// <remarks>
+        /// Create or update an Interval.  Must include &#x60;line&#x60; and &#x60;type&#x60;. &#x60;match&#x60; must be omitted, &#x60;unique&#x60; or &#x60;last&#x60;   - If &#x60;id&#x60; is not supplied, a new Interval will be created.   - If &#x60;id&#x60; is supplied, existing Interval will be updated. This interval&#39;s start time can be modified using &#x60;start_time&#x60; field.  To update a specific interval supply the &#x60;id&#x60; of that interval.  If the interval exists with all the same parameters nothing is done.  To update the most recent Interval of a given &#x60;type&#x60; on a &#x60;line&#x60; one may use &#x60;match: last&#x60; and omit &#x60;id&#x60;  For &#x60;RUN&#x60; type: if &#x60;product&#x60; and/or &#x60;product_mapping&#x60; does not exist a new one will be created. Further a &#x60;target&#x60; may be set by adding a &#x60;target&#x60; to the metadata field. The &#x60;line&#x60; and &#x60;product&#x60; for this target will be the same as the interval.  Please see examples for more specific information. 
+        /// </remarks>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="interval"></param>
+        /// <returns>List&lt;Interval&gt;</returns>
+        List<Interval> SetInterval(Interval interval);
+
+        /// <summary>
+        /// Create or update an interval
+        /// </summary>
+        /// <remarks>
+        /// Create or update an Interval.  Must include &#x60;line&#x60; and &#x60;type&#x60;. &#x60;match&#x60; must be omitted, &#x60;unique&#x60; or &#x60;last&#x60;   - If &#x60;id&#x60; is not supplied, a new Interval will be created.   - If &#x60;id&#x60; is supplied, existing Interval will be updated. This interval&#39;s start time can be modified using &#x60;start_time&#x60; field.  To update a specific interval supply the &#x60;id&#x60; of that interval.  If the interval exists with all the same parameters nothing is done.  To update the most recent Interval of a given &#x60;type&#x60; on a &#x60;line&#x60; one may use &#x60;match: last&#x60; and omit &#x60;id&#x60;  For &#x60;RUN&#x60; type: if &#x60;product&#x60; and/or &#x60;product_mapping&#x60; does not exist a new one will be created. Further a &#x60;target&#x60; may be set by adding a &#x60;target&#x60; to the metadata field. The &#x60;line&#x60; and &#x60;product&#x60; for this target will be the same as the interval.  Please see examples for more specific information. 
+        /// </remarks>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="interval"></param>
+        /// <returns>ApiResponse of List&lt;Interval&gt;</returns>
+        ApiResponse<List<Interval>> SetIntervalWithHttpInfo(Interval interval);
+        /// <summary>
+        /// Create or update a custom interval type
+        /// </summary>
+        /// <remarks>
+        /// **Create** (no &#x60;id&#x60; in the body): send &#x60;name&#x60; (required) and optional &#x60;metadata_schema&#x60; / &#x60;tags&#x60;.  **Update** (with &#x60;id&#x60;): send the interval type’s &#x60;id&#x60; and optional &#x60;metadata_schema&#x60; / &#x60;tags&#x60; only. Do not send &#x60;name&#x60; for updates; including &#x60;name&#x60; returns 400. Renames are not supported.  **Patch (update only)**: &#x60;metadata_schema&#x60; — if the key is missing, the existing value is kept; if present, it replaces. &#x60;tags&#x60; — if the key is missing, tags are unchanged; &#x60;null&#x60; leaves tags unchanged; &#x60;[]&#x60; clears tags; a non-empty array replaces.  **Built-in types (RUN, BATCH, STATE) cannot be created, set, or deleted.** 
+        /// </remarks>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="intervalTypeSet"></param>
+        /// <returns>IntervalType</returns>
+        IntervalType SetIntervalType(IntervalTypeSet intervalTypeSet);
+
+        /// <summary>
+        /// Create or update a custom interval type
+        /// </summary>
+        /// <remarks>
+        /// **Create** (no &#x60;id&#x60; in the body): send &#x60;name&#x60; (required) and optional &#x60;metadata_schema&#x60; / &#x60;tags&#x60;.  **Update** (with &#x60;id&#x60;): send the interval type’s &#x60;id&#x60; and optional &#x60;metadata_schema&#x60; / &#x60;tags&#x60; only. Do not send &#x60;name&#x60; for updates; including &#x60;name&#x60; returns 400. Renames are not supported.  **Patch (update only)**: &#x60;metadata_schema&#x60; — if the key is missing, the existing value is kept; if present, it replaces. &#x60;tags&#x60; — if the key is missing, tags are unchanged; &#x60;null&#x60; leaves tags unchanged; &#x60;[]&#x60; clears tags; a non-empty array replaces.  **Built-in types (RUN, BATCH, STATE) cannot be created, set, or deleted.** 
+        /// </remarks>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="intervalTypeSet"></param>
+        /// <returns>ApiResponse of IntervalType</returns>
+        ApiResponse<IntervalType> SetIntervalTypeWithHttpInfo(IntervalTypeSet intervalTypeSet);
+        /// <summary>
+        /// Update an interval
+        /// </summary>
+        /// <remarks>
+        /// Update an existing Interval. This endpoint only updates intervals and will not create new ones.  Must include &#x60;line&#x60;, &#x60;type&#x60;, and &#x60;id&#x60;. The &#x60;id&#x60; must reference an existing interval.  This interval&#39;s properties can be modified using the following fields: - &#x60;name&#x60;: Update the interval name - &#x60;start_time&#x60;: Modify the start time - &#x60;end_time&#x60;: Modify the end time - &#x60;metadata&#x60;: Update metadata (product, target, category, reason, etc.)  If the interval does not exist, a 404 error will be returned.  **Note:** The &#x60;id&#x60; must be obtained from either: - The response when creating an interval via &#x60;/v2/interval/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60; 
+        /// </remarks>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="interval"></param>
+        /// <returns>List&lt;Interval&gt;</returns>
+        List<Interval> UpdateInterval(Interval interval);
+
+        /// <summary>
+        /// Update an interval
+        /// </summary>
+        /// <remarks>
+        /// Update an existing Interval. This endpoint only updates intervals and will not create new ones.  Must include &#x60;line&#x60;, &#x60;type&#x60;, and &#x60;id&#x60;. The &#x60;id&#x60; must reference an existing interval.  This interval&#39;s properties can be modified using the following fields: - &#x60;name&#x60;: Update the interval name - &#x60;start_time&#x60;: Modify the start time - &#x60;end_time&#x60;: Modify the end time - &#x60;metadata&#x60;: Update metadata (product, target, category, reason, etc.)  If the interval does not exist, a 404 error will be returned.  **Note:** The &#x60;id&#x60; must be obtained from either: - The response when creating an interval via &#x60;/v2/interval/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60; 
+        /// </remarks>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="interval"></param>
+        /// <returns>ApiResponse of List&lt;Interval&gt;</returns>
+        ApiResponse<List<Interval>> UpdateIntervalWithHttpInfo(Interval interval);
         #endregion Synchronous Operations
     }
 
@@ -206,122 +248,7 @@ namespace Oden.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// Delete an interval by &#x60;type&#x60;, &#x60;line&#x60;, and &#x60;id&#x60;  **Note:** The &#x60;id&#x60; must be obtained from either: - The response when creating an interval via &#x60;/v2/interval/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60;  The examples below use placeholder IDs - replace with actual IDs from your system. 
-        /// </remarks>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="interval"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;Interval&gt;</returns>
-        System.Threading.Tasks.Task<List<Interval>> V2IntervalDeletePostAsync(Interval interval, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// Delete an interval by &#x60;type&#x60;, &#x60;line&#x60;, and &#x60;id&#x60;  **Note:** The &#x60;id&#x60; must be obtained from either: - The response when creating an interval via &#x60;/v2/interval/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60;  The examples below use placeholder IDs - replace with actual IDs from your system. 
-        /// </remarks>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="interval"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;Interval&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Interval>>> V2IntervalDeletePostWithHttpInfoAsync(Interval interval, System.Threading.CancellationToken cancellationToken = default);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// Searches for intervals by &#x60;type&#x60;, &#x60;line&#x60; and other optional parameters:  - &#x60;id&#x60; (for a specific Interval) - &#x60;match: unique&#x60; or omit  OR  - &#x60;match : last&#x60; for the most recent Interval of the given type on the given line  OR  - &#x60;start_time&#x60; and &#x60;end_time&#x60; (for a range of Intervals over a period of time) - &#x60;match: all&#x60; for more than one result  OR  - match all intervals for all lines in a given factory  AND/OR  - &#x60;name&#x60; (only for Intervals with a matching name) 
-        /// </remarks>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="interval"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;Interval&gt;</returns>
-        System.Threading.Tasks.Task<List<Interval>> V2IntervalSearchPostAsync(Interval interval, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// Searches for intervals by &#x60;type&#x60;, &#x60;line&#x60; and other optional parameters:  - &#x60;id&#x60; (for a specific Interval) - &#x60;match: unique&#x60; or omit  OR  - &#x60;match : last&#x60; for the most recent Interval of the given type on the given line  OR  - &#x60;start_time&#x60; and &#x60;end_time&#x60; (for a range of Intervals over a period of time) - &#x60;match: all&#x60; for more than one result  OR  - match all intervals for all lines in a given factory  AND/OR  - &#x60;name&#x60; (only for Intervals with a matching name) 
-        /// </remarks>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="interval"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;Interval&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Interval>>> V2IntervalSearchPostWithHttpInfoAsync(Interval interval, System.Threading.CancellationToken cancellationToken = default);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// Create or update an Interval.  Must include &#x60;line&#x60; and &#x60;type&#x60;. &#x60;match&#x60; must be omitted, &#x60;unique&#x60; or &#x60;last&#x60;   - If &#x60;id&#x60; is not supplied, a new Interval will be created.   - If &#x60;id&#x60; is supplied, existing Interval will be updated. This interval&#39;s start time can be modified using &#x60;start_time&#x60; field.  To update a specific interval supply the &#x60;id&#x60; of that interval.  If the interval exists with all the same parameters nothing is done.  To update the most recent Interval of a given &#x60;type&#x60; on a &#x60;line&#x60; one may use &#x60;match: last&#x60; and omit &#x60;id&#x60;  For &#x60;RUN&#x60; type: if &#x60;product&#x60; and/or &#x60;product_mapping&#x60; does not exist a new one will be created. Further a &#x60;target&#x60; may be set by adding a &#x60;target&#x60; to the metadata field. The &#x60;line&#x60; and &#x60;product&#x60; for this target will be the same as the interval.  Please see examples for more specific information. 
-        /// </remarks>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="interval"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;Interval&gt;</returns>
-        System.Threading.Tasks.Task<List<Interval>> V2IntervalSetPostAsync(Interval interval, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// Create or update an Interval.  Must include &#x60;line&#x60; and &#x60;type&#x60;. &#x60;match&#x60; must be omitted, &#x60;unique&#x60; or &#x60;last&#x60;   - If &#x60;id&#x60; is not supplied, a new Interval will be created.   - If &#x60;id&#x60; is supplied, existing Interval will be updated. This interval&#39;s start time can be modified using &#x60;start_time&#x60; field.  To update a specific interval supply the &#x60;id&#x60; of that interval.  If the interval exists with all the same parameters nothing is done.  To update the most recent Interval of a given &#x60;type&#x60; on a &#x60;line&#x60; one may use &#x60;match: last&#x60; and omit &#x60;id&#x60;  For &#x60;RUN&#x60; type: if &#x60;product&#x60; and/or &#x60;product_mapping&#x60; does not exist a new one will be created. Further a &#x60;target&#x60; may be set by adding a &#x60;target&#x60; to the metadata field. The &#x60;line&#x60; and &#x60;product&#x60; for this target will be the same as the interval.  Please see examples for more specific information. 
-        /// </remarks>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="interval"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;Interval&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Interval>>> V2IntervalSetPostWithHttpInfoAsync(Interval interval, System.Threading.CancellationToken cancellationToken = default);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// Search for Interval Types by &#x60;name&#x60;, &#x60;id&#x60;, or just &#x60;match: all&#x60; to return all Interval Types associated with the your organization. Basic Interval Types - - &#x60;RUN&#x60;, &#x60;BATCH&#x60;, and &#x60;STATE&#x60; - - are dedicated interval types that come out-of-the-box with Oden. Custom Interval Types may be created by users. 
-        /// </remarks>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="intervalType"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;IntervalType&gt;</returns>
-        System.Threading.Tasks.Task<List<IntervalType>> V2IntervalTypeSearchPostAsync(IntervalType intervalType, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// Search for Interval Types by &#x60;name&#x60;, &#x60;id&#x60;, or just &#x60;match: all&#x60; to return all Interval Types associated with the your organization. Basic Interval Types - - &#x60;RUN&#x60;, &#x60;BATCH&#x60;, and &#x60;STATE&#x60; - - are dedicated interval types that come out-of-the-box with Oden. Custom Interval Types may be created by users. 
-        /// </remarks>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="intervalType"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;IntervalType&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<IntervalType>>> V2IntervalTypeSearchPostWithHttpInfoAsync(IntervalType intervalType, System.Threading.CancellationToken cancellationToken = default);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// Update an existing Interval. This endpoint only updates intervals and will not create new ones.  Must include &#x60;line&#x60;, &#x60;type&#x60;, and &#x60;id&#x60;. The &#x60;id&#x60; must reference an existing interval.  This interval&#39;s properties can be modified using the following fields: - &#x60;name&#x60;: Update the interval name - &#x60;start_time&#x60;: Modify the start time - &#x60;end_time&#x60;: Modify the end time - &#x60;metadata&#x60;: Update metadata (product, target, category, reason, etc.)  If the interval does not exist, a 404 error will be returned.  **Note:** The &#x60;id&#x60; must be obtained from either: - The response when creating an interval via &#x60;/v2/interval/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60; 
-        /// </remarks>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="interval"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;Interval&gt;</returns>
-        System.Threading.Tasks.Task<List<Interval>> V2IntervalUpdatePostAsync(Interval interval, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// Update an existing Interval. This endpoint only updates intervals and will not create new ones.  Must include &#x60;line&#x60;, &#x60;type&#x60;, and &#x60;id&#x60;. The &#x60;id&#x60; must reference an existing interval.  This interval&#39;s properties can be modified using the following fields: - &#x60;name&#x60;: Update the interval name - &#x60;start_time&#x60;: Modify the start time - &#x60;end_time&#x60;: Modify the end time - &#x60;metadata&#x60;: Update metadata (product, target, category, reason, etc.)  If the interval does not exist, a 404 error will be returned.  **Note:** The &#x60;id&#x60; must be obtained from either: - The response when creating an interval via &#x60;/v2/interval/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60; 
-        /// </remarks>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="interval"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;Interval&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Interval>>> V2IntervalUpdatePostWithHttpInfoAsync(Interval interval, System.Threading.CancellationToken cancellationToken = default);
-        /// <summary>
-        /// 
+        /// Delete intervals in a time range
         /// </summary>
         /// <remarks>
         /// Delete a group of intervals by a single &#x60;type&#x60; and a single &#x60;line&#x60;, between &#x60;start_time&#x60; and &#x60;end_time&#x60;. Returns a list of intervals that were not deleted, and the number of intervals deleted.  Limitations: - Cannot exceed 15,000 intervals per request, or 30 days worth of data. - Currently does not support \&quot;batch\&quot; or \&quot;run\&quot; interval types. 
@@ -329,11 +256,11 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="intervalBulkDelete"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of V2IntervalsDeletePost200Response</returns>
-        System.Threading.Tasks.Task<V2IntervalsDeletePost200Response> V2IntervalsDeletePostAsync(IntervalBulkDelete intervalBulkDelete, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of BulkDeleteIntervals200Response</returns>
+        System.Threading.Tasks.Task<BulkDeleteIntervals200Response> BulkDeleteIntervalsAsync(IntervalBulkDelete intervalBulkDelete, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// 
+        /// Delete intervals in a time range
         /// </summary>
         /// <remarks>
         /// Delete a group of intervals by a single &#x60;type&#x60; and a single &#x60;line&#x60;, between &#x60;start_time&#x60; and &#x60;end_time&#x60;. Returns a list of intervals that were not deleted, and the number of intervals deleted.  Limitations: - Cannot exceed 15,000 intervals per request, or 30 days worth of data. - Currently does not support \&quot;batch\&quot; or \&quot;run\&quot; interval types. 
@@ -341,10 +268,10 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="intervalBulkDelete"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (V2IntervalsDeletePost200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V2IntervalsDeletePost200Response>> V2IntervalsDeletePostWithHttpInfoAsync(IntervalBulkDelete intervalBulkDelete, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (BulkDeleteIntervals200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<BulkDeleteIntervals200Response>> BulkDeleteIntervalsWithHttpInfoAsync(IntervalBulkDelete intervalBulkDelete, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// 
+        /// Create a set of intervals
         /// </summary>
         /// <remarks>
         /// Create (Does not update) a group of custom intervals, for the same &#x60;type&#x60; and &#x60;line&#x60;. Line and type do not need to be included in each individual interval, just once at the top level.  Limitations: - Cannot excees 2500 intervals per request. - Will not write over other intervals - Does not support \&quot;batch\&quot;, \&quot;run\&quot;, or \&quot;state\&quot; interval types. 
@@ -353,10 +280,10 @@ namespace Oden.Api
         /// <param name="intervalBulkCreate"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
-        System.Threading.Tasks.Task<List<string>> V2IntervalsSetPostAsync(IntervalBulkCreate intervalBulkCreate, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<List<string>> BulkSetIntervalsAsync(IntervalBulkCreate intervalBulkCreate, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// 
+        /// Create a set of intervals
         /// </summary>
         /// <remarks>
         /// Create (Does not update) a group of custom intervals, for the same &#x60;type&#x60; and &#x60;line&#x60;. Line and type do not need to be included in each individual interval, just once at the top level.  Limitations: - Cannot excees 2500 intervals per request. - Will not write over other intervals - Does not support \&quot;batch\&quot;, \&quot;run\&quot;, or \&quot;state\&quot; interval types. 
@@ -365,9 +292,9 @@ namespace Oden.Api
         /// <param name="intervalBulkCreate"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<string>>> V2IntervalsSetPostWithHttpInfoAsync(IntervalBulkCreate intervalBulkCreate, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<List<string>>> BulkSetIntervalsWithHttpInfoAsync(IntervalBulkCreate intervalBulkCreate, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// 
+        /// Update a set of intervals
         /// </summary>
         /// <remarks>
         /// Update multiple existing intervals. This endpoint only updates intervals and will not create new ones.  Each interval in the &#x60;intervals&#x60; array must include an &#x60;id&#x60; that references an existing interval.  Updatable fields for each interval: - &#x60;name&#x60;: Update the interval name - &#x60;start_time&#x60;: Modify the start time - &#x60;end_time&#x60;: Modify the end time - &#x60;metadata&#x60;: Update metadata (product, target, category, reason, etc.)  The endpoint will attempt to update all intervals and return information about successes and failures: - Successfully updated intervals are returned in the response - Failed intervals are listed with their IDs and error reasons  Limitations: - Cannot exceed 2500 intervals per request - All intervals must be of the same &#x60;type&#x60; and on the same &#x60;line&#x60;  **Note:** Interval IDs must be obtained from either: - The response when creating intervals via &#x60;/v2/interval/set&#x60; or &#x60;/v2/intervals/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60; 
@@ -375,11 +302,11 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="intervalBulkUpdate"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of V2IntervalsUpdatePost200Response</returns>
-        System.Threading.Tasks.Task<V2IntervalsUpdatePost200Response> V2IntervalsUpdatePostAsync(IntervalBulkUpdate intervalBulkUpdate, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of BulkUpdateIntervals200Response</returns>
+        System.Threading.Tasks.Task<BulkUpdateIntervals200Response> BulkUpdateIntervalsAsync(IntervalBulkUpdate intervalBulkUpdate, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// 
+        /// Update a set of intervals
         /// </summary>
         /// <remarks>
         /// Update multiple existing intervals. This endpoint only updates intervals and will not create new ones.  Each interval in the &#x60;intervals&#x60; array must include an &#x60;id&#x60; that references an existing interval.  Updatable fields for each interval: - &#x60;name&#x60;: Update the interval name - &#x60;start_time&#x60;: Modify the start time - &#x60;end_time&#x60;: Modify the end time - &#x60;metadata&#x60;: Update metadata (product, target, category, reason, etc.)  The endpoint will attempt to update all intervals and return information about successes and failures: - Successfully updated intervals are returned in the response - Failed intervals are listed with their IDs and error reasons  Limitations: - Cannot exceed 2500 intervals per request - All intervals must be of the same &#x60;type&#x60; and on the same &#x60;line&#x60;  **Note:** Interval IDs must be obtained from either: - The response when creating intervals via &#x60;/v2/interval/set&#x60; or &#x60;/v2/intervals/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60; 
@@ -387,8 +314,169 @@ namespace Oden.Api
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="intervalBulkUpdate"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (V2IntervalsUpdatePost200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<V2IntervalsUpdatePost200Response>> V2IntervalsUpdatePostWithHttpInfoAsync(IntervalBulkUpdate intervalBulkUpdate, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (BulkUpdateIntervals200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<BulkUpdateIntervals200Response>> BulkUpdateIntervalsWithHttpInfoAsync(IntervalBulkUpdate intervalBulkUpdate, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Delete an interval
+        /// </summary>
+        /// <remarks>
+        /// Delete an interval by &#x60;type&#x60;, &#x60;line&#x60;, and &#x60;id&#x60;  **Note:** The &#x60;id&#x60; must be obtained from either: - The response when creating an interval via &#x60;/v2/interval/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60;  The examples below use placeholder IDs - replace with actual IDs from your system. 
+        /// </remarks>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="interval"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;Interval&gt;</returns>
+        System.Threading.Tasks.Task<List<Interval>> DeleteIntervalAsync(Interval interval, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Delete an interval
+        /// </summary>
+        /// <remarks>
+        /// Delete an interval by &#x60;type&#x60;, &#x60;line&#x60;, and &#x60;id&#x60;  **Note:** The &#x60;id&#x60; must be obtained from either: - The response when creating an interval via &#x60;/v2/interval/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60;  The examples below use placeholder IDs - replace with actual IDs from your system. 
+        /// </remarks>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="interval"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;Interval&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Interval>>> DeleteIntervalWithHttpInfoAsync(Interval interval, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Delete a custom interval type
+        /// </summary>
+        /// <remarks>
+        /// Delete an existing custom Interval Type. &#x60;id&#x60; is required. Built-in types (RUN, BATCH, STATE) cannot be deleted. 
+        /// </remarks>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="intervalType"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of IntervalType</returns>
+        System.Threading.Tasks.Task<IntervalType> DeleteIntervalTypeAsync(IntervalType intervalType, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Delete a custom interval type
+        /// </summary>
+        /// <remarks>
+        /// Delete an existing custom Interval Type. &#x60;id&#x60; is required. Built-in types (RUN, BATCH, STATE) cannot be deleted. 
+        /// </remarks>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="intervalType"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (IntervalType)</returns>
+        System.Threading.Tasks.Task<ApiResponse<IntervalType>> DeleteIntervalTypeWithHttpInfoAsync(IntervalType intervalType, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Search interval types
+        /// </summary>
+        /// <remarks>
+        /// Search for Interval Types by &#x60;name&#x60;, &#x60;id&#x60;, or just &#x60;match: all&#x60; to return all Interval Types associated with the your organization. Basic Interval Types - - &#x60;RUN&#x60;, &#x60;BATCH&#x60;, and &#x60;STATE&#x60; - - are dedicated interval types that come out-of-the-box with Oden. Custom Interval Types may be created by users. 
+        /// </remarks>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="intervalType"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;IntervalType&gt;</returns>
+        System.Threading.Tasks.Task<List<IntervalType>> SearchIntervalTypesAsync(IntervalType intervalType, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Search interval types
+        /// </summary>
+        /// <remarks>
+        /// Search for Interval Types by &#x60;name&#x60;, &#x60;id&#x60;, or just &#x60;match: all&#x60; to return all Interval Types associated with the your organization. Basic Interval Types - - &#x60;RUN&#x60;, &#x60;BATCH&#x60;, and &#x60;STATE&#x60; - - are dedicated interval types that come out-of-the-box with Oden. Custom Interval Types may be created by users. 
+        /// </remarks>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="intervalType"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;IntervalType&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<IntervalType>>> SearchIntervalTypesWithHttpInfoAsync(IntervalType intervalType, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Search intervals on a line
+        /// </summary>
+        /// <remarks>
+        /// Searches for intervals by &#x60;type&#x60;, &#x60;line&#x60; and other optional parameters:  - &#x60;id&#x60; (for a specific Interval) - &#x60;match: unique&#x60; or omit  OR  - &#x60;match : last&#x60; for the most recent Interval of the given type on the given line  OR  - &#x60;start_time&#x60; and &#x60;end_time&#x60; (for a range of Intervals over a period of time) - &#x60;match: all&#x60; for more than one result  OR  - match all intervals for all lines in a given factory  AND/OR  - &#x60;name&#x60; (only for Intervals with a matching name) 
+        /// </remarks>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="interval"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;Interval&gt;</returns>
+        System.Threading.Tasks.Task<List<Interval>> SearchIntervalsAsync(Interval interval, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Search intervals on a line
+        /// </summary>
+        /// <remarks>
+        /// Searches for intervals by &#x60;type&#x60;, &#x60;line&#x60; and other optional parameters:  - &#x60;id&#x60; (for a specific Interval) - &#x60;match: unique&#x60; or omit  OR  - &#x60;match : last&#x60; for the most recent Interval of the given type on the given line  OR  - &#x60;start_time&#x60; and &#x60;end_time&#x60; (for a range of Intervals over a period of time) - &#x60;match: all&#x60; for more than one result  OR  - match all intervals for all lines in a given factory  AND/OR  - &#x60;name&#x60; (only for Intervals with a matching name) 
+        /// </remarks>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="interval"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;Interval&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Interval>>> SearchIntervalsWithHttpInfoAsync(Interval interval, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create or update an interval
+        /// </summary>
+        /// <remarks>
+        /// Create or update an Interval.  Must include &#x60;line&#x60; and &#x60;type&#x60;. &#x60;match&#x60; must be omitted, &#x60;unique&#x60; or &#x60;last&#x60;   - If &#x60;id&#x60; is not supplied, a new Interval will be created.   - If &#x60;id&#x60; is supplied, existing Interval will be updated. This interval&#39;s start time can be modified using &#x60;start_time&#x60; field.  To update a specific interval supply the &#x60;id&#x60; of that interval.  If the interval exists with all the same parameters nothing is done.  To update the most recent Interval of a given &#x60;type&#x60; on a &#x60;line&#x60; one may use &#x60;match: last&#x60; and omit &#x60;id&#x60;  For &#x60;RUN&#x60; type: if &#x60;product&#x60; and/or &#x60;product_mapping&#x60; does not exist a new one will be created. Further a &#x60;target&#x60; may be set by adding a &#x60;target&#x60; to the metadata field. The &#x60;line&#x60; and &#x60;product&#x60; for this target will be the same as the interval.  Please see examples for more specific information. 
+        /// </remarks>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="interval"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;Interval&gt;</returns>
+        System.Threading.Tasks.Task<List<Interval>> SetIntervalAsync(Interval interval, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Create or update an interval
+        /// </summary>
+        /// <remarks>
+        /// Create or update an Interval.  Must include &#x60;line&#x60; and &#x60;type&#x60;. &#x60;match&#x60; must be omitted, &#x60;unique&#x60; or &#x60;last&#x60;   - If &#x60;id&#x60; is not supplied, a new Interval will be created.   - If &#x60;id&#x60; is supplied, existing Interval will be updated. This interval&#39;s start time can be modified using &#x60;start_time&#x60; field.  To update a specific interval supply the &#x60;id&#x60; of that interval.  If the interval exists with all the same parameters nothing is done.  To update the most recent Interval of a given &#x60;type&#x60; on a &#x60;line&#x60; one may use &#x60;match: last&#x60; and omit &#x60;id&#x60;  For &#x60;RUN&#x60; type: if &#x60;product&#x60; and/or &#x60;product_mapping&#x60; does not exist a new one will be created. Further a &#x60;target&#x60; may be set by adding a &#x60;target&#x60; to the metadata field. The &#x60;line&#x60; and &#x60;product&#x60; for this target will be the same as the interval.  Please see examples for more specific information. 
+        /// </remarks>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="interval"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;Interval&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Interval>>> SetIntervalWithHttpInfoAsync(Interval interval, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create or update a custom interval type
+        /// </summary>
+        /// <remarks>
+        /// **Create** (no &#x60;id&#x60; in the body): send &#x60;name&#x60; (required) and optional &#x60;metadata_schema&#x60; / &#x60;tags&#x60;.  **Update** (with &#x60;id&#x60;): send the interval type’s &#x60;id&#x60; and optional &#x60;metadata_schema&#x60; / &#x60;tags&#x60; only. Do not send &#x60;name&#x60; for updates; including &#x60;name&#x60; returns 400. Renames are not supported.  **Patch (update only)**: &#x60;metadata_schema&#x60; — if the key is missing, the existing value is kept; if present, it replaces. &#x60;tags&#x60; — if the key is missing, tags are unchanged; &#x60;null&#x60; leaves tags unchanged; &#x60;[]&#x60; clears tags; a non-empty array replaces.  **Built-in types (RUN, BATCH, STATE) cannot be created, set, or deleted.** 
+        /// </remarks>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="intervalTypeSet"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of IntervalType</returns>
+        System.Threading.Tasks.Task<IntervalType> SetIntervalTypeAsync(IntervalTypeSet intervalTypeSet, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Create or update a custom interval type
+        /// </summary>
+        /// <remarks>
+        /// **Create** (no &#x60;id&#x60; in the body): send &#x60;name&#x60; (required) and optional &#x60;metadata_schema&#x60; / &#x60;tags&#x60;.  **Update** (with &#x60;id&#x60;): send the interval type’s &#x60;id&#x60; and optional &#x60;metadata_schema&#x60; / &#x60;tags&#x60; only. Do not send &#x60;name&#x60; for updates; including &#x60;name&#x60; returns 400. Renames are not supported.  **Patch (update only)**: &#x60;metadata_schema&#x60; — if the key is missing, the existing value is kept; if present, it replaces. &#x60;tags&#x60; — if the key is missing, tags are unchanged; &#x60;null&#x60; leaves tags unchanged; &#x60;[]&#x60; clears tags; a non-empty array replaces.  **Built-in types (RUN, BATCH, STATE) cannot be created, set, or deleted.** 
+        /// </remarks>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="intervalTypeSet"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (IntervalType)</returns>
+        System.Threading.Tasks.Task<ApiResponse<IntervalType>> SetIntervalTypeWithHttpInfoAsync(IntervalTypeSet intervalTypeSet, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update an interval
+        /// </summary>
+        /// <remarks>
+        /// Update an existing Interval. This endpoint only updates intervals and will not create new ones.  Must include &#x60;line&#x60;, &#x60;type&#x60;, and &#x60;id&#x60;. The &#x60;id&#x60; must reference an existing interval.  This interval&#39;s properties can be modified using the following fields: - &#x60;name&#x60;: Update the interval name - &#x60;start_time&#x60;: Modify the start time - &#x60;end_time&#x60;: Modify the end time - &#x60;metadata&#x60;: Update metadata (product, target, category, reason, etc.)  If the interval does not exist, a 404 error will be returned.  **Note:** The &#x60;id&#x60; must be obtained from either: - The response when creating an interval via &#x60;/v2/interval/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60; 
+        /// </remarks>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="interval"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;Interval&gt;</returns>
+        System.Threading.Tasks.Task<List<Interval>> UpdateIntervalAsync(Interval interval, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Update an interval
+        /// </summary>
+        /// <remarks>
+        /// Update an existing Interval. This endpoint only updates intervals and will not create new ones.  Must include &#x60;line&#x60;, &#x60;type&#x60;, and &#x60;id&#x60;. The &#x60;id&#x60; must reference an existing interval.  This interval&#39;s properties can be modified using the following fields: - &#x60;name&#x60;: Update the interval name - &#x60;start_time&#x60;: Modify the start time - &#x60;end_time&#x60;: Modify the end time - &#x60;metadata&#x60;: Update metadata (product, target, category, reason, etc.)  If the interval does not exist, a 404 error will be returned.  **Note:** The &#x60;id&#x60; must be obtained from either: - The response when creating an interval via &#x60;/v2/interval/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60; 
+        /// </remarks>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="interval"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;Interval&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Interval>>> UpdateIntervalWithHttpInfoAsync(Interval interval, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -603,663 +691,28 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Delete an interval by &#x60;type&#x60;, &#x60;line&#x60;, and &#x60;id&#x60;  **Note:** The &#x60;id&#x60; must be obtained from either: - The response when creating an interval via &#x60;/v2/interval/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60;  The examples below use placeholder IDs - replace with actual IDs from your system. 
-        /// </summary>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="interval"></param>
-        /// <returns>List&lt;Interval&gt;</returns>
-        public List<Interval> V2IntervalDeletePost(Interval interval)
-        {
-            Oden.Client.ApiResponse<List<Interval>> localVarResponse = V2IntervalDeletePostWithHttpInfo(interval);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  Delete an interval by &#x60;type&#x60;, &#x60;line&#x60;, and &#x60;id&#x60;  **Note:** The &#x60;id&#x60; must be obtained from either: - The response when creating an interval via &#x60;/v2/interval/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60;  The examples below use placeholder IDs - replace with actual IDs from your system. 
-        /// </summary>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="interval"></param>
-        /// <returns>ApiResponse of List&lt;Interval&gt;</returns>
-        public Oden.Client.ApiResponse<List<Interval>> V2IntervalDeletePostWithHttpInfo(Interval interval)
-        {
-            // verify the required parameter 'interval' is set
-            if (interval == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'interval' when calling IntervalsApi->V2IntervalDeletePost");
-
-            Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Oden.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.Data = interval;
-
-            // authentication (APIKeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<List<Interval>>("/v2/interval/delete", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("V2IntervalDeletePost", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  Delete an interval by &#x60;type&#x60;, &#x60;line&#x60;, and &#x60;id&#x60;  **Note:** The &#x60;id&#x60; must be obtained from either: - The response when creating an interval via &#x60;/v2/interval/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60;  The examples below use placeholder IDs - replace with actual IDs from your system. 
-        /// </summary>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="interval"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;Interval&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Interval>> V2IntervalDeletePostAsync(Interval interval, System.Threading.CancellationToken cancellationToken = default)
-        {
-            Oden.Client.ApiResponse<List<Interval>> localVarResponse = await V2IntervalDeletePostWithHttpInfoAsync(interval, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  Delete an interval by &#x60;type&#x60;, &#x60;line&#x60;, and &#x60;id&#x60;  **Note:** The &#x60;id&#x60; must be obtained from either: - The response when creating an interval via &#x60;/v2/interval/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60;  The examples below use placeholder IDs - replace with actual IDs from your system. 
-        /// </summary>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="interval"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;Interval&gt;)</returns>
-        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<List<Interval>>> V2IntervalDeletePostWithHttpInfoAsync(Interval interval, System.Threading.CancellationToken cancellationToken = default)
-        {
-            // verify the required parameter 'interval' is set
-            if (interval == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'interval' when calling IntervalsApi->V2IntervalDeletePost");
-
-
-            Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-
-            var localVarContentType = Oden.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.Data = interval;
-
-            // authentication (APIKeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.PostAsync<List<Interval>>("/v2/interval/delete", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("V2IntervalDeletePost", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  Searches for intervals by &#x60;type&#x60;, &#x60;line&#x60; and other optional parameters:  - &#x60;id&#x60; (for a specific Interval) - &#x60;match: unique&#x60; or omit  OR  - &#x60;match : last&#x60; for the most recent Interval of the given type on the given line  OR  - &#x60;start_time&#x60; and &#x60;end_time&#x60; (for a range of Intervals over a period of time) - &#x60;match: all&#x60; for more than one result  OR  - match all intervals for all lines in a given factory  AND/OR  - &#x60;name&#x60; (only for Intervals with a matching name) 
-        /// </summary>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="interval"></param>
-        /// <returns>List&lt;Interval&gt;</returns>
-        public List<Interval> V2IntervalSearchPost(Interval interval)
-        {
-            Oden.Client.ApiResponse<List<Interval>> localVarResponse = V2IntervalSearchPostWithHttpInfo(interval);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  Searches for intervals by &#x60;type&#x60;, &#x60;line&#x60; and other optional parameters:  - &#x60;id&#x60; (for a specific Interval) - &#x60;match: unique&#x60; or omit  OR  - &#x60;match : last&#x60; for the most recent Interval of the given type on the given line  OR  - &#x60;start_time&#x60; and &#x60;end_time&#x60; (for a range of Intervals over a period of time) - &#x60;match: all&#x60; for more than one result  OR  - match all intervals for all lines in a given factory  AND/OR  - &#x60;name&#x60; (only for Intervals with a matching name) 
-        /// </summary>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="interval"></param>
-        /// <returns>ApiResponse of List&lt;Interval&gt;</returns>
-        public Oden.Client.ApiResponse<List<Interval>> V2IntervalSearchPostWithHttpInfo(Interval interval)
-        {
-            // verify the required parameter 'interval' is set
-            if (interval == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'interval' when calling IntervalsApi->V2IntervalSearchPost");
-
-            Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Oden.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.Data = interval;
-
-            // authentication (APIKeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<List<Interval>>("/v2/interval/search", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("V2IntervalSearchPost", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  Searches for intervals by &#x60;type&#x60;, &#x60;line&#x60; and other optional parameters:  - &#x60;id&#x60; (for a specific Interval) - &#x60;match: unique&#x60; or omit  OR  - &#x60;match : last&#x60; for the most recent Interval of the given type on the given line  OR  - &#x60;start_time&#x60; and &#x60;end_time&#x60; (for a range of Intervals over a period of time) - &#x60;match: all&#x60; for more than one result  OR  - match all intervals for all lines in a given factory  AND/OR  - &#x60;name&#x60; (only for Intervals with a matching name) 
-        /// </summary>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="interval"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;Interval&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Interval>> V2IntervalSearchPostAsync(Interval interval, System.Threading.CancellationToken cancellationToken = default)
-        {
-            Oden.Client.ApiResponse<List<Interval>> localVarResponse = await V2IntervalSearchPostWithHttpInfoAsync(interval, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  Searches for intervals by &#x60;type&#x60;, &#x60;line&#x60; and other optional parameters:  - &#x60;id&#x60; (for a specific Interval) - &#x60;match: unique&#x60; or omit  OR  - &#x60;match : last&#x60; for the most recent Interval of the given type on the given line  OR  - &#x60;start_time&#x60; and &#x60;end_time&#x60; (for a range of Intervals over a period of time) - &#x60;match: all&#x60; for more than one result  OR  - match all intervals for all lines in a given factory  AND/OR  - &#x60;name&#x60; (only for Intervals with a matching name) 
-        /// </summary>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="interval"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;Interval&gt;)</returns>
-        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<List<Interval>>> V2IntervalSearchPostWithHttpInfoAsync(Interval interval, System.Threading.CancellationToken cancellationToken = default)
-        {
-            // verify the required parameter 'interval' is set
-            if (interval == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'interval' when calling IntervalsApi->V2IntervalSearchPost");
-
-
-            Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-
-            var localVarContentType = Oden.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.Data = interval;
-
-            // authentication (APIKeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.PostAsync<List<Interval>>("/v2/interval/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("V2IntervalSearchPost", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  Create or update an Interval.  Must include &#x60;line&#x60; and &#x60;type&#x60;. &#x60;match&#x60; must be omitted, &#x60;unique&#x60; or &#x60;last&#x60;   - If &#x60;id&#x60; is not supplied, a new Interval will be created.   - If &#x60;id&#x60; is supplied, existing Interval will be updated. This interval&#39;s start time can be modified using &#x60;start_time&#x60; field.  To update a specific interval supply the &#x60;id&#x60; of that interval.  If the interval exists with all the same parameters nothing is done.  To update the most recent Interval of a given &#x60;type&#x60; on a &#x60;line&#x60; one may use &#x60;match: last&#x60; and omit &#x60;id&#x60;  For &#x60;RUN&#x60; type: if &#x60;product&#x60; and/or &#x60;product_mapping&#x60; does not exist a new one will be created. Further a &#x60;target&#x60; may be set by adding a &#x60;target&#x60; to the metadata field. The &#x60;line&#x60; and &#x60;product&#x60; for this target will be the same as the interval.  Please see examples for more specific information. 
-        /// </summary>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="interval"></param>
-        /// <returns>List&lt;Interval&gt;</returns>
-        public List<Interval> V2IntervalSetPost(Interval interval)
-        {
-            Oden.Client.ApiResponse<List<Interval>> localVarResponse = V2IntervalSetPostWithHttpInfo(interval);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  Create or update an Interval.  Must include &#x60;line&#x60; and &#x60;type&#x60;. &#x60;match&#x60; must be omitted, &#x60;unique&#x60; or &#x60;last&#x60;   - If &#x60;id&#x60; is not supplied, a new Interval will be created.   - If &#x60;id&#x60; is supplied, existing Interval will be updated. This interval&#39;s start time can be modified using &#x60;start_time&#x60; field.  To update a specific interval supply the &#x60;id&#x60; of that interval.  If the interval exists with all the same parameters nothing is done.  To update the most recent Interval of a given &#x60;type&#x60; on a &#x60;line&#x60; one may use &#x60;match: last&#x60; and omit &#x60;id&#x60;  For &#x60;RUN&#x60; type: if &#x60;product&#x60; and/or &#x60;product_mapping&#x60; does not exist a new one will be created. Further a &#x60;target&#x60; may be set by adding a &#x60;target&#x60; to the metadata field. The &#x60;line&#x60; and &#x60;product&#x60; for this target will be the same as the interval.  Please see examples for more specific information. 
-        /// </summary>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="interval"></param>
-        /// <returns>ApiResponse of List&lt;Interval&gt;</returns>
-        public Oden.Client.ApiResponse<List<Interval>> V2IntervalSetPostWithHttpInfo(Interval interval)
-        {
-            // verify the required parameter 'interval' is set
-            if (interval == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'interval' when calling IntervalsApi->V2IntervalSetPost");
-
-            Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Oden.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.Data = interval;
-
-            // authentication (APIKeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<List<Interval>>("/v2/interval/set", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("V2IntervalSetPost", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  Create or update an Interval.  Must include &#x60;line&#x60; and &#x60;type&#x60;. &#x60;match&#x60; must be omitted, &#x60;unique&#x60; or &#x60;last&#x60;   - If &#x60;id&#x60; is not supplied, a new Interval will be created.   - If &#x60;id&#x60; is supplied, existing Interval will be updated. This interval&#39;s start time can be modified using &#x60;start_time&#x60; field.  To update a specific interval supply the &#x60;id&#x60; of that interval.  If the interval exists with all the same parameters nothing is done.  To update the most recent Interval of a given &#x60;type&#x60; on a &#x60;line&#x60; one may use &#x60;match: last&#x60; and omit &#x60;id&#x60;  For &#x60;RUN&#x60; type: if &#x60;product&#x60; and/or &#x60;product_mapping&#x60; does not exist a new one will be created. Further a &#x60;target&#x60; may be set by adding a &#x60;target&#x60; to the metadata field. The &#x60;line&#x60; and &#x60;product&#x60; for this target will be the same as the interval.  Please see examples for more specific information. 
-        /// </summary>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="interval"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;Interval&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Interval>> V2IntervalSetPostAsync(Interval interval, System.Threading.CancellationToken cancellationToken = default)
-        {
-            Oden.Client.ApiResponse<List<Interval>> localVarResponse = await V2IntervalSetPostWithHttpInfoAsync(interval, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  Create or update an Interval.  Must include &#x60;line&#x60; and &#x60;type&#x60;. &#x60;match&#x60; must be omitted, &#x60;unique&#x60; or &#x60;last&#x60;   - If &#x60;id&#x60; is not supplied, a new Interval will be created.   - If &#x60;id&#x60; is supplied, existing Interval will be updated. This interval&#39;s start time can be modified using &#x60;start_time&#x60; field.  To update a specific interval supply the &#x60;id&#x60; of that interval.  If the interval exists with all the same parameters nothing is done.  To update the most recent Interval of a given &#x60;type&#x60; on a &#x60;line&#x60; one may use &#x60;match: last&#x60; and omit &#x60;id&#x60;  For &#x60;RUN&#x60; type: if &#x60;product&#x60; and/or &#x60;product_mapping&#x60; does not exist a new one will be created. Further a &#x60;target&#x60; may be set by adding a &#x60;target&#x60; to the metadata field. The &#x60;line&#x60; and &#x60;product&#x60; for this target will be the same as the interval.  Please see examples for more specific information. 
-        /// </summary>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="interval"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;Interval&gt;)</returns>
-        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<List<Interval>>> V2IntervalSetPostWithHttpInfoAsync(Interval interval, System.Threading.CancellationToken cancellationToken = default)
-        {
-            // verify the required parameter 'interval' is set
-            if (interval == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'interval' when calling IntervalsApi->V2IntervalSetPost");
-
-
-            Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-
-            var localVarContentType = Oden.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.Data = interval;
-
-            // authentication (APIKeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.PostAsync<List<Interval>>("/v2/interval/set", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("V2IntervalSetPost", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  Search for Interval Types by &#x60;name&#x60;, &#x60;id&#x60;, or just &#x60;match: all&#x60; to return all Interval Types associated with the your organization. Basic Interval Types - - &#x60;RUN&#x60;, &#x60;BATCH&#x60;, and &#x60;STATE&#x60; - - are dedicated interval types that come out-of-the-box with Oden. Custom Interval Types may be created by users. 
-        /// </summary>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="intervalType"></param>
-        /// <returns>List&lt;IntervalType&gt;</returns>
-        public List<IntervalType> V2IntervalTypeSearchPost(IntervalType intervalType)
-        {
-            Oden.Client.ApiResponse<List<IntervalType>> localVarResponse = V2IntervalTypeSearchPostWithHttpInfo(intervalType);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  Search for Interval Types by &#x60;name&#x60;, &#x60;id&#x60;, or just &#x60;match: all&#x60; to return all Interval Types associated with the your organization. Basic Interval Types - - &#x60;RUN&#x60;, &#x60;BATCH&#x60;, and &#x60;STATE&#x60; - - are dedicated interval types that come out-of-the-box with Oden. Custom Interval Types may be created by users. 
-        /// </summary>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="intervalType"></param>
-        /// <returns>ApiResponse of List&lt;IntervalType&gt;</returns>
-        public Oden.Client.ApiResponse<List<IntervalType>> V2IntervalTypeSearchPostWithHttpInfo(IntervalType intervalType)
-        {
-            // verify the required parameter 'intervalType' is set
-            if (intervalType == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'intervalType' when calling IntervalsApi->V2IntervalTypeSearchPost");
-
-            Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Oden.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.Data = intervalType;
-
-            // authentication (APIKeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<List<IntervalType>>("/v2/interval_type/search", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("V2IntervalTypeSearchPost", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  Search for Interval Types by &#x60;name&#x60;, &#x60;id&#x60;, or just &#x60;match: all&#x60; to return all Interval Types associated with the your organization. Basic Interval Types - - &#x60;RUN&#x60;, &#x60;BATCH&#x60;, and &#x60;STATE&#x60; - - are dedicated interval types that come out-of-the-box with Oden. Custom Interval Types may be created by users. 
-        /// </summary>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="intervalType"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;IntervalType&gt;</returns>
-        public async System.Threading.Tasks.Task<List<IntervalType>> V2IntervalTypeSearchPostAsync(IntervalType intervalType, System.Threading.CancellationToken cancellationToken = default)
-        {
-            Oden.Client.ApiResponse<List<IntervalType>> localVarResponse = await V2IntervalTypeSearchPostWithHttpInfoAsync(intervalType, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  Search for Interval Types by &#x60;name&#x60;, &#x60;id&#x60;, or just &#x60;match: all&#x60; to return all Interval Types associated with the your organization. Basic Interval Types - - &#x60;RUN&#x60;, &#x60;BATCH&#x60;, and &#x60;STATE&#x60; - - are dedicated interval types that come out-of-the-box with Oden. Custom Interval Types may be created by users. 
-        /// </summary>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="intervalType"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;IntervalType&gt;)</returns>
-        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<List<IntervalType>>> V2IntervalTypeSearchPostWithHttpInfoAsync(IntervalType intervalType, System.Threading.CancellationToken cancellationToken = default)
-        {
-            // verify the required parameter 'intervalType' is set
-            if (intervalType == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'intervalType' when calling IntervalsApi->V2IntervalTypeSearchPost");
-
-
-            Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-
-            var localVarContentType = Oden.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.Data = intervalType;
-
-            // authentication (APIKeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.PostAsync<List<IntervalType>>("/v2/interval_type/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("V2IntervalTypeSearchPost", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  Update an existing Interval. This endpoint only updates intervals and will not create new ones.  Must include &#x60;line&#x60;, &#x60;type&#x60;, and &#x60;id&#x60;. The &#x60;id&#x60; must reference an existing interval.  This interval&#39;s properties can be modified using the following fields: - &#x60;name&#x60;: Update the interval name - &#x60;start_time&#x60;: Modify the start time - &#x60;end_time&#x60;: Modify the end time - &#x60;metadata&#x60;: Update metadata (product, target, category, reason, etc.)  If the interval does not exist, a 404 error will be returned.  **Note:** The &#x60;id&#x60; must be obtained from either: - The response when creating an interval via &#x60;/v2/interval/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60; 
-        /// </summary>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="interval"></param>
-        /// <returns>List&lt;Interval&gt;</returns>
-        public List<Interval> V2IntervalUpdatePost(Interval interval)
-        {
-            Oden.Client.ApiResponse<List<Interval>> localVarResponse = V2IntervalUpdatePostWithHttpInfo(interval);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  Update an existing Interval. This endpoint only updates intervals and will not create new ones.  Must include &#x60;line&#x60;, &#x60;type&#x60;, and &#x60;id&#x60;. The &#x60;id&#x60; must reference an existing interval.  This interval&#39;s properties can be modified using the following fields: - &#x60;name&#x60;: Update the interval name - &#x60;start_time&#x60;: Modify the start time - &#x60;end_time&#x60;: Modify the end time - &#x60;metadata&#x60;: Update metadata (product, target, category, reason, etc.)  If the interval does not exist, a 404 error will be returned.  **Note:** The &#x60;id&#x60; must be obtained from either: - The response when creating an interval via &#x60;/v2/interval/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60; 
-        /// </summary>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="interval"></param>
-        /// <returns>ApiResponse of List&lt;Interval&gt;</returns>
-        public Oden.Client.ApiResponse<List<Interval>> V2IntervalUpdatePostWithHttpInfo(Interval interval)
-        {
-            // verify the required parameter 'interval' is set
-            if (interval == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'interval' when calling IntervalsApi->V2IntervalUpdatePost");
-
-            Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Oden.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.Data = interval;
-
-            // authentication (APIKeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<List<Interval>>("/v2/interval/update", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("V2IntervalUpdatePost", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  Update an existing Interval. This endpoint only updates intervals and will not create new ones.  Must include &#x60;line&#x60;, &#x60;type&#x60;, and &#x60;id&#x60;. The &#x60;id&#x60; must reference an existing interval.  This interval&#39;s properties can be modified using the following fields: - &#x60;name&#x60;: Update the interval name - &#x60;start_time&#x60;: Modify the start time - &#x60;end_time&#x60;: Modify the end time - &#x60;metadata&#x60;: Update metadata (product, target, category, reason, etc.)  If the interval does not exist, a 404 error will be returned.  **Note:** The &#x60;id&#x60; must be obtained from either: - The response when creating an interval via &#x60;/v2/interval/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60; 
-        /// </summary>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="interval"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;Interval&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Interval>> V2IntervalUpdatePostAsync(Interval interval, System.Threading.CancellationToken cancellationToken = default)
-        {
-            Oden.Client.ApiResponse<List<Interval>> localVarResponse = await V2IntervalUpdatePostWithHttpInfoAsync(interval, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  Update an existing Interval. This endpoint only updates intervals and will not create new ones.  Must include &#x60;line&#x60;, &#x60;type&#x60;, and &#x60;id&#x60;. The &#x60;id&#x60; must reference an existing interval.  This interval&#39;s properties can be modified using the following fields: - &#x60;name&#x60;: Update the interval name - &#x60;start_time&#x60;: Modify the start time - &#x60;end_time&#x60;: Modify the end time - &#x60;metadata&#x60;: Update metadata (product, target, category, reason, etc.)  If the interval does not exist, a 404 error will be returned.  **Note:** The &#x60;id&#x60; must be obtained from either: - The response when creating an interval via &#x60;/v2/interval/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60; 
-        /// </summary>
-        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="interval"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;Interval&gt;)</returns>
-        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<List<Interval>>> V2IntervalUpdatePostWithHttpInfoAsync(Interval interval, System.Threading.CancellationToken cancellationToken = default)
-        {
-            // verify the required parameter 'interval' is set
-            if (interval == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'interval' when calling IntervalsApi->V2IntervalUpdatePost");
-
-
-            Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-
-            var localVarContentType = Oden.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.Data = interval;
-
-            // authentication (APIKeyAuth) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.PostAsync<List<Interval>>("/v2/interval/update", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("V2IntervalUpdatePost", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  Delete a group of intervals by a single &#x60;type&#x60; and a single &#x60;line&#x60;, between &#x60;start_time&#x60; and &#x60;end_time&#x60;. Returns a list of intervals that were not deleted, and the number of intervals deleted.  Limitations: - Cannot exceed 15,000 intervals per request, or 30 days worth of data. - Currently does not support \&quot;batch\&quot; or \&quot;run\&quot; interval types. 
+        /// Delete intervals in a time range Delete a group of intervals by a single &#x60;type&#x60; and a single &#x60;line&#x60;, between &#x60;start_time&#x60; and &#x60;end_time&#x60;. Returns a list of intervals that were not deleted, and the number of intervals deleted.  Limitations: - Cannot exceed 15,000 intervals per request, or 30 days worth of data. - Currently does not support \&quot;batch\&quot; or \&quot;run\&quot; interval types. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="intervalBulkDelete"></param>
-        /// <returns>V2IntervalsDeletePost200Response</returns>
-        public V2IntervalsDeletePost200Response V2IntervalsDeletePost(IntervalBulkDelete intervalBulkDelete)
+        /// <returns>BulkDeleteIntervals200Response</returns>
+        public BulkDeleteIntervals200Response BulkDeleteIntervals(IntervalBulkDelete intervalBulkDelete)
         {
-            Oden.Client.ApiResponse<V2IntervalsDeletePost200Response> localVarResponse = V2IntervalsDeletePostWithHttpInfo(intervalBulkDelete);
+            Oden.Client.ApiResponse<BulkDeleteIntervals200Response> localVarResponse = BulkDeleteIntervalsWithHttpInfo(intervalBulkDelete);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  Delete a group of intervals by a single &#x60;type&#x60; and a single &#x60;line&#x60;, between &#x60;start_time&#x60; and &#x60;end_time&#x60;. Returns a list of intervals that were not deleted, and the number of intervals deleted.  Limitations: - Cannot exceed 15,000 intervals per request, or 30 days worth of data. - Currently does not support \&quot;batch\&quot; or \&quot;run\&quot; interval types. 
+        /// Delete intervals in a time range Delete a group of intervals by a single &#x60;type&#x60; and a single &#x60;line&#x60;, between &#x60;start_time&#x60; and &#x60;end_time&#x60;. Returns a list of intervals that were not deleted, and the number of intervals deleted.  Limitations: - Cannot exceed 15,000 intervals per request, or 30 days worth of data. - Currently does not support \&quot;batch\&quot; or \&quot;run\&quot; interval types. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="intervalBulkDelete"></param>
-        /// <returns>ApiResponse of V2IntervalsDeletePost200Response</returns>
-        public Oden.Client.ApiResponse<V2IntervalsDeletePost200Response> V2IntervalsDeletePostWithHttpInfo(IntervalBulkDelete intervalBulkDelete)
+        /// <returns>ApiResponse of BulkDeleteIntervals200Response</returns>
+        public Oden.Client.ApiResponse<BulkDeleteIntervals200Response> BulkDeleteIntervalsWithHttpInfo(IntervalBulkDelete intervalBulkDelete)
         {
             // verify the required parameter 'intervalBulkDelete' is set
             if (intervalBulkDelete == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'intervalBulkDelete' when calling IntervalsApi->V2IntervalsDeletePost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'intervalBulkDelete' when calling IntervalsApi->BulkDeleteIntervals");
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
 
@@ -1287,11 +740,11 @@ namespace Oden.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<V2IntervalsDeletePost200Response>("/v2/intervals/delete", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<BulkDeleteIntervals200Response>("/v2/intervals/delete", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2IntervalsDeletePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("BulkDeleteIntervals", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -1299,30 +752,30 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Delete a group of intervals by a single &#x60;type&#x60; and a single &#x60;line&#x60;, between &#x60;start_time&#x60; and &#x60;end_time&#x60;. Returns a list of intervals that were not deleted, and the number of intervals deleted.  Limitations: - Cannot exceed 15,000 intervals per request, or 30 days worth of data. - Currently does not support \&quot;batch\&quot; or \&quot;run\&quot; interval types. 
+        /// Delete intervals in a time range Delete a group of intervals by a single &#x60;type&#x60; and a single &#x60;line&#x60;, between &#x60;start_time&#x60; and &#x60;end_time&#x60;. Returns a list of intervals that were not deleted, and the number of intervals deleted.  Limitations: - Cannot exceed 15,000 intervals per request, or 30 days worth of data. - Currently does not support \&quot;batch\&quot; or \&quot;run\&quot; interval types. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="intervalBulkDelete"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of V2IntervalsDeletePost200Response</returns>
-        public async System.Threading.Tasks.Task<V2IntervalsDeletePost200Response> V2IntervalsDeletePostAsync(IntervalBulkDelete intervalBulkDelete, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of BulkDeleteIntervals200Response</returns>
+        public async System.Threading.Tasks.Task<BulkDeleteIntervals200Response> BulkDeleteIntervalsAsync(IntervalBulkDelete intervalBulkDelete, System.Threading.CancellationToken cancellationToken = default)
         {
-            Oden.Client.ApiResponse<V2IntervalsDeletePost200Response> localVarResponse = await V2IntervalsDeletePostWithHttpInfoAsync(intervalBulkDelete, cancellationToken).ConfigureAwait(false);
+            Oden.Client.ApiResponse<BulkDeleteIntervals200Response> localVarResponse = await BulkDeleteIntervalsWithHttpInfoAsync(intervalBulkDelete, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  Delete a group of intervals by a single &#x60;type&#x60; and a single &#x60;line&#x60;, between &#x60;start_time&#x60; and &#x60;end_time&#x60;. Returns a list of intervals that were not deleted, and the number of intervals deleted.  Limitations: - Cannot exceed 15,000 intervals per request, or 30 days worth of data. - Currently does not support \&quot;batch\&quot; or \&quot;run\&quot; interval types. 
+        /// Delete intervals in a time range Delete a group of intervals by a single &#x60;type&#x60; and a single &#x60;line&#x60;, between &#x60;start_time&#x60; and &#x60;end_time&#x60;. Returns a list of intervals that were not deleted, and the number of intervals deleted.  Limitations: - Cannot exceed 15,000 intervals per request, or 30 days worth of data. - Currently does not support \&quot;batch\&quot; or \&quot;run\&quot; interval types. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="intervalBulkDelete"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (V2IntervalsDeletePost200Response)</returns>
-        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<V2IntervalsDeletePost200Response>> V2IntervalsDeletePostWithHttpInfoAsync(IntervalBulkDelete intervalBulkDelete, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (BulkDeleteIntervals200Response)</returns>
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<BulkDeleteIntervals200Response>> BulkDeleteIntervalsWithHttpInfoAsync(IntervalBulkDelete intervalBulkDelete, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'intervalBulkDelete' is set
             if (intervalBulkDelete == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'intervalBulkDelete' when calling IntervalsApi->V2IntervalsDeletePost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'intervalBulkDelete' when calling IntervalsApi->BulkDeleteIntervals");
 
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
@@ -1353,11 +806,11 @@ namespace Oden.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<V2IntervalsDeletePost200Response>("/v2/intervals/delete", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<BulkDeleteIntervals200Response>("/v2/intervals/delete", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2IntervalsDeletePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("BulkDeleteIntervals", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -1365,28 +818,28 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Create (Does not update) a group of custom intervals, for the same &#x60;type&#x60; and &#x60;line&#x60;. Line and type do not need to be included in each individual interval, just once at the top level.  Limitations: - Cannot excees 2500 intervals per request. - Will not write over other intervals - Does not support \&quot;batch\&quot;, \&quot;run\&quot;, or \&quot;state\&quot; interval types. 
+        /// Create a set of intervals Create (Does not update) a group of custom intervals, for the same &#x60;type&#x60; and &#x60;line&#x60;. Line and type do not need to be included in each individual interval, just once at the top level.  Limitations: - Cannot excees 2500 intervals per request. - Will not write over other intervals - Does not support \&quot;batch\&quot;, \&quot;run\&quot;, or \&quot;state\&quot; interval types. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="intervalBulkCreate"></param>
         /// <returns>List&lt;string&gt;</returns>
-        public List<string> V2IntervalsSetPost(IntervalBulkCreate intervalBulkCreate)
+        public List<string> BulkSetIntervals(IntervalBulkCreate intervalBulkCreate)
         {
-            Oden.Client.ApiResponse<List<string>> localVarResponse = V2IntervalsSetPostWithHttpInfo(intervalBulkCreate);
+            Oden.Client.ApiResponse<List<string>> localVarResponse = BulkSetIntervalsWithHttpInfo(intervalBulkCreate);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  Create (Does not update) a group of custom intervals, for the same &#x60;type&#x60; and &#x60;line&#x60;. Line and type do not need to be included in each individual interval, just once at the top level.  Limitations: - Cannot excees 2500 intervals per request. - Will not write over other intervals - Does not support \&quot;batch\&quot;, \&quot;run\&quot;, or \&quot;state\&quot; interval types. 
+        /// Create a set of intervals Create (Does not update) a group of custom intervals, for the same &#x60;type&#x60; and &#x60;line&#x60;. Line and type do not need to be included in each individual interval, just once at the top level.  Limitations: - Cannot excees 2500 intervals per request. - Will not write over other intervals - Does not support \&quot;batch\&quot;, \&quot;run\&quot;, or \&quot;state\&quot; interval types. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="intervalBulkCreate"></param>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
-        public Oden.Client.ApiResponse<List<string>> V2IntervalsSetPostWithHttpInfo(IntervalBulkCreate intervalBulkCreate)
+        public Oden.Client.ApiResponse<List<string>> BulkSetIntervalsWithHttpInfo(IntervalBulkCreate intervalBulkCreate)
         {
             // verify the required parameter 'intervalBulkCreate' is set
             if (intervalBulkCreate == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'intervalBulkCreate' when calling IntervalsApi->V2IntervalsSetPost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'intervalBulkCreate' when calling IntervalsApi->BulkSetIntervals");
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
 
@@ -1418,7 +871,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2IntervalsSetPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("BulkSetIntervals", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -1426,30 +879,30 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Create (Does not update) a group of custom intervals, for the same &#x60;type&#x60; and &#x60;line&#x60;. Line and type do not need to be included in each individual interval, just once at the top level.  Limitations: - Cannot excees 2500 intervals per request. - Will not write over other intervals - Does not support \&quot;batch\&quot;, \&quot;run\&quot;, or \&quot;state\&quot; interval types. 
+        /// Create a set of intervals Create (Does not update) a group of custom intervals, for the same &#x60;type&#x60; and &#x60;line&#x60;. Line and type do not need to be included in each individual interval, just once at the top level.  Limitations: - Cannot excees 2500 intervals per request. - Will not write over other intervals - Does not support \&quot;batch\&quot;, \&quot;run\&quot;, or \&quot;state\&quot; interval types. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="intervalBulkCreate"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;string&gt;</returns>
-        public async System.Threading.Tasks.Task<List<string>> V2IntervalsSetPostAsync(IntervalBulkCreate intervalBulkCreate, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<List<string>> BulkSetIntervalsAsync(IntervalBulkCreate intervalBulkCreate, System.Threading.CancellationToken cancellationToken = default)
         {
-            Oden.Client.ApiResponse<List<string>> localVarResponse = await V2IntervalsSetPostWithHttpInfoAsync(intervalBulkCreate, cancellationToken).ConfigureAwait(false);
+            Oden.Client.ApiResponse<List<string>> localVarResponse = await BulkSetIntervalsWithHttpInfoAsync(intervalBulkCreate, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  Create (Does not update) a group of custom intervals, for the same &#x60;type&#x60; and &#x60;line&#x60;. Line and type do not need to be included in each individual interval, just once at the top level.  Limitations: - Cannot excees 2500 intervals per request. - Will not write over other intervals - Does not support \&quot;batch\&quot;, \&quot;run\&quot;, or \&quot;state\&quot; interval types. 
+        /// Create a set of intervals Create (Does not update) a group of custom intervals, for the same &#x60;type&#x60; and &#x60;line&#x60;. Line and type do not need to be included in each individual interval, just once at the top level.  Limitations: - Cannot excees 2500 intervals per request. - Will not write over other intervals - Does not support \&quot;batch\&quot;, \&quot;run\&quot;, or \&quot;state\&quot; interval types. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="intervalBulkCreate"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<List<string>>> V2IntervalsSetPostWithHttpInfoAsync(IntervalBulkCreate intervalBulkCreate, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<List<string>>> BulkSetIntervalsWithHttpInfoAsync(IntervalBulkCreate intervalBulkCreate, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'intervalBulkCreate' is set
             if (intervalBulkCreate == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'intervalBulkCreate' when calling IntervalsApi->V2IntervalsSetPost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'intervalBulkCreate' when calling IntervalsApi->BulkSetIntervals");
 
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
@@ -1484,7 +937,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2IntervalsSetPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("BulkSetIntervals", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -1492,28 +945,28 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Update multiple existing intervals. This endpoint only updates intervals and will not create new ones.  Each interval in the &#x60;intervals&#x60; array must include an &#x60;id&#x60; that references an existing interval.  Updatable fields for each interval: - &#x60;name&#x60;: Update the interval name - &#x60;start_time&#x60;: Modify the start time - &#x60;end_time&#x60;: Modify the end time - &#x60;metadata&#x60;: Update metadata (product, target, category, reason, etc.)  The endpoint will attempt to update all intervals and return information about successes and failures: - Successfully updated intervals are returned in the response - Failed intervals are listed with their IDs and error reasons  Limitations: - Cannot exceed 2500 intervals per request - All intervals must be of the same &#x60;type&#x60; and on the same &#x60;line&#x60;  **Note:** Interval IDs must be obtained from either: - The response when creating intervals via &#x60;/v2/interval/set&#x60; or &#x60;/v2/intervals/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60; 
+        /// Update a set of intervals Update multiple existing intervals. This endpoint only updates intervals and will not create new ones.  Each interval in the &#x60;intervals&#x60; array must include an &#x60;id&#x60; that references an existing interval.  Updatable fields for each interval: - &#x60;name&#x60;: Update the interval name - &#x60;start_time&#x60;: Modify the start time - &#x60;end_time&#x60;: Modify the end time - &#x60;metadata&#x60;: Update metadata (product, target, category, reason, etc.)  The endpoint will attempt to update all intervals and return information about successes and failures: - Successfully updated intervals are returned in the response - Failed intervals are listed with their IDs and error reasons  Limitations: - Cannot exceed 2500 intervals per request - All intervals must be of the same &#x60;type&#x60; and on the same &#x60;line&#x60;  **Note:** Interval IDs must be obtained from either: - The response when creating intervals via &#x60;/v2/interval/set&#x60; or &#x60;/v2/intervals/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60; 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="intervalBulkUpdate"></param>
-        /// <returns>V2IntervalsUpdatePost200Response</returns>
-        public V2IntervalsUpdatePost200Response V2IntervalsUpdatePost(IntervalBulkUpdate intervalBulkUpdate)
+        /// <returns>BulkUpdateIntervals200Response</returns>
+        public BulkUpdateIntervals200Response BulkUpdateIntervals(IntervalBulkUpdate intervalBulkUpdate)
         {
-            Oden.Client.ApiResponse<V2IntervalsUpdatePost200Response> localVarResponse = V2IntervalsUpdatePostWithHttpInfo(intervalBulkUpdate);
+            Oden.Client.ApiResponse<BulkUpdateIntervals200Response> localVarResponse = BulkUpdateIntervalsWithHttpInfo(intervalBulkUpdate);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  Update multiple existing intervals. This endpoint only updates intervals and will not create new ones.  Each interval in the &#x60;intervals&#x60; array must include an &#x60;id&#x60; that references an existing interval.  Updatable fields for each interval: - &#x60;name&#x60;: Update the interval name - &#x60;start_time&#x60;: Modify the start time - &#x60;end_time&#x60;: Modify the end time - &#x60;metadata&#x60;: Update metadata (product, target, category, reason, etc.)  The endpoint will attempt to update all intervals and return information about successes and failures: - Successfully updated intervals are returned in the response - Failed intervals are listed with their IDs and error reasons  Limitations: - Cannot exceed 2500 intervals per request - All intervals must be of the same &#x60;type&#x60; and on the same &#x60;line&#x60;  **Note:** Interval IDs must be obtained from either: - The response when creating intervals via &#x60;/v2/interval/set&#x60; or &#x60;/v2/intervals/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60; 
+        /// Update a set of intervals Update multiple existing intervals. This endpoint only updates intervals and will not create new ones.  Each interval in the &#x60;intervals&#x60; array must include an &#x60;id&#x60; that references an existing interval.  Updatable fields for each interval: - &#x60;name&#x60;: Update the interval name - &#x60;start_time&#x60;: Modify the start time - &#x60;end_time&#x60;: Modify the end time - &#x60;metadata&#x60;: Update metadata (product, target, category, reason, etc.)  The endpoint will attempt to update all intervals and return information about successes and failures: - Successfully updated intervals are returned in the response - Failed intervals are listed with their IDs and error reasons  Limitations: - Cannot exceed 2500 intervals per request - All intervals must be of the same &#x60;type&#x60; and on the same &#x60;line&#x60;  **Note:** Interval IDs must be obtained from either: - The response when creating intervals via &#x60;/v2/interval/set&#x60; or &#x60;/v2/intervals/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60; 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="intervalBulkUpdate"></param>
-        /// <returns>ApiResponse of V2IntervalsUpdatePost200Response</returns>
-        public Oden.Client.ApiResponse<V2IntervalsUpdatePost200Response> V2IntervalsUpdatePostWithHttpInfo(IntervalBulkUpdate intervalBulkUpdate)
+        /// <returns>ApiResponse of BulkUpdateIntervals200Response</returns>
+        public Oden.Client.ApiResponse<BulkUpdateIntervals200Response> BulkUpdateIntervalsWithHttpInfo(IntervalBulkUpdate intervalBulkUpdate)
         {
             // verify the required parameter 'intervalBulkUpdate' is set
             if (intervalBulkUpdate == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'intervalBulkUpdate' when calling IntervalsApi->V2IntervalsUpdatePost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'intervalBulkUpdate' when calling IntervalsApi->BulkUpdateIntervals");
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
 
@@ -1541,11 +994,11 @@ namespace Oden.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<V2IntervalsUpdatePost200Response>("/v2/intervals/update", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<BulkUpdateIntervals200Response>("/v2/intervals/update", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2IntervalsUpdatePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("BulkUpdateIntervals", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -1553,30 +1006,30 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Update multiple existing intervals. This endpoint only updates intervals and will not create new ones.  Each interval in the &#x60;intervals&#x60; array must include an &#x60;id&#x60; that references an existing interval.  Updatable fields for each interval: - &#x60;name&#x60;: Update the interval name - &#x60;start_time&#x60;: Modify the start time - &#x60;end_time&#x60;: Modify the end time - &#x60;metadata&#x60;: Update metadata (product, target, category, reason, etc.)  The endpoint will attempt to update all intervals and return information about successes and failures: - Successfully updated intervals are returned in the response - Failed intervals are listed with their IDs and error reasons  Limitations: - Cannot exceed 2500 intervals per request - All intervals must be of the same &#x60;type&#x60; and on the same &#x60;line&#x60;  **Note:** Interval IDs must be obtained from either: - The response when creating intervals via &#x60;/v2/interval/set&#x60; or &#x60;/v2/intervals/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60; 
+        /// Update a set of intervals Update multiple existing intervals. This endpoint only updates intervals and will not create new ones.  Each interval in the &#x60;intervals&#x60; array must include an &#x60;id&#x60; that references an existing interval.  Updatable fields for each interval: - &#x60;name&#x60;: Update the interval name - &#x60;start_time&#x60;: Modify the start time - &#x60;end_time&#x60;: Modify the end time - &#x60;metadata&#x60;: Update metadata (product, target, category, reason, etc.)  The endpoint will attempt to update all intervals and return information about successes and failures: - Successfully updated intervals are returned in the response - Failed intervals are listed with their IDs and error reasons  Limitations: - Cannot exceed 2500 intervals per request - All intervals must be of the same &#x60;type&#x60; and on the same &#x60;line&#x60;  **Note:** Interval IDs must be obtained from either: - The response when creating intervals via &#x60;/v2/interval/set&#x60; or &#x60;/v2/intervals/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60; 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="intervalBulkUpdate"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of V2IntervalsUpdatePost200Response</returns>
-        public async System.Threading.Tasks.Task<V2IntervalsUpdatePost200Response> V2IntervalsUpdatePostAsync(IntervalBulkUpdate intervalBulkUpdate, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of BulkUpdateIntervals200Response</returns>
+        public async System.Threading.Tasks.Task<BulkUpdateIntervals200Response> BulkUpdateIntervalsAsync(IntervalBulkUpdate intervalBulkUpdate, System.Threading.CancellationToken cancellationToken = default)
         {
-            Oden.Client.ApiResponse<V2IntervalsUpdatePost200Response> localVarResponse = await V2IntervalsUpdatePostWithHttpInfoAsync(intervalBulkUpdate, cancellationToken).ConfigureAwait(false);
+            Oden.Client.ApiResponse<BulkUpdateIntervals200Response> localVarResponse = await BulkUpdateIntervalsWithHttpInfoAsync(intervalBulkUpdate, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  Update multiple existing intervals. This endpoint only updates intervals and will not create new ones.  Each interval in the &#x60;intervals&#x60; array must include an &#x60;id&#x60; that references an existing interval.  Updatable fields for each interval: - &#x60;name&#x60;: Update the interval name - &#x60;start_time&#x60;: Modify the start time - &#x60;end_time&#x60;: Modify the end time - &#x60;metadata&#x60;: Update metadata (product, target, category, reason, etc.)  The endpoint will attempt to update all intervals and return information about successes and failures: - Successfully updated intervals are returned in the response - Failed intervals are listed with their IDs and error reasons  Limitations: - Cannot exceed 2500 intervals per request - All intervals must be of the same &#x60;type&#x60; and on the same &#x60;line&#x60;  **Note:** Interval IDs must be obtained from either: - The response when creating intervals via &#x60;/v2/interval/set&#x60; or &#x60;/v2/intervals/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60; 
+        /// Update a set of intervals Update multiple existing intervals. This endpoint only updates intervals and will not create new ones.  Each interval in the &#x60;intervals&#x60; array must include an &#x60;id&#x60; that references an existing interval.  Updatable fields for each interval: - &#x60;name&#x60;: Update the interval name - &#x60;start_time&#x60;: Modify the start time - &#x60;end_time&#x60;: Modify the end time - &#x60;metadata&#x60;: Update metadata (product, target, category, reason, etc.)  The endpoint will attempt to update all intervals and return information about successes and failures: - Successfully updated intervals are returned in the response - Failed intervals are listed with their IDs and error reasons  Limitations: - Cannot exceed 2500 intervals per request - All intervals must be of the same &#x60;type&#x60; and on the same &#x60;line&#x60;  **Note:** Interval IDs must be obtained from either: - The response when creating intervals via &#x60;/v2/interval/set&#x60; or &#x60;/v2/intervals/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60; 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="intervalBulkUpdate"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (V2IntervalsUpdatePost200Response)</returns>
-        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<V2IntervalsUpdatePost200Response>> V2IntervalsUpdatePostWithHttpInfoAsync(IntervalBulkUpdate intervalBulkUpdate, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (BulkUpdateIntervals200Response)</returns>
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<BulkUpdateIntervals200Response>> BulkUpdateIntervalsWithHttpInfoAsync(IntervalBulkUpdate intervalBulkUpdate, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'intervalBulkUpdate' is set
             if (intervalBulkUpdate == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'intervalBulkUpdate' when calling IntervalsApi->V2IntervalsUpdatePost");
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'intervalBulkUpdate' when calling IntervalsApi->BulkUpdateIntervals");
 
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
@@ -1607,11 +1060,900 @@ namespace Oden.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<V2IntervalsUpdatePost200Response>("/v2/intervals/update", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<BulkUpdateIntervals200Response>("/v2/intervals/update", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2IntervalsUpdatePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("BulkUpdateIntervals", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete an interval Delete an interval by &#x60;type&#x60;, &#x60;line&#x60;, and &#x60;id&#x60;  **Note:** The &#x60;id&#x60; must be obtained from either: - The response when creating an interval via &#x60;/v2/interval/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60;  The examples below use placeholder IDs - replace with actual IDs from your system. 
+        /// </summary>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="interval"></param>
+        /// <returns>List&lt;Interval&gt;</returns>
+        public List<Interval> DeleteInterval(Interval interval)
+        {
+            Oden.Client.ApiResponse<List<Interval>> localVarResponse = DeleteIntervalWithHttpInfo(interval);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Delete an interval Delete an interval by &#x60;type&#x60;, &#x60;line&#x60;, and &#x60;id&#x60;  **Note:** The &#x60;id&#x60; must be obtained from either: - The response when creating an interval via &#x60;/v2/interval/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60;  The examples below use placeholder IDs - replace with actual IDs from your system. 
+        /// </summary>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="interval"></param>
+        /// <returns>ApiResponse of List&lt;Interval&gt;</returns>
+        public Oden.Client.ApiResponse<List<Interval>> DeleteIntervalWithHttpInfo(Interval interval)
+        {
+            // verify the required parameter 'interval' is set
+            if (interval == null)
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'interval' when calling IntervalsApi->DeleteInterval");
+
+            Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Oden.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = interval;
+
+            // authentication (APIKeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<List<Interval>>("/v2/interval/delete", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DeleteInterval", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete an interval Delete an interval by &#x60;type&#x60;, &#x60;line&#x60;, and &#x60;id&#x60;  **Note:** The &#x60;id&#x60; must be obtained from either: - The response when creating an interval via &#x60;/v2/interval/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60;  The examples below use placeholder IDs - replace with actual IDs from your system. 
+        /// </summary>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="interval"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;Interval&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Interval>> DeleteIntervalAsync(Interval interval, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Oden.Client.ApiResponse<List<Interval>> localVarResponse = await DeleteIntervalWithHttpInfoAsync(interval, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Delete an interval Delete an interval by &#x60;type&#x60;, &#x60;line&#x60;, and &#x60;id&#x60;  **Note:** The &#x60;id&#x60; must be obtained from either: - The response when creating an interval via &#x60;/v2/interval/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60;  The examples below use placeholder IDs - replace with actual IDs from your system. 
+        /// </summary>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="interval"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;Interval&gt;)</returns>
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<List<Interval>>> DeleteIntervalWithHttpInfoAsync(Interval interval, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'interval' is set
+            if (interval == null)
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'interval' when calling IntervalsApi->DeleteInterval");
+
+
+            Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Oden.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = interval;
+
+            // authentication (APIKeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<Interval>>("/v2/interval/delete", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DeleteInterval", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete a custom interval type Delete an existing custom Interval Type. &#x60;id&#x60; is required. Built-in types (RUN, BATCH, STATE) cannot be deleted. 
+        /// </summary>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="intervalType"></param>
+        /// <returns>IntervalType</returns>
+        public IntervalType DeleteIntervalType(IntervalType intervalType)
+        {
+            Oden.Client.ApiResponse<IntervalType> localVarResponse = DeleteIntervalTypeWithHttpInfo(intervalType);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Delete a custom interval type Delete an existing custom Interval Type. &#x60;id&#x60; is required. Built-in types (RUN, BATCH, STATE) cannot be deleted. 
+        /// </summary>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="intervalType"></param>
+        /// <returns>ApiResponse of IntervalType</returns>
+        public Oden.Client.ApiResponse<IntervalType> DeleteIntervalTypeWithHttpInfo(IntervalType intervalType)
+        {
+            // verify the required parameter 'intervalType' is set
+            if (intervalType == null)
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'intervalType' when calling IntervalsApi->DeleteIntervalType");
+
+            Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Oden.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = intervalType;
+
+            // authentication (APIKeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<IntervalType>("/v2/interval_type/delete", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DeleteIntervalType", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete a custom interval type Delete an existing custom Interval Type. &#x60;id&#x60; is required. Built-in types (RUN, BATCH, STATE) cannot be deleted. 
+        /// </summary>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="intervalType"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of IntervalType</returns>
+        public async System.Threading.Tasks.Task<IntervalType> DeleteIntervalTypeAsync(IntervalType intervalType, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Oden.Client.ApiResponse<IntervalType> localVarResponse = await DeleteIntervalTypeWithHttpInfoAsync(intervalType, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Delete a custom interval type Delete an existing custom Interval Type. &#x60;id&#x60; is required. Built-in types (RUN, BATCH, STATE) cannot be deleted. 
+        /// </summary>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="intervalType"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (IntervalType)</returns>
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<IntervalType>> DeleteIntervalTypeWithHttpInfoAsync(IntervalType intervalType, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'intervalType' is set
+            if (intervalType == null)
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'intervalType' when calling IntervalsApi->DeleteIntervalType");
+
+
+            Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Oden.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = intervalType;
+
+            // authentication (APIKeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<IntervalType>("/v2/interval_type/delete", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DeleteIntervalType", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Search interval types Search for Interval Types by &#x60;name&#x60;, &#x60;id&#x60;, or just &#x60;match: all&#x60; to return all Interval Types associated with the your organization. Basic Interval Types - - &#x60;RUN&#x60;, &#x60;BATCH&#x60;, and &#x60;STATE&#x60; - - are dedicated interval types that come out-of-the-box with Oden. Custom Interval Types may be created by users. 
+        /// </summary>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="intervalType"></param>
+        /// <returns>List&lt;IntervalType&gt;</returns>
+        public List<IntervalType> SearchIntervalTypes(IntervalType intervalType)
+        {
+            Oden.Client.ApiResponse<List<IntervalType>> localVarResponse = SearchIntervalTypesWithHttpInfo(intervalType);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Search interval types Search for Interval Types by &#x60;name&#x60;, &#x60;id&#x60;, or just &#x60;match: all&#x60; to return all Interval Types associated with the your organization. Basic Interval Types - - &#x60;RUN&#x60;, &#x60;BATCH&#x60;, and &#x60;STATE&#x60; - - are dedicated interval types that come out-of-the-box with Oden. Custom Interval Types may be created by users. 
+        /// </summary>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="intervalType"></param>
+        /// <returns>ApiResponse of List&lt;IntervalType&gt;</returns>
+        public Oden.Client.ApiResponse<List<IntervalType>> SearchIntervalTypesWithHttpInfo(IntervalType intervalType)
+        {
+            // verify the required parameter 'intervalType' is set
+            if (intervalType == null)
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'intervalType' when calling IntervalsApi->SearchIntervalTypes");
+
+            Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Oden.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = intervalType;
+
+            // authentication (APIKeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<List<IntervalType>>("/v2/interval_type/search", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SearchIntervalTypes", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Search interval types Search for Interval Types by &#x60;name&#x60;, &#x60;id&#x60;, or just &#x60;match: all&#x60; to return all Interval Types associated with the your organization. Basic Interval Types - - &#x60;RUN&#x60;, &#x60;BATCH&#x60;, and &#x60;STATE&#x60; - - are dedicated interval types that come out-of-the-box with Oden. Custom Interval Types may be created by users. 
+        /// </summary>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="intervalType"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;IntervalType&gt;</returns>
+        public async System.Threading.Tasks.Task<List<IntervalType>> SearchIntervalTypesAsync(IntervalType intervalType, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Oden.Client.ApiResponse<List<IntervalType>> localVarResponse = await SearchIntervalTypesWithHttpInfoAsync(intervalType, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Search interval types Search for Interval Types by &#x60;name&#x60;, &#x60;id&#x60;, or just &#x60;match: all&#x60; to return all Interval Types associated with the your organization. Basic Interval Types - - &#x60;RUN&#x60;, &#x60;BATCH&#x60;, and &#x60;STATE&#x60; - - are dedicated interval types that come out-of-the-box with Oden. Custom Interval Types may be created by users. 
+        /// </summary>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="intervalType"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;IntervalType&gt;)</returns>
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<List<IntervalType>>> SearchIntervalTypesWithHttpInfoAsync(IntervalType intervalType, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'intervalType' is set
+            if (intervalType == null)
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'intervalType' when calling IntervalsApi->SearchIntervalTypes");
+
+
+            Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Oden.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = intervalType;
+
+            // authentication (APIKeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<IntervalType>>("/v2/interval_type/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SearchIntervalTypes", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Search intervals on a line Searches for intervals by &#x60;type&#x60;, &#x60;line&#x60; and other optional parameters:  - &#x60;id&#x60; (for a specific Interval) - &#x60;match: unique&#x60; or omit  OR  - &#x60;match : last&#x60; for the most recent Interval of the given type on the given line  OR  - &#x60;start_time&#x60; and &#x60;end_time&#x60; (for a range of Intervals over a period of time) - &#x60;match: all&#x60; for more than one result  OR  - match all intervals for all lines in a given factory  AND/OR  - &#x60;name&#x60; (only for Intervals with a matching name) 
+        /// </summary>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="interval"></param>
+        /// <returns>List&lt;Interval&gt;</returns>
+        public List<Interval> SearchIntervals(Interval interval)
+        {
+            Oden.Client.ApiResponse<List<Interval>> localVarResponse = SearchIntervalsWithHttpInfo(interval);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Search intervals on a line Searches for intervals by &#x60;type&#x60;, &#x60;line&#x60; and other optional parameters:  - &#x60;id&#x60; (for a specific Interval) - &#x60;match: unique&#x60; or omit  OR  - &#x60;match : last&#x60; for the most recent Interval of the given type on the given line  OR  - &#x60;start_time&#x60; and &#x60;end_time&#x60; (for a range of Intervals over a period of time) - &#x60;match: all&#x60; for more than one result  OR  - match all intervals for all lines in a given factory  AND/OR  - &#x60;name&#x60; (only for Intervals with a matching name) 
+        /// </summary>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="interval"></param>
+        /// <returns>ApiResponse of List&lt;Interval&gt;</returns>
+        public Oden.Client.ApiResponse<List<Interval>> SearchIntervalsWithHttpInfo(Interval interval)
+        {
+            // verify the required parameter 'interval' is set
+            if (interval == null)
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'interval' when calling IntervalsApi->SearchIntervals");
+
+            Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Oden.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = interval;
+
+            // authentication (APIKeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<List<Interval>>("/v2/interval/search", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SearchIntervals", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Search intervals on a line Searches for intervals by &#x60;type&#x60;, &#x60;line&#x60; and other optional parameters:  - &#x60;id&#x60; (for a specific Interval) - &#x60;match: unique&#x60; or omit  OR  - &#x60;match : last&#x60; for the most recent Interval of the given type on the given line  OR  - &#x60;start_time&#x60; and &#x60;end_time&#x60; (for a range of Intervals over a period of time) - &#x60;match: all&#x60; for more than one result  OR  - match all intervals for all lines in a given factory  AND/OR  - &#x60;name&#x60; (only for Intervals with a matching name) 
+        /// </summary>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="interval"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;Interval&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Interval>> SearchIntervalsAsync(Interval interval, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Oden.Client.ApiResponse<List<Interval>> localVarResponse = await SearchIntervalsWithHttpInfoAsync(interval, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Search intervals on a line Searches for intervals by &#x60;type&#x60;, &#x60;line&#x60; and other optional parameters:  - &#x60;id&#x60; (for a specific Interval) - &#x60;match: unique&#x60; or omit  OR  - &#x60;match : last&#x60; for the most recent Interval of the given type on the given line  OR  - &#x60;start_time&#x60; and &#x60;end_time&#x60; (for a range of Intervals over a period of time) - &#x60;match: all&#x60; for more than one result  OR  - match all intervals for all lines in a given factory  AND/OR  - &#x60;name&#x60; (only for Intervals with a matching name) 
+        /// </summary>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="interval"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;Interval&gt;)</returns>
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<List<Interval>>> SearchIntervalsWithHttpInfoAsync(Interval interval, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'interval' is set
+            if (interval == null)
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'interval' when calling IntervalsApi->SearchIntervals");
+
+
+            Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Oden.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = interval;
+
+            // authentication (APIKeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<Interval>>("/v2/interval/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SearchIntervals", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Create or update an interval Create or update an Interval.  Must include &#x60;line&#x60; and &#x60;type&#x60;. &#x60;match&#x60; must be omitted, &#x60;unique&#x60; or &#x60;last&#x60;   - If &#x60;id&#x60; is not supplied, a new Interval will be created.   - If &#x60;id&#x60; is supplied, existing Interval will be updated. This interval&#39;s start time can be modified using &#x60;start_time&#x60; field.  To update a specific interval supply the &#x60;id&#x60; of that interval.  If the interval exists with all the same parameters nothing is done.  To update the most recent Interval of a given &#x60;type&#x60; on a &#x60;line&#x60; one may use &#x60;match: last&#x60; and omit &#x60;id&#x60;  For &#x60;RUN&#x60; type: if &#x60;product&#x60; and/or &#x60;product_mapping&#x60; does not exist a new one will be created. Further a &#x60;target&#x60; may be set by adding a &#x60;target&#x60; to the metadata field. The &#x60;line&#x60; and &#x60;product&#x60; for this target will be the same as the interval.  Please see examples for more specific information. 
+        /// </summary>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="interval"></param>
+        /// <returns>List&lt;Interval&gt;</returns>
+        public List<Interval> SetInterval(Interval interval)
+        {
+            Oden.Client.ApiResponse<List<Interval>> localVarResponse = SetIntervalWithHttpInfo(interval);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create or update an interval Create or update an Interval.  Must include &#x60;line&#x60; and &#x60;type&#x60;. &#x60;match&#x60; must be omitted, &#x60;unique&#x60; or &#x60;last&#x60;   - If &#x60;id&#x60; is not supplied, a new Interval will be created.   - If &#x60;id&#x60; is supplied, existing Interval will be updated. This interval&#39;s start time can be modified using &#x60;start_time&#x60; field.  To update a specific interval supply the &#x60;id&#x60; of that interval.  If the interval exists with all the same parameters nothing is done.  To update the most recent Interval of a given &#x60;type&#x60; on a &#x60;line&#x60; one may use &#x60;match: last&#x60; and omit &#x60;id&#x60;  For &#x60;RUN&#x60; type: if &#x60;product&#x60; and/or &#x60;product_mapping&#x60; does not exist a new one will be created. Further a &#x60;target&#x60; may be set by adding a &#x60;target&#x60; to the metadata field. The &#x60;line&#x60; and &#x60;product&#x60; for this target will be the same as the interval.  Please see examples for more specific information. 
+        /// </summary>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="interval"></param>
+        /// <returns>ApiResponse of List&lt;Interval&gt;</returns>
+        public Oden.Client.ApiResponse<List<Interval>> SetIntervalWithHttpInfo(Interval interval)
+        {
+            // verify the required parameter 'interval' is set
+            if (interval == null)
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'interval' when calling IntervalsApi->SetInterval");
+
+            Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Oden.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = interval;
+
+            // authentication (APIKeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<List<Interval>>("/v2/interval/set", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SetInterval", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Create or update an interval Create or update an Interval.  Must include &#x60;line&#x60; and &#x60;type&#x60;. &#x60;match&#x60; must be omitted, &#x60;unique&#x60; or &#x60;last&#x60;   - If &#x60;id&#x60; is not supplied, a new Interval will be created.   - If &#x60;id&#x60; is supplied, existing Interval will be updated. This interval&#39;s start time can be modified using &#x60;start_time&#x60; field.  To update a specific interval supply the &#x60;id&#x60; of that interval.  If the interval exists with all the same parameters nothing is done.  To update the most recent Interval of a given &#x60;type&#x60; on a &#x60;line&#x60; one may use &#x60;match: last&#x60; and omit &#x60;id&#x60;  For &#x60;RUN&#x60; type: if &#x60;product&#x60; and/or &#x60;product_mapping&#x60; does not exist a new one will be created. Further a &#x60;target&#x60; may be set by adding a &#x60;target&#x60; to the metadata field. The &#x60;line&#x60; and &#x60;product&#x60; for this target will be the same as the interval.  Please see examples for more specific information. 
+        /// </summary>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="interval"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;Interval&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Interval>> SetIntervalAsync(Interval interval, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Oden.Client.ApiResponse<List<Interval>> localVarResponse = await SetIntervalWithHttpInfoAsync(interval, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create or update an interval Create or update an Interval.  Must include &#x60;line&#x60; and &#x60;type&#x60;. &#x60;match&#x60; must be omitted, &#x60;unique&#x60; or &#x60;last&#x60;   - If &#x60;id&#x60; is not supplied, a new Interval will be created.   - If &#x60;id&#x60; is supplied, existing Interval will be updated. This interval&#39;s start time can be modified using &#x60;start_time&#x60; field.  To update a specific interval supply the &#x60;id&#x60; of that interval.  If the interval exists with all the same parameters nothing is done.  To update the most recent Interval of a given &#x60;type&#x60; on a &#x60;line&#x60; one may use &#x60;match: last&#x60; and omit &#x60;id&#x60;  For &#x60;RUN&#x60; type: if &#x60;product&#x60; and/or &#x60;product_mapping&#x60; does not exist a new one will be created. Further a &#x60;target&#x60; may be set by adding a &#x60;target&#x60; to the metadata field. The &#x60;line&#x60; and &#x60;product&#x60; for this target will be the same as the interval.  Please see examples for more specific information. 
+        /// </summary>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="interval"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;Interval&gt;)</returns>
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<List<Interval>>> SetIntervalWithHttpInfoAsync(Interval interval, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'interval' is set
+            if (interval == null)
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'interval' when calling IntervalsApi->SetInterval");
+
+
+            Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Oden.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = interval;
+
+            // authentication (APIKeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<Interval>>("/v2/interval/set", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SetInterval", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Create or update a custom interval type **Create** (no &#x60;id&#x60; in the body): send &#x60;name&#x60; (required) and optional &#x60;metadata_schema&#x60; / &#x60;tags&#x60;.  **Update** (with &#x60;id&#x60;): send the interval type’s &#x60;id&#x60; and optional &#x60;metadata_schema&#x60; / &#x60;tags&#x60; only. Do not send &#x60;name&#x60; for updates; including &#x60;name&#x60; returns 400. Renames are not supported.  **Patch (update only)**: &#x60;metadata_schema&#x60; — if the key is missing, the existing value is kept; if present, it replaces. &#x60;tags&#x60; — if the key is missing, tags are unchanged; &#x60;null&#x60; leaves tags unchanged; &#x60;[]&#x60; clears tags; a non-empty array replaces.  **Built-in types (RUN, BATCH, STATE) cannot be created, set, or deleted.** 
+        /// </summary>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="intervalTypeSet"></param>
+        /// <returns>IntervalType</returns>
+        public IntervalType SetIntervalType(IntervalTypeSet intervalTypeSet)
+        {
+            Oden.Client.ApiResponse<IntervalType> localVarResponse = SetIntervalTypeWithHttpInfo(intervalTypeSet);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create or update a custom interval type **Create** (no &#x60;id&#x60; in the body): send &#x60;name&#x60; (required) and optional &#x60;metadata_schema&#x60; / &#x60;tags&#x60;.  **Update** (with &#x60;id&#x60;): send the interval type’s &#x60;id&#x60; and optional &#x60;metadata_schema&#x60; / &#x60;tags&#x60; only. Do not send &#x60;name&#x60; for updates; including &#x60;name&#x60; returns 400. Renames are not supported.  **Patch (update only)**: &#x60;metadata_schema&#x60; — if the key is missing, the existing value is kept; if present, it replaces. &#x60;tags&#x60; — if the key is missing, tags are unchanged; &#x60;null&#x60; leaves tags unchanged; &#x60;[]&#x60; clears tags; a non-empty array replaces.  **Built-in types (RUN, BATCH, STATE) cannot be created, set, or deleted.** 
+        /// </summary>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="intervalTypeSet"></param>
+        /// <returns>ApiResponse of IntervalType</returns>
+        public Oden.Client.ApiResponse<IntervalType> SetIntervalTypeWithHttpInfo(IntervalTypeSet intervalTypeSet)
+        {
+            // verify the required parameter 'intervalTypeSet' is set
+            if (intervalTypeSet == null)
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'intervalTypeSet' when calling IntervalsApi->SetIntervalType");
+
+            Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Oden.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = intervalTypeSet;
+
+            // authentication (APIKeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<IntervalType>("/v2/interval_type/set", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SetIntervalType", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Create or update a custom interval type **Create** (no &#x60;id&#x60; in the body): send &#x60;name&#x60; (required) and optional &#x60;metadata_schema&#x60; / &#x60;tags&#x60;.  **Update** (with &#x60;id&#x60;): send the interval type’s &#x60;id&#x60; and optional &#x60;metadata_schema&#x60; / &#x60;tags&#x60; only. Do not send &#x60;name&#x60; for updates; including &#x60;name&#x60; returns 400. Renames are not supported.  **Patch (update only)**: &#x60;metadata_schema&#x60; — if the key is missing, the existing value is kept; if present, it replaces. &#x60;tags&#x60; — if the key is missing, tags are unchanged; &#x60;null&#x60; leaves tags unchanged; &#x60;[]&#x60; clears tags; a non-empty array replaces.  **Built-in types (RUN, BATCH, STATE) cannot be created, set, or deleted.** 
+        /// </summary>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="intervalTypeSet"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of IntervalType</returns>
+        public async System.Threading.Tasks.Task<IntervalType> SetIntervalTypeAsync(IntervalTypeSet intervalTypeSet, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Oden.Client.ApiResponse<IntervalType> localVarResponse = await SetIntervalTypeWithHttpInfoAsync(intervalTypeSet, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create or update a custom interval type **Create** (no &#x60;id&#x60; in the body): send &#x60;name&#x60; (required) and optional &#x60;metadata_schema&#x60; / &#x60;tags&#x60;.  **Update** (with &#x60;id&#x60;): send the interval type’s &#x60;id&#x60; and optional &#x60;metadata_schema&#x60; / &#x60;tags&#x60; only. Do not send &#x60;name&#x60; for updates; including &#x60;name&#x60; returns 400. Renames are not supported.  **Patch (update only)**: &#x60;metadata_schema&#x60; — if the key is missing, the existing value is kept; if present, it replaces. &#x60;tags&#x60; — if the key is missing, tags are unchanged; &#x60;null&#x60; leaves tags unchanged; &#x60;[]&#x60; clears tags; a non-empty array replaces.  **Built-in types (RUN, BATCH, STATE) cannot be created, set, or deleted.** 
+        /// </summary>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="intervalTypeSet"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (IntervalType)</returns>
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<IntervalType>> SetIntervalTypeWithHttpInfoAsync(IntervalTypeSet intervalTypeSet, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'intervalTypeSet' is set
+            if (intervalTypeSet == null)
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'intervalTypeSet' when calling IntervalsApi->SetIntervalType");
+
+
+            Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Oden.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = intervalTypeSet;
+
+            // authentication (APIKeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<IntervalType>("/v2/interval_type/set", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SetIntervalType", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update an interval Update an existing Interval. This endpoint only updates intervals and will not create new ones.  Must include &#x60;line&#x60;, &#x60;type&#x60;, and &#x60;id&#x60;. The &#x60;id&#x60; must reference an existing interval.  This interval&#39;s properties can be modified using the following fields: - &#x60;name&#x60;: Update the interval name - &#x60;start_time&#x60;: Modify the start time - &#x60;end_time&#x60;: Modify the end time - &#x60;metadata&#x60;: Update metadata (product, target, category, reason, etc.)  If the interval does not exist, a 404 error will be returned.  **Note:** The &#x60;id&#x60; must be obtained from either: - The response when creating an interval via &#x60;/v2/interval/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60; 
+        /// </summary>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="interval"></param>
+        /// <returns>List&lt;Interval&gt;</returns>
+        public List<Interval> UpdateInterval(Interval interval)
+        {
+            Oden.Client.ApiResponse<List<Interval>> localVarResponse = UpdateIntervalWithHttpInfo(interval);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update an interval Update an existing Interval. This endpoint only updates intervals and will not create new ones.  Must include &#x60;line&#x60;, &#x60;type&#x60;, and &#x60;id&#x60;. The &#x60;id&#x60; must reference an existing interval.  This interval&#39;s properties can be modified using the following fields: - &#x60;name&#x60;: Update the interval name - &#x60;start_time&#x60;: Modify the start time - &#x60;end_time&#x60;: Modify the end time - &#x60;metadata&#x60;: Update metadata (product, target, category, reason, etc.)  If the interval does not exist, a 404 error will be returned.  **Note:** The &#x60;id&#x60; must be obtained from either: - The response when creating an interval via &#x60;/v2/interval/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60; 
+        /// </summary>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="interval"></param>
+        /// <returns>ApiResponse of List&lt;Interval&gt;</returns>
+        public Oden.Client.ApiResponse<List<Interval>> UpdateIntervalWithHttpInfo(Interval interval)
+        {
+            // verify the required parameter 'interval' is set
+            if (interval == null)
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'interval' when calling IntervalsApi->UpdateInterval");
+
+            Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Oden.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = interval;
+
+            // authentication (APIKeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<List<Interval>>("/v2/interval/update", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdateInterval", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update an interval Update an existing Interval. This endpoint only updates intervals and will not create new ones.  Must include &#x60;line&#x60;, &#x60;type&#x60;, and &#x60;id&#x60;. The &#x60;id&#x60; must reference an existing interval.  This interval&#39;s properties can be modified using the following fields: - &#x60;name&#x60;: Update the interval name - &#x60;start_time&#x60;: Modify the start time - &#x60;end_time&#x60;: Modify the end time - &#x60;metadata&#x60;: Update metadata (product, target, category, reason, etc.)  If the interval does not exist, a 404 error will be returned.  **Note:** The &#x60;id&#x60; must be obtained from either: - The response when creating an interval via &#x60;/v2/interval/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60; 
+        /// </summary>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="interval"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;Interval&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Interval>> UpdateIntervalAsync(Interval interval, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Oden.Client.ApiResponse<List<Interval>> localVarResponse = await UpdateIntervalWithHttpInfoAsync(interval, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update an interval Update an existing Interval. This endpoint only updates intervals and will not create new ones.  Must include &#x60;line&#x60;, &#x60;type&#x60;, and &#x60;id&#x60;. The &#x60;id&#x60; must reference an existing interval.  This interval&#39;s properties can be modified using the following fields: - &#x60;name&#x60;: Update the interval name - &#x60;start_time&#x60;: Modify the start time - &#x60;end_time&#x60;: Modify the end time - &#x60;metadata&#x60;: Update metadata (product, target, category, reason, etc.)  If the interval does not exist, a 404 error will be returned.  **Note:** The &#x60;id&#x60; must be obtained from either: - The response when creating an interval via &#x60;/v2/interval/set&#x60; - Searching for intervals via &#x60;/v2/interval/search&#x60; 
+        /// </summary>
+        /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="interval"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;Interval&gt;)</returns>
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<List<Interval>>> UpdateIntervalWithHttpInfoAsync(Interval interval, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'interval' is set
+            if (interval == null)
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'interval' when calling IntervalsApi->UpdateInterval");
+
+
+            Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Oden.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = interval;
+
+            // authentication (APIKeyAuth) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<Interval>>("/v2/interval/update", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdateInterval", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

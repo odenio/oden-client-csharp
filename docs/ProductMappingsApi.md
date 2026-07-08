@@ -4,14 +4,14 @@ All URIs are relative to *https://api.oden.app*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**V2ProductMappingSearchPost**](ProductMappingsApi.md#v2productmappingsearchpost) | **POST** /v2/product_mapping/search |  |
-| [**V2ProductMappingSetPost**](ProductMappingsApi.md#v2productmappingsetpost) | **POST** /v2/product_mapping/set |  |
+| [**SearchProductMappings**](ProductMappingsApi.md#searchproductmappings) | **POST** /v2/product_mapping/search | Search product-to-line mappings |
+| [**SetProductMapping**](ProductMappingsApi.md#setproductmapping) | **POST** /v2/product_mapping/set | Map a product to a line |
 
-<a id="v2productmappingsearchpost"></a>
-# **V2ProductMappingSearchPost**
-> List&lt;ProductMapping&gt; V2ProductMappingSearchPost (ProductMapping productMapping)
+<a id="searchproductmappings"></a>
+# **SearchProductMappings**
+> List&lt;ProductMapping&gt; SearchProductMappings (ProductMapping productMapping)
 
-
+Search product-to-line mappings
 
 Searches for Product Mappings.  May be used to confirm a Product Mapping exists.  Much like `product/search`, may be used to get `name`s of line or product from `id`s, or `id`s from `name`s. 
 
@@ -26,7 +26,7 @@ using Oden.Model;
 
 namespace Example
 {
-    public class V2ProductMappingSearchPostExample
+    public class SearchProductMappingsExample
     {
         public static void Main()
         {
@@ -45,12 +45,13 @@ namespace Example
 
             try
             {
-                List<ProductMapping> result = apiInstance.V2ProductMappingSearchPost(productMapping);
+                // Search product-to-line mappings
+                List<ProductMapping> result = apiInstance.SearchProductMappings(productMapping);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ProductMappingsApi.V2ProductMappingSearchPost: " + e.Message);
+                Debug.Print("Exception when calling ProductMappingsApi.SearchProductMappings: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -59,20 +60,21 @@ namespace Example
 }
 ```
 
-#### Using the V2ProductMappingSearchPostWithHttpInfo variant
+#### Using the SearchProductMappingsWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<ProductMapping>> response = apiInstance.V2ProductMappingSearchPostWithHttpInfo(productMapping);
+    // Search product-to-line mappings
+    ApiResponse<List<ProductMapping>> response = apiInstance.SearchProductMappingsWithHttpInfo(productMapping);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ProductMappingsApi.V2ProductMappingSearchPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ProductMappingsApi.SearchProductMappingsWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -110,11 +112,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="v2productmappingsetpost"></a>
-# **V2ProductMappingSetPost**
-> void V2ProductMappingSetPost (ProductMapping productMapping)
+<a id="setproductmapping"></a>
+# **SetProductMapping**
+> void SetProductMapping (ProductMapping productMapping)
 
-
+Map a product to a line
 
 Map a Product to a Line - implying this Line can produce, or is producing this Product.  If the supplied Product doesn't exist, it will be created. 
 
@@ -129,7 +131,7 @@ using Oden.Model;
 
 namespace Example
 {
-    public class V2ProductMappingSetPostExample
+    public class SetProductMappingExample
     {
         public static void Main()
         {
@@ -148,11 +150,12 @@ namespace Example
 
             try
             {
-                apiInstance.V2ProductMappingSetPost(productMapping);
+                // Map a product to a line
+                apiInstance.SetProductMapping(productMapping);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ProductMappingsApi.V2ProductMappingSetPost: " + e.Message);
+                Debug.Print("Exception when calling ProductMappingsApi.SetProductMapping: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -161,17 +164,18 @@ namespace Example
 }
 ```
 
-#### Using the V2ProductMappingSetPostWithHttpInfo variant
+#### Using the SetProductMappingWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.V2ProductMappingSetPostWithHttpInfo(productMapping);
+    // Map a product to a line
+    apiInstance.SetProductMappingWithHttpInfo(productMapping);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ProductMappingsApi.V2ProductMappingSetPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ProductMappingsApi.SetProductMappingWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

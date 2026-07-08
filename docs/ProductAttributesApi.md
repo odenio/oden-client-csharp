@@ -4,14 +4,14 @@ All URIs are relative to *https://api.oden.app*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**V2ProductAttributeSearchPost**](ProductAttributesApi.md#v2productattributesearchpost) | **POST** /v2/product_attribute/search |  |
-| [**V2ProductAttributeSetPost**](ProductAttributesApi.md#v2productattributesetpost) | **POST** /v2/product_attribute/set |  |
+| [**SearchProductAttributes**](ProductAttributesApi.md#searchproductattributes) | **POST** /v2/product_attribute/search | Search product attributes |
+| [**SetProductAttribute**](ProductAttributesApi.md#setproductattribute) | **POST** /v2/product_attribute/set | Create or update a product attribute |
 
-<a id="v2productattributesearchpost"></a>
-# **V2ProductAttributeSearchPost**
-> List&lt;ProductAttribute&gt; V2ProductAttributeSearchPost (ProductAttribute productAttribute)
+<a id="searchproductattributes"></a>
+# **SearchProductAttributes**
+> List&lt;ProductAttribute&gt; SearchProductAttributes (ProductAttribute productAttribute)
 
-
+Search product attributes
 
 Searches for Product Attributes  Product attributes may be searched by ID, product, or, display_name - in that order.  If an ID is supplied, it will be used to search for a Product Attribute, and display_name, product will be ignored.  If a product is supplied (and no ID), it will be used to search for a Product Attribute, and display_name will be ignored. 
 
@@ -26,7 +26,7 @@ using Oden.Model;
 
 namespace Example
 {
-    public class V2ProductAttributeSearchPostExample
+    public class SearchProductAttributesExample
     {
         public static void Main()
         {
@@ -45,12 +45,13 @@ namespace Example
 
             try
             {
-                List<ProductAttribute> result = apiInstance.V2ProductAttributeSearchPost(productAttribute);
+                // Search product attributes
+                List<ProductAttribute> result = apiInstance.SearchProductAttributes(productAttribute);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ProductAttributesApi.V2ProductAttributeSearchPost: " + e.Message);
+                Debug.Print("Exception when calling ProductAttributesApi.SearchProductAttributes: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -59,20 +60,21 @@ namespace Example
 }
 ```
 
-#### Using the V2ProductAttributeSearchPostWithHttpInfo variant
+#### Using the SearchProductAttributesWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<ProductAttribute>> response = apiInstance.V2ProductAttributeSearchPostWithHttpInfo(productAttribute);
+    // Search product attributes
+    ApiResponse<List<ProductAttribute>> response = apiInstance.SearchProductAttributesWithHttpInfo(productAttribute);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ProductAttributesApi.V2ProductAttributeSearchPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ProductAttributesApi.SearchProductAttributesWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -110,11 +112,11 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="v2productattributesetpost"></a>
-# **V2ProductAttributeSetPost**
-> List&lt;ProductAttribute&gt; V2ProductAttributeSetPost (ProductAttribute productAttribute)
+<a id="setproductattribute"></a>
+# **SetProductAttribute**
+> List&lt;ProductAttribute&gt; SetProductAttribute (ProductAttribute productAttribute)
 
-
+Create or update a product attribute
 
 Set a Product Attribute for a Product.  If the supplied Product Attribute doesn't exist, it will be created.  If the supplied Product Attribute Value doesn't exist, it will be created.  If the supplied Product Attribute Value is already set for the Product, it will be updated.  If the supplied Product Attribute Value is not set for the Product, it will be added.  Supplied Product must exist already. 
 
@@ -129,7 +131,7 @@ using Oden.Model;
 
 namespace Example
 {
-    public class V2ProductAttributeSetPostExample
+    public class SetProductAttributeExample
     {
         public static void Main()
         {
@@ -148,12 +150,13 @@ namespace Example
 
             try
             {
-                List<ProductAttribute> result = apiInstance.V2ProductAttributeSetPost(productAttribute);
+                // Create or update a product attribute
+                List<ProductAttribute> result = apiInstance.SetProductAttribute(productAttribute);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ProductAttributesApi.V2ProductAttributeSetPost: " + e.Message);
+                Debug.Print("Exception when calling ProductAttributesApi.SetProductAttribute: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -162,20 +165,21 @@ namespace Example
 }
 ```
 
-#### Using the V2ProductAttributeSetPostWithHttpInfo variant
+#### Using the SetProductAttributeWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<List<ProductAttribute>> response = apiInstance.V2ProductAttributeSetPostWithHttpInfo(productAttribute);
+    // Create or update a product attribute
+    ApiResponse<List<ProductAttribute>> response = apiInstance.SetProductAttributeWithHttpInfo(productAttribute);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ProductAttributesApi.V2ProductAttributeSetPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ProductAttributesApi.SetProductAttributeWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }

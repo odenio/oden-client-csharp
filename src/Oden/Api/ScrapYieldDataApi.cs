@@ -29,70 +29,70 @@ namespace Oden.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// Delete a scrap/yield record
         /// </summary>
         /// <remarks>
         /// Deletes Scrap Yield record by ID and line 
         /// </remarks>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2ScrapYieldSearchPostRequest"></param>
+        /// <param name="searchScrapYieldRequest"></param>
         /// <returns></returns>
-        void V2ScrapYieldDeletePost(V2ScrapYieldSearchPostRequest v2ScrapYieldSearchPostRequest);
+        void DeleteScrapYield(SearchScrapYieldRequest searchScrapYieldRequest);
 
         /// <summary>
-        /// 
+        /// Delete a scrap/yield record
         /// </summary>
         /// <remarks>
         /// Deletes Scrap Yield record by ID and line 
         /// </remarks>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2ScrapYieldSearchPostRequest"></param>
+        /// <param name="searchScrapYieldRequest"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> V2ScrapYieldDeletePostWithHttpInfo(V2ScrapYieldSearchPostRequest v2ScrapYieldSearchPostRequest);
+        ApiResponse<Object> DeleteScrapYieldWithHttpInfo(SearchScrapYieldRequest searchScrapYieldRequest);
         /// <summary>
-        /// 
+        /// Search scrap/yield records
         /// </summary>
         /// <remarks>
         /// Searches for scrap/yield records for a given Interval 
         /// </remarks>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2ScrapYieldSearchPostRequest"></param>
+        /// <param name="searchScrapYieldRequest"></param>
         /// <returns></returns>
-        void V2ScrapYieldSearchPost(V2ScrapYieldSearchPostRequest v2ScrapYieldSearchPostRequest);
+        void SearchScrapYield(SearchScrapYieldRequest searchScrapYieldRequest);
 
         /// <summary>
-        /// 
+        /// Search scrap/yield records
         /// </summary>
         /// <remarks>
         /// Searches for scrap/yield records for a given Interval 
         /// </remarks>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2ScrapYieldSearchPostRequest"></param>
+        /// <param name="searchScrapYieldRequest"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> V2ScrapYieldSearchPostWithHttpInfo(V2ScrapYieldSearchPostRequest v2ScrapYieldSearchPostRequest);
+        ApiResponse<Object> SearchScrapYieldWithHttpInfo(SearchScrapYieldRequest searchScrapYieldRequest);
         /// <summary>
-        /// 
+        /// Create or update a scrap/yield record
         /// </summary>
         /// <remarks>
         /// Uploads scrap or yield raw data.  Notes:  - If &#x60;id&#x60; is provided the existing Scrap/Yield record will be updated.  - If &#x60;id&#x60; is omitted a new Scrap/Yield record will be created.  - The scrap yield for an interval is an aggregate of all scrap yield raw data records associated with that interval     - Therefore, multiple scrap yield records can exist for a single interval, each contributing to the \&quot;aggregate\&quot; (i.e. sum total) scrap/yield of that interval  - Changing an aggregate can be done by either adding another record with an offset, or updating an existing record.     - Example: If you have 3 scrap records in an interval: 50 50 50 &#x3D; 150 and want to make the aggregate 100 for a given interval, either update one of the existing scrap records from 50 -&gt; 0, or add a new one with value -50  - Duplicate keys should be avoided, see Schema docs above for details. 
         /// </remarks>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2ScrapYieldSetPostRequest"></param>
+        /// <param name="setScrapYieldRequest"></param>
         /// <param name="pattern">Optional pattern type to use for matching: - &#x60;exact&#x60; for exact match - &#x60;contains&#x60; for the string to be contained in the query - &#x60;regex&#x60; to match based on a regular expression  (optional, default to exact)</param>
         /// <returns></returns>
-        void V2ScrapYieldSetPost(V2ScrapYieldSetPostRequest v2ScrapYieldSetPostRequest, string pattern = default);
+        void SetScrapYield(SetScrapYieldRequest setScrapYieldRequest, string pattern = default);
 
         /// <summary>
-        /// 
+        /// Create or update a scrap/yield record
         /// </summary>
         /// <remarks>
         /// Uploads scrap or yield raw data.  Notes:  - If &#x60;id&#x60; is provided the existing Scrap/Yield record will be updated.  - If &#x60;id&#x60; is omitted a new Scrap/Yield record will be created.  - The scrap yield for an interval is an aggregate of all scrap yield raw data records associated with that interval     - Therefore, multiple scrap yield records can exist for a single interval, each contributing to the \&quot;aggregate\&quot; (i.e. sum total) scrap/yield of that interval  - Changing an aggregate can be done by either adding another record with an offset, or updating an existing record.     - Example: If you have 3 scrap records in an interval: 50 50 50 &#x3D; 150 and want to make the aggregate 100 for a given interval, either update one of the existing scrap records from 50 -&gt; 0, or add a new one with value -50  - Duplicate keys should be avoided, see Schema docs above for details. 
         /// </remarks>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2ScrapYieldSetPostRequest"></param>
+        /// <param name="setScrapYieldRequest"></param>
         /// <param name="pattern">Optional pattern type to use for matching: - &#x60;exact&#x60; for exact match - &#x60;contains&#x60; for the string to be contained in the query - &#x60;regex&#x60; to match based on a regular expression  (optional, default to exact)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> V2ScrapYieldSetPostWithHttpInfo(V2ScrapYieldSetPostRequest v2ScrapYieldSetPostRequest, string pattern = default);
+        ApiResponse<Object> SetScrapYieldWithHttpInfo(SetScrapYieldRequest setScrapYieldRequest, string pattern = default);
         #endregion Synchronous Operations
     }
 
@@ -103,76 +103,76 @@ namespace Oden.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// Delete a scrap/yield record
         /// </summary>
         /// <remarks>
         /// Deletes Scrap Yield record by ID and line 
         /// </remarks>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2ScrapYieldSearchPostRequest"></param>
+        /// <param name="searchScrapYieldRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task V2ScrapYieldDeletePostAsync(V2ScrapYieldSearchPostRequest v2ScrapYieldSearchPostRequest, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task DeleteScrapYieldAsync(SearchScrapYieldRequest searchScrapYieldRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// 
+        /// Delete a scrap/yield record
         /// </summary>
         /// <remarks>
         /// Deletes Scrap Yield record by ID and line 
         /// </remarks>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2ScrapYieldSearchPostRequest"></param>
+        /// <param name="searchScrapYieldRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> V2ScrapYieldDeletePostWithHttpInfoAsync(V2ScrapYieldSearchPostRequest v2ScrapYieldSearchPostRequest, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteScrapYieldWithHttpInfoAsync(SearchScrapYieldRequest searchScrapYieldRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// 
+        /// Search scrap/yield records
         /// </summary>
         /// <remarks>
         /// Searches for scrap/yield records for a given Interval 
         /// </remarks>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2ScrapYieldSearchPostRequest"></param>
+        /// <param name="searchScrapYieldRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task V2ScrapYieldSearchPostAsync(V2ScrapYieldSearchPostRequest v2ScrapYieldSearchPostRequest, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task SearchScrapYieldAsync(SearchScrapYieldRequest searchScrapYieldRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// 
+        /// Search scrap/yield records
         /// </summary>
         /// <remarks>
         /// Searches for scrap/yield records for a given Interval 
         /// </remarks>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2ScrapYieldSearchPostRequest"></param>
+        /// <param name="searchScrapYieldRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> V2ScrapYieldSearchPostWithHttpInfoAsync(V2ScrapYieldSearchPostRequest v2ScrapYieldSearchPostRequest, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<Object>> SearchScrapYieldWithHttpInfoAsync(SearchScrapYieldRequest searchScrapYieldRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// 
+        /// Create or update a scrap/yield record
         /// </summary>
         /// <remarks>
         /// Uploads scrap or yield raw data.  Notes:  - If &#x60;id&#x60; is provided the existing Scrap/Yield record will be updated.  - If &#x60;id&#x60; is omitted a new Scrap/Yield record will be created.  - The scrap yield for an interval is an aggregate of all scrap yield raw data records associated with that interval     - Therefore, multiple scrap yield records can exist for a single interval, each contributing to the \&quot;aggregate\&quot; (i.e. sum total) scrap/yield of that interval  - Changing an aggregate can be done by either adding another record with an offset, or updating an existing record.     - Example: If you have 3 scrap records in an interval: 50 50 50 &#x3D; 150 and want to make the aggregate 100 for a given interval, either update one of the existing scrap records from 50 -&gt; 0, or add a new one with value -50  - Duplicate keys should be avoided, see Schema docs above for details. 
         /// </remarks>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2ScrapYieldSetPostRequest"></param>
+        /// <param name="setScrapYieldRequest"></param>
         /// <param name="pattern">Optional pattern type to use for matching: - &#x60;exact&#x60; for exact match - &#x60;contains&#x60; for the string to be contained in the query - &#x60;regex&#x60; to match based on a regular expression  (optional, default to exact)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task V2ScrapYieldSetPostAsync(V2ScrapYieldSetPostRequest v2ScrapYieldSetPostRequest, string pattern = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task SetScrapYieldAsync(SetScrapYieldRequest setScrapYieldRequest, string pattern = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// 
+        /// Create or update a scrap/yield record
         /// </summary>
         /// <remarks>
         /// Uploads scrap or yield raw data.  Notes:  - If &#x60;id&#x60; is provided the existing Scrap/Yield record will be updated.  - If &#x60;id&#x60; is omitted a new Scrap/Yield record will be created.  - The scrap yield for an interval is an aggregate of all scrap yield raw data records associated with that interval     - Therefore, multiple scrap yield records can exist for a single interval, each contributing to the \&quot;aggregate\&quot; (i.e. sum total) scrap/yield of that interval  - Changing an aggregate can be done by either adding another record with an offset, or updating an existing record.     - Example: If you have 3 scrap records in an interval: 50 50 50 &#x3D; 150 and want to make the aggregate 100 for a given interval, either update one of the existing scrap records from 50 -&gt; 0, or add a new one with value -50  - Duplicate keys should be avoided, see Schema docs above for details. 
         /// </remarks>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2ScrapYieldSetPostRequest"></param>
+        /// <param name="setScrapYieldRequest"></param>
         /// <param name="pattern">Optional pattern type to use for matching: - &#x60;exact&#x60; for exact match - &#x60;contains&#x60; for the string to be contained in the query - &#x60;regex&#x60; to match based on a regular expression  (optional, default to exact)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> V2ScrapYieldSetPostWithHttpInfoAsync(V2ScrapYieldSetPostRequest v2ScrapYieldSetPostRequest, string pattern = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<Object>> SetScrapYieldWithHttpInfoAsync(SetScrapYieldRequest setScrapYieldRequest, string pattern = default, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -387,27 +387,27 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Deletes Scrap Yield record by ID and line 
+        /// Delete a scrap/yield record Deletes Scrap Yield record by ID and line 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2ScrapYieldSearchPostRequest"></param>
+        /// <param name="searchScrapYieldRequest"></param>
         /// <returns></returns>
-        public void V2ScrapYieldDeletePost(V2ScrapYieldSearchPostRequest v2ScrapYieldSearchPostRequest)
+        public void DeleteScrapYield(SearchScrapYieldRequest searchScrapYieldRequest)
         {
-            V2ScrapYieldDeletePostWithHttpInfo(v2ScrapYieldSearchPostRequest);
+            DeleteScrapYieldWithHttpInfo(searchScrapYieldRequest);
         }
 
         /// <summary>
-        ///  Deletes Scrap Yield record by ID and line 
+        /// Delete a scrap/yield record Deletes Scrap Yield record by ID and line 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2ScrapYieldSearchPostRequest"></param>
+        /// <param name="searchScrapYieldRequest"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Oden.Client.ApiResponse<Object> V2ScrapYieldDeletePostWithHttpInfo(V2ScrapYieldSearchPostRequest v2ScrapYieldSearchPostRequest)
+        public Oden.Client.ApiResponse<Object> DeleteScrapYieldWithHttpInfo(SearchScrapYieldRequest searchScrapYieldRequest)
         {
-            // verify the required parameter 'v2ScrapYieldSearchPostRequest' is set
-            if (v2ScrapYieldSearchPostRequest == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'v2ScrapYieldSearchPostRequest' when calling ScrapYieldDataApi->V2ScrapYieldDeletePost");
+            // verify the required parameter 'searchScrapYieldRequest' is set
+            if (searchScrapYieldRequest == null)
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'searchScrapYieldRequest' when calling ScrapYieldDataApi->DeleteScrapYield");
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
 
@@ -426,7 +426,7 @@ namespace Oden.Api
             var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = v2ScrapYieldSearchPostRequest;
+            localVarRequestOptions.Data = searchScrapYieldRequest;
 
             // authentication (APIKeyAuth) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -439,7 +439,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2ScrapYieldDeletePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeleteScrapYield", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -447,29 +447,29 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Deletes Scrap Yield record by ID and line 
+        /// Delete a scrap/yield record Deletes Scrap Yield record by ID and line 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2ScrapYieldSearchPostRequest"></param>
+        /// <param name="searchScrapYieldRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task V2ScrapYieldDeletePostAsync(V2ScrapYieldSearchPostRequest v2ScrapYieldSearchPostRequest, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task DeleteScrapYieldAsync(SearchScrapYieldRequest searchScrapYieldRequest, System.Threading.CancellationToken cancellationToken = default)
         {
-            await V2ScrapYieldDeletePostWithHttpInfoAsync(v2ScrapYieldSearchPostRequest, cancellationToken).ConfigureAwait(false);
+            await DeleteScrapYieldWithHttpInfoAsync(searchScrapYieldRequest, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        ///  Deletes Scrap Yield record by ID and line 
+        /// Delete a scrap/yield record Deletes Scrap Yield record by ID and line 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2ScrapYieldSearchPostRequest"></param>
+        /// <param name="searchScrapYieldRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<Object>> V2ScrapYieldDeletePostWithHttpInfoAsync(V2ScrapYieldSearchPostRequest v2ScrapYieldSearchPostRequest, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<Object>> DeleteScrapYieldWithHttpInfoAsync(SearchScrapYieldRequest searchScrapYieldRequest, System.Threading.CancellationToken cancellationToken = default)
         {
-            // verify the required parameter 'v2ScrapYieldSearchPostRequest' is set
-            if (v2ScrapYieldSearchPostRequest == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'v2ScrapYieldSearchPostRequest' when calling ScrapYieldDataApi->V2ScrapYieldDeletePost");
+            // verify the required parameter 'searchScrapYieldRequest' is set
+            if (searchScrapYieldRequest == null)
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'searchScrapYieldRequest' when calling ScrapYieldDataApi->DeleteScrapYield");
 
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
@@ -490,7 +490,7 @@ namespace Oden.Api
             var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = v2ScrapYieldSearchPostRequest;
+            localVarRequestOptions.Data = searchScrapYieldRequest;
 
             // authentication (APIKeyAuth) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -504,7 +504,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2ScrapYieldDeletePost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeleteScrapYield", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -512,27 +512,27 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Searches for scrap/yield records for a given Interval 
+        /// Search scrap/yield records Searches for scrap/yield records for a given Interval 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2ScrapYieldSearchPostRequest"></param>
+        /// <param name="searchScrapYieldRequest"></param>
         /// <returns></returns>
-        public void V2ScrapYieldSearchPost(V2ScrapYieldSearchPostRequest v2ScrapYieldSearchPostRequest)
+        public void SearchScrapYield(SearchScrapYieldRequest searchScrapYieldRequest)
         {
-            V2ScrapYieldSearchPostWithHttpInfo(v2ScrapYieldSearchPostRequest);
+            SearchScrapYieldWithHttpInfo(searchScrapYieldRequest);
         }
 
         /// <summary>
-        ///  Searches for scrap/yield records for a given Interval 
+        /// Search scrap/yield records Searches for scrap/yield records for a given Interval 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2ScrapYieldSearchPostRequest"></param>
+        /// <param name="searchScrapYieldRequest"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Oden.Client.ApiResponse<Object> V2ScrapYieldSearchPostWithHttpInfo(V2ScrapYieldSearchPostRequest v2ScrapYieldSearchPostRequest)
+        public Oden.Client.ApiResponse<Object> SearchScrapYieldWithHttpInfo(SearchScrapYieldRequest searchScrapYieldRequest)
         {
-            // verify the required parameter 'v2ScrapYieldSearchPostRequest' is set
-            if (v2ScrapYieldSearchPostRequest == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'v2ScrapYieldSearchPostRequest' when calling ScrapYieldDataApi->V2ScrapYieldSearchPost");
+            // verify the required parameter 'searchScrapYieldRequest' is set
+            if (searchScrapYieldRequest == null)
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'searchScrapYieldRequest' when calling ScrapYieldDataApi->SearchScrapYield");
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
 
@@ -551,7 +551,7 @@ namespace Oden.Api
             var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = v2ScrapYieldSearchPostRequest;
+            localVarRequestOptions.Data = searchScrapYieldRequest;
 
             // authentication (APIKeyAuth) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -564,7 +564,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2ScrapYieldSearchPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SearchScrapYield", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -572,29 +572,29 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Searches for scrap/yield records for a given Interval 
+        /// Search scrap/yield records Searches for scrap/yield records for a given Interval 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2ScrapYieldSearchPostRequest"></param>
+        /// <param name="searchScrapYieldRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task V2ScrapYieldSearchPostAsync(V2ScrapYieldSearchPostRequest v2ScrapYieldSearchPostRequest, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task SearchScrapYieldAsync(SearchScrapYieldRequest searchScrapYieldRequest, System.Threading.CancellationToken cancellationToken = default)
         {
-            await V2ScrapYieldSearchPostWithHttpInfoAsync(v2ScrapYieldSearchPostRequest, cancellationToken).ConfigureAwait(false);
+            await SearchScrapYieldWithHttpInfoAsync(searchScrapYieldRequest, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        ///  Searches for scrap/yield records for a given Interval 
+        /// Search scrap/yield records Searches for scrap/yield records for a given Interval 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2ScrapYieldSearchPostRequest"></param>
+        /// <param name="searchScrapYieldRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<Object>> V2ScrapYieldSearchPostWithHttpInfoAsync(V2ScrapYieldSearchPostRequest v2ScrapYieldSearchPostRequest, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<Object>> SearchScrapYieldWithHttpInfoAsync(SearchScrapYieldRequest searchScrapYieldRequest, System.Threading.CancellationToken cancellationToken = default)
         {
-            // verify the required parameter 'v2ScrapYieldSearchPostRequest' is set
-            if (v2ScrapYieldSearchPostRequest == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'v2ScrapYieldSearchPostRequest' when calling ScrapYieldDataApi->V2ScrapYieldSearchPost");
+            // verify the required parameter 'searchScrapYieldRequest' is set
+            if (searchScrapYieldRequest == null)
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'searchScrapYieldRequest' when calling ScrapYieldDataApi->SearchScrapYield");
 
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
@@ -615,7 +615,7 @@ namespace Oden.Api
             var localVarAccept = Oden.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = v2ScrapYieldSearchPostRequest;
+            localVarRequestOptions.Data = searchScrapYieldRequest;
 
             // authentication (APIKeyAuth) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -629,7 +629,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2ScrapYieldSearchPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SearchScrapYield", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -637,29 +637,29 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Uploads scrap or yield raw data.  Notes:  - If &#x60;id&#x60; is provided the existing Scrap/Yield record will be updated.  - If &#x60;id&#x60; is omitted a new Scrap/Yield record will be created.  - The scrap yield for an interval is an aggregate of all scrap yield raw data records associated with that interval     - Therefore, multiple scrap yield records can exist for a single interval, each contributing to the \&quot;aggregate\&quot; (i.e. sum total) scrap/yield of that interval  - Changing an aggregate can be done by either adding another record with an offset, or updating an existing record.     - Example: If you have 3 scrap records in an interval: 50 50 50 &#x3D; 150 and want to make the aggregate 100 for a given interval, either update one of the existing scrap records from 50 -&gt; 0, or add a new one with value -50  - Duplicate keys should be avoided, see Schema docs above for details. 
+        /// Create or update a scrap/yield record Uploads scrap or yield raw data.  Notes:  - If &#x60;id&#x60; is provided the existing Scrap/Yield record will be updated.  - If &#x60;id&#x60; is omitted a new Scrap/Yield record will be created.  - The scrap yield for an interval is an aggregate of all scrap yield raw data records associated with that interval     - Therefore, multiple scrap yield records can exist for a single interval, each contributing to the \&quot;aggregate\&quot; (i.e. sum total) scrap/yield of that interval  - Changing an aggregate can be done by either adding another record with an offset, or updating an existing record.     - Example: If you have 3 scrap records in an interval: 50 50 50 &#x3D; 150 and want to make the aggregate 100 for a given interval, either update one of the existing scrap records from 50 -&gt; 0, or add a new one with value -50  - Duplicate keys should be avoided, see Schema docs above for details. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2ScrapYieldSetPostRequest"></param>
+        /// <param name="setScrapYieldRequest"></param>
         /// <param name="pattern">Optional pattern type to use for matching: - &#x60;exact&#x60; for exact match - &#x60;contains&#x60; for the string to be contained in the query - &#x60;regex&#x60; to match based on a regular expression  (optional, default to exact)</param>
         /// <returns></returns>
-        public void V2ScrapYieldSetPost(V2ScrapYieldSetPostRequest v2ScrapYieldSetPostRequest, string pattern = default)
+        public void SetScrapYield(SetScrapYieldRequest setScrapYieldRequest, string pattern = default)
         {
-            V2ScrapYieldSetPostWithHttpInfo(v2ScrapYieldSetPostRequest, pattern);
+            SetScrapYieldWithHttpInfo(setScrapYieldRequest, pattern);
         }
 
         /// <summary>
-        ///  Uploads scrap or yield raw data.  Notes:  - If &#x60;id&#x60; is provided the existing Scrap/Yield record will be updated.  - If &#x60;id&#x60; is omitted a new Scrap/Yield record will be created.  - The scrap yield for an interval is an aggregate of all scrap yield raw data records associated with that interval     - Therefore, multiple scrap yield records can exist for a single interval, each contributing to the \&quot;aggregate\&quot; (i.e. sum total) scrap/yield of that interval  - Changing an aggregate can be done by either adding another record with an offset, or updating an existing record.     - Example: If you have 3 scrap records in an interval: 50 50 50 &#x3D; 150 and want to make the aggregate 100 for a given interval, either update one of the existing scrap records from 50 -&gt; 0, or add a new one with value -50  - Duplicate keys should be avoided, see Schema docs above for details. 
+        /// Create or update a scrap/yield record Uploads scrap or yield raw data.  Notes:  - If &#x60;id&#x60; is provided the existing Scrap/Yield record will be updated.  - If &#x60;id&#x60; is omitted a new Scrap/Yield record will be created.  - The scrap yield for an interval is an aggregate of all scrap yield raw data records associated with that interval     - Therefore, multiple scrap yield records can exist for a single interval, each contributing to the \&quot;aggregate\&quot; (i.e. sum total) scrap/yield of that interval  - Changing an aggregate can be done by either adding another record with an offset, or updating an existing record.     - Example: If you have 3 scrap records in an interval: 50 50 50 &#x3D; 150 and want to make the aggregate 100 for a given interval, either update one of the existing scrap records from 50 -&gt; 0, or add a new one with value -50  - Duplicate keys should be avoided, see Schema docs above for details. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2ScrapYieldSetPostRequest"></param>
+        /// <param name="setScrapYieldRequest"></param>
         /// <param name="pattern">Optional pattern type to use for matching: - &#x60;exact&#x60; for exact match - &#x60;contains&#x60; for the string to be contained in the query - &#x60;regex&#x60; to match based on a regular expression  (optional, default to exact)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Oden.Client.ApiResponse<Object> V2ScrapYieldSetPostWithHttpInfo(V2ScrapYieldSetPostRequest v2ScrapYieldSetPostRequest, string pattern = default)
+        public Oden.Client.ApiResponse<Object> SetScrapYieldWithHttpInfo(SetScrapYieldRequest setScrapYieldRequest, string pattern = default)
         {
-            // verify the required parameter 'v2ScrapYieldSetPostRequest' is set
-            if (v2ScrapYieldSetPostRequest == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'v2ScrapYieldSetPostRequest' when calling ScrapYieldDataApi->V2ScrapYieldSetPost");
+            // verify the required parameter 'setScrapYieldRequest' is set
+            if (setScrapYieldRequest == null)
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'setScrapYieldRequest' when calling ScrapYieldDataApi->SetScrapYield");
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
 
@@ -682,7 +682,7 @@ namespace Oden.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Oden.Client.ClientUtils.ParameterToMultiMap("", "pattern", pattern));
             }
-            localVarRequestOptions.Data = v2ScrapYieldSetPostRequest;
+            localVarRequestOptions.Data = setScrapYieldRequest;
 
             // authentication (APIKeyAuth) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -695,7 +695,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2ScrapYieldSetPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SetScrapYield", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -703,31 +703,31 @@ namespace Oden.Api
         }
 
         /// <summary>
-        ///  Uploads scrap or yield raw data.  Notes:  - If &#x60;id&#x60; is provided the existing Scrap/Yield record will be updated.  - If &#x60;id&#x60; is omitted a new Scrap/Yield record will be created.  - The scrap yield for an interval is an aggregate of all scrap yield raw data records associated with that interval     - Therefore, multiple scrap yield records can exist for a single interval, each contributing to the \&quot;aggregate\&quot; (i.e. sum total) scrap/yield of that interval  - Changing an aggregate can be done by either adding another record with an offset, or updating an existing record.     - Example: If you have 3 scrap records in an interval: 50 50 50 &#x3D; 150 and want to make the aggregate 100 for a given interval, either update one of the existing scrap records from 50 -&gt; 0, or add a new one with value -50  - Duplicate keys should be avoided, see Schema docs above for details. 
+        /// Create or update a scrap/yield record Uploads scrap or yield raw data.  Notes:  - If &#x60;id&#x60; is provided the existing Scrap/Yield record will be updated.  - If &#x60;id&#x60; is omitted a new Scrap/Yield record will be created.  - The scrap yield for an interval is an aggregate of all scrap yield raw data records associated with that interval     - Therefore, multiple scrap yield records can exist for a single interval, each contributing to the \&quot;aggregate\&quot; (i.e. sum total) scrap/yield of that interval  - Changing an aggregate can be done by either adding another record with an offset, or updating an existing record.     - Example: If you have 3 scrap records in an interval: 50 50 50 &#x3D; 150 and want to make the aggregate 100 for a given interval, either update one of the existing scrap records from 50 -&gt; 0, or add a new one with value -50  - Duplicate keys should be avoided, see Schema docs above for details. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2ScrapYieldSetPostRequest"></param>
+        /// <param name="setScrapYieldRequest"></param>
         /// <param name="pattern">Optional pattern type to use for matching: - &#x60;exact&#x60; for exact match - &#x60;contains&#x60; for the string to be contained in the query - &#x60;regex&#x60; to match based on a regular expression  (optional, default to exact)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task V2ScrapYieldSetPostAsync(V2ScrapYieldSetPostRequest v2ScrapYieldSetPostRequest, string pattern = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task SetScrapYieldAsync(SetScrapYieldRequest setScrapYieldRequest, string pattern = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            await V2ScrapYieldSetPostWithHttpInfoAsync(v2ScrapYieldSetPostRequest, pattern, cancellationToken).ConfigureAwait(false);
+            await SetScrapYieldWithHttpInfoAsync(setScrapYieldRequest, pattern, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        ///  Uploads scrap or yield raw data.  Notes:  - If &#x60;id&#x60; is provided the existing Scrap/Yield record will be updated.  - If &#x60;id&#x60; is omitted a new Scrap/Yield record will be created.  - The scrap yield for an interval is an aggregate of all scrap yield raw data records associated with that interval     - Therefore, multiple scrap yield records can exist for a single interval, each contributing to the \&quot;aggregate\&quot; (i.e. sum total) scrap/yield of that interval  - Changing an aggregate can be done by either adding another record with an offset, or updating an existing record.     - Example: If you have 3 scrap records in an interval: 50 50 50 &#x3D; 150 and want to make the aggregate 100 for a given interval, either update one of the existing scrap records from 50 -&gt; 0, or add a new one with value -50  - Duplicate keys should be avoided, see Schema docs above for details. 
+        /// Create or update a scrap/yield record Uploads scrap or yield raw data.  Notes:  - If &#x60;id&#x60; is provided the existing Scrap/Yield record will be updated.  - If &#x60;id&#x60; is omitted a new Scrap/Yield record will be created.  - The scrap yield for an interval is an aggregate of all scrap yield raw data records associated with that interval     - Therefore, multiple scrap yield records can exist for a single interval, each contributing to the \&quot;aggregate\&quot; (i.e. sum total) scrap/yield of that interval  - Changing an aggregate can be done by either adding another record with an offset, or updating an existing record.     - Example: If you have 3 scrap records in an interval: 50 50 50 &#x3D; 150 and want to make the aggregate 100 for a given interval, either update one of the existing scrap records from 50 -&gt; 0, or add a new one with value -50  - Duplicate keys should be avoided, see Schema docs above for details. 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="v2ScrapYieldSetPostRequest"></param>
+        /// <param name="setScrapYieldRequest"></param>
         /// <param name="pattern">Optional pattern type to use for matching: - &#x60;exact&#x60; for exact match - &#x60;contains&#x60; for the string to be contained in the query - &#x60;regex&#x60; to match based on a regular expression  (optional, default to exact)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<Object>> V2ScrapYieldSetPostWithHttpInfoAsync(V2ScrapYieldSetPostRequest v2ScrapYieldSetPostRequest, string pattern = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Oden.Client.ApiResponse<Object>> SetScrapYieldWithHttpInfoAsync(SetScrapYieldRequest setScrapYieldRequest, string pattern = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            // verify the required parameter 'v2ScrapYieldSetPostRequest' is set
-            if (v2ScrapYieldSetPostRequest == null)
-                throw new Oden.Client.ApiException(400, "Missing required parameter 'v2ScrapYieldSetPostRequest' when calling ScrapYieldDataApi->V2ScrapYieldSetPost");
+            // verify the required parameter 'setScrapYieldRequest' is set
+            if (setScrapYieldRequest == null)
+                throw new Oden.Client.ApiException(400, "Missing required parameter 'setScrapYieldRequest' when calling ScrapYieldDataApi->SetScrapYield");
 
 
             Oden.Client.RequestOptions localVarRequestOptions = new Oden.Client.RequestOptions();
@@ -752,7 +752,7 @@ namespace Oden.Api
             {
                 localVarRequestOptions.QueryParameters.Add(Oden.Client.ClientUtils.ParameterToMultiMap("", "pattern", pattern));
             }
-            localVarRequestOptions.Data = v2ScrapYieldSetPostRequest;
+            localVarRequestOptions.Data = setScrapYieldRequest;
 
             // authentication (APIKeyAuth) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -766,7 +766,7 @@ namespace Oden.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("V2ScrapYieldSetPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SetScrapYield", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

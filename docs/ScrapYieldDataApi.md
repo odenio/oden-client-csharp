@@ -4,15 +4,15 @@ All URIs are relative to *https://api.oden.app*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**V2ScrapYieldDeletePost**](ScrapYieldDataApi.md#v2scrapyielddeletepost) | **POST** /v2/scrap_yield/delete |  |
-| [**V2ScrapYieldSearchPost**](ScrapYieldDataApi.md#v2scrapyieldsearchpost) | **POST** /v2/scrap_yield/search |  |
-| [**V2ScrapYieldSetPost**](ScrapYieldDataApi.md#v2scrapyieldsetpost) | **POST** /v2/scrap_yield/set |  |
+| [**DeleteScrapYield**](ScrapYieldDataApi.md#deletescrapyield) | **POST** /v2/scrap_yield/delete | Delete a scrap/yield record |
+| [**SearchScrapYield**](ScrapYieldDataApi.md#searchscrapyield) | **POST** /v2/scrap_yield/search | Search scrap/yield records |
+| [**SetScrapYield**](ScrapYieldDataApi.md#setscrapyield) | **POST** /v2/scrap_yield/set | Create or update a scrap/yield record |
 
-<a id="v2scrapyielddeletepost"></a>
-# **V2ScrapYieldDeletePost**
-> void V2ScrapYieldDeletePost (V2ScrapYieldSearchPostRequest v2ScrapYieldSearchPostRequest)
+<a id="deletescrapyield"></a>
+# **DeleteScrapYield**
+> void DeleteScrapYield (SearchScrapYieldRequest searchScrapYieldRequest)
 
-
+Delete a scrap/yield record
 
 Deletes Scrap Yield record by ID and line 
 
@@ -27,7 +27,7 @@ using Oden.Model;
 
 namespace Example
 {
-    public class V2ScrapYieldDeletePostExample
+    public class DeleteScrapYieldExample
     {
         public static void Main()
         {
@@ -42,15 +42,16 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ScrapYieldDataApi(httpClient, config, httpClientHandler);
-            var v2ScrapYieldSearchPostRequest = new V2ScrapYieldSearchPostRequest(); // V2ScrapYieldSearchPostRequest | 
+            var searchScrapYieldRequest = new SearchScrapYieldRequest(); // SearchScrapYieldRequest | 
 
             try
             {
-                apiInstance.V2ScrapYieldDeletePost(v2ScrapYieldSearchPostRequest);
+                // Delete a scrap/yield record
+                apiInstance.DeleteScrapYield(searchScrapYieldRequest);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScrapYieldDataApi.V2ScrapYieldDeletePost: " + e.Message);
+                Debug.Print("Exception when calling ScrapYieldDataApi.DeleteScrapYield: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -59,17 +60,18 @@ namespace Example
 }
 ```
 
-#### Using the V2ScrapYieldDeletePostWithHttpInfo variant
+#### Using the DeleteScrapYieldWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.V2ScrapYieldDeletePostWithHttpInfo(v2ScrapYieldSearchPostRequest);
+    // Delete a scrap/yield record
+    apiInstance.DeleteScrapYieldWithHttpInfo(searchScrapYieldRequest);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ScrapYieldDataApi.V2ScrapYieldDeletePostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ScrapYieldDataApi.DeleteScrapYieldWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -79,7 +81,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **v2ScrapYieldSearchPostRequest** | [**V2ScrapYieldSearchPostRequest**](V2ScrapYieldSearchPostRequest.md) |  |  |
+| **searchScrapYieldRequest** | [**SearchScrapYieldRequest**](SearchScrapYieldRequest.md) |  |  |
 
 ### Return type
 
@@ -109,11 +111,11 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="v2scrapyieldsearchpost"></a>
-# **V2ScrapYieldSearchPost**
-> void V2ScrapYieldSearchPost (V2ScrapYieldSearchPostRequest v2ScrapYieldSearchPostRequest)
+<a id="searchscrapyield"></a>
+# **SearchScrapYield**
+> void SearchScrapYield (SearchScrapYieldRequest searchScrapYieldRequest)
 
-
+Search scrap/yield records
 
 Searches for scrap/yield records for a given Interval 
 
@@ -128,7 +130,7 @@ using Oden.Model;
 
 namespace Example
 {
-    public class V2ScrapYieldSearchPostExample
+    public class SearchScrapYieldExample
     {
         public static void Main()
         {
@@ -143,15 +145,16 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ScrapYieldDataApi(httpClient, config, httpClientHandler);
-            var v2ScrapYieldSearchPostRequest = new V2ScrapYieldSearchPostRequest(); // V2ScrapYieldSearchPostRequest | 
+            var searchScrapYieldRequest = new SearchScrapYieldRequest(); // SearchScrapYieldRequest | 
 
             try
             {
-                apiInstance.V2ScrapYieldSearchPost(v2ScrapYieldSearchPostRequest);
+                // Search scrap/yield records
+                apiInstance.SearchScrapYield(searchScrapYieldRequest);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScrapYieldDataApi.V2ScrapYieldSearchPost: " + e.Message);
+                Debug.Print("Exception when calling ScrapYieldDataApi.SearchScrapYield: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -160,17 +163,18 @@ namespace Example
 }
 ```
 
-#### Using the V2ScrapYieldSearchPostWithHttpInfo variant
+#### Using the SearchScrapYieldWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.V2ScrapYieldSearchPostWithHttpInfo(v2ScrapYieldSearchPostRequest);
+    // Search scrap/yield records
+    apiInstance.SearchScrapYieldWithHttpInfo(searchScrapYieldRequest);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ScrapYieldDataApi.V2ScrapYieldSearchPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ScrapYieldDataApi.SearchScrapYieldWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -180,7 +184,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **v2ScrapYieldSearchPostRequest** | [**V2ScrapYieldSearchPostRequest**](V2ScrapYieldSearchPostRequest.md) |  |  |
+| **searchScrapYieldRequest** | [**SearchScrapYieldRequest**](SearchScrapYieldRequest.md) |  |  |
 
 ### Return type
 
@@ -210,11 +214,11 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="v2scrapyieldsetpost"></a>
-# **V2ScrapYieldSetPost**
-> void V2ScrapYieldSetPost (V2ScrapYieldSetPostRequest v2ScrapYieldSetPostRequest, string pattern = null)
+<a id="setscrapyield"></a>
+# **SetScrapYield**
+> void SetScrapYield (SetScrapYieldRequest setScrapYieldRequest, string pattern = null)
 
-
+Create or update a scrap/yield record
 
 Uploads scrap or yield raw data.  Notes:  - If `id` is provided the existing Scrap/Yield record will be updated.  - If `id` is omitted a new Scrap/Yield record will be created.  - The scrap yield for an interval is an aggregate of all scrap yield raw data records associated with that interval     - Therefore, multiple scrap yield records can exist for a single interval, each contributing to the \"aggregate\" (i.e. sum total) scrap/yield of that interval  - Changing an aggregate can be done by either adding another record with an offset, or updating an existing record.     - Example: If you have 3 scrap records in an interval: 50 50 50 = 150 and want to make the aggregate 100 for a given interval, either update one of the existing scrap records from 50 -> 0, or add a new one with value -50  - Duplicate keys should be avoided, see Schema docs above for details. 
 
@@ -229,7 +233,7 @@ using Oden.Model;
 
 namespace Example
 {
-    public class V2ScrapYieldSetPostExample
+    public class SetScrapYieldExample
     {
         public static void Main()
         {
@@ -244,16 +248,17 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ScrapYieldDataApi(httpClient, config, httpClientHandler);
-            var v2ScrapYieldSetPostRequest = new V2ScrapYieldSetPostRequest(); // V2ScrapYieldSetPostRequest | 
+            var setScrapYieldRequest = new SetScrapYieldRequest(); // SetScrapYieldRequest | 
             var pattern = "exact";  // string | Optional pattern type to use for matching: - `exact` for exact match - `contains` for the string to be contained in the query - `regex` to match based on a regular expression  (optional)  (default to exact)
 
             try
             {
-                apiInstance.V2ScrapYieldSetPost(v2ScrapYieldSetPostRequest, pattern);
+                // Create or update a scrap/yield record
+                apiInstance.SetScrapYield(setScrapYieldRequest, pattern);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ScrapYieldDataApi.V2ScrapYieldSetPost: " + e.Message);
+                Debug.Print("Exception when calling ScrapYieldDataApi.SetScrapYield: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -262,17 +267,18 @@ namespace Example
 }
 ```
 
-#### Using the V2ScrapYieldSetPostWithHttpInfo variant
+#### Using the SetScrapYieldWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    apiInstance.V2ScrapYieldSetPostWithHttpInfo(v2ScrapYieldSetPostRequest, pattern);
+    // Create or update a scrap/yield record
+    apiInstance.SetScrapYieldWithHttpInfo(setScrapYieldRequest, pattern);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling ScrapYieldDataApi.V2ScrapYieldSetPostWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling ScrapYieldDataApi.SetScrapYieldWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -282,7 +288,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **v2ScrapYieldSetPostRequest** | [**V2ScrapYieldSetPostRequest**](V2ScrapYieldSetPostRequest.md) |  |  |
+| **setScrapYieldRequest** | [**SetScrapYieldRequest**](SetScrapYieldRequest.md) |  |  |
 | **pattern** | **string** | Optional pattern type to use for matching: - &#x60;exact&#x60; for exact match - &#x60;contains&#x60; for the string to be contained in the query - &#x60;regex&#x60; to match based on a regular expression  | [optional] [default to exact] |
 
 ### Return type
