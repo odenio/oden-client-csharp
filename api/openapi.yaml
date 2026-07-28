@@ -3829,6 +3829,8 @@ components:
           x-go-type-skip-optional-pointer: true
         run:
           $ref: "#/components/schemas/Interval"
+      required:
+      - metadata_type
       type: object
     RunMetadata:
       additionalProperties: true
@@ -3844,6 +3846,8 @@ components:
           $ref: "#/components/schemas/Product"
         target:
           $ref: "#/components/schemas/Target"
+      required:
+      - metadata_type
       type: object
     StateMetadata:
       additionalProperties: true
@@ -3861,6 +3865,8 @@ components:
           type: string
         category:
           $ref: "#/components/schemas/StateCategory"
+      required:
+      - metadata_type
       type: object
     CustomMetadata:
       additionalProperties: true
@@ -3872,6 +3878,8 @@ components:
           readOnly: true
           type: string
           x-go-type-skip-optional-pointer: true
+      required:
+      - metadata_type
       type: object
     Unit:
       description: |
