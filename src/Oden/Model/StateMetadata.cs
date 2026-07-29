@@ -50,8 +50,8 @@ namespace Oden.Model
         /// <summary>
         /// Gets or Sets MetadataType
         /// </summary>
-        [DataMember(Name = "metadata_type", IsRequired = true, EmitDefaultValue = true)]
-        public MetadataTypeEnum MetadataType { get; set; }
+        [DataMember(Name = "metadata_type", EmitDefaultValue = false)]
+        public MetadataTypeEnum? MetadataType { get; set; }
 
         /// <summary>
         /// Returns false as MetadataType should not be serialized given that it's read-only.
@@ -60,14 +60,6 @@ namespace Oden.Model
         public bool ShouldSerializeMetadataType()
         {
             return false;
-        }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="StateMetadata" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected StateMetadata()
-        {
-            this.AdditionalProperties = new Dictionary<string, object>();
         }
         /// <summary>
         /// Initializes a new instance of the <see cref="StateMetadata" /> class.
