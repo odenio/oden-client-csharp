@@ -260,6 +260,10 @@ Class | Method | HTTP request | Description
 *ScrapYieldDataApi* | [**DeleteScrapYield**](docs/ScrapYieldDataApi.md#deletescrapyield) | **POST** /v2/scrap_yield/delete | Delete a scrap/yield record
 *ScrapYieldDataApi* | [**SearchScrapYield**](docs/ScrapYieldDataApi.md#searchscrapyield) | **POST** /v2/scrap_yield/search | Search scrap/yield records
 *ScrapYieldDataApi* | [**SetScrapYield**](docs/ScrapYieldDataApi.md#setscrapyield) | **POST** /v2/scrap_yield/set | Create or update a scrap/yield record
+*StatesApi* | [**SearchStateCategories**](docs/StatesApi.md#searchstatecategories) | **POST** /v2/state_category/search | Search state categories
+*StatesApi* | [**SearchStateReasons**](docs/StatesApi.md#searchstatereasons) | **POST** /v2/state_reason/search | Search state reasons on one or more lines
+*StatesApi* | [**SetStateCategory**](docs/StatesApi.md#setstatecategory) | **POST** /v2/state_category/set | Create or update a state category
+*StatesApi* | [**SetStateReasons**](docs/StatesApi.md#setstatereasons) | **POST** /v2/state_reason/set | Create a state reason on one or more lines
 *TargetsApi* | [**SearchTargets**](docs/TargetsApi.md#searchtargets) | **POST** /v2/target/search | Search metric targets
 *TargetsApi* | [**SetTarget**](docs/TargetsApi.md#settarget) | **POST** /v2/target/set | Create or update a metric target
 
@@ -313,8 +317,15 @@ Class | Method | HTTP request | Description
  - [Model.SearchScrapYieldRequest](docs/SearchScrapYieldRequest.md)
  - [Model.SetScrapYieldRequest](docs/SetScrapYieldRequest.md)
  - [Model.StateCategory](docs/StateCategory.md)
+ - [Model.StateCategoryDetail](docs/StateCategoryDetail.md)
+ - [Model.StateCategorySearch](docs/StateCategorySearch.md)
+ - [Model.StateCategorySet](docs/StateCategorySet.md)
+ - [Model.StateCategoryType](docs/StateCategoryType.md)
  - [Model.StateMetadata](docs/StateMetadata.md)
  - [Model.StateReason](docs/StateReason.md)
+ - [Model.StateReasonDetail](docs/StateReasonDetail.md)
+ - [Model.StateReasonSearch](docs/StateReasonSearch.md)
+ - [Model.StateReasonSet](docs/StateReasonSet.md)
  - [Model.Target](docs/Target.md)
  - [Model.Unit](docs/Unit.md)
 
