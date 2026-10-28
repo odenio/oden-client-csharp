@@ -157,7 +157,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
         "401":
           content:
             application/json:
@@ -191,12 +192,6 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
       summary: Search production lines
       tags:
       - Machine Groups
@@ -271,18 +266,13 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
         "400":
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
         "404":
           content:
             application/json:
@@ -355,18 +345,13 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
         "400":
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
         "404":
           content:
             application/json:
@@ -432,18 +417,13 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
         "400":
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
       summary: Search products
       tags:
       - Products
@@ -493,18 +473,13 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
         "400":
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
       summary: Create or update a product
       tags:
       - Products
@@ -560,18 +535,13 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
         "400":
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
         "404":
           content:
             application/json:
@@ -650,18 +620,13 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
         "400":
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
       summary: Search product-to-line mappings
       tags:
       - Product Mappings
@@ -719,18 +684,13 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
         "400":
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
         "404":
           content:
             application/json:
@@ -797,18 +757,13 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
         "400":
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
       summary: Search product attributes
       tags:
       - Product Attributes
@@ -880,18 +835,13 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
         "400":
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
       summary: Create or update a product attribute
       tags:
       - Product Attributes
@@ -953,18 +903,13 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
         "400":
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
         "404":
           content:
             application/json:
@@ -1054,18 +999,13 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
         "400":
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
         "404":
           content:
             application/json:
@@ -1173,18 +1113,13 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
         "400":
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
         "404":
           content:
             application/json:
@@ -1378,18 +1313,13 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
         "400":
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
       summary: Create or update an interval
       tags:
       - Intervals
@@ -1493,7 +1423,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
         "401":
           content:
             application/json:
@@ -1527,12 +1458,6 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
       summary: Update an interval
       tags:
       - Intervals
@@ -1622,18 +1547,13 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
         "400":
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
         "404":
           content:
             application/json:
@@ -1691,7 +1611,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
         "401":
           content:
             application/json:
@@ -1725,12 +1646,6 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
       summary: Create a set of intervals
       tags:
       - Intervals
@@ -1817,7 +1732,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
         "401":
           content:
             application/json:
@@ -1845,12 +1761,6 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
       summary: Update a set of intervals
       tags:
       - Intervals
@@ -1893,7 +1803,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
         "401":
           content:
             application/json:
@@ -1927,12 +1838,6 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
       summary: Delete intervals in a time range
       tags:
       - Intervals
@@ -1988,18 +1893,13 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
         "400":
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
         "404":
           content:
             application/json:
@@ -2050,7 +1950,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
         "401":
           content:
             application/json:
@@ -2077,12 +1978,6 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
       summary: Create or update a custom interval type
       tags:
       - Intervals
@@ -2114,7 +2009,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
         "401":
           content:
             application/json:
@@ -2141,12 +2037,6 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
       summary: Delete a custom interval type
       tags:
       - Intervals
@@ -2190,7 +2080,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
         "401":
           content:
             application/json:
@@ -2255,7 +2146,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
         "401":
           content:
             application/json:
@@ -2335,7 +2227,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
         "401":
           content:
             application/json:
@@ -2410,7 +2303,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
         "401":
           content:
             application/json:
@@ -2502,18 +2396,13 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
         "400":
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
         "404":
           content:
             application/json:
@@ -2630,18 +2519,13 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
         "400":
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
         "404":
           content:
             application/json:
@@ -2703,18 +2587,13 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
         "400":
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
         "404":
           content:
             application/json:
@@ -2788,18 +2667,13 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
         "400":
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
         "404":
           content:
             application/json:
@@ -2874,18 +2748,13 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
         "400":
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
         "404":
           content:
             application/json:
@@ -2950,18 +2819,13 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
         "400":
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
         "404":
           content:
             application/json:
@@ -3017,18 +2881,13 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
         "400":
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
         "404":
           content:
             application/json:
@@ -3087,18 +2946,13 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
         "400":
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
         "404":
           content:
             application/json:
@@ -3146,7 +3000,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
         "401":
           content:
             application/json:
@@ -3186,12 +3041,6 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
       summary: Run an OQL query
       tags:
       - OQL
@@ -3231,7 +3080,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
         "401":
           content:
             application/json:
@@ -3264,12 +3114,6 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
       summary: Execute a dashboard
       tags:
       - Dashboards
@@ -3321,7 +3165,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
         "401":
           content:
             application/json:
@@ -3355,12 +3200,6 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
       summary: Search maintenance work orders
       tags:
       - Maintenance Work Orders
@@ -3420,7 +3259,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
         "401":
           content:
             application/json:
@@ -3454,12 +3294,6 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
       summary: Create or update a maintenance work order
       tags:
       - Maintenance Work Orders
@@ -3502,7 +3336,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/search_lines_400_response"
-          description: An error occurred regarding one of the input parameters
+          description: |
+            The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
         "401":
           content:
             application/json:
@@ -3536,12 +3371,6 @@ paths:
                 $ref: "#/components/schemas/search_lines_500_response"
           description: |
             An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/GenericError"
-          description: Endpoint is not yet implemented
       summary: Delete a maintenance work order
       tags:
       - Maintenance Work Orders
@@ -3621,24 +3450,19 @@ components:
           schema:
             $ref: "#/components/schemas/GenericError"
       description: Entity not found
-    UnimplementedError:
-      content:
-        application/json:
-          schema:
-            $ref: "#/components/schemas/GenericError"
-      description: Endpoint is not yet implemented
     TooManyRequestsError:
       content:
         application/json:
           schema:
             $ref: "#/components/schemas/GenericError"
       description: Too many requests
-    ParameterError:
+    BadRequestError:
       content:
         application/json:
           schema:
             $ref: "#/components/schemas/search_lines_400_response"
-      description: An error occurred regarding one of the input parameters
+      description: |
+        The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed "Unimplemented:").
   schemas:
     Match:
       default: unique
@@ -4822,7 +4646,7 @@ components:
       - error
       - retryable
       type: object
-    search_lines_400_response:
+    ParameterError:
       example:
         error: error
         name: name
@@ -4839,6 +4663,10 @@ components:
       - name
       - retryable
       type: object
+    search_lines_400_response:
+      anyOf:
+      - $ref: "#/components/schemas/ParameterError"
+      - $ref: "#/components/schemas/GenericError"
     search_lines_409_response:
       example:
         entity_name: entity_name

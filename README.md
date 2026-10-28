@@ -302,6 +302,7 @@ Class | Method | HTTP request | Description
  - [Model.Match](docs/Match.md)
  - [Model.MetricGroup](docs/MetricGroup.md)
  - [Model.OQLQuery](docs/OQLQuery.md)
+ - [Model.ParameterError](docs/ParameterError.md)
  - [Model.Product](docs/Product.md)
  - [Model.ProductAttribute](docs/ProductAttribute.md)
  - [Model.ProductMapping](docs/ProductMapping.md)

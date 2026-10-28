@@ -55,14 +55,14 @@ namespace Oden.Test.Api
         }
 
         /// <summary>
-        /// Test V2MetricGroupSearchPost
+        /// Test SearchMetricGroups
         /// </summary>
         [Fact]
-        public void V2MetricGroupSearchPostTest()
+        public void SearchMetricGroupsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //MetricGroup metricGroup = null;
-            //var response = instance.V2MetricGroupSearchPost(metricGroup);
+            //var response = instance.SearchMetricGroups(metricGroup);
             //Assert.IsType<List<MetricGroup>>(response);
         }
     }

@@ -55,99 +55,123 @@ namespace Oden.Test.Api
         }
 
         /// <summary>
-        /// Test V2IntervalDeletePost
+        /// Test BulkDeleteIntervals
         /// </summary>
         [Fact]
-        public void V2IntervalDeletePostTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //Interval interval = null;
-            //var response = instance.V2IntervalDeletePost(interval);
-            //Assert.IsType<List<Interval>>(response);
-        }
-
-        /// <summary>
-        /// Test V2IntervalSearchPost
-        /// </summary>
-        [Fact]
-        public void V2IntervalSearchPostTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //Interval interval = null;
-            //var response = instance.V2IntervalSearchPost(interval);
-            //Assert.IsType<List<Interval>>(response);
-        }
-
-        /// <summary>
-        /// Test V2IntervalSetPost
-        /// </summary>
-        [Fact]
-        public void V2IntervalSetPostTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //Interval interval = null;
-            //var response = instance.V2IntervalSetPost(interval);
-            //Assert.IsType<List<Interval>>(response);
-        }
-
-        /// <summary>
-        /// Test V2IntervalTypeSearchPost
-        /// </summary>
-        [Fact]
-        public void V2IntervalTypeSearchPostTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //IntervalType intervalType = null;
-            //var response = instance.V2IntervalTypeSearchPost(intervalType);
-            //Assert.IsType<List<IntervalType>>(response);
-        }
-
-        /// <summary>
-        /// Test V2IntervalUpdatePost
-        /// </summary>
-        [Fact]
-        public void V2IntervalUpdatePostTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //Interval interval = null;
-            //var response = instance.V2IntervalUpdatePost(interval);
-            //Assert.IsType<List<Interval>>(response);
-        }
-
-        /// <summary>
-        /// Test V2IntervalsDeletePost
-        /// </summary>
-        [Fact]
-        public void V2IntervalsDeletePostTest()
+        public void BulkDeleteIntervalsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //IntervalBulkDelete intervalBulkDelete = null;
-            //var response = instance.V2IntervalsDeletePost(intervalBulkDelete);
-            //Assert.IsType<V2IntervalsDeletePost200Response>(response);
+            //var response = instance.BulkDeleteIntervals(intervalBulkDelete);
+            //Assert.IsType<BulkDeleteIntervals200Response>(response);
         }
 
         /// <summary>
-        /// Test V2IntervalsSetPost
+        /// Test BulkSetIntervals
         /// </summary>
         [Fact]
-        public void V2IntervalsSetPostTest()
+        public void BulkSetIntervalsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //IntervalBulkCreate intervalBulkCreate = null;
-            //var response = instance.V2IntervalsSetPost(intervalBulkCreate);
+            //var response = instance.BulkSetIntervals(intervalBulkCreate);
             //Assert.IsType<List<string>>(response);
         }
 
         /// <summary>
-        /// Test V2IntervalsUpdatePost
+        /// Test BulkUpdateIntervals
         /// </summary>
         [Fact]
-        public void V2IntervalsUpdatePostTest()
+        public void BulkUpdateIntervalsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //IntervalBulkUpdate intervalBulkUpdate = null;
-            //var response = instance.V2IntervalsUpdatePost(intervalBulkUpdate);
-            //Assert.IsType<V2IntervalsUpdatePost200Response>(response);
+            //var response = instance.BulkUpdateIntervals(intervalBulkUpdate);
+            //Assert.IsType<BulkUpdateIntervals200Response>(response);
+        }
+
+        /// <summary>
+        /// Test DeleteInterval
+        /// </summary>
+        [Fact]
+        public void DeleteIntervalTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Interval interval = null;
+            //var response = instance.DeleteInterval(interval);
+            //Assert.IsType<List<Interval>>(response);
+        }
+
+        /// <summary>
+        /// Test DeleteIntervalType
+        /// </summary>
+        [Fact]
+        public void DeleteIntervalTypeTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //IntervalType intervalType = null;
+            //var response = instance.DeleteIntervalType(intervalType);
+            //Assert.IsType<IntervalType>(response);
+        }
+
+        /// <summary>
+        /// Test SearchIntervalTypes
+        /// </summary>
+        [Fact]
+        public void SearchIntervalTypesTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //IntervalType intervalType = null;
+            //var response = instance.SearchIntervalTypes(intervalType);
+            //Assert.IsType<List<IntervalType>>(response);
+        }
+
+        /// <summary>
+        /// Test SearchIntervals
+        /// </summary>
+        [Fact]
+        public void SearchIntervalsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Interval interval = null;
+            //var response = instance.SearchIntervals(interval);
+            //Assert.IsType<List<Interval>>(response);
+        }
+
+        /// <summary>
+        /// Test SetInterval
+        /// </summary>
+        [Fact]
+        public void SetIntervalTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Interval interval = null;
+            //var response = instance.SetInterval(interval);
+            //Assert.IsType<List<Interval>>(response);
+        }
+
+        /// <summary>
+        /// Test SetIntervalType
+        /// </summary>
+        [Fact]
+        public void SetIntervalTypeTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //IntervalTypeSet intervalTypeSet = null;
+            //var response = instance.SetIntervalType(intervalTypeSet);
+            //Assert.IsType<IntervalType>(response);
+        }
+
+        /// <summary>
+        /// Test UpdateInterval
+        /// </summary>
+        [Fact]
+        public void UpdateIntervalTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Interval interval = null;
+            //var response = instance.UpdateInterval(interval);
+            //Assert.IsType<List<Interval>>(response);
         }
     }
 }

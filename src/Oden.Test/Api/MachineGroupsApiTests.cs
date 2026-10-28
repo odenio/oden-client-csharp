@@ -55,26 +55,26 @@ namespace Oden.Test.Api
         }
 
         /// <summary>
-        /// Test V2FactorySearchPost
+        /// Test SearchFactories
         /// </summary>
         [Fact]
-        public void V2FactorySearchPostTest()
+        public void SearchFactoriesTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Factory factory = null;
-            //var response = instance.V2FactorySearchPost(factory);
+            //var response = instance.SearchFactories(factory);
             //Assert.IsType<List<Factory>>(response);
         }
 
         /// <summary>
-        /// Test V2LineSearchPost
+        /// Test SearchLines
         /// </summary>
         [Fact]
-        public void V2LineSearchPostTest()
+        public void SearchLinesTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Line line = null;
-            //var response = instance.V2LineSearchPost(line);
+            //var response = instance.SearchLines(line);
             //Assert.IsType<List<Line>>(response);
         }
     }

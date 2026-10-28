@@ -107,8 +107,7 @@ void (empty response body)
 | **401** | User has provided either no credentials or invalid credentials |  -  |
 | **403** | User has provided valid credentials but is not authorized to access the entity  |  -  |
 | **500** | An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.  |  -  |
-| **501** | Endpoint is not yet implemented |  -  |
-| **400** | An error occurred regarding one of the input parameters |  -  |
+| **400** | The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed \&quot;Unimplemented:\&quot;).  |  -  |
 | **404** | Entity not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -210,8 +209,7 @@ void (empty response body)
 | **401** | User has provided either no credentials or invalid credentials |  -  |
 | **403** | User has provided valid credentials but is not authorized to access the entity  |  -  |
 | **500** | An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.  |  -  |
-| **501** | Endpoint is not yet implemented |  -  |
-| **400** | An error occurred regarding one of the input parameters |  -  |
+| **400** | The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed \&quot;Unimplemented:\&quot;).  |  -  |
 | **404** | Entity not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -313,8 +311,7 @@ void (empty response body)
 | **401** | User has provided either no credentials or invalid credentials |  -  |
 | **403** | User has provided valid credentials but is not authorized to access the entity  |  -  |
 | **500** | An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.  |  -  |
-| **501** | Endpoint is not yet implemented |  -  |
-| **400** | An error occurred regarding one of the input parameters |  -  |
+| **400** | The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed \&quot;Unimplemented:\&quot;).  |  -  |
 | **404** | Entity not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -416,8 +413,7 @@ void (empty response body)
 | **401** | User has provided either no credentials or invalid credentials |  -  |
 | **403** | User has provided valid credentials but is not authorized to access the entity  |  -  |
 | **500** | An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.  |  -  |
-| **501** | Endpoint is not yet implemented |  -  |
-| **400** | An error occurred regarding one of the input parameters |  -  |
+| **400** | The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed \&quot;Unimplemented:\&quot;).  |  -  |
 | **404** | Entity not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -519,8 +515,7 @@ void (empty response body)
 | **401** | User has provided either no credentials or invalid credentials |  -  |
 | **403** | User has provided valid credentials but is not authorized to access the entity  |  -  |
 | **500** | An internal server error has occurred. If reporting the error to Oden, include the ID returned in this response to aid in debugging.  |  -  |
-| **501** | Endpoint is not yet implemented |  -  |
-| **400** | An error occurred regarding one of the input parameters |  -  |
+| **400** | The request is malformed. Either one of the input parameters is invalid (ParameterError body), or this endpoint does not support the combination of inputs supplied (GenericError body, error message prefixed \&quot;Unimplemented:\&quot;).  |  -  |
 | **404** | Entity not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

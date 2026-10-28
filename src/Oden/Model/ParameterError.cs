@@ -28,33 +28,56 @@ using OpenAPIDateConverter = Oden.Client.OpenAPIDateConverter;
 namespace Oden.Model
 {
     /// <summary>
-    /// V2IntervalsUpdatePost200ResponseFailedIntervalsInner
+    /// ParameterError
     /// </summary>
-    [DataContract(Name = "_v2_intervals_update_post_200_response_failed_intervals_inner")]
-    public partial class V2IntervalsUpdatePost200ResponseFailedIntervalsInner : IValidatableObject
+    [DataContract(Name = "ParameterError")]
+    public partial class ParameterError : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="V2IntervalsUpdatePost200ResponseFailedIntervalsInner" /> class.
+        /// Initializes a new instance of the <see cref="ParameterError" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="error">error.</param>
-        public V2IntervalsUpdatePost200ResponseFailedIntervalsInner(string id = default, string error = default)
-        {
-            this.Id = id;
-            this.Error = error;
-        }
-
+        [JsonConstructorAttribute]
+        protected ParameterError() { }
         /// <summary>
-        /// Gets or Sets Id
+        /// Initializes a new instance of the <see cref="ParameterError" /> class.
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
-        public string Id { get; set; }
+        /// <param name="error">error (required).</param>
+        /// <param name="name">name (required).</param>
+        /// <param name="retryable">retryable (required).</param>
+        public ParameterError(string error = default, string name = default, bool retryable = default)
+        {
+            // to ensure "error" is required (not null)
+            if (error == null)
+            {
+                throw new ArgumentNullException("error is a required property for ParameterError and cannot be null");
+            }
+            this.Error = error;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for ParameterError and cannot be null");
+            }
+            this.Name = name;
+            this.Retryable = retryable;
+        }
 
         /// <summary>
         /// Gets or Sets Error
         /// </summary>
-        [DataMember(Name = "error", EmitDefaultValue = false)]
+        [DataMember(Name = "error", IsRequired = true, EmitDefaultValue = true)]
         public string Error { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Name
+        /// </summary>
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Retryable
+        /// </summary>
+        [DataMember(Name = "retryable", IsRequired = true, EmitDefaultValue = true)]
+        public bool Retryable { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -63,9 +86,10 @@ namespace Oden.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class V2IntervalsUpdatePost200ResponseFailedIntervalsInner {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("class ParameterError {\n");
             sb.Append("  Error: ").Append(Error).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Retryable: ").Append(Retryable).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

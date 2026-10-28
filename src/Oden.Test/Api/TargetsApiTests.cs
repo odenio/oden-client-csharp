@@ -55,26 +55,26 @@ namespace Oden.Test.Api
         }
 
         /// <summary>
-        /// Test V2TargetSearchPost
+        /// Test SearchTargets
         /// </summary>
         [Fact]
-        public void V2TargetSearchPostTest()
+        public void SearchTargetsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Target target = null;
-            //var response = instance.V2TargetSearchPost(target);
+            //var response = instance.SearchTargets(target);
             //Assert.IsType<List<Target>>(response);
         }
 
         /// <summary>
-        /// Test V2TargetSetPost
+        /// Test SetTarget
         /// </summary>
         [Fact]
-        public void V2TargetSetPostTest()
+        public void SetTargetTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Target target = null;
-            //var response = instance.V2TargetSetPost(target);
+            //var response = instance.SetTarget(target);
             //Assert.IsType<Target>(response);
         }
     }

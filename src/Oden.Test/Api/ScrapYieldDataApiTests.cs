@@ -55,37 +55,37 @@ namespace Oden.Test.Api
         }
 
         /// <summary>
-        /// Test V2ScrapYieldDeletePost
+        /// Test DeleteScrapYield
         /// </summary>
         [Fact]
-        public void V2ScrapYieldDeletePostTest()
+        public void DeleteScrapYieldTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //V2ScrapYieldSearchPostRequest v2ScrapYieldSearchPostRequest = null;
-            //instance.V2ScrapYieldDeletePost(v2ScrapYieldSearchPostRequest);
+            //SearchScrapYieldRequest searchScrapYieldRequest = null;
+            //instance.DeleteScrapYield(searchScrapYieldRequest);
         }
 
         /// <summary>
-        /// Test V2ScrapYieldSearchPost
+        /// Test SearchScrapYield
         /// </summary>
         [Fact]
-        public void V2ScrapYieldSearchPostTest()
+        public void SearchScrapYieldTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //V2ScrapYieldSearchPostRequest v2ScrapYieldSearchPostRequest = null;
-            //instance.V2ScrapYieldSearchPost(v2ScrapYieldSearchPostRequest);
+            //SearchScrapYieldRequest searchScrapYieldRequest = null;
+            //instance.SearchScrapYield(searchScrapYieldRequest);
         }
 
         /// <summary>
-        /// Test V2ScrapYieldSetPost
+        /// Test SetScrapYield
         /// </summary>
         [Fact]
-        public void V2ScrapYieldSetPostTest()
+        public void SetScrapYieldTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //V2ScrapYieldSetPostRequest v2ScrapYieldSetPostRequest = null;
+            //SetScrapYieldRequest setScrapYieldRequest = null;
             //string pattern = null;
-            //instance.V2ScrapYieldSetPost(v2ScrapYieldSetPostRequest, pattern);
+            //instance.SetScrapYield(setScrapYieldRequest, pattern);
         }
     }
 }

@@ -55,38 +55,38 @@ namespace Oden.Test.Api
         }
 
         /// <summary>
-        /// Test V2MaintenanceWorkOrderDeletePost
+        /// Test DeleteMaintenanceWorkOrder
         /// </summary>
         [Fact]
-        public void V2MaintenanceWorkOrderDeletePostTest()
+        public void DeleteMaintenanceWorkOrderTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //MaintenanceWorkOrder maintenanceWorkOrder = null;
-            //var response = instance.V2MaintenanceWorkOrderDeletePost(maintenanceWorkOrder);
+            //var response = instance.DeleteMaintenanceWorkOrder(maintenanceWorkOrder);
             //Assert.IsType<List<MaintenanceWorkOrder>>(response);
         }
 
         /// <summary>
-        /// Test V2MaintenanceWorkOrderSearchPost
+        /// Test SearchMaintenanceWorkOrders
         /// </summary>
         [Fact]
-        public void V2MaintenanceWorkOrderSearchPostTest()
+        public void SearchMaintenanceWorkOrdersTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //V2MaintenanceWorkOrderSearchPostRequest v2MaintenanceWorkOrderSearchPostRequest = null;
-            //var response = instance.V2MaintenanceWorkOrderSearchPost(v2MaintenanceWorkOrderSearchPostRequest);
+            //SearchMaintenanceWorkOrdersRequest searchMaintenanceWorkOrdersRequest = null;
+            //var response = instance.SearchMaintenanceWorkOrders(searchMaintenanceWorkOrdersRequest);
             //Assert.IsType<List<MaintenanceWorkOrder>>(response);
         }
 
         /// <summary>
-        /// Test V2MaintenanceWorkOrderSetPost
+        /// Test SetMaintenanceWorkOrder
         /// </summary>
         [Fact]
-        public void V2MaintenanceWorkOrderSetPostTest()
+        public void SetMaintenanceWorkOrderTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //MaintenanceWorkOrder maintenanceWorkOrder = null;
-            //var response = instance.V2MaintenanceWorkOrderSetPost(maintenanceWorkOrder);
+            //var response = instance.SetMaintenanceWorkOrder(maintenanceWorkOrder);
             //Assert.IsType<MaintenanceWorkOrder>(response);
         }
     }

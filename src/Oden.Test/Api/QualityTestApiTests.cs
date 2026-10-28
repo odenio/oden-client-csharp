@@ -55,58 +55,58 @@ namespace Oden.Test.Api
         }
 
         /// <summary>
-        /// Test V2QualitySchemaSearchPost
+        /// Test BulkDeleteQualityTests
         /// </summary>
         [Fact]
-        public void V2QualitySchemaSearchPostTest()
+        public void BulkDeleteQualityTestsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //BulkDeleteQualityTestsRequest bulkDeleteQualityTestsRequest = null;
+            //instance.BulkDeleteQualityTests(bulkDeleteQualityTestsRequest);
+        }
+
+        /// <summary>
+        /// Test DeleteQualityTest
+        /// </summary>
+        [Fact]
+        public void DeleteQualityTestTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //QualityTest qualityTest = null;
+            //instance.DeleteQualityTest(qualityTest);
+        }
+
+        /// <summary>
+        /// Test SearchQualitySchemas
+        /// </summary>
+        [Fact]
+        public void SearchQualitySchemasTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //QualitySchema qualitySchema = null;
-            //instance.V2QualitySchemaSearchPost(qualitySchema);
+            //instance.SearchQualitySchemas(qualitySchema);
         }
 
         /// <summary>
-        /// Test V2QualityTestDeletePost
+        /// Test SearchQualityTests
         /// </summary>
         [Fact]
-        public void V2QualityTestDeletePostTest()
+        public void SearchQualityTestsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //QualityTest qualityTest = null;
-            //instance.V2QualityTestDeletePost(qualityTest);
+            //instance.SearchQualityTests(qualityTest);
         }
 
         /// <summary>
-        /// Test V2QualityTestSearchPost
+        /// Test SetQualityTest
         /// </summary>
         [Fact]
-        public void V2QualityTestSearchPostTest()
+        public void SetQualityTestTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //QualityTest qualityTest = null;
-            //instance.V2QualityTestSearchPost(qualityTest);
-        }
-
-        /// <summary>
-        /// Test V2QualityTestSetPost
-        /// </summary>
-        [Fact]
-        public void V2QualityTestSetPostTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //QualityTest qualityTest = null;
-            //instance.V2QualityTestSetPost(qualityTest);
-        }
-
-        /// <summary>
-        /// Test V2QualityTestsDeletePost
-        /// </summary>
-        [Fact]
-        public void V2QualityTestsDeletePostTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //V2QualityTestsDeletePostRequest v2QualityTestsDeletePostRequest = null;
-            //instance.V2QualityTestsDeletePost(v2QualityTestsDeletePostRequest);
+            //instance.SetQualityTest(qualityTest);
         }
     }
 }

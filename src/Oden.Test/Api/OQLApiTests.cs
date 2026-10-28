@@ -55,15 +55,15 @@ namespace Oden.Test.Api
         }
 
         /// <summary>
-        /// Test V2OqlQueryPost
+        /// Test RunOqlQuery
         /// </summary>
         [Fact]
-        public void V2OqlQueryPostTest()
+        public void RunOqlQueryTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //OQLQuery oQLQuery = null;
             //string format = null;
-            //instance.V2OqlQueryPost(oQLQuery, format);
+            //instance.RunOqlQuery(oQLQuery, format);
         }
     }
 }

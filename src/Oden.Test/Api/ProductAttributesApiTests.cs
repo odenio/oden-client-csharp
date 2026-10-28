@@ -55,26 +55,26 @@ namespace Oden.Test.Api
         }
 
         /// <summary>
-        /// Test V2ProductAttributeSearchPost
+        /// Test SearchProductAttributes
         /// </summary>
         [Fact]
-        public void V2ProductAttributeSearchPostTest()
+        public void SearchProductAttributesTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //ProductAttribute productAttribute = null;
-            //var response = instance.V2ProductAttributeSearchPost(productAttribute);
+            //var response = instance.SearchProductAttributes(productAttribute);
             //Assert.IsType<List<ProductAttribute>>(response);
         }
 
         /// <summary>
-        /// Test V2ProductAttributeSetPost
+        /// Test SetProductAttribute
         /// </summary>
         [Fact]
-        public void V2ProductAttributeSetPostTest()
+        public void SetProductAttributeTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //ProductAttribute productAttribute = null;
-            //var response = instance.V2ProductAttributeSetPost(productAttribute);
+            //var response = instance.SetProductAttribute(productAttribute);
             //Assert.IsType<List<ProductAttribute>>(response);
         }
     }

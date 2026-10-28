@@ -55,37 +55,37 @@ namespace Oden.Test.Api
         }
 
         /// <summary>
-        /// Test V2ProductDeletePost
+        /// Test DeleteProduct
         /// </summary>
         [Fact]
-        public void V2ProductDeletePostTest()
+        public void DeleteProductTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Product product = null;
-            //instance.V2ProductDeletePost(product);
+            //instance.DeleteProduct(product);
         }
 
         /// <summary>
-        /// Test V2ProductSearchPost
+        /// Test SearchProducts
         /// </summary>
         [Fact]
-        public void V2ProductSearchPostTest()
+        public void SearchProductsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Product product = null;
-            //var response = instance.V2ProductSearchPost(product);
+            //var response = instance.SearchProducts(product);
             //Assert.IsType<List<Product>>(response);
         }
 
         /// <summary>
-        /// Test V2ProductSetPost
+        /// Test SetProduct
         /// </summary>
         [Fact]
-        public void V2ProductSetPostTest()
+        public void SetProductTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //Product product = null;
-            //instance.V2ProductSetPost(product);
+            //instance.SetProduct(product);
         }
     }
 }

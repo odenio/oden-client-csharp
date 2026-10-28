@@ -55,26 +55,26 @@ namespace Oden.Test.Api
         }
 
         /// <summary>
-        /// Test V2ProductMappingSearchPost
+        /// Test SearchProductMappings
         /// </summary>
         [Fact]
-        public void V2ProductMappingSearchPostTest()
+        public void SearchProductMappingsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //ProductMapping productMapping = null;
-            //var response = instance.V2ProductMappingSearchPost(productMapping);
+            //var response = instance.SearchProductMappings(productMapping);
             //Assert.IsType<List<ProductMapping>>(response);
         }
 
         /// <summary>
-        /// Test V2ProductMappingSetPost
+        /// Test SetProductMapping
         /// </summary>
         [Fact]
-        public void V2ProductMappingSetPostTest()
+        public void SetProductMappingTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //ProductMapping productMapping = null;
-            //instance.V2ProductMappingSetPost(productMapping);
+            //instance.SetProductMapping(productMapping);
         }
     }
 }

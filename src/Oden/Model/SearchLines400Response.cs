@@ -24,60 +24,89 @@ using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using FileParameter = Oden.Client.FileParameter;
 using OpenAPIDateConverter = Oden.Client.OpenAPIDateConverter;
+using System.Reflection;
 
 namespace Oden.Model
 {
     /// <summary>
     /// SearchLines400Response
     /// </summary>
+    [JsonConverter(typeof(SearchLines400ResponseJsonConverter))]
     [DataContract(Name = "search_lines_400_response")]
-    public partial class SearchLines400Response : IValidatableObject
+    public partial class SearchLines400Response : AbstractOpenAPISchema, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SearchLines400Response" /> class.
+        /// Initializes a new instance of the <see cref="SearchLines400Response" /> class
+        /// with the <see cref="ParameterError" /> class
         /// </summary>
-        [JsonConstructorAttribute]
-        protected SearchLines400Response() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SearchLines400Response" /> class.
-        /// </summary>
-        /// <param name="error">error (required).</param>
-        /// <param name="name">name (required).</param>
-        /// <param name="retryable">retryable (required).</param>
-        public SearchLines400Response(string error = default, string name = default, bool retryable = default)
+        /// <param name="actualInstance">An instance of ParameterError.</param>
+        public SearchLines400Response(ParameterError actualInstance)
         {
-            // to ensure "error" is required (not null)
-            if (error == null)
-            {
-                throw new ArgumentNullException("error is a required property for SearchLines400Response and cannot be null");
-            }
-            this.Error = error;
-            // to ensure "name" is required (not null)
-            if (name == null)
-            {
-                throw new ArgumentNullException("name is a required property for SearchLines400Response and cannot be null");
-            }
-            this.Name = name;
-            this.Retryable = retryable;
+            IsNullable = false;
+            SchemaType= "anyOf";
+            ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
         }
 
         /// <summary>
-        /// Gets or Sets Error
+        /// Initializes a new instance of the <see cref="SearchLines400Response" /> class
+        /// with the <see cref="GenericError" /> class
         /// </summary>
-        [DataMember(Name = "error", IsRequired = true, EmitDefaultValue = true)]
-        public string Error { get; set; }
+        /// <param name="actualInstance">An instance of GenericError.</param>
+        public SearchLines400Response(GenericError actualInstance)
+        {
+            IsNullable = false;
+            SchemaType= "anyOf";
+            ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
+        }
+
+
+        private Object _actualInstance;
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or Sets ActualInstance
         /// </summary>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
-        public string Name { get; set; }
+        public override Object ActualInstance
+        {
+            get
+            {
+                return _actualInstance;
+            }
+            set
+            {
+                if (value.GetType() == typeof(GenericError))
+                {
+                    _actualInstance = value;
+                }
+                else if (value.GetType() == typeof(ParameterError))
+                {
+                    _actualInstance = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Invalid instance found. Must be the following types: GenericError, ParameterError");
+                }
+            }
+        }
 
         /// <summary>
-        /// Gets or Sets Retryable
+        /// Get the actual instance of `ParameterError`. If the actual instance is not `ParameterError`,
+        /// the InvalidClassException will be thrown
         /// </summary>
-        [DataMember(Name = "retryable", IsRequired = true, EmitDefaultValue = true)]
-        public bool Retryable { get; set; }
+        /// <returns>An instance of ParameterError</returns>
+        public ParameterError GetParameterError()
+        {
+            return (ParameterError)ActualInstance;
+        }
+
+        /// <summary>
+        /// Get the actual instance of `GenericError`. If the actual instance is not `GenericError`,
+        /// the InvalidClassException will be thrown
+        /// </summary>
+        /// <returns>An instance of GenericError</returns>
+        public GenericError GetGenericError()
+        {
+            return (GenericError)ActualInstance;
+        }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -85,11 +114,9 @@ namespace Oden.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
             sb.Append("class SearchLines400Response {\n");
-            sb.Append("  Error: ").Append(Error).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Retryable: ").Append(Retryable).Append("\n");
+            sb.Append("  ActualInstance: ").Append(ActualInstance).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -98,9 +125,51 @@ namespace Oden.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public virtual string ToJson()
+        public override string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return JsonConvert.SerializeObject(ActualInstance, SearchLines400Response.SerializerSettings);
+        }
+
+        /// <summary>
+        /// Converts the JSON string into an instance of SearchLines400Response
+        /// </summary>
+        /// <param name="jsonString">JSON string</param>
+        /// <returns>An instance of SearchLines400Response</returns>
+        public static SearchLines400Response FromJson(string jsonString)
+        {
+            SearchLines400Response newSearchLines400Response = null;
+
+            if (string.IsNullOrEmpty(jsonString))
+            {
+                return newSearchLines400Response;
+            }
+
+            try
+            {
+                newSearchLines400Response = new SearchLines400Response(JsonConvert.DeserializeObject<GenericError>(jsonString, SearchLines400Response.SerializerSettings));
+                // deserialization is considered successful at this point if no exception has been thrown.
+                return newSearchLines400Response;
+            }
+            catch (Exception exception)
+            {
+                // deserialization failed, try the next one
+                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into GenericError: {1}", jsonString, exception.ToString()));
+            }
+
+            try
+            {
+                newSearchLines400Response = new SearchLines400Response(JsonConvert.DeserializeObject<ParameterError>(jsonString, SearchLines400Response.SerializerSettings));
+                // deserialization is considered successful at this point if no exception has been thrown.
+                return newSearchLines400Response;
+            }
+            catch (Exception exception)
+            {
+                // deserialization failed, try the next one
+                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into ParameterError: {1}", jsonString, exception.ToString()));
+            }
+
+            // no match found, throw an exception
+            throw new InvalidDataException("The JSON string `" + jsonString + "` cannot be deserialized into any schema defined.");
         }
 
         /// <summary>
@@ -108,9 +177,57 @@ namespace Oden.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
+        }
+    }
+
+    /// <summary>
+    /// Custom JSON converter for SearchLines400Response
+    /// </summary>
+    public class SearchLines400ResponseJsonConverter : JsonConverter
+    {
+        /// <summary>
+        /// To write the JSON string
+        /// </summary>
+        /// <param name="writer">JSON writer</param>
+        /// <param name="value">Object to be converted into a JSON string</param>
+        /// <param name="serializer">JSON Serializer</param>
+        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        {
+            writer.WriteRawValue((string)(typeof(SearchLines400Response).GetMethod("ToJson").Invoke(value, null)));
+        }
+
+        /// <summary>
+        /// To convert a JSON string into an object
+        /// </summary>
+        /// <param name="reader">JSON reader</param>
+        /// <param name="objectType">Object type</param>
+        /// <param name="existingValue">Existing value</param>
+        /// <param name="serializer">JSON Serializer</param>
+        /// <returns>The object converted from the JSON string</returns>
+        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+        {
+            switch(reader.TokenType) 
+            {
+                case JsonToken.StartObject:
+                    return SearchLines400Response.FromJson(JObject.Load(reader).ToString(Formatting.None));
+                case JsonToken.StartArray:
+                    return SearchLines400Response.FromJson(JArray.Load(reader).ToString(Formatting.None));
+                default:
+                    return null;
+            }
+        }
+
+        /// <summary>
+        /// Check if the object can be converted
+        /// </summary>
+        /// <param name="objectType">Object type</param>
+        /// <returns>True if the object can be converted</returns>
+        public override bool CanConvert(Type objectType)
+        {
+            return false;
         }
     }
 
