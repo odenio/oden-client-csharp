@@ -195,6 +195,9 @@ paths:
       summary: Search production lines
       tags:
       - Machine Groups
+      x-mcp-annotations:
+        readOnlyHint: true
+        openWorldHint: false
   /v2/factory/search:
     post:
       description: |
@@ -282,6 +285,9 @@ paths:
       summary: Search factories
       tags:
       - Machine Groups
+      x-mcp-annotations:
+        readOnlyHint: true
+        openWorldHint: false
   /v2/metric_group/search:
     post:
       description: |
@@ -361,6 +367,9 @@ paths:
       summary: Search metric groups
       tags:
       - Metric Groups
+      x-mcp-annotations:
+        readOnlyHint: true
+        openWorldHint: false
   /v2/product/search:
     post:
       description: |
@@ -427,6 +436,9 @@ paths:
       summary: Search products
       tags:
       - Products
+      x-mcp-annotations:
+        readOnlyHint: true
+        openWorldHint: false
   /v2/product/set:
     post:
       description: |
@@ -483,6 +495,11 @@ paths:
       summary: Create or update a product
       tags:
       - Products
+      x-mcp-annotations:
+        readOnlyHint: false
+        destructiveHint: true
+        idempotentHint: false
+        openWorldHint: false
   /v2/product/delete:
     post:
       description: |
@@ -551,6 +568,11 @@ paths:
       summary: Delete a product
       tags:
       - Products
+      x-mcp-annotations:
+        readOnlyHint: false
+        destructiveHint: true
+        idempotentHint: true
+        openWorldHint: false
   /v2/product_mapping/search:
     post:
       description: |
@@ -630,6 +652,9 @@ paths:
       summary: Search product-to-line mappings
       tags:
       - Product Mappings
+      x-mcp-annotations:
+        readOnlyHint: true
+        openWorldHint: false
   /v2/product_mapping/set:
     post:
       description: |
@@ -700,6 +725,11 @@ paths:
       summary: Map a product to a line
       tags:
       - Product Mappings
+      x-mcp-annotations:
+        readOnlyHint: false
+        destructiveHint: false
+        idempotentHint: true
+        openWorldHint: false
   /v2/product_attribute/search:
     post:
       description: |
@@ -767,6 +797,9 @@ paths:
       summary: Search product attributes
       tags:
       - Product Attributes
+      x-mcp-annotations:
+        readOnlyHint: true
+        openWorldHint: false
   /v2/product_attribute/set:
     post:
       description: |
@@ -845,6 +878,11 @@ paths:
       summary: Create or update a product attribute
       tags:
       - Product Attributes
+      x-mcp-annotations:
+        readOnlyHint: false
+        destructiveHint: true
+        idempotentHint: true
+        openWorldHint: false
   /v2/target/search:
     post:
       description: |
@@ -919,6 +957,9 @@ paths:
       summary: Search metric targets
       tags:
       - Targets
+      x-mcp-annotations:
+        readOnlyHint: true
+        openWorldHint: false
   /v2/target/set:
     post:
       description: |
@@ -1015,6 +1056,11 @@ paths:
       summary: Create or update a metric target
       tags:
       - Targets
+      x-mcp-annotations:
+        readOnlyHint: false
+        destructiveHint: true
+        idempotentHint: true
+        openWorldHint: false
   /v2/interval/search:
     post:
       description: |
@@ -1129,6 +1175,9 @@ paths:
       summary: Search intervals on a line
       tags:
       - Intervals
+      x-mcp-annotations:
+        readOnlyHint: true
+        openWorldHint: false
   /v2/interval/set:
     post:
       description: |
@@ -1323,6 +1372,11 @@ paths:
       summary: Create or update an interval
       tags:
       - Intervals
+      x-mcp-annotations:
+        readOnlyHint: false
+        destructiveHint: true
+        idempotentHint: false
+        openWorldHint: true
   /v2/interval/update:
     post:
       description: |
@@ -1461,6 +1515,11 @@ paths:
       summary: Update an interval
       tags:
       - Intervals
+      x-mcp-annotations:
+        readOnlyHint: false
+        destructiveHint: true
+        idempotentHint: true
+        openWorldHint: true
   /v2/interval/delete:
     post:
       description: |
@@ -1563,6 +1622,11 @@ paths:
       summary: Delete an interval
       tags:
       - Intervals
+      x-mcp-annotations:
+        readOnlyHint: false
+        destructiveHint: true
+        idempotentHint: true
+        openWorldHint: true
   /v2/intervals/set:
     post:
       description: |
@@ -1649,6 +1713,11 @@ paths:
       summary: Create a set of intervals
       tags:
       - Intervals
+      x-mcp-annotations:
+        readOnlyHint: false
+        destructiveHint: true
+        idempotentHint: false
+        openWorldHint: true
   /v2/intervals/update:
     post:
       description: |
@@ -1764,6 +1833,11 @@ paths:
       summary: Update a set of intervals
       tags:
       - Intervals
+      x-mcp-annotations:
+        readOnlyHint: false
+        destructiveHint: true
+        idempotentHint: true
+        openWorldHint: true
   /v2/intervals/delete:
     post:
       description: |
@@ -1841,6 +1915,11 @@ paths:
       summary: Delete intervals in a time range
       tags:
       - Intervals
+      x-mcp-annotations:
+        readOnlyHint: false
+        destructiveHint: true
+        idempotentHint: false
+        openWorldHint: true
   /v2/interval_type/search:
     post:
       description: |
@@ -1909,6 +1988,9 @@ paths:
       summary: Search interval types
       tags:
       - Intervals
+      x-mcp-annotations:
+        readOnlyHint: true
+        openWorldHint: false
   /v2/interval_type/set:
     post:
       description: |
@@ -1981,6 +2063,11 @@ paths:
       summary: Create or update a custom interval type
       tags:
       - Intervals
+      x-mcp-annotations:
+        readOnlyHint: false
+        destructiveHint: true
+        idempotentHint: false
+        openWorldHint: false
   /v2/interval_type/delete:
     post:
       description: |
@@ -2040,6 +2127,11 @@ paths:
       summary: Delete a custom interval type
       tags:
       - Intervals
+      x-mcp-annotations:
+        readOnlyHint: false
+        destructiveHint: true
+        idempotentHint: true
+        openWorldHint: false
   /v2/state_category/search:
     post:
       description: |
@@ -2105,6 +2197,9 @@ paths:
       summary: Search state categories
       tags:
       - States
+      x-mcp-annotations:
+        readOnlyHint: true
+        openWorldHint: false
   /v2/state_category/set:
     post:
       description: |
@@ -2184,6 +2279,11 @@ paths:
       summary: Create or update a state category
       tags:
       - States
+      x-mcp-annotations:
+        readOnlyHint: false
+        destructiveHint: true
+        idempotentHint: true
+        openWorldHint: false
   /v2/state_reason/search:
     post:
       description: |
@@ -2258,6 +2358,9 @@ paths:
       summary: Search state reasons on one or more lines
       tags:
       - States
+      x-mcp-annotations:
+        readOnlyHint: true
+        openWorldHint: false
   /v2/state_reason/set:
     post:
       description: |
@@ -2341,6 +2444,11 @@ paths:
       summary: Create a state reason on one or more lines
       tags:
       - States
+      x-mcp-annotations:
+        readOnlyHint: false
+        destructiveHint: true
+        idempotentHint: true
+        openWorldHint: false
   /v2/scrap_yield/search:
     post:
       description: |
@@ -2412,6 +2520,9 @@ paths:
       summary: Search scrap/yield records
       tags:
       - Scrap/Yield Data
+      x-mcp-annotations:
+        readOnlyHint: true
+        openWorldHint: false
   /v2/scrap_yield/set:
     post:
       description: |
@@ -2535,6 +2646,11 @@ paths:
       summary: Create or update a scrap/yield record
       tags:
       - Scrap/Yield Data
+      x-mcp-annotations:
+        readOnlyHint: false
+        destructiveHint: true
+        idempotentHint: false
+        openWorldHint: false
   /v2/scrap_yield/delete:
     post:
       description: |
@@ -2603,6 +2719,11 @@ paths:
       summary: Delete a scrap/yield record
       tags:
       - Scrap/Yield Data
+      x-mcp-annotations:
+        readOnlyHint: false
+        destructiveHint: true
+        idempotentHint: true
+        openWorldHint: false
   /v2/quality_test/set:
     post:
       description: |
@@ -2683,6 +2804,11 @@ paths:
       summary: Create or update a quality test result
       tags:
       - Quality Test
+      x-mcp-annotations:
+        readOnlyHint: false
+        destructiveHint: true
+        idempotentHint: false
+        openWorldHint: true
   /v2/quality_test/search:
     post:
       description: |
@@ -2764,6 +2890,9 @@ paths:
       summary: Search quality tests
       tags:
       - Quality Test
+      x-mcp-annotations:
+        readOnlyHint: true
+        openWorldHint: false
   /v2/quality_test/delete:
     post:
       description: |
@@ -2835,6 +2964,11 @@ paths:
       summary: Delete a quality test
       tags:
       - Quality Test
+      x-mcp-annotations:
+        readOnlyHint: false
+        destructiveHint: true
+        idempotentHint: true
+        openWorldHint: true
   /v2/quality_tests/delete:
     post:
       description: |
@@ -2897,6 +3031,11 @@ paths:
       summary: Delete multiple quality tests
       tags:
       - Quality Test
+      x-mcp-annotations:
+        readOnlyHint: false
+        destructiveHint: true
+        idempotentHint: true
+        openWorldHint: true
   /v2/quality_schema/search:
     post:
       description: |
@@ -2962,6 +3101,9 @@ paths:
       summary: Search quality schemas for a factory
       tags:
       - Quality Test
+      x-mcp-annotations:
+        readOnlyHint: true
+        openWorldHint: false
   /v2/oql/query:
     post:
       description: |
@@ -3044,6 +3186,9 @@ paths:
       summary: Run an OQL query
       tags:
       - OQL
+      x-mcp-annotations:
+        readOnlyHint: true
+        openWorldHint: false
   /v2/dashboard/execute:
     post:
       description: |
@@ -3117,6 +3262,9 @@ paths:
       summary: Execute a dashboard
       tags:
       - Dashboards
+      x-mcp-annotations:
+        readOnlyHint: true
+        openWorldHint: false
   /v2/maintenance_work_order/search:
     post:
       description: |
@@ -3203,6 +3351,9 @@ paths:
       summary: Search maintenance work orders
       tags:
       - Maintenance Work Orders
+      x-mcp-annotations:
+        readOnlyHint: true
+        openWorldHint: false
   /v2/maintenance_work_order/set:
     post:
       description: |
@@ -3297,6 +3448,11 @@ paths:
       summary: Create or update a maintenance work order
       tags:
       - Maintenance Work Orders
+      x-mcp-annotations:
+        readOnlyHint: false
+        destructiveHint: true
+        idempotentHint: false
+        openWorldHint: true
   /v2/maintenance_work_order/delete:
     post:
       description: |
@@ -3374,6 +3530,11 @@ paths:
       summary: Delete a maintenance work order
       tags:
       - Maintenance Work Orders
+      x-mcp-annotations:
+        readOnlyHint: false
+        destructiveHint: true
+        idempotentHint: true
+        openWorldHint: true
 components:
   parameters:
     FormatParam:
@@ -4958,4 +5119,38 @@ components:
       in: header
       name: Authorization
       type: apiKey
+x-mcp-annotation-presets:
+  read-only:
+    readOnlyHint: true
+    openWorldHint: false
+  additive-write:
+    readOnlyHint: false
+    destructiveHint: false
+    idempotentHint: true
+    openWorldHint: false
+  overwrite:
+    readOnlyHint: false
+    destructiveHint: true
+    idempotentHint: true
+    openWorldHint: false
+  overwrite-or-create:
+    readOnlyHint: false
+    destructiveHint: true
+    idempotentHint: false
+    openWorldHint: false
+  overwrite-event:
+    readOnlyHint: false
+    destructiveHint: true
+    idempotentHint: true
+    openWorldHint: true
+  overwrite-or-create-event:
+    readOnlyHint: false
+    destructiveHint: true
+    idempotentHint: false
+    openWorldHint: true
+  cascading-delete-event:
+    readOnlyHint: false
+    destructiveHint: true
+    idempotentHint: false
+    openWorldHint: true
 
