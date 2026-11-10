@@ -32,7 +32,7 @@ namespace Oden.Api
         /// Run an OQL query
         /// </summary>
         /// <remarks>
-        /// Run an OQL (Oden Query Language) query.  For reference on writing OQL queries, see:  [https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql](https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql) 
+        /// Run an OQL (Oden Query Language) query.  A 400 means the query itself is wrong: it does not parse, uses an unknown macro or column, has invalid settings, or exceeds the complexity budget. The &#x60;error&#x60; field says why; fix the query rather than retrying it. A 403 means the caller may not query the lines it touches, and a 412 means the data the query needs is not available yet.  For reference on writing OQL queries, see:  [https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql](https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql) 
         /// </remarks>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="oQLQuery"></param>
@@ -44,7 +44,7 @@ namespace Oden.Api
         /// Run an OQL query
         /// </summary>
         /// <remarks>
-        /// Run an OQL (Oden Query Language) query.  For reference on writing OQL queries, see:  [https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql](https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql) 
+        /// Run an OQL (Oden Query Language) query.  A 400 means the query itself is wrong: it does not parse, uses an unknown macro or column, has invalid settings, or exceeds the complexity budget. The &#x60;error&#x60; field says why; fix the query rather than retrying it. A 403 means the caller may not query the lines it touches, and a 412 means the data the query needs is not available yet.  For reference on writing OQL queries, see:  [https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql](https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql) 
         /// </remarks>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="oQLQuery"></param>
@@ -64,7 +64,7 @@ namespace Oden.Api
         /// Run an OQL query
         /// </summary>
         /// <remarks>
-        /// Run an OQL (Oden Query Language) query.  For reference on writing OQL queries, see:  [https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql](https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql) 
+        /// Run an OQL (Oden Query Language) query.  A 400 means the query itself is wrong: it does not parse, uses an unknown macro or column, has invalid settings, or exceeds the complexity budget. The &#x60;error&#x60; field says why; fix the query rather than retrying it. A 403 means the caller may not query the lines it touches, and a 412 means the data the query needs is not available yet.  For reference on writing OQL queries, see:  [https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql](https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql) 
         /// </remarks>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="oQLQuery"></param>
@@ -77,7 +77,7 @@ namespace Oden.Api
         /// Run an OQL query
         /// </summary>
         /// <remarks>
-        /// Run an OQL (Oden Query Language) query.  For reference on writing OQL queries, see:  [https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql](https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql) 
+        /// Run an OQL (Oden Query Language) query.  A 400 means the query itself is wrong: it does not parse, uses an unknown macro or column, has invalid settings, or exceeds the complexity budget. The &#x60;error&#x60; field says why; fix the query rather than retrying it. A 403 means the caller may not query the lines it touches, and a 412 means the data the query needs is not available yet.  For reference on writing OQL queries, see:  [https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql](https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql) 
         /// </remarks>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="oQLQuery"></param>
@@ -299,7 +299,7 @@ namespace Oden.Api
         }
 
         /// <summary>
-        /// Run an OQL query Run an OQL (Oden Query Language) query.  For reference on writing OQL queries, see:  [https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql](https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql) 
+        /// Run an OQL query Run an OQL (Oden Query Language) query.  A 400 means the query itself is wrong: it does not parse, uses an unknown macro or column, has invalid settings, or exceeds the complexity budget. The &#x60;error&#x60; field says why; fix the query rather than retrying it. A 403 means the caller may not query the lines it touches, and a 412 means the data the query needs is not available yet.  For reference on writing OQL queries, see:  [https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql](https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql) 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="oQLQuery"></param>
@@ -311,7 +311,7 @@ namespace Oden.Api
         }
 
         /// <summary>
-        /// Run an OQL query Run an OQL (Oden Query Language) query.  For reference on writing OQL queries, see:  [https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql](https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql) 
+        /// Run an OQL query Run an OQL (Oden Query Language) query.  A 400 means the query itself is wrong: it does not parse, uses an unknown macro or column, has invalid settings, or exceeds the complexity budget. The &#x60;error&#x60; field says why; fix the query rather than retrying it. A 403 means the caller may not query the lines it touches, and a 412 means the data the query needs is not available yet.  For reference on writing OQL queries, see:  [https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql](https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql) 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="oQLQuery"></param>
@@ -365,7 +365,7 @@ namespace Oden.Api
         }
 
         /// <summary>
-        /// Run an OQL query Run an OQL (Oden Query Language) query.  For reference on writing OQL queries, see:  [https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql](https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql) 
+        /// Run an OQL query Run an OQL (Oden Query Language) query.  A 400 means the query itself is wrong: it does not parse, uses an unknown macro or column, has invalid settings, or exceeds the complexity budget. The &#x60;error&#x60; field says why; fix the query rather than retrying it. A 403 means the caller may not query the lines it touches, and a 412 means the data the query needs is not available yet.  For reference on writing OQL queries, see:  [https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql](https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql) 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="oQLQuery"></param>
@@ -378,7 +378,7 @@ namespace Oden.Api
         }
 
         /// <summary>
-        /// Run an OQL query Run an OQL (Oden Query Language) query.  For reference on writing OQL queries, see:  [https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql](https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql) 
+        /// Run an OQL query Run an OQL (Oden Query Language) query.  A 400 means the query itself is wrong: it does not parse, uses an unknown macro or column, has invalid settings, or exceeds the complexity budget. The &#x60;error&#x60; field says why; fix the query rather than retrying it. A 403 means the caller may not query the lines it touches, and a 412 means the data the query needs is not available yet.  For reference on writing OQL queries, see:  [https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql](https://platform.oden.app/knowledge/how-do-i-write-queries-in-oden-query-language-oql) 
         /// </summary>
         /// <exception cref="Oden.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="oQLQuery"></param>
